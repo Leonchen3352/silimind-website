@@ -1,156 +1,258 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>产品总览 — SiliMind | B2B 营销销售全链路 AI 平台</title>
-    <meta name="description" content="SiliMind 产品矩阵：营销获客、销售管理、AI 智能决策，覆盖 B2B 全链路。" />
-    <meta name="robots" content="noindex, follow" />
-    <link rel="canonical" href="https://www.silimind.net/products.html" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <meta property="og:title" content="产品总览 — SiliMind | B2B 营销销售全链路 AI 平台" />
-    <meta property="og:description" content="SiliMind 产品矩阵：营销获客、销售管理、AI 智能决策，覆盖 B2B 全链路。" />
-    <meta property="og:url" content="https://www.silimind.net/products.html" />
-    <meta property="og:type" content="website" />
-    <meta property="og:locale" content="zh_CN" />
-    <meta property="og:site_name" content="SiliMind" />
-    <style>
-        :root {
-            --bg-primary: #0a0a0f;
-            --bg-secondary: #12121a;
-            --accent: #6366f1;
-            --accent-light: #818cf8;
-            --text-primary: #f0f0f5;
-            --text-secondary: rgba(240, 240, 245, 0.6);
-            --border: rgba(99, 102, 241, 0.08);
-        }
-        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', 'PingFang SC', 'Noto Sans SC', sans-serif;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            line-height: 1.6;
-        }
-        nav {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 1rem 2rem;
-            border-bottom: 1px solid var(--border);
-            max-width: 1200px;
-            margin: 0 auto;
-            width: 100%;
-        }
-        .nav-logo {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--accent-light);
-            text-decoration: none;
-        }
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 1.75rem;
-            list-style: none;
-        }
-        .nav-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.2s;
-        }
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: var(--accent-light);
-        }
-        .nav-cta {
-            padding: 0.5rem 1.25rem;
-            background: var(--accent);
-            color: #fff !important;
-            border-radius: 6px;
-            font-weight: 500;
-            text-decoration: none;
-            font-size: 0.875rem;
-            transition: background 0.2s;
-        }
-        .nav-cta:hover {
-            background: var(--accent-light);
-        }
-        main {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 4rem 2rem;
-        }
-        h1 {
-            font-size: 2.25rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-        }
-        .description {
-            color: var(--text-secondary);
-            font-size: 1.05rem;
-            max-width: 520px;
-            margin-bottom: 2.5rem;
-            line-height: 1.7;
-        }
-        .coming-soon {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 1.15rem;
-            color: var(--accent-light);
-            font-weight: 600;
-        }
-        .back-link {
-            margin-top: 2rem;
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.2s;
-        }
-        .back-link:hover {
-            color: var(--accent-light);
-        }
-        footer {
-            text-align: center;
-            padding: 2rem;
-            border-top: 1px solid var(--border);
-            color: var(--text-secondary);
-            font-size: 0.8rem;
-        }
-        @media (max-width: 768px) {
-            nav { padding: 1rem; flex-wrap: wrap; gap: 1rem; }
-            .nav-links { gap: 1rem; }
-            h1 { font-size: 1.75rem; }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <title>SiliMind 产品总览 | SiliMind</title>
+  <meta name="description" content="SiliMind 三大核心模块：营销获客、销售管理、AI 智能决策。AI 贯穿获客到成交全链路的一站式 B2B 营销销售平台。" />
+  <link rel="canonical" href="https://www.silimind.net/products.html" />
+  <meta property="og:title" content="SiliMind 产品总览" />
+  <meta property="og:description" content="SiliMind 三大核心模块：营销获客、销售管理、AI 智能决策。AI 贯穿获客到成交全链路的一站式 B2B 营销销售平台。" />
+  <meta property="og:url" content="https://www.silimind.net/products.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:site_name" content="SiliMind" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "SiliMind 产品总览",
+    "description": "SiliMind 三大核心模块：营销获客、销售管理、AI 智能决策。AI 贯穿获客到成交全链路的一站式 B2B 营销销售平台。",
+    "url": "https://www.silimind.net/products.html",
+    "datePublished": "2026-07-31",
+    "author": {
+      "@type": "Organization",
+      "name": "SiliMind"
+    }
+  }
+  </script>
+  <style>
+    :root {
+      --bg-primary: #0a0a0f;
+      --bg-secondary: #12121a;
+      --bg-tertiary: #181824;
+      --accent: #6366f1;
+      --accent-hover: #4f46e5;
+      --accent-light: #818cf8;
+      --accent-glow: rgba(99,102,241,0.15);
+      --text-primary: #f0f0f5;
+      --text-secondary: rgba(240,240,245,0.6);
+      --text-tertiary: rgba(240,240,245,0.4);
+      --border: rgba(99,102,241,0.08);
+      --border-hover: rgba(99,102,241,0.2);
+      --font: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', 'PingFang SC', 'Noto Sans SC', sans-serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+    a { color: var(--accent-light); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: #fff; }
+    strong { color: var(--text-primary); font-weight: 600; }
+
+    /* Nav */
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(10,10,15,0.92); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); height: 64px; }
+    .nav-inner { max-width: 1120px; margin: 0 auto; padding: 0 32px; height: 100%; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { font-size: 20px; font-weight: 700; color: var(--accent-light); text-decoration: none; letter-spacing: 0.5px; }
+    .nav-links { list-style: none; display: flex; gap: 28px; align-items: center; }
+    .nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--text-primary); }
+    .nav-links a.active { color: var(--accent-light); }
+    .nav-cta { padding: 8px 20px; font-size: 13px; background: var(--accent); color: #fff !important; border-radius: 6px; font-weight: 600; text-decoration: none; transition: all 0.2s; }
+    .nav-cta:hover { background: var(--accent-hover); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(99,102,241,0.3); }
+
+    /* Page */
+    .page { max-width: 900px; margin: 0 auto; padding: 120px 32px 60px; }
+    .page h1 { font-size: 38px; font-weight: 700; line-height: 1.25; margin-bottom: 16px; background: linear-gradient(135deg, #6366f1, #a78bfa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .page-subtitle { font-size: 17px; color: var(--text-secondary); line-height: 1.8; margin-bottom: 40px; max-width: 720px; }
+
+    /* Sections */
+    .module-section { border: 1px solid var(--border); border-radius: 16px; padding: 40px; margin-bottom: 32px; background: var(--bg-secondary); }
+    .module-section h2 { font-size: 28px; font-weight: 700; margin-bottom: 8px; color: var(--text-primary); }
+    .module-section h2 .emoji { font-size: 28px; margin-right: 8px; }
+    .module-section > p { font-size: 15px; color: var(--text-secondary); margin-bottom: 28px; line-height: 1.8; }
+
+    /* Features */
+    .feature-block { border: 1px solid var(--border); border-radius: 12px; padding: 24px 28px; margin-bottom: 20px; background: var(--bg-tertiary); }
+    .feature-block h3 { font-size: 18px; font-weight: 700; color: var(--accent-light); margin-bottom: 10px; }
+    .feature-block p { font-size: 15px; color: var(--text-secondary); line-height: 1.85; }
+
+    /* Tech list */
+    .tech-section { border: 1px solid var(--border); border-radius: 16px; padding: 40px; margin-bottom: 32px; background: var(--bg-secondary); }
+    .tech-section h2 { font-size: 24px; font-weight: 700; margin-bottom: 24px; color: var(--text-primary); }
+    .tech-section ul { list-style: none; }
+    .tech-section li { font-size: 15px; color: var(--text-secondary); line-height: 1.85; padding: 10px 0; border-bottom: 1px solid var(--border); padding-left: 20px; position: relative; }
+    .tech-section li:last-child { border-bottom: none; }
+    .tech-section li::before { content: ''; position: absolute; left: 0; top: 18px; width: 6px; height: 6px; background: var(--accent); border-radius: 50%; }
+
+    /* CTA Section */
+    .cta-section { background: linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary)); border: 1px solid var(--border-hover); border-radius: 16px; padding: 48px; text-align: center; margin-bottom: 48px; }
+    .cta-section h2 { font-size: 24px; font-weight: 700; margin-bottom: 12px; }
+    .cta-section p { font-size: 15px; color: var(--text-secondary); margin-bottom: 28px; }
+    .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary { display: inline-block; padding: 14px 32px; border-radius: 8px; background: var(--accent); color: #fff; text-decoration: none; font-size: 15px; font-weight: 600; transition: all 0.2s; }
+    .btn-primary:hover { background: var(--accent-hover); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(99,102,241,0.3); color: #fff; }
+    .btn-secondary { display: inline-block; padding: 14px 32px; border-radius: 8px; background: transparent; color: var(--accent-light); text-decoration: none; font-size: 15px; font-weight: 600; border: 1px solid var(--border-hover); transition: all 0.2s; }
+    .btn-secondary:hover { background: var(--accent-glow); border-color: var(--accent-light); color: #fff; }
+
+    /* Module link */
+    .module-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 24px; font-size: 15px; font-weight: 600; color: var(--accent-light); padding: 10px 20px; border-radius: 8px; border: 1px solid var(--border-hover); background: var(--accent-glow); transition: all 0.2s; }
+    .module-link:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+    /* Footer */
+    footer { text-align: center; padding: 32px; color: var(--text-tertiary); font-size: 13px; border-top: 1px solid var(--border); }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .page { padding: 100px 20px 40px; }
+      .page h1 { font-size: 28px; }
+      .module-section { padding: 24px 20px; }
+      .module-section h2 { font-size: 22px; }
+      .feature-block { padding: 20px; }
+      .cta-section { padding: 32px 20px; }
+      .cta-buttons { flex-direction: column; align-items: center; }
+    }
+  </style>
 </head>
 <body>
-    <nav>
-        <a href="/" class="nav-logo">SiliMind</a>
-        <ul class="nav-links">
-            <li><a href="/products.html" class="active">产品</a></li>
-            <li><a href="/solutions.html">解决方案</a></li>
-            <li><a href="/cases.html">客户案例</a></li>
-            <li><a href="/blog/">Blog</a></li>
-            <li><a href="/about.html">关于我们</a></li>
-            <li><a href="#" class="nav-cta">预约演示</a></li>
-        </ul>
-    </nav>
-    <main>
-        <h1>产品总览</h1>
-        <p class="description">SiliMind 产品矩阵：营销获客、销售管理、AI 智能决策，覆盖 B2B 全链路。</p>
-        <p class="coming-soon">✨ 敬请期待</p>
-        <a href="/" class="back-link">← 返回首页</a>
-    </main>
-    <footer>© 2026 SiliMind 思理智能. All rights reserved.</footer>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">SiliMind</a>
+      <ul class="nav-links">
+        <li><a href="/products.html" class="active">产品</a></li>
+        <li><a href="/solutions.html">解决方案</a></li>
+        <li><a href="/cases.html">客户案例</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/about.html">关于我们</a></li>
+      </ul>
+      <a href="#" class="nav-cta">预约演示</a>
+    </div>
+  </nav>
+
+  <main class="page">
+    <h1>三个模块，一个平台</h1>
+    <p class="page-subtitle">不再在营销工具和 CRM 之间反复切换，数据真正打通。</p>
+
+    <p style="font-size:16px; color:var(--text-secondary); line-height:2; margin-bottom:48px;">SiliMind 把内容获客、线索管理、商机跟进、合同成交放在一个平台里。AI 贯穿每个环节——帮你选题、写内容、跟进客户、生成纪要、分析数据。从「一篇 SEO 文章带来的线索」到「这笔成交的钱」，全链路可追溯。</p>
+
+    <!-- 营销获客 -->
+    <section class="module-section">
+      <h2><span class="emoji">📢</span>营销获客</h2>
+      <p>从「不知道写什么」到「哪篇内容带来了成交」，全链路可追溯。</p>
+
+      <div class="feature-block">
+        <h3>AI 选题中心</h3>
+        <p>输入行业关键词，AI 返回 10 个选题建议，每个带搜索量估算、竞争难度和机会分。不再拍脑袋决定写什么，让搜索数据替你做判断。每周一自动推送「本周选题周报」，基于上周内容的搜索排名变化和行业热点。</p>
+      </div>
+
+      <div class="feature-block">
+        <h3>内容工作台</h3>
+        <p>三列看板（草稿→待审核→已发布）管理所有内容。AI 根据选题自动生成初稿，编辑器内嵌 SEO 实时检查面板——关键词密度、H 标签结构、内链建议、可读性评分。支持一键分发到多个平台。</p>
+      </div>
+
+      <div class="feature-block">
+        <h3>效果归因看板</h3>
+        <p>Sankey 图展示从内容发布→页面访问→留资询盘→线索入库→商机创建→成交的完整数据流。ROI 排行榜按「带来的成交金额」排序，市场团队第一次看到「哪篇内容真正带来了钱」。</p>
+      </div>
+
+      <div class="feature-block">
+        <h3>多渠道消息聚合</h3>
+        <p>WhatsApp、Email、LinkedIn 等渠道的客户消息统一汇聚在客户 360° 画像的时间线上，不需要切换多个 App。</p>
+      </div>
+
+      <a href="/products/marketing.html" class="module-link">了解营销获客 →</a>
+    </section>
+
+    <!-- 销售管理 -->
+    <section class="module-section">
+      <h2><span class="emoji">💼</span>销售管理</h2>
+      <p>统一线索池、商机看板、客户 360° 画像、拜访纪要自动生成、合同智能管理。所有渠道消息汇聚一处，销售换人信息不丢。</p>
+
+      <div class="feature-block">
+        <h3>统一线索池</h3>
+        <p>所有渠道进来的潜在客户汇聚在这里。AI 意向评分（0-100）自动标记高价值线索，支持轮询、按行业、按地区自动分配。每条线索有 SLA 倒计时，超时通知销售总监。</p>
+      </div>
+
+      <div class="feature-block">
+        <h3>商机 Kanban 看板</h3>
+        <p>4 个阶段列（新询盘→跟进中→报价中→已成交/已输单），拖拽推进。每个商机卡显示客户公司、金额、距上次跟进天数。点击进入详情页，沟通时间线 + AI 侧边栏（自动提取客户核心需求、预算范围、建议下一步）。</p>
+      </div>
+
+      <div class="feature-block">
+        <h3>客户 360° 画像</h3>
+        <p>三个 Tab 视角：「销售触点」展示所有渠道消息的时间线（带情绪标注）；「营销触点」展示转化为线索前的内容互动；「AI 洞察」提供综合画像和风险提示。客户健康度评分（0-100）一目了然。</p>
+      </div>
+
+      <div class="feature-block">
+        <h3>拜访管理</h3>
+        <p>上传录音，AI 1 分钟生成结构化纪要（13 个业务字段：议题、摘要、关键要点、客户反馈、下一步行动等）。拜访日历支持月/周视图切换，可拖拽调整日期。</p>
+      </div>
+
+      <div class="feature-block">
+        <h3>合同与报价</h3>
+        <p>AI 从沟通记录中自动提取合同字段填充模板，审批流程（草拟→待审批→生效）。报价单编辑器支持产品选择、币种转换、PDF 导出，自动关联商机和沟通时间线。</p>
+      </div>
+
+      <a href="/products/sales.html" class="module-link">了解销售管理 →</a>
+    </section>
+
+    <!-- AI 智能决策 -->
+    <section class="module-section">
+      <h2><span class="emoji">🤖</span>AI 智能决策</h2>
+      <p>8 类 AI 建议信号每天推送到销售首页。ChatBI 自然语言查询，管理驾驶舱实时指标。从「人找数据」到「数据找人」。</p>
+
+      <div class="feature-block">
+        <h3>AI 建议中心</h3>
+        <p>8 类信号覆盖销售全场景：沉默客户唤醒、停滞商机推进、高价值商机预警、到期任务提醒、拜访后未跟进、即将拜访准备、热门邮件识别、负面情绪预警。每张建议卡有「采纳」和「忽略」按钮，采纳后自动创建任务或推进商机阶段。</p>
+      </div>
+
+      <div class="feature-block">
+        <h3>ChatBI 智能问答</h3>
+        <p>用自然语言查数据，AI 自动生成图表（柱状图/饼图/趋势线），支持一键导出。「上个月哪个渠道成交金额最高？」「对比张三和李四的商机转化率」——不需要学 SQL，直接问。</p>
+      </div>
+
+      <div class="feature-block">
+        <h3>管理驾驶舱</h3>
+        <p>全公司级指标：销售漏斗、获客成本（CAC）、团队业绩排行、获客渠道效果。AI 主动预警：线索量下降、高价值商机停滞、销售响应速度低于平均水平。AI 成本透明——8 类 AI 调用方埋点统计，管理者清楚每一分 AI 投入花在哪里。</p>
+      </div>
+
+      <div class="feature-block">
+        <h3>商机健康度评分</h3>
+        <p>5 个维度自动评分：沟通频率、情绪趋势、阶段推进速度、主动联系占比、金额权重。绿色（70-100）健康、黄色（40-69）关注、红色（0-39）预警。</p>
+      </div>
+
+      <a href="/products/ai.html" class="module-link">了解 AI 智能决策 →</a>
+    </section>
+
+    <!-- 核心技术 -->
+    <section class="tech-section">
+      <h2>核心技术</h2>
+      <ul>
+        <li><strong>231 个 API 路由</strong>，45 张数据表，完整覆盖营销销售全流程</li>
+        <li><strong>多渠道消息聚合</strong>：WhatsApp / Telegram / Email / LinkedIn / Instagram / Messenger</li>
+        <li><strong>RAG 知识库</strong>：上传 PDF/Word/Markdown/URL，AI 自动索引，消息旁生成技术问题回复草稿（引用来源，半自动模式）</li>
+        <li><strong>私有化部署</strong>：数据完全在企业内部，支持 PostgreSQL + Redis 生产部署</li>
+      </ul>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+      <h2>准备好让 AI 为你的团队工作了吗？</h2>
+      <p>预约演示，了解 SiliMind 如何帮助你的团队提升获客效率和成交转化率。</p>
+      <div class="cta-buttons">
+        <a href="#demo" class="btn-primary">预约演示</a>
+        <a href="#contact" class="btn-secondary">联系销售 →</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>© 2026 SiliMind 思理智能. All rights reserved.</footer>
 </body>
 </html>
