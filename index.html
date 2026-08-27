@@ -1,1115 +1,148 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-  <title>SiliMind — 思理智能让工作变得更简单 | B2B 营销销售全链路 AI 平台</title>
-  <meta name="description" content="SiliMind 是企业级 B2B 营销销售全链路 AI 平台，AI 贯穿内容获客、线索管理、商机跟进、合同成交全链路，支持私有化部署。" />
-  <meta name="keywords" content="B2B AI 平台, 营销销售一体化, AI 获客, CRM, 内容营销, 效果归因, SiliMind, 思理智能" />
-  <link rel="canonical" href="https://www.silimind.net/" />
-  <meta property="og:title" content="SiliMind — 思理智能让工作变得更简单 | B2B 营销销售全链路 AI 平台" />
-  <meta property="og:description" content="AI 贯穿获客→成交→复购全链路，内容营销与 CRM 首次真正打通。" />
-  <meta property="og:url" content="https://www.silimind.net/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:locale" content="zh_CN" />
-  <meta property="og:site_name" content="SiliMind" />
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "SiliMind",
-    "url": "https://www.silimind.net",
-    "description": "B2B 营销销售全链路 AI 平台，AI 贯穿获客到成交全链路",
-    "sameAs": []
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SiliMind · 维护中</title>
+<meta name="robots" content="noindex, nofollow" />
+<meta name="description" content="SiliMind 官网正在维护升级，预计很快恢复访问。" />
+<style>
+  :root {
+    --bg-primary: #0a0a0f;
+    --bg-secondary: #12121a;
+    --accent: #6366f1;
+    --accent-light: #818cf8;
+    --text-primary: #f0f0f5;
+    --text-secondary: rgba(240, 240, 245, 0.6);
+    --border: rgba(99, 102, 241, 0.18);
   }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "SiliMind 和传统 CRM 有什么区别？",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "传统 CRM 只管销售阶段的数据，和营销工具是分开的。SiliMind 是 AI 原生的一体化平台——内容获客产生的线索自动进入 CRM，从哪篇文章到哪个客户到哪笔成交全链路可追溯。"
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "SiliMind 的 AI 会替代销售人员吗？",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "不会。SiliMind 的 AI 是半自动模式——AI 帮你分析数据、生成纪要、推荐下一步行动，但所有对外沟通都由销售人员确认后才发送。AI 是助手，不是替代。"
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "支持哪些渠道的消息统一管理？",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "目前支持 WhatsApp、Email，未来计划支持 LinkedIn、微信。所有渠道消息汇聚在客户 360° 画像的时间线上。"
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "支持私有化部署吗？",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "支持。SiliMind 提供私有化部署方案，数据完全在企业内部，满足金融、医疗等对数据安全要求高的行业。"
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "AI 主动获客功能合规吗？",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "合规。只使用公开数据，每个搜索结果标注数据来源，发送开发信带退订链接，有频率限制，目标在欧盟时自动提示 GDPR 合规检查。"
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "适合什么规模的企业？",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "SiliMind 主要服务于 5-200 人规模的 B2B 企业，包括外贸/跨境贸易团队、内贸大客户销售团队、以及需要内容获客+销售管理的 SaaS 企业。"
-        }
-      }
-    ]
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body {
+    height: 100%;
+    background: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.12), transparent 60%), var(--bg-primary);
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    -webkit-font-smoothing: antialiased;
   }
-  </script>
-  <style>
-    /* ==================== CSS Variables ==================== */
-    :root {
-      --bg-primary: #0a0a0f;
-      --bg-secondary: #12121a;
-      --bg-tertiary: #181824;
-      --accent: #6366f1;
-      --accent-hover: #4f46e5;
-      --accent-light: #818cf8;
-      --accent-glow: rgba(99,102,241,0.15);
-      --text-primary: #f0f0f5;
-      --text-secondary: rgba(240,240,245,0.6);
-      --text-tertiary: rgba(240,240,245,0.4);
-      --success: #10b981;
-      --warning: #f59e0b;
-      --danger: #ef4444;
-      --border: rgba(99,102,241,0.08);
-      --border-hover: rgba(99,102,241,0.25);
-      --font: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'PingFang SC', 'Noto Sans SC', sans-serif;
-      --max-width: 1120px;
-    }
-
-    /* ==================== Reset ==================== */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: var(--font);
-      background: var(--bg-primary);
-      color: var(--text-primary);
-      line-height: 1.7;
-      min-height: 100vh;
-    }
-
-    /* ==================== Typography ==================== */
-    .section-label {
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--accent-light);
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      margin-bottom: 12px;
-    }
-    .section-title {
-      font-size: 36px;
-      font-weight: 700;
-      line-height: 1.25;
-      margin-bottom: 16px;
-      color: var(--text-primary);
-    }
-    .section-subtitle {
-      font-size: 16px;
-      color: var(--text-secondary);
-      max-width: 640px;
-      line-height: 1.7;
-    }
-    .section-header {
-      text-align: center;
-      margin-bottom: 48px;
-    }
-    .section-header .section-subtitle {
-      margin: 0 auto;
-    }
-
-    /* ==================== Buttons ==================== */
-    .btn-primary {
-      display: inline-block;
-      padding: 14px 32px;
-      border-radius: 8px;
-      background: var(--accent);
-      color: #fff;
-      text-decoration: none;
-      font-size: 15px;
-      font-weight: 600;
-      border: none;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-    .btn-primary:hover {
-      background: var(--accent-hover);
-      transform: translateY(-1px);
-      box-shadow: 0 8px 24px rgba(99,102,241,0.3);
-    }
-    .btn-secondary {
-      display: inline-block;
-      padding: 14px 32px;
-      border-radius: 8px;
-      background: transparent;
-      color: var(--accent-light);
-      text-decoration: none;
-      font-size: 15px;
-      font-weight: 600;
-      border: 1px solid var(--border-hover);
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-    .btn-secondary:hover {
-      background: var(--accent-glow);
-      border-color: var(--accent-light);
-    }
-    .btn-small {
-      padding: 8px 20px;
-      font-size: 13px;
-      border-radius: 6px;
-    }
-
-    /* ==================== Layout ==================== */
-    .container {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 0 32px;
-    }
-
-    /* ==================== 1. Nav ==================== */
-    .nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      background: rgba(10,10,15,0.92);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border);
-      height: 64px;
-    }
-    .nav-inner {
-      max-width: var(--max-width); margin: 0 auto; padding: 0 32px;
-      height: 100%; display: flex; align-items: center; justify-content: space-between;
-    }
-    .nav-logo {
-      font-size: 20px; font-weight: 700; color: var(--accent-light);
-      text-decoration: none; letter-spacing: 0.5px;
-    }
-    .nav-links { list-style: none; display: flex; gap: 28px; align-items: center; }
-    .nav-links a {
-      color: var(--text-secondary); text-decoration: none; font-size: 14px;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--text-primary); }
-    .nav-cta {
-      padding: 8px 20px !important;
-      font-size: 13px !important;
-      background: var(--accent) !important;
-      color: #fff !important;
-      border-radius: 6px !important;
-      font-weight: 600 !important;
-      transition: all 0.2s !important;
-    }
-    .nav-cta:hover {
-      background: var(--accent-hover) !important;
-    }
-
-    /* ==================== 2. Hero ==================== */
-    .hero {
-      display: flex; align-items: center;
-      min-height: 100vh;
-      padding: 120px 32px 80px;
-    }
-    .hero-inner {
-      max-width: var(--max-width); margin: 0 auto; width: 100%;
-      display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
-    }
-    .hero-text { max-width: 560px; }
-    .hero-pill {
-      display: inline-block;
-      padding: 6px 16px;
-      border-radius: 20px;
-      border: 1px solid var(--border-hover);
-      background: var(--accent-glow);
-      color: var(--accent-light);
-      font-size: 13px;
-      font-weight: 500;
-      margin-bottom: 24px;
-    }
-    .hero h1 {
-      font-size: 44px; font-weight: 700; line-height: 1.2;
-      margin-bottom: 20px;
-      background: linear-gradient(135deg, #6366f1, #a78bfa, #6366f1);
-      background-size: 200% 200%;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: gradient-shift 4s ease infinite;
-    }
-    @keyframes gradient-shift {
-      0%, 100% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-    }
-    .hero-subtitle {
-      font-size: 17px; color: var(--text-secondary); margin-bottom: 36px; line-height: 1.8;
-    }
-    .hero-cta {
-      display: flex; gap: 16px; align-items: center;
-    }
-    .hero-visual {
-      background: var(--bg-secondary);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 24px;
-      min-height: 380px;
-      display: flex; align-items: center; justify-content: center;
-      color: var(--text-tertiary);
-      font-size: 14px;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero-visual::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle at 30% 40%, var(--accent-glow) 0%, transparent 60%);
-      pointer-events: none;
-    }
-    .hero-visual-placeholder {
-      text-align: center;
-      z-index: 1;
-    }
-    .hero-visual-placeholder span {
-      display: block;
-      font-size: 32px;
-      margin-bottom: 8px;
-    }
-
-    /* ==================== 3. Social Proof ==================== */
-    .social-proof {
-      padding: 60px 32px;
-      text-align: center;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-    .social-proof-label {
-      font-size: 13px;
-      color: var(--text-tertiary);
-      margin-bottom: 24px;
-      letter-spacing: 1px;
-    }
-    .social-proof-tags {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-    .social-proof-tag {
-      padding: 8px 20px;
-      border-radius: 20px;
-      background: var(--bg-secondary);
-      border: 1px solid var(--border);
-      color: var(--text-secondary);
-      font-size: 14px;
-      font-weight: 500;
-    }
-
-    /* ==================== 4. Core Modules ==================== */
-    .modules {
-      padding: 100px 32px;
-    }
-    .modules-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-    .module-card {
-      background: var(--bg-secondary);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 32px;
-      transition: border-color 0.3s, box-shadow 0.3s;
-    }
-    .module-card:hover {
-      border-color: var(--border-hover);
-      box-shadow: 0 8px 32px rgba(99,102,241,0.08);
-    }
-    .module-icon {
-      font-size: 28px;
-      margin-bottom: 16px;
-    }
-    .module-card h3 {
-      font-size: 20px;
-      font-weight: 700;
-      margin-bottom: 12px;
-      color: var(--text-primary);
-    }
-    .module-card .module-desc {
-      font-size: 14px;
-      color: var(--text-secondary);
-      margin-bottom: 24px;
-      line-height: 1.7;
-    }
-    .module-features {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-    .module-features li {
-      font-size: 13px;
-      color: var(--text-secondary);
-      padding-left: 20px;
-      position: relative;
-      line-height: 1.5;
-    }
-    .module-features li::before {
-      content: '→';
-      position: absolute;
-      left: 0;
-      color: var(--accent-light);
-    }
-    .module-link {
-      display: inline-block;
-      margin-top: 20px;
-      color: var(--accent-light);
-      font-size: 13px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .module-link:hover { color: var(--text-primary); }
-
-    /* ==================== 5. How It Works ==================== */
-    .how-it-works {
-      padding: 100px 32px;
-      background: var(--bg-secondary);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 32px;
-      margin-top: 48px;
-    }
-    .step {
-      text-align: center;
-      position: relative;
-    }
-    .step-number {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: var(--accent-glow);
-      border: 1px solid var(--border-hover);
-      color: var(--accent-light);
-      font-size: 18px;
-      font-weight: 700;
-      margin-bottom: 20px;
-    }
-    .step h3 {
-      font-size: 18px;
-      font-weight: 600;
-      margin-bottom: 8px;
-    }
-    .step p {
-      font-size: 14px;
-      color: var(--text-secondary);
-      line-height: 1.6;
-    }
-    .step-arrow {
-      position: absolute;
-      top: 24px;
-      right: -24px;
-      color: var(--border-hover);
-      font-size: 20px;
-    }
-    .step:last-child .step-arrow { display: none; }
-
-    /* ==================== 6. Metrics ==================== */
-    .metrics {
-      padding: 80px 32px;
-    }
-    .metrics-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-    }
-    .metric-card {
-      background: var(--bg-secondary);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 32px 24px;
-      text-align: center;
-      transition: border-color 0.3s;
-    }
-    .metric-card:hover { border-color: var(--border-hover); }
-    .metric-value {
-      font-size: 36px;
-      font-weight: 700;
-      color: var(--accent-light);
-      margin-bottom: 8px;
-    }
-    .metric-label {
-      font-size: 14px;
-      color: var(--text-secondary);
-      margin-bottom: 8px;
-    }
-    .metric-note {
-      font-size: 11px;
-      color: var(--text-tertiary);
-    }
-
-    /* ==================== 7. Role Tabs ==================== */
-    .roles {
-      padding: 100px 32px;
-      background: var(--bg-secondary);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-    .role-tabs {
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-      margin-bottom: 48px;
-    }
-    .role-tab {
-      padding: 10px 24px;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-      background: transparent;
-      color: var(--text-secondary);
-      font-size: 14px;
-      font-weight: 500;
-      cursor: pointer;
-      transition: all 0.2s;
-      font-family: var(--font);
-    }
-    .role-tab:hover {
-      border-color: var(--border-hover);
-      color: var(--text-primary);
-    }
-    .role-tab.active {
-      background: var(--accent);
-      border-color: var(--accent);
-      color: #fff;
-    }
-    .role-panel {
-      display: none;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    .role-panel.active { display: block; }
-    .role-panel h3 {
-      font-size: 24px;
-      font-weight: 700;
-      margin-bottom: 16px;
-    }
-    .role-panel .role-desc {
-      font-size: 15px;
-      color: var(--text-secondary);
-      margin-bottom: 24px;
-      line-height: 1.8;
-    }
-    .role-story {
-      background: var(--bg-primary);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 24px;
-      font-size: 14px;
-      color: var(--text-secondary);
-      line-height: 1.8;
-      position: relative;
-    }
-    .role-story::before {
-      content: '"';
-      font-size: 32px;
-      color: var(--accent-light);
-      opacity: 0.5;
-      position: absolute;
-      top: 8px;
-      left: 16px;
-    }
-    .role-story p {
-      padding-left: 20px;
-    }
-
-    /* ==================== 8. Security ==================== */
-    .security {
-      padding: 100px 32px;
-    }
-    .security-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-    }
-    .security-card {
-      background: var(--bg-secondary);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 28px 24px;
-      text-align: center;
-      transition: border-color 0.3s;
-    }
-    .security-card:hover { border-color: var(--border-hover); }
-    .security-icon {
-      font-size: 28px;
-      margin-bottom: 12px;
-    }
-    .security-card h3 {
-      font-size: 16px;
-      font-weight: 600;
-      margin-bottom: 8px;
-    }
-    .security-card p {
-      font-size: 13px;
-      color: var(--text-secondary);
-      line-height: 1.6;
-    }
-
-    /* ==================== 9. FAQ ==================== */
-    .faq {
-      padding: 100px 32px;
-      background: var(--bg-secondary);
-      border-top: 1px solid var(--border);
-    }
-    .faq-list {
-      max-width: 760px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-    .faq-item {
-      background: var(--bg-primary);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      overflow: hidden;
-    }
-    .faq-question {
-      padding: 20px 24px;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 15px;
-      font-weight: 600;
-      transition: color 0.2s;
-    }
-    .faq-question:hover { color: var(--accent-light); }
-    .faq-question .faq-toggle {
-      font-size: 18px;
-      color: var(--text-tertiary);
-      transition: transform 0.2s;
-    }
-    .faq-item.open .faq-toggle { transform: rotate(45deg); }
-    .faq-answer {
-      padding: 0 24px;
-      max-height: 0;
-      overflow: hidden;
-      transition: all 0.3s;
-    }
-    .faq-item.open .faq-answer {
-      padding: 0 24px 20px;
-      max-height: 300px;
-    }
-    .faq-answer p {
-      font-size: 14px;
-      color: var(--text-secondary);
-      line-height: 1.7;
-    }
-
-    /* ==================== 10. Bottom CTA ==================== */
-    .bottom-cta {
-      padding: 100px 32px;
-      text-align: center;
-    }
-    .bottom-cta h2 {
-      font-size: 32px;
-      font-weight: 700;
-      margin-bottom: 16px;
-    }
-    .bottom-cta .section-subtitle {
-      margin: 0 auto 36px;
-      text-align: center;
-    }
-    .bottom-cta .hero-cta {
-      justify-content: center;
-    }
-
-    /* ==================== 11. Footer ==================== */
-    .site-footer {
-      border-top: 1px solid var(--border);
-      padding: 48px 32px 32px;
-    }
-    .footer-inner {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr;
-      gap: 48px;
-    }
-    .footer-brand p {
-      font-size: 13px;
-      color: var(--text-secondary);
-      margin-top: 12px;
-      line-height: 1.6;
-    }
-    .footer-col h4 {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--text-primary);
-      margin-bottom: 16px;
-    }
-    .footer-col ul {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .footer-col a {
-      color: var(--text-secondary);
-      text-decoration: none;
-      font-size: 13px;
-      transition: color 0.2s;
-    }
-    .footer-col a:hover { color: var(--accent-light); }
-    .footer-bottom {
-      max-width: var(--max-width);
-      margin: 32px auto 0;
-      padding-top: 24px;
-      border-top: 1px solid var(--border);
-      display: flex;
-      justify-content: space-between;
-      font-size: 12px;
-      color: var(--text-tertiary);
-    }
-    .footer-bottom a {
-      color: var(--text-tertiary);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .footer-bottom a:hover { color: var(--text-secondary); }
-
-    /* ==================== Responsive ==================== */
-    @media (max-width: 960px) {
-      .hero-inner { grid-template-columns: 1fr; text-align: center; }
-      .hero-text { max-width: 100%; }
-      .hero-cta { justify-content: center; }
-      .hero-visual { min-height: 280px; margin-top: 32px; }
-      .modules-grid { grid-template-columns: 1fr; }
-      .steps { grid-template-columns: 1fr; gap: 40px; }
-      .step-arrow { display: none !important; }
-      .metrics-grid { grid-template-columns: repeat(2, 1fr); }
-      .security-grid { grid-template-columns: repeat(2, 1fr); }
-      .footer-inner { grid-template-columns: 1fr 1fr; gap: 32px; }
-    }
-    @media (max-width: 640px) {
-      .hero h1 { font-size: 30px; }
-      .hero-subtitle { font-size: 15px; }
-      .section-title { font-size: 26px; }
-      .metrics-grid { grid-template-columns: 1fr; }
-      .security-grid { grid-template-columns: 1fr; }
-      .role-tabs { flex-wrap: wrap; }
-      .nav-links li:not(:last-child) { display: none; }
-      .footer-inner { grid-template-columns: 1fr; gap: 24px; }
-      .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
-    }
-  </style>
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+  .card {
+    width: 100%;
+    max-width: 560px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 48px 40px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  }
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 28px;
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 0.4px;
+  }
+  .logo-mark {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, var(--accent), var(--accent-light));
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 16px;
+  }
+  .badge {
+    display: inline-block;
+    font-size: 12px;
+    color: var(--accent-light);
+    border: 1px solid var(--border);
+    padding: 4px 12px;
+    border-radius: 999px;
+    margin-bottom: 18px;
+    letter-spacing: 0.5px;
+  }
+  h1 {
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 14px;
+    line-height: 1.4;
+  }
+  p {
+    color: var(--text-secondary);
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 8px;
+  }
+  .pulse {
+    margin-top: 28px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--text-secondary);
+  }
+  .pulse-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent-light);
+    box-shadow: 0 0 0 0 rgba(129, 140, 248, 0.7);
+    animation: pulse 1.6s infinite;
+  }
+  @keyframes pulse {
+    0%   { box-shadow: 0 0 0 0   rgba(129, 140, 248, 0.6); }
+    70%  { box-shadow: 0 0 0 12px rgba(129, 140, 248, 0);   }
+    100% { box-shadow: 0 0 0 0   rgba(129, 140, 248, 0);   }
+  }
+  .contact {
+    margin-top: 28px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    font-size: 13px;
+    color: var(--text-secondary);
+  }
+  .contact a {
+    color: var(--accent-light);
+    text-decoration: none;
+    border-bottom: 1px dashed rgba(129, 140, 248, 0.4);
+  }
+  footer {
+    margin-top: 18px;
+    font-size: 12px;
+    color: rgba(240, 240, 245, 0.35);
+  }
+</style>
 </head>
 <body>
-
-  <!-- ===== 1. Navigation ===== -->
-  <nav class="nav">
-    <div class="nav-inner">
-      <a href="/" class="nav-logo">SiliMind</a>
-      <ul class="nav-links">
-        <li><a href="/products">产品</a></li>
-        <li><a href="/solutions">解决方案</a></li>
-        <li><a href="/cases">客户案例</a></li>
-        <li><a href="/blog/">Blog</a></li>
-        <li><a href="#" class="nav-cta">预约演示</a></li>
-      </ul>
+  <main class="card" role="main">
+    <div class="logo">
+      <span class="logo-mark">S</span>
+      <span>SiliMind</span>
     </div>
-  </nav>
+    <span class="badge">MAINTENANCE</span>
+    <h1>网站正在维护升级</h1>
+    <p>我们正在做一些必要的升级工作，很快就会恢复访问。</p>
+    <p>感谢你的耐心等候。</p>
 
-  <!-- ===== 2. Hero ===== -->
-  <section class="hero" id="hero">
-    <div class="hero-inner">
-      <div class="hero-text">
-        <span class="hero-pill">B2B 营销销售全链路 AI 平台</span>
-        <h1>思理智能让工作变得更简单</h1>
-        <p class="hero-subtitle">AI 贯穿获客 → 成交 → 复购全链路，内容营销与 CRM 首次真正打通。线索从哪来、成交多少钱，一目了然。</p>
-        <div class="hero-cta">
-          <a href="#" class="btn-primary">预约演示</a>
-          <a href="#modules" class="btn-secondary">查看产品 →</a>
-        </div>
-      </div>
-      <div class="hero-visual">
-        <img src="/images/hero-dashboard.png" alt="SiliMind ROI 归因看板 — 从内容营销到销售成交的全链路效果追踪" style="width: 100%; border-radius: 8px; z-index: 1; position: relative;" />
-      </div>
+    <div class="pulse">
+      <span class="pulse-dot"></span>
+      <span>预计短期内恢复</span>
     </div>
-  </section>
 
-  <!-- ===== 3. Social Proof ===== -->
-  <section class="social-proof">
-    <p class="social-proof-label">受到领先的 B2B 企业的信赖</p>
-    <div class="social-proof-tags">
-      <span class="social-proof-tag">外贸与跨境贸易</span>
-      <span class="social-proof-tag">工业制造</span>
-      <span class="social-proof-tag">SaaS 与企业服务</span>
-      <span class="social-proof-tag">医疗器械</span>
-      <span class="social-proof-tag">建材化工</span>
+    <div class="contact">
+      商务合作 / 紧急联系：<a href="mailto:contact@silimind.net">contact@silimind.net</a>
     </div>
-  </section>
 
-  <!-- ===== 4. Core Modules ===== -->
-  <section class="modules" id="modules">
-    <div class="container">
-      <div class="section-header">
-        <p class="section-label">产品能力</p>
-        <h2 class="section-title">三个模块，一个平台</h2>
-        <p class="section-subtitle">不再在营销工具和 CRM 之间反复切换，数据真正打通。</p>
-      </div>
-      <div class="modules-grid">
-        <!-- Module 1: Marketing -->
-        <div class="module-card">
-          <div class="module-icon">📢</div>
-          <h3>AI 驱动的营销获客引擎</h3>
-          <p class="module-desc">AI 智能选题 → 内容创作 → 多平台分发 → 效果归因。从「不知道写什么」到「哪篇内容带来了成交」，全链路可追溯。</p>
-          <ul class="module-features">
-            <li><strong>AI 选题中心</strong> — 基于搜索量和竞争度智能推荐选题</li>
-            <li><strong>内容工作台</strong> — AI 辅助写作，1 天产出 5-10 篇 SEO 内容</li>
-            <li><strong>效果归因</strong> — 内容→线索→成交 ROI 全链路可视化</li>
-          </ul>
-          <a href="/products/marketing" class="module-link">了解营销获客 →</a>
-        </div>
-        <!-- Module 2: Sales -->
-        <div class="module-card">
-          <div class="module-icon">💼</div>
-          <h3>从线索到成交的全流程 CRM</h3>
-          <p class="module-desc">统一线索池、商机看板、客户 360° 画像、拜访纪要自动生成、合同智能管理。所有渠道消息汇聚一处，销售换人信息不丢。</p>
-          <ul class="module-features">
-            <li><strong>统一线索池</strong> — 多渠道汇聚，AI 意向评分自动分配</li>
-            <li><strong>客户 360°</strong> — WhatsApp/Email/拜访/报价，一条时间线</li>
-            <li><strong>AI 拜访纪要</strong> — 上传录音，1 分钟生成结构化纪要</li>
-          </ul>
-          <a href="/products/sales" class="module-link">了解销售管理 →</a>
-        </div>
-        <!-- Module 3: AI Intelligence -->
-        <div class="module-card">
-          <div class="module-icon">🤖</div>
-          <h3>让数据主动找你</h3>
-          <p class="module-desc">8 类 AI 建议信号每天推送到销售首页——沉默客户唤醒、停滞商机推进、高价值商机预警。ChatBI 自然语言查询，管理驾驶舱实时指标。</p>
-          <ul class="module-features">
-            <li><strong>AI 建议中心</strong> — 8 类信号，主动告诉你该跟进谁</li>
-            <li><strong>ChatBI 智能问答</strong> — 用自然语言查数据，自动生成图表</li>
-            <li><strong>管理驾驶舱</strong> — 实时销售漏斗、获客成本、AI 预警</li>
-          </ul>
-          <a href="/products/ai" class="module-link">了解 AI 智能决策 →</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== 5. How It Works ===== -->
-  <section class="how-it-works">
-    <div class="container">
-      <div class="section-header">
-        <p class="section-label">工作原理</p>
-        <h2 class="section-title">三步启动，全链路运转</h2>
-      </div>
-      <div class="steps">
-        <div class="step">
-          <div class="step-number">1</div>
-          <span class="step-arrow">→</span>
-          <h3>🔗 接入企业系统</h3>
-          <p>连接 ERP、CRM、OA，WhatsApp、Email 客户消息自动汇聚，数据不再孤岛。</p>
-        </div>
-        <div class="step">
-          <div class="step-number">2</div>
-          <span class="step-arrow">→</span>
-          <h3>🤖 AI 自动运转</h3>
-          <p>AI 智能选题、辅助写内容、分析商机、跟进线索、生成拜访纪要，后台自动工作。</p>
-        </div>
-        <div class="step">
-          <div class="step-number">3</div>
-          <h3>📊 数据驱动增长</h3>
-          <p>归因看板知道哪篇内容带来了成交，ChatBI 随时查数据，AI 主动推送增长建议。</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== 6. Metrics ===== -->
-  <section class="metrics">
-    <div class="container">
-      <div class="section-header">
-        <p class="section-label">数据说话</p>
-        <h2 class="section-title">用数据衡量 AI 的价值</h2>
-      </div>
-      <div class="metrics-grid">
-        <div class="metric-card">
-          <div class="metric-value">10x</div>
-          <div class="metric-label">内容生产效率提升</div>
-          <div class="metric-note">基于产品目标</div>
-        </div>
-        <div class="metric-card">
-          <div class="metric-value">80%</div>
-          <div class="metric-label">获客成本降低</div>
-          <div class="metric-note">基于产品目标</div>
-        </div>
-        <div class="metric-card">
-          <div class="metric-value">3x</div>
-          <div class="metric-label">销售跟进效率提升</div>
-          <div class="metric-note">基于产品目标</div>
-        </div>
-        <div class="metric-card">
-          <div class="metric-value">100%</div>
-          <div class="metric-label">数据闭环可追溯</div>
-          <div class="metric-note">内容→线索→成交</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== 7. Role Tabs ===== -->
-  <section class="roles">
-    <div class="container">
-      <div class="section-header">
-        <p class="section-label">角色体验</p>
-        <h2 class="section-title">不同角色，不同体验</h2>
-        <p class="section-subtitle">SiliMind 为市场运营、销售、管理者提供定制化工作台</p>
-      </div>
-      <div class="role-tabs">
-        <button class="role-tab active" data-role="marketing">📢 市场运营</button>
-        <button class="role-tab" data-role="sales">💼 销售</button>
-        <button class="role-tab" data-role="manager">📊 管理者</button>
-      </div>
-
-      <div class="role-panel active" id="role-marketing">
-        <h3>从「不知道写什么」到「清楚哪篇内容带来了成交」</h3>
-        <p class="role-desc">AI 根据搜索量推荐选题，辅助生成 SEO 优化内容，一键分发到多个平台。效果归因看板首次打通内容数据和 CRM 数据——哪篇文章带来了哪个客户、哪个成交，一目了然。</p>
-        <div class="role-story">
-          <p>小林是外贸公司的市场运营，早上 AI 推荐 10 个选题，选了搜索量最高的那个。AI 30 秒生成 2500 字英文初稿，修改参数后一键发布。下午看归因看板，上周那篇 LED 选型指南带来了 3 个成交订单、$45,000。</p>
-        </div>
-      </div>
-
-      <div class="role-panel" id="role-sales">
-        <h3>从「信息散落各处」到「一个页面掌控所有」</h3>
-        <p class="role-desc">WhatsApp、Email、拜访纪要、报价记录，全部汇聚在客户 360° 画像的时间线上。每天 AI 推送 3-5 张建议卡片——该跟进谁、哪个商机停滞了、哪条询价要赶紧回复。不再漏掉任何一个机会。</p>
-        <div class="role-story">
-          <p>张三早上打开 SiliMind，AI 建议：「ABC 机械刘总昨晚询价 50 台，建议 2h 内回复」。点采纳，自动创建跟进任务。拜访结束后上传录音，1 分钟生成结构化纪要，下一步行动自动创建。</p>
-        </div>
-      </div>
-
-      <div class="role-panel" id="role-manager">
-        <h3>从「决策靠感觉」到「数据主动找你」</h3>
-        <p class="role-desc">管理驾驶舱实时展示销售漏斗、获客成本、团队业绩排行。ChatBI 自然语言查询——「上个月哪个渠道的成交金额最高？」AI 自动生成图表。AI 主动预警：线索量下降、高价值商机停滞、销售响应速度低于平均。</p>
-        <div class="role-story">
-          <p>王总打开驾驶舱：线索 +15%，但转化率从 52% 降到 49%。问 AI：「对比各渠道的成交金额分布」。发现 LinkedIn 平均 $5,000，WhatsApp 平均 $35,000。决定调整内容策略。</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== 8. Security ===== -->
-  <section class="security">
-    <div class="container">
-      <div class="section-header">
-        <p class="section-label">安全合规</p>
-        <h2 class="section-title">数据安全，企业放心</h2>
-      </div>
-      <div class="security-grid">
-        <div class="security-card">
-          <div class="security-icon">🔒</div>
-          <h3>私有化部署</h3>
-          <p>支持私有化部署，数据完全掌控在企业内部</p>
-        </div>
-        <div class="security-card">
-          <div class="security-icon">🛡️</div>
-          <h3>数据加密</h3>
-          <p>传输和存储全链路加密，满足合规要求</p>
-        </div>
-        <div class="security-card">
-          <div class="security-icon">👥</div>
-          <h3>权限管控</h3>
-          <p>按角色精细权限，敏感数据可设可见范围</p>
-        </div>
-        <div class="security-card">
-          <div class="security-icon">🔗</div>
-          <h3>对接安全</h3>
-          <p>ERP/CRM/OA 对接采用安全通道，数据隔离</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== 9. FAQ ===== -->
-  <section class="faq">
-    <div class="container">
-      <div class="section-header">
-        <p class="section-label">常见问题</p>
-        <h2 class="section-title">你可能想知道的</h2>
-      </div>
-      <div class="faq-list">
-        <div class="faq-item">
-          <div class="faq-question">
-            <span>SiliMind 和传统 CRM 有什么区别？</span>
-            <span class="faq-toggle">+</span>
-          </div>
-          <div class="faq-answer">
-            <p>传统 CRM（如 HubSpot、Zoho）只管销售阶段的数据，和营销工具是分开的。SiliMind 是 AI 原生的一体化平台——内容获客产生的线索自动进入 CRM，从「哪篇文章」到「哪个客户」到「哪笔成交」全链路可追溯。</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question">
-            <span>SiliMind 的 AI 会替代销售人员吗？</span>
-            <span class="faq-toggle">+</span>
-          </div>
-          <div class="faq-answer">
-            <p>不会。SiliMind 的 AI 是「半自动」模式——AI 帮你分析数据、生成纪要、推荐下一步行动，但所有对外沟通都由销售人员确认后才发送。AI 是助手，不是替代。</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question">
-            <span>支持哪些渠道的消息统一管理？</span>
-            <span class="faq-toggle">+</span>
-          </div>
-          <div class="faq-answer">
-            <p>目前支持 WhatsApp、Email，未来计划支持 LinkedIn、微信。所有渠道消息汇聚在客户 360° 画像的时间线上，不再需要切换多个 App。</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question">
-            <span>支持私有化部署吗？</span>
-            <span class="faq-toggle">+</span>
-          </div>
-          <div class="faq-answer">
-            <p>支持。SiliMind 提供私有化部署方案，数据完全在企业内部，满足金融、医疗等对数据安全要求高的行业。</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question">
-            <span>AI 主动获客功能合规吗？</span>
-            <span class="faq-toggle">+</span>
-          </div>
-          <div class="faq-answer">
-            <p>合规。我们只使用公开数据（LinkedIn 公开资料、Google、公开网站），每个搜索结果标注数据来源，发送开发信带退订链接，有频率限制，目标在欧盟时自动提示 GDPR 合规检查。</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question">
-            <span>适合什么规模的企业？</span>
-            <span class="faq-toggle">+</span>
-          </div>
-          <div class="faq-answer">
-            <p>SiliMind 主要服务于 5-200 人规模的 B2B 企业，包括外贸/跨境贸易团队、内贸大客户销售团队、以及需要内容获客+销售管理的 SaaS 企业。按席位定价，灵活适配不同规模。</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== 10. Bottom CTA ===== -->
-  <section class="bottom-cta">
-    <div class="container">
-      <h2>准备好让 AI 为你的团队工作了吗？</h2>
-      <p class="section-subtitle">预约演示，30 分钟了解 SiliMind 如何打通你的营销销售全链路</p>
-      <div class="hero-cta">
-        <a href="#" class="btn-primary">预约演示</a>
-        <a href="#" class="btn-secondary">联系销售 →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== 11. Footer ===== -->
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <a href="/" class="nav-logo" style="font-size:24px">SiliMind</a>
-        <p>SiliMind — 从内容获客到成交转化的 AI 平台。思理智能让工作变得更简单。</p>
-      </div>
-      <div class="footer-col">
-        <h4>产品</h4>
-        <ul>
-          <li><a href="/products/marketing">营销获客</a></li>
-          <li><a href="/products/sales">销售管理</a></li>
-          <li><a href="/products/ai">AI 智能决策</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>资源</h4>
-        <ul>
-          <li><a href="/blog/">Blog</a></li>
-          <li><a href="#">帮助中心</a></li>
-          <li><a href="#">API 文档</a></li>
-          <li><a href="#">更新日志</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>公司</h4>
-        <ul>
-          <li><a href="/about">关于我们</a></li>
-          <li><a href="/solutions">解决方案</a></li>
-          <li><a href="/cases">客户案例</a></li>
-          <li><a href="#">联系我们</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2026 SiliMind. All rights reserved.</span>
-      <span>
-        <a href="#">隐私政策</a> · <a href="#">服务条款</a>
-      </span>
-    </div>
-  </footer>
-
-  <!-- ===== FAQ Toggle JS ===== -->
-  <script>
-    // FAQ accordion
-    document.querySelectorAll('.faq-question').forEach(function(q) {
-      q.addEventListener('click', function() {
-        var item = this.parentElement;
-        var wasOpen = item.classList.contains('open');
-        // Close all
-        document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('open'); });
-        // Toggle clicked
-        if (!wasOpen) item.classList.add('open');
-      });
-    });
-
-    // Role tabs
-    document.querySelectorAll('.role-tab').forEach(function(tab) {
-      tab.addEventListener('click', function() {
-        var role = this.getAttribute('data-role');
-        // Update active tab
-        document.querySelectorAll('.role-tab').forEach(function(t) { t.classList.remove('active'); });
-        this.classList.add('active');
-        // Show corresponding panel
-        document.querySelectorAll('.role-panel').forEach(function(p) { p.classList.remove('active'); });
-        document.getElementById('role-' + role).classList.add('active');
-      });
-    });
-  </script>
+    <footer>© SiliMind · 思理智能</footer>
+  </main>
 </body>
 </html>
