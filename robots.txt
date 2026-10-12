@@ -29,4 +29,8 @@ Allow: /
 User-agent: meta-externalagent
 Allow: /
 
+# 百度搜索资源平台（显式放行，避免误屏蔽）
+User-agent: Baiduspider
+Allow: /
+
 Sitemap: https://www.silimind.net/sitemap.xml
