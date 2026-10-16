@@ -113,6 +113,15 @@
     .module-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 24px; font-size: 15px; font-weight: 600; color: var(--accent-light); padding: 10px 20px; border-radius: 8px; border: 1px solid var(--border-hover); background: var(--accent-glow); transition: all 0.2s; }
     .module-link:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
 
+    /* Light panel (定位区块：浅色背景需深色文字，覆盖全局深色主题) */
+    .light-panel { color: #2a2f45; }
+    .light-panel h2, .light-panel h3 { color: #14162b; }
+    .light-panel strong { color: #1f2333; font-weight: 700; }
+    .light-panel .cmp-card { background: #fff; border-radius: 10px; padding: 18px; border: 1px solid #e5e7eb; }
+    .light-panel .cmp-card h3 { color: #14162b; }
+    .light-panel .cmp-card p, .light-panel .cmp-card li { color: #3a4056; }
+    .light-panel .cmp-card-ai h3, .light-panel .cmp-card-ai p, .light-panel .cmp-card-ai li, .light-panel .cmp-card-ai strong { color: #fff !important; }
+
     /* Footer */
     footer { text-align: center; padding: 32px; color: var(--text-tertiary); font-size: 13px; border-top: 1px solid var(--border); }
 
@@ -149,20 +158,20 @@
     <p class="page-subtitle">不再在营销工具和 CRM 之间反复切换，数据真正打通。</p>
 
     <!-- 定位：组织智能 差异化区块 -->
-    <div style="background:linear-gradient(135deg,#f0f2ff,#fff);border:1px solid #cdd4ff;border-radius:14px;padding:32px;margin-bottom:48px;">
+    <div class="light-panel" style="background:linear-gradient(135deg,#f0f2ff,#fff);border:1px solid #cdd4ff;border-radius:14px;padding:32px;margin-bottom:48px;">
       <h2 style="font-size:22px;margin-bottom:12px;">我们的定位：组织智能（Organizational Intelligence）</h2>
-      <p style="font-size:15px;color:#444;line-height:1.9;margin-bottom:20px;">SiliMind <strong>不是个人办公助手</strong>（如 Workbody 类产品帮你一个人安排日程、写邮件），而是让<strong>整个组织</strong>由 AI 驱动运转——36 名数字员工分工协作、主动感知、自主执行。</p>
+      <p style="font-size:15px;line-height:1.9;margin-bottom:20px;">SiliMind <strong>不是个人办公助手</strong>（如 Workbody 类产品帮你一个人安排日程、写邮件），而是让<strong>整个组织</strong>由 AI 驱动运转——36 名数字员工分工协作、主动感知、自主执行。</p>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;">
-        <div style="background:#fff;border-radius:10px;padding:18px;border:1px solid #e5e7eb;">
+        <div class="cmp-card">
           <h3 style="font-size:15px;margin-bottom:8px;">🧍 个人办公助手（Workbody 类）</h3>
-          <ul style="font-size:13.5px;color:#555;line-height:1.9;padding-left:18px;">
+          <ul style="font-size:13.5px;line-height:1.9;padding-left:18px;">
             <li>服务单个职场人</li>
             <li>一个 Copilot 对话框，人问才答</li>
             <li>个人笔记与会话记忆</li>
             <li>价值=个人效率提升</li>
           </ul>
         </div>
-        <div style="background:linear-gradient(135deg,#5b6ee0,#7b4fa8);color:#fff;border-radius:10px;padding:18px;">
+        <div class="cmp-card-ai" style="background:linear-gradient(135deg,#5b6ee0,#7b4fa8);color:#fff;border-radius:10px;padding:18px;">
           <h3 style="font-size:15px;margin-bottom:8px;">🏢 SiliMind 组织智能</h3>
           <ul style="font-size:13.5px;line-height:1.9;padding-left:18px;">
             <li><strong>服务整个组织</strong>——36 名数字员工组成的团队</li>
