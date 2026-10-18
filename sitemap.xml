@@ -37,7 +37,7 @@
   <!-- Blog listing -->
   <url>
     <loc>https://www.silimind.net/blog/</loc>
-    <lastmod>2026-10-17</lastmod>
+    <lastmod>2026-10-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -46,6 +46,12 @@
   <url>
     <loc>https://www.silimind.net/blog/marketup-crm-integrated-platform</loc>
     <lastmod>2026-10-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.silimind.net/blog/ai-sdr-china-fit</loc>
+    <lastmod>2026-10-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
