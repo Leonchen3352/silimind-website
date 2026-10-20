@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <title>Blog - SiliMind</title>
+  <meta name="description" content="SiliMind ブログ — AI Agent の最新トレンド、企業のスマート化実践、技術インサイトを探る。" />
+  <link rel="canonical" href="https://www.silimind.net/ja/blog/" />
+  <meta property="og:title" content="Blog - SiliMind" />
+  <meta property="og:description" content="SiliMind ブログ — AI Agent の最新トレンド、企業のスマート化実践、技術インサイトを探る。" />
+  <meta property="og:url" content="https://www.silimind.net/ja/blog/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ja_JP" />
+  <meta property="og:site_name" content="SiliMind" />
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJ7HH4824R"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RJ7HH4824R');
+  </script>
+  <style>
+    :root {
+      --bg-primary: #0a0a0f;
+      --bg-secondary: #12121a;
+      --bg-card: #16161f;
+      --accent: #6366f1;
+      --accent-light: #818cf8;
+      --text-primary: #f0f0f5;
+      --text-secondary: rgba(240,240,245,0.6);
+      --border: rgba(99,102,241,0.08);
+      --border-hover: rgba(99,102,241,0.25);
+      --font: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'PingFang SC', 'Noto Sans SC', sans-serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* Nav */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(10,10,15,0.9);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      height: 64px;
+    }
+    .nav-inner {
+      max-width: 1100px; margin: 0 auto; padding: 0 32px;
+      height: 100%; display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      font-size: 20px; font-weight: 700; color: var(--accent-light);
+      text-decoration: none; letter-spacing: 1px;
+    }
+    .nav-links { list-style: none; display: flex; gap: 32px; }
+    .nav-links a {
+      color: var(--text-secondary); text-decoration: none; font-size: 14px;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--text-primary); }
+
+    /* Page header */
+    .page-header {
+      padding: 120px 32px 60px;
+      text-align: center;
+    }
+    .page-header h1 {
+      font-size: 36px; font-weight: 700; margin-bottom: 12px;
+      background: linear-gradient(135deg, #6366f1, #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .page-header p {
+      color: var(--text-secondary); font-size: 16px; max-width: 560px; margin: 0 auto;
+    }
+
+    /* Blog grid */
+    .blog-grid {
+      max-width: 900px; margin: 0 auto; padding: 0 32px 80px;
+      display: grid; grid-template-columns: 1fr; gap: 24px;
+    }
+    .blog-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px 32px;
+      transition: border-color 0.2s, transform 0.2s;
+      text-decoration: none;
+      display: block;
+    }
+    .blog-card:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-2px);
+    }
+    .blog-card h2 {
+      font-size: 20px; font-weight: 600; margin-bottom: 8px;
+      color: var(--text-primary);
+    }
+    .blog-card .date {
+      font-size: 13px; color: var(--text-secondary); margin-bottom: 10px;
+    }
+    .blog-card .excerpt {
+      font-size: 14px; color: var(--text-secondary); line-height: 1.7;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    /* Empty state */
+    .empty-state {
+      text-align: center; padding: 60px 32px;
+      color: var(--text-secondary);
+    }
+    .empty-state p { font-size: 15px; }
+
+    /* Footer */
+    footer {
+      text-align: center; padding: 40px 32px;
+      border-top: 1px solid var(--border);
+      color: var(--text-secondary); font-size: 13px;
+    }
+
+    @media (max-width: 768px) {
+      .page-header h1 { font-size: 28px; }
+      .blog-grid { padding: 0 16px 60px; }
+      .blog-card { padding: 20px 24px; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/ja/" class="nav-logo">SiliMind</a>
+      <ul class="nav-links">
+        <li><a href="/ja/blog/" class="active">Blog</a></li>
+        <li><a href="/ja/#features">コア機能</a></li>
+        <li><a href="#">ソリューション</a></li>
+        <li><a href="#">会社概要</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="page-header">
+    <h1>Blog</h1>
+    <p>AI Agent の最新トレンド、企業のスマート化実践、技術インサイトを探る</p>
+  </section>
+
+  <section class="blog-grid">
+    <a href="/blog/zoho-crm-content-marketing-gap" class="blog-card">
+      <h2>Zoho CRM Is Fine. The Gap Is Content.</h2>
+      <div class="date">2026-10-19</div>
+      <p class="excerpt">Zoho CRM に問題はない。問題はコンテンツから案件へのアトリビューションにある。乗り換えるべきかの判断は、「コンテンツが主な成長エンジンか／方向性のアトリビューションで良しとできるか／移行の忍耐があるか」の 3 問。三択：つぎ足す、移行する、またはギャップを受け入れる。</p>
+    </a>
+    <a href="/blog/ai-sdr-china-fit" class="blog-card">
+      <h2>Clay、11x、Outreach は中国チームに合うか？AI 営業ツールの 4 つのなじまなさ</h2>
+      <div class="date">2026-10-18</div>
+      <p class="excerpt">海外の AI 営業ツールが中国チームに頻繁に提案されるが、データソース、送受のクローズドループ、中国語の文脈、データ越境という 4 つの壁が、それが解になるかを左右する。3 問の意思決定フレームワーク付き：買う価値があるケース、まだ買わないほうがいいケース。</p>
+    </a>
+    <a href="/blog/marketup-crm-integrated-platform" class="blog-card">
+      <h2>MarketUP と CRM を分けて買うか、統合プラットフォームを選ぶか？</h2>
+      <div class="date">2026-10-17</div>
+      <p class="excerpt">MarketUP でキャンペーンを走らせても、リードを CRM に渡すと宅配便を他人の庭に投げ込むようなもの。本稿は「分けて買う vs 統合」の判断フレームワークを提示：3 つの具体的なインターフェース断絶、乗り換えないほうがいい 5 つのケース、会議に持ち込める 3 問。</p>
+    </a>
+    <a href="/blog/silimind-vs-hubspot" class="blog-card">
+      <h2>SiliMind vs HubSpot: How to Choose an All-in-One AI Marketing + Sales Platform</h2>
+      <div class="date">2026-10-16</div>
+      <p class="excerpt">なぜ中国の B2B チームは深夜に "HubSpot alternative" を検索するのか？この英語比較記事は誠実に分解：価格帯、WeChat エコシステムのデータサイロ、オンプレミス導入という 3 大差分に加え、選定フレームワークと契約前の 4 つのデューデリジェンス質問、HubSpot の強みも率直に認める。</p>
+    </a>
+    <a href="/blog/b2b-marketing-sales-platform-top7" class="blog-card">
+      <h2>2026 年 B2B マーケティング・営業統合プラットフォーム Top 7（無料プラン込み）</h2>
+      <div class="date">2026-10-15</div>
+      <p class="excerpt">マーケティングツールと CRM を分けて買うと、データが合わないのが常態。本稿は HubSpot、Zoho、紛享銷客、銷售易、MarketUP、致趣百川、SiliMind の 7 製品を実測比較。選定フレームワーク 3 問と無料プランの状況付き。</p>
+    </a>
+    <a href="/blog/content-attribution-b2b" class="blog-card">
+      <h2>どの記事が成約をもたらしたか分かるか？コンテンツアトリビューション実践ガイド</h2>
+      <div class="date">2026-10-14</div>
+      <p class="excerpt">何十本もコンテンツを発信しても、経営者に「どれが成約につながったか」と聞かれると誰も答えられない。本稿は UTM、フォーム流入元フィールド、コンテンツタッチポイント管理表という 4 ステップの手動方式と、コンテンツと CRM データをつなぐ統合型アプローチを提示。</p>
+    </a>
+    <a href="/blog/sales-visit-recording-ai-notes" class="blog-card">
+      <h2>営業訪問から戻っても会話の要点を覚えていない？録音から議事録への正しいやり方</h2>
+      <div class="date">2026-10-12</div>
+      <p class="excerpt">2 時間の深掘り訪問には有効な情報ポイントが 30 以上あるが、24 時間後には 3 割しか思い出せない。本稿は大口営業の「要点を覚えられない」実際のコストを分解し、訪問録音 → AI 議事録 → 案件流転という完全な実践方法を提示。</p>
+    </a>
+  </section>
+
+  <footer>
+    <p>© 2026 SiliMind. All rights reserved. &nbsp;·&nbsp; WeChat：18612418612 &nbsp;·&nbsp; <a href="mailto:micheal@silimind.net">micheal@silimind.net</a></p>
+  </footer>
+</body>
+</html>

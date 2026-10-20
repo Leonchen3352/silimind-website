@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <title>销售管理 — SiliMind</title>
+  <meta name="description" content="统一线索池、商机 Kanban、客户 360° 画像、AI 拜访纪要、智能合同管理。SiliMind 销售管理模块让销售从信息散落到掌控全局。" />
+  <link rel="canonical" href="https://www.silimind.net/zh/products/sales.html"/>
+  <meta property="og:title" content="销售管理 — SiliMind" />
+  <meta property="og:description" content="统一线索池、商机 Kanban、客户 360° 画像、AI 拜访纪要、智能合同管理。SiliMind 销售管理模块让销售从信息散落到掌控全局。" />
+  <meta property="og:url" content="https://www.silimind.net/products/sales.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:site_name" content="SiliMind" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "销售管理 — SiliMind",
+    "description": "统一线索池、商机 Kanban、客户 360° 画像、AI 拜访纪要、智能合同管理。SiliMind 销售管理模块让销售从信息散落到掌控全局。",
+    "url": "https://www.silimind.net/products/sales.html",
+    "datePublished": "2026-07-31",
+    "author": {
+      "@type": "Organization",
+      "name": "SiliMind"
+    }
+  }
+  </script>
+  <style>
+    :root {
+      --bg-primary: #0a0a0f;
+      --bg-secondary: #12121a;
+      --bg-tertiary: #181824;
+      --accent: #6366f1;
+      --accent-hover: #4f46e5;
+      --accent-light: #818cf8;
+      --accent-glow: rgba(99,102,241,0.15);
+      --text-primary: #f0f0f5;
+      --text-secondary: rgba(240,240,245,0.6);
+      --text-tertiary: rgba(240,240,245,0.4);
+      --border: rgba(99,102,241,0.08);
+      --border-hover: rgba(99,102,241,0.2);
+      --font: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', 'PingFang SC', 'Noto Sans SC', sans-serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font); background: var(--bg-primary); color: var(--text-primary); line-height: 1.7; min-height: 100vh; }
+    a { color: var(--accent-light); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: #fff; }
+    strong { color: var(--text-primary); font-weight: 600; }
+
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(10,10,15,0.92); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); height: 64px; }
+    .nav-inner { max-width: 1120px; margin: 0 auto; padding: 0 32px; height: 100%; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { font-size: 20px; font-weight: 700; color: var(--accent-light); text-decoration: none; letter-spacing: 0.5px; }
+    .nav-links { list-style: none; display: flex; gap: 28px; align-items: center; }
+    .nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--text-primary); }
+    .nav-links a.active { color: var(--accent-light); }
+    .nav-cta { padding: 8px 20px; font-size: 13px; background: var(--accent); color: #fff !important; border-radius: 6px; font-weight: 600; text-decoration: none; transition: all 0.2s; }
+    .nav-cta:hover { background: var(--accent-hover); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(99,102,241,0.3); }
+
+    .page { max-width: 900px; margin: 0 auto; padding: 120px 32px 60px; }
+    .page h1 { font-size: 38px; font-weight: 700; line-height: 1.25; margin-bottom: 16px; background: linear-gradient(135deg, #6366f1, #a78bfa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .page-subtitle { font-size: 17px; color: var(--text-secondary); line-height: 1.8; margin-bottom: 48px; max-width: 720px; }
+
+    .section { margin-bottom: 48px; }
+    .section h2 { font-size: 28px; font-weight: 700; margin-bottom: 8px; color: var(--text-primary); padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+    .section h2 + p { font-size: 15px; color: var(--text-secondary); margin-top: 12px; margin-bottom: 24px; line-height: 1.8; }
+    .section h3 { font-size: 18px; font-weight: 700; color: var(--accent-light); margin-bottom: 12px; }
+
+    .feature-card { border: 1px solid var(--border); border-radius: 12px; padding: 24px 28px; margin-bottom: 20px; background: var(--bg-secondary); }
+    .feature-card h3 { font-size: 17px; font-weight: 700; color: var(--accent-light); margin-bottom: 10px; }
+    .feature-card p { font-size: 15px; color: var(--text-secondary); line-height: 1.85; }
+
+    .detail-list { list-style: none; padding: 0; margin: 12px 0 20px; }
+    .detail-list li { font-size: 15px; color: var(--text-secondary); line-height: 1.85; padding: 8px 0 8px 20px; position: relative; border-bottom: 1px solid var(--border); }
+    .detail-list li:last-child { border-bottom: none; }
+    .detail-list li::before { content: ''; position: absolute; left: 0; top: 16px; width: 6px; height: 6px; background: var(--accent); border-radius: 50%; }
+
+    .tab-block { border: 1px solid var(--border); border-radius: 12px; padding: 24px 28px; margin-bottom: 20px; background: var(--bg-secondary); }
+    .tab-block h3 { font-size: 16px; font-weight: 700; color: var(--accent-light); margin-bottom: 8px; }
+    .tab-block p { font-size: 15px; color: var(--text-secondary); line-height: 1.85; }
+
+    .cta-section { background: linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary)); border: 1px solid var(--border-hover); border-radius: 16px; padding: 48px; text-align: center; margin-bottom: 48px; }
+    .cta-section h2 { font-size: 24px; font-weight: 700; margin-bottom: 12px; border: none; }
+    .cta-section p { font-size: 15px; color: var(--text-secondary); margin-bottom: 28px; }
+    .btn-primary { display: inline-block; padding: 14px 32px; border-radius: 8px; background: var(--accent); color: #fff; text-decoration: none; font-size: 15px; font-weight: 600; transition: all 0.2s; }
+    .btn-primary:hover { background: var(--accent-hover); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(99,102,241,0.3); color: #fff; }
+
+    .integration-note { font-size: 15px; color: var(--text-secondary); line-height: 2; padding: 32px; border: 1px solid var(--border); border-radius: 12px; background: var(--bg-secondary); margin-bottom: 48px; }
+
+    footer { text-align: center; padding: 32px; color: var(--text-tertiary); font-size: 13px; border-top: 1px solid var(--border); }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .page { padding: 100px 20px 40px; }
+      .page h1 { font-size: 28px; }
+      .section h2 { font-size: 22px; }
+      .feature-card, .tab-block { padding: 20px; }
+      .cta-section { padding: 32px 20px; }
+    }
+  </style>
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJ7HH4824R"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RJ7HH4824R');
+  </script>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">SiliMind</a>
+      <ul class="nav-links">
+        <li><a href="/zh/products.html" class="active">产品</a></li>
+        <li><a href="/zh/solutions.html">解决方案</a></li>
+        <li><a href="/zh/cases.html">客户案例</a></li>
+        <li><a href="/zh/blog/">Blog</a></li>
+        <li><a href="/zh/about.html">关于我们</a></li>
+      </ul>
+      <a href="https://agent.silimind.net/register" class="nav-cta">申请使用</a>
+    </div>
+  </nav>
+
+  <main class="page">
+    <h1>销售管理</h1>
+    <p class="page-subtitle">从线索到成交的全流程 CRM。</p>
+
+    <p style="font-size:16px; color:var(--text-secondary); line-height:2; margin-bottom:48px;">B2B 销售的痛点很具体：客户消息散落在 WhatsApp、微信、Email 和笔记本里，拜访纪要靠手写，合同起草耗时长格式不统一，销售换人信息全丢。无论你的团队做内贸还是外贸，这些问题都一样存在。SiliMind 销售管理模块把所有渠道消息聚合在一条时间线上，AI 自动生成纪要和分析建议，让销售把时间花在跟客户沟通而不是在系统里找信息。</p>
+
+    <!-- 统一线索池 -->
+    <section class="section">
+      <h2>统一线索池</h2>
+      <p>所有渠道进来的线索，一处管理</p>
+      <p style="font-size:15px; color:var(--text-secondary); line-height:1.85;">无论线索来自内容营销的表单、AI 主动获客的推送、展会导入、官网询盘还是转介绍，全部汇聚在统一线索池。</p>
+
+      <div class="feature-card">
+        <h3>AI 意向评分</h3>
+        <p>每条线索自动打分（0-100），高意向线索标绿、中等标黄、低意向标灰。销售优先处理高分线索，不漏掉任何一个高价值询盘。</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>智能归属 + 兜底认领</h3>
+        <p>线索入库后由 AI 按规则自动打分（0-100）并尝试归属；无法自动归属的消息进入「未分配收件箱」，管理员一键认领、指派或改派，分配结果实时通知到人。</p>
+      </div>
+    </section>
+
+    <!-- 商机管理 -->
+    <section class="section">
+      <h2>商机管理</h2>
+      <p>一目了然看全局，点进去看全部</p>
+
+      <div class="feature-card">
+        <h3>Kanban 看板</h3>
+        <p>5 个阶段（新询盘→跟进中→报价中→赢单→输单），拖拽推进。每个商机卡只显示决策所需信息：客户公司、金额、距上次跟进天数（&gt;3 天橙色，&gt;7 天红色）；赢单/输单自动记录时间与输单原因，成交概率由 AI 直接读写。</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>商机详情页</h3>
+        <p>三个区域：</p>
+        <ul class="detail-list">
+          <li>商机信息（阶段、金额、预计成交日期、竞争对手、产品明细）</li>
+          <li>沟通时间线（所有渠道消息按时间排列，每条带渠道图标）</li>
+          <li>AI 侧边栏（自动提取：客户核心需求、预算范围、决策人、竞品倾向、建议下一步行动）</li>
+        </ul>
+      </div>
+
+      <div class="feature-card">
+        <h3>AI 自动推进</h3>
+        <p>销售采纳 AI 建议卡后，系统自动创建跟进任务或推进商机阶段，不需要手动操作。</p>
+      </div>
+    </section>
+
+    <!-- 客户 360° 画像 -->
+    <section class="section">
+      <h2>客户 360° 画像</h2>
+      <p>5 分钟了解一个客户的全貌</p>
+      <p style="font-size:15px; color:var(--text-secondary); line-height:1.85;">接手新客户不需要翻聊天记录和邮件，客户 360° 画像把所有信息聚合在一个页面。</p>
+
+      <div class="tab-block">
+        <h3>「销售触点」Tab</h3>
+        <p>成为线索后的所有销售互动时间线。WhatsApp 消息、微信对话、Email、电话记录、拜访纪要、报价记录，按时间排列。沟通中的情绪变化用颜色标注（正面绿、负面红、中性灰）。这就是统一消息中心——所有渠道消息在此聚合，不需要独立的「消息中心」页面。</p>
+      </div>
+
+      <div class="tab-block">
+        <h3>「营销触点」Tab</h3>
+        <p>成为线索前的内容互动：阅读的文章、社媒互动、官网表单提交、展会扫码。转化为线索的那个触点用蓝色高亮。</p>
+      </div>
+
+      <div class="tab-block">
+        <h3>「AI 洞察」Tab</h3>
+        <p>AI 自动分析所有数据的综合画像：客户画像摘要、需求分析、风险提示、建议行动。</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>商机健康度评分</h3>
+        <p>0-100 分，随沟通频率、情绪趋势、阶段停留、主被动占比、金额 5 个维度自动计算，在客户画像中嵌入展示：绿色（70-100）健康、黄色（40-69）需要关注、红色（0-39）预警。</p>
+      </div>
+    </section>
+
+    <!-- 拜访管理 -->
+    <section class="section">
+      <h2>拜访管理</h2>
+      <p>上传录音，1 分钟生成结构化纪要</p>
+
+      <div class="feature-card">
+        <h3>AI 结构化纪要</h3>
+        <p>拜访结束后上传录音，AI 自动生成 13 个业务字段：议题、摘要、关键要点、客户反馈、下一步行动、参会人、时间、地点、类型、时长、结果、情绪、原始转写。销售校对确认后保存，自动关联客户和商机。</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>自动创建任务</h3>
+        <p>纪要确认后，系统从「下一步行动」中自动创建跟进任务（带截止日期和关联商机）。不需要纪要写完后再去任务模块手动创建。</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>拜访日历</h3>
+        <p>月/周视图切换，每天显示拜访安排（色块标注客户名+类型图标）。支持拖拽调整日期。拜访类型覆盖现场、线上、电话、展会四类。</p>
+      </div>
+    </section>
+
+    <!-- 合同与报价 -->
+    <section class="section">
+      <h2>合同与报价</h2>
+      <p>AI 自动填充合同模板，报价单 PDF 一键导出</p>
+
+      <div class="feature-card">
+        <h3>AI 合同生成</h3>
+        <p>在商机详情页点击「生成合同」，AI 从沟通记录中自动提取客户信息、产品明细、价格条款和付款条件，填充到合同模板中。合同进入审批流程：草拟→待审批→生效（两步流程）。</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>报价单编辑器</h3>
+        <p>左侧产品选择面板（从产品知识库读取产品列表，AI 自动填充规格参数），右侧实时预览（产品名/规格/数量/单价/小计/折扣/总计）。支持币种转换，一键导出 PDF（带公司 Logo 和联系方式）。报价单自动关联商机，记录在沟通时间线中。</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>合同状态管理</h3>
+        <p>5 种状态（草拟/待审批/生效中/已到期/已终止），表格视图一目了然。</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>🔐 敏感操作，先审批后执行</h3>
+        <p>发布内容、新建合同、删除客户或商机、导出数据——这 5 类敏感操作，企业可按需开启「先审批后执行」。多人会签，全部通过才放行，任何一人驳回即止。管理员同样受规则约束，没有整体豁免——公司越大越放心。与合同内部的草拟→待审批→生效流程相互独立，管的是「动手之前谁点头」。</p>
+      </div>
+    </section>
+
+    <!-- 模块打通 -->
+    <div class="integration-note">
+      <strong>销售管理，与营销获客和 AI 决策打通</strong><br><br>
+      营销获客产生的线索自动进入统一线索池，效果归因持续追踪每条线索的来源内容。AI 建议中心的 8 类信号覆盖销售全流程。ChatBI 让销售用自然语言查商机数据。拜访纪要和合同数据都沉淀在客户 360° 画像中，换人接手零信息丢失。
+    </div>
+
+    <!-- CTA -->
+    <section class="cta-section">
+      <h2>让销售团队从信息散落到掌控全局</h2>
+      <p>AI 辅助的全流程 CRM，销售专注跟客户沟通。</p>
+      <div class="cta-buttons" style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+        <a href="https://agent.silimind.net/register" class="btn-primary">申请使用 →</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>© 2026 SiliMind 思理智能. All rights reserved. &nbsp;·&nbsp; 微信：18612418612 &nbsp;·&nbsp; <a href="mailto:micheal@silimind.net">micheal@silimind.net</a>  <p style="font-size:12px;color:var(--text-tertiary, rgba(240,240,245,0.4));margin-top:16px;text-align:center;">本语言版本为机器辅助翻译，如有歧义以英文版为准。</p>
+  </footer>
+</body>
+</html>

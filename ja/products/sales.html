@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <title>営業管理 — SiliMind</title>
+  <meta name="description" content="統一リードプール、案件 Kanban、顧客 360° プロファイル、AI 訪問議事録、スマート契約管理。SiliMind 営業管理モジュールで、情報の散在から全体の掌握へ。" />
+  <link rel="canonical" href="https://www.silimind.net/ja/products/sales.html" />
+  <meta property="og:title" content="営業管理 — SiliMind" />
+  <meta property="og:description" content="統一リードプール、案件 Kanban、顧客 360° プロファイル、AI 訪問議事録、スマート契約管理。SiliMind 営業管理モジュールで、情報の散在から全体の掌握へ。" />
+  <meta property="og:url" content="https://www.silimind.net/ja/products/sales.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="ja_JP" />
+  <meta property="og:site_name" content="SiliMind" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "営業管理 — SiliMind",
+    "description": "統一リードプール、案件 Kanban、顧客 360° プロファイル、AI 訪問議事録、スマート契約管理。SiliMind 営業管理モジュールで、情報の散在から全体の掌握へ。",
+    "url": "https://www.silimind.net/ja/products/sales.html",
+    "datePublished": "2026-07-31",
+    "author": {
+      "@type": "Organization",
+      "name": "SiliMind"
+    }
+  }
+  </script>
+  <style>
+    :root {
+      --bg-primary: #0a0a0f;
+      --bg-secondary: #12121a;
+      --bg-tertiary: #181824;
+      --accent: #6366f1;
+      --accent-hover: #4f46e5;
+      --accent-light: #818cf8;
+      --accent-glow: rgba(99,102,241,0.15);
+      --text-primary: #f0f0f5;
+      --text-secondary: rgba(240,240,245,0.6);
+      --text-tertiary: rgba(240,240,245,0.4);
+      --border: rgba(99,102,241,0.08);
+      --border-hover: rgba(99,102,241,0.2);
+      --font: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', 'PingFang SC', 'Noto Sans SC', sans-serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font); background: var(--bg-primary); color: var(--text-primary); line-height: 1.7; min-height: 100vh; }
+    a { color: var(--accent-light); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: #fff; }
+    strong { color: var(--text-primary); font-weight: 600; }
+
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(10,10,15,0.92); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); height: 64px; }
+    .nav-inner { max-width: 1120px; margin: 0 auto; padding: 0 32px; height: 100%; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { font-size: 20px; font-weight: 700; color: var(--accent-light); text-decoration: none; letter-spacing: 0.5px; }
+    .nav-links { list-style: none; display: flex; gap: 28px; align-items: center; }
+    .nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--text-primary); }
+    .nav-links a.active { color: var(--accent-light); }
+    .nav-cta { padding: 8px 20px; font-size: 13px; background: var(--accent); color: #fff !important; border-radius: 6px; font-weight: 600; text-decoration: none; transition: all 0.2s; }
+    .nav-cta:hover { background: var(--accent-hover); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(99,102,241,0.3); }
+
+    .page { max-width: 900px; margin: 0 auto; padding: 120px 32px 60px; }
+    .page h1 { font-size: 38px; font-weight: 700; line-height: 1.25; margin-bottom: 16px; background: linear-gradient(135deg, #6366f1, #a78bfa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .page-subtitle { font-size: 17px; color: var(--text-secondary); line-height: 1.8; margin-bottom: 48px; max-width: 720px; }
+
+    .section { margin-bottom: 48px; }
+    .section h2 { font-size: 28px; font-weight: 700; margin-bottom: 8px; color: var(--text-primary); padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+    .section h2 + p { font-size: 15px; color: var(--text-secondary); margin-top: 12px; margin-bottom: 24px; line-height: 1.8; }
+    .section h3 { font-size: 18px; font-weight: 700; color: var(--accent-light); margin-bottom: 12px; }
+
+    .feature-card { border: 1px solid var(--border); border-radius: 12px; padding: 24px 28px; margin-bottom: 20px; background: var(--bg-secondary); }
+    .feature-card h3 { font-size: 17px; font-weight: 700; color: var(--accent-light); margin-bottom: 10px; }
+    .feature-card p { font-size: 15px; color: var(--text-secondary); line-height: 1.85; }
+
+    .detail-list { list-style: none; padding: 0; margin: 12px 0 20px; }
+    .detail-list li { font-size: 15px; color: var(--text-secondary); line-height: 1.85; padding: 8px 0 8px 20px; position: relative; border-bottom: 1px solid var(--border); }
+    .detail-list li:last-child { border-bottom: none; }
+    .detail-list li::before { content: ''; position: absolute; left: 0; top: 16px; width: 6px; height: 6px; background: var(--accent); border-radius: 50%; }
+
+    .tab-block { border: 1px solid var(--border); border-radius: 12px; padding: 24px 28px; margin-bottom: 20px; background: var(--bg-secondary); }
+    .tab-block h3 { font-size: 16px; font-weight: 700; color: var(--accent-light); margin-bottom: 8px; }
+    .tab-block p { font-size: 15px; color: var(--text-secondary); line-height: 1.85; }
+
+    .cta-section { background: linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary)); border: 1px solid var(--border-hover); border-radius: 16px; padding: 48px; text-align: center; margin-bottom: 48px; }
+    .cta-section h2 { font-size: 24px; font-weight: 700; margin-bottom: 12px; border: none; }
+    .cta-section p { font-size: 15px; color: var(--text-secondary); margin-bottom: 28px; }
+    .btn-primary { display: inline-block; padding: 14px 32px; border-radius: 8px; background: var(--accent); color: #fff; text-decoration: none; font-size: 15px; font-weight: 600; transition: all 0.2s; }
+    .btn-primary:hover { background: var(--accent-hover); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(99,102,241,0.3); color: #fff; }
+
+    .integration-note { font-size: 15px; color: var(--text-secondary); line-height: 2; padding: 32px; border: 1px solid var(--border); border-radius: 12px; background: var(--bg-secondary); margin-bottom: 48px; }
+
+    footer { text-align: center; padding: 32px; color: var(--text-tertiary); font-size: 13px; border-top: 1px solid var(--border); }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .page { padding: 100px 20px 40px; }
+      .page h1 { font-size: 28px; }
+      .section h2 { font-size: 22px; }
+      .feature-card, .tab-block { padding: 20px; }
+      .cta-section { padding: 32px 20px; }
+    }
+  </style>
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJ7HH4824R"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RJ7HH4824R');
+  </script>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/ja/" class="nav-logo">SiliMind</a>
+      <ul class="nav-links">
+        <li><a href="/ja/products.html" class="active">製品</a></li>
+        <li><a href="/ja/solutions.html">ソリューション</a></li>
+        <li><a href="/ja/cases.html">導入事例</a></li>
+        <li><a href="/ja/blog/">Blog</a></li>
+        <li><a href="/ja/about.html">会社概要</a></li>
+      </ul>
+      <a href="https://agent.silimind.net/register" class="nav-cta">利用を申請</a>
+    </div>
+  </nav>
+
+  <main class="page">
+    <h1>営業管理</h1>
+    <p class="page-subtitle">リードから成約までの全プロセス CRM。</p>
+
+    <p style="font-size:16px; color:var(--text-secondary); line-height:2; margin-bottom:48px;">B2B 営業の課題はとても具体的です：顧客メッセージが WhatsApp、WeChat、Email、ノートに散らばり、訪問議事録は手書き、契約ドラフトには時間がかかりフォーマットもバラバラ、担当が変われば情報はすべて失われる。国内取引でも海外取引でも、これらの問題は同じように存在します。SiliMind 営業管理モジュールは全チャネルのメッセージを 1 本のタイムラインに集約し、AI が議事録と分析提案を自動生成。営業はシステム内で情報を探す時間を顧客とのコミュニケーションに充てられます。</p>
+
+    <!-- 統一リードプール -->
+    <section class="section">
+      <h2>統一リードプール</h2>
+      <p>全チャネルのリードを 1 ヶ所で管理</p>
+      <p style="font-size:15px; color:var(--text-secondary); line-height:1.85;">コンテンツマーケティングのフォーム、AI アウトバウンド獲客のプッシュ、展示会インポート、Web サイト問い合わせ、紹介——どこから来たリードも、統一リードプールに集約されます。</p>
+
+      <div class="feature-card">
+        <h3>AI 意欲スコアリング</h3>
+        <p>各リードを自動スコアリング（0-100）。高意欲リードは緑、中は黄、低意欲はグレーで表示。営業は高スコアのリードから優先的に対応し、高価値な問い合わせを逃しません。</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>スマート帰属 + フォールバック引受</h3>
+        <p>リード登録後、AI がルールに基づいて自動スコアリング（0-100）し、帰属を試みます。自動帰属できないメッセージは「未割り当て受信箱」に入り、管理者がワンクリックで引き受け・割り当て・変更を行い、割り当て結果はリアルタイムで本人に通知されます。</p>
+      </div>
+    </section>
+
+    <!-- 案件管理 -->
+    <section class="section">
+      <h2>案件管理</h2>
+      <p>一覧で全体を把握、クリックで詳細を確認</p>
+
+      <div class="feature-card">
+        <h3>Kanban ボード</h3>
+        <p>5 段階（新規問い合わせ→フォロー中→見積中→受注→失注）、ドラッグで進捗管理。各案件カードには意思決定に必要な情報のみ表示：顧客会社、金額、前回フォローからの経過日数（3 日超でオレンジ、7 日超でレッド）。受注／失注は時刻と失注理由を自動記録し、成約確率は AI が直接読み書きします。</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>案件詳細ページ</h3>
+        <p>3 つのエリア：</p>
+        <ul class="detail-list">
+          <li>案件情報（段階、金額、予想成約日、競合、製品明細）</li>
+          <li>コミュニケーションタイムライン（全チャネルメッセージを時系列で、各件にチャネルアイコン付き）</li>
+          <li>AI サイドバー（自動抽出：顧客の核心ニーズ、予算レンジ、決裁者、競合志向、次のアクション提案）</li>
+        </ul>
+      </div>
+
+      <div class="feature-card">
+        <h3>AI 自動進行</h3>
+        <p>営業が AI 提案カードを採用すると、システムがフォロータスクを自動作成、または案件段階を自動進行します。手動操作は不要です。</p>
+      </div>
+    </section>
+
+    <!-- 顧客 360° プロファイル -->
+    <section class="section">
+      <h2>顧客 360° プロファイル</h2>
+      <p>5 分で顧客の全体像を把握</p>
+      <p style="font-size:15px; color:var(--text-secondary); line-height:1.85;">新しい顧客を引き継いでチャット履歴やメールを漁る必要はありません。顧客 360° プロファイルがすべての情報を 1 ページに集約します。</p>
+
+      <div class="tab-block">
+        <h3>「営業タッチポイント」タブ</h3>
+        <p>リード化以降のすべての営業やり取りのタイムライン。WhatsApp メッセージ、WeChat での会話、Email、通話記録、訪問議事録、見積記録が時系列で並びます。コミュニケーションの感情変化は色でラベル付け（ポジティブ緑、ネガティブ赤、中立グレー）。これが統一メッセージセンター——全チャネルのメッセージがここに集約され、独立した「メッセージセンター」ページは不要です。</p>
+      </div>
+
+      <div class="tab-block">
+        <h3>「マーケティングタッチポイント」タブ</h3>
+        <p>リード化以前のコンテンツやり取り：読んだ記事、SNS でのやり取り、Web サイトフォームの送信、展示会の QR スキャン。リード転換に至ったタッチポイントは青色でハイライトされます。</p>
+      </div>
+
+      <div class="tab-block">
+        <h3>「AI インサイト」タブ</h3>
+        <p>AI が全データを自動分析した総合プロファイル：顧客サマリー、ニーズ分析、リスク警告、推奨アクション。</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>案件ヘルススコア</h3>
+        <p>0-100 点。コミュニケーション頻度、感情トレンド、段階滞留、能動/受動比率、金額の 5 つの次元から自動計算され、顧客プロファイルに組み込み表示：緑（70-100）健康、黄（40-69）要注意、赤（0-39）警報。</p>
+      </div>
+    </section>
+
+    <!-- 訪問管理 -->
+    <section class="section">
+      <h2>訪問管理</h2>
+      <p>録音をアップロード、1 分で構造化議事録</p>
+
+      <div class="feature-card">
+        <h3>AI 構造化議事録</h3>
+        <p>訪問終了後に録音をアップロードすると、AI が 13 の業務フィールドを自動生成：議題、要約、キーポイント、顧客フィードバック、次のアクション、参加者、日時、場所、種類、所要時間、結果、感情、元トランスクリプト。営業が校正・確認して保存すると、顧客と案件に自動紐づきます。</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>タスク自動作成</h3>
+        <p>議事録確認後、システムは「次のアクション」からフォロータスクを自動作成（期日と紐づく案件付き）。議事録を書いた後にタスクモジュールへ手動で作り直す必要はありません。</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>訪問カレンダー</h3>
+        <p>月／週ビュー切替。各日に訪問予定を表示（顧客名＋種類アイコンの色分け）。日付のドラッグ調整に対応。訪問種別は現地、オンライン、電話、展示会の 4 種類をカバーします。</p>
+      </div>
+    </section>
+
+    <!-- 契約と見積 -->
+    <section class="section">
+      <h2>契約と見積</h2>
+      <p>AI が契約テンプレートを自動充填、見積は PDF ワンクリック出力</p>
+
+      <div class="feature-card">
+        <h3>AI 契約生成</h3>
+        <p>案件詳細ページで「契約を生成」をクリックすると、AI がコミュニケーション記録から顧客情報、製品明細、価格条件、支払条件を自動抽出し、契約テンプレートに充填します。契約は承認フローへ：下書き→承認待ち→有効（2 ステップフロー）。</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>見積エディタ</h3>
+        <p>左側に製品選択パネル（製品ナレッジベースから製品リストを読み込み、AI が仕様パラメータを自動充填）、右側にリアルタイムプレビュー（製品名／仕様／数量／単価／小計／割引／合計）。通貨換算に対応し、PDF ワンクリック出力（社ロゴと連絡先付き）。見積は案件に自動紐づき、コミュニケーションタイムラインに記録されます。</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>契約ステータス管理</h3>
+        <p>5 つのステータス（下書き／承認待ち／有効中／期限切れ／終了）。テーブルビューで一目瞭然です。</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>🔐 機微操作は、承認を経てから実行</h3>
+        <p>コンテンツ公開、契約新規作成、顧客・案件の削除、データ出力——この 5 種類の機微操作について、企業は必要に応じて「先に承認、後に実行」を有効化できます。複数人の合議署名で、全員承認のみ通過、1 人でも却下すれば停止。管理者も同じ規則に従い、全面的な免除はありません——会社が大きいほど安心です。契約内部の下書き→承認待ち→有効フローとは独立しており、管轄するのは「実行の前に誰が頷くか」です。</p>
+      </div>
+    </section>
+
+    <!-- モジュール連携 -->
+    <div class="integration-note">
+      <strong>営業管理は、マーケティング獲客と AI 意思決定と連携</strong><br><br>
+      マーケティング獲客が生んだリードは統一リードプールに自動流入し、効果アトリビューションが各リードの流入元コンテンツを継続追跡します。AI 提案センターの 8 種類のシグナルが営業の全プロセスをカバー。ChatBI で営業は自然言語で案件データを照会できます。訪問議事録と契約データはすべて顧客 360° プロファイルに蓄積され、引き継ぎでも情報の損失はゼロです。
+    </div>
+
+    <!-- CTA -->
+    <section class="cta-section">
+      <h2>営業チームを「情報の散在」から「全体の掌握」へ</h2>
+      <p>AI が支援する全プロセス CRM で、営業は顧客とのコミュニケーションに専念。</p>
+      <div class="cta-buttons" style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+        <a href="https://agent.silimind.net/register" class="btn-primary">利用を申請 →</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>© 2026 SiliMind. All rights reserved. &nbsp;·&nbsp; WeChat：18612418612 &nbsp;·&nbsp; <a href="mailto:micheal@silimind.net">micheal@silimind.net</a></footer>
+</body>
+</html>
