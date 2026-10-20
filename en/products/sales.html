@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <title>Sales Management — SiliMind | All-in-One AI Platform for B2B Marketing &amp; Sales</title>
+  <meta name="description" content="A full-funnel CRM from lead to close — unified leads, AI visit notes, opportunity boards, contracts &amp; quotes." />
+  <link rel="canonical" href="https://www.silimind.net/en/products/sales.html" />
+  <meta property="og:title" content="Sales Management — SiliMind" />
+  <meta property="og:description" content="A full-funnel CRM from lead to close — unified leads, AI visit notes, opportunity boards, contracts &amp; quotes." />
+  <meta property="og:url" content="https://www.silimind.net/en/products/sales.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="SiliMind" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Sales Management — SiliMind",
+    "description": "Unified lead pool, opportunity Kanban, customer 360° profiles, AI visit notes, and smart contract management. The SiliMind Sales Management module takes reps from scattered information to full control.",
+    "url": "https://www.silimind.net/products/sales.html",
+    "datePublished": "2026-07-31",
+    "author": {
+      "@type": "Organization",
+      "name": "SiliMind"
+    }
+  }
+  </script>
+  <style>
+    :root {
+      --bg-primary: #0a0a0f;
+      --bg-secondary: #12121a;
+      --bg-tertiary: #181824;
+      --accent: #6366f1;
+      --accent-hover: #4f46e5;
+      --accent-light: #818cf8;
+      --accent-glow: rgba(99,102,241,0.15);
+      --text-primary: #f0f0f5;
+      --text-secondary: rgba(240,240,245,0.6);
+      --text-tertiary: rgba(240,240,245,0.4);
+      --border: rgba(99,102,241,0.08);
+      --border-hover: rgba(99,102,241,0.2);
+      --font: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', 'PingFang SC', 'Noto Sans SC', 'Noto Sans KR', sans-serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font); background: var(--bg-primary); color: var(--text-primary); line-height: 1.7; min-height: 100vh; }
+    a { color: var(--accent-light); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: #fff; }
+    strong { color: var(--text-primary); font-weight: 600; }
+
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(10,10,15,0.92); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); height: 64px; }
+    .nav-inner { max-width: 1120px; margin: 0 auto; padding: 0 32px; height: 100%; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { font-size: 20px; font-weight: 700; color: var(--accent-light); text-decoration: none; letter-spacing: 0.5px; }
+    .nav-links { list-style: none; display: flex; gap: 28px; align-items: center; }
+    .nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--text-primary); }
+    .nav-links a.active { color: var(--accent-light); }
+    .nav-cta { padding: 8px 20px; font-size: 13px; background: var(--accent); color: #fff !important; border-radius: 6px; font-weight: 600; text-decoration: none; transition: all 0.2s; }
+    .nav-cta:hover { background: var(--accent-hover); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(99,102,241,0.3); }
+
+    .page { max-width: 900px; margin: 0 auto; padding: 120px 32px 60px; }
+    .page h1 { font-size: 38px; font-weight: 700; line-height: 1.25; margin-bottom: 16px; background: linear-gradient(135deg, #6366f1, #a78bfa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .page-subtitle { font-size: 17px; color: var(--text-secondary); line-height: 1.8; margin-bottom: 48px; max-width: 720px; }
+
+    .section { margin-bottom: 48px; }
+    .section h2 { font-size: 28px; font-weight: 700; margin-bottom: 8px; color: var(--text-primary); padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+    .section h2 + p { font-size: 15px; color: var(--text-secondary); margin-top: 12px; margin-bottom: 24px; line-height: 1.8; }
+    .section h3 { font-size: 18px; font-weight: 700; color: var(--accent-light); margin-bottom: 12px; }
+
+    .feature-card { border: 1px solid var(--border); border-radius: 12px; padding: 24px 28px; margin-bottom: 20px; background: var(--bg-secondary); }
+    .feature-card h3 { font-size: 17px; font-weight: 700; color: var(--accent-light); margin-bottom: 10px; }
+    .feature-card p { font-size: 15px; color: var(--text-secondary); line-height: 1.85; }
+
+    .detail-list { list-style: none; padding: 0; margin: 12px 0 20px; }
+    .detail-list li { font-size: 15px; color: var(--text-secondary); line-height: 1.85; padding: 8px 0 8px 20px; position: relative; border-bottom: 1px solid var(--border); }
+    .detail-list li:last-child { border-bottom: none; }
+    .detail-list li::before { content: ''; position: absolute; left: 0; top: 16px; width: 6px; height: 6px; background: var(--accent); border-radius: 50%; }
+
+    .tab-block { border: 1px solid var(--border); border-radius: 12px; padding: 24px 28px; margin-bottom: 20px; background: var(--bg-secondary); }
+    .tab-block h3 { font-size: 16px; font-weight: 700; color: var(--accent-light); margin-bottom: 8px; }
+    .tab-block p { font-size: 15px; color: var(--text-secondary); line-height: 1.85; }
+
+    .cta-section { background: linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary)); border: 1px solid var(--border-hover); border-radius: 16px; padding: 48px; text-align: center; margin-bottom: 48px; }
+    .cta-section h2 { font-size: 24px; font-weight: 700; margin-bottom: 12px; border: none; }
+    .cta-section p { font-size: 15px; color: var(--text-secondary); margin-bottom: 28px; }
+    .btn-primary { display: inline-block; padding: 14px 32px; border-radius: 8px; background: var(--accent); color: #fff; text-decoration: none; font-size: 15px; font-weight: 600; transition: all 0.2s; }
+    .btn-primary:hover { background: var(--accent-hover); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(99,102,241,0.3); color: #fff; }
+
+    .integration-note { font-size: 15px; color: var(--text-secondary); line-height: 2; padding: 32px; border: 1px solid var(--border); border-radius: 12px; background: var(--bg-secondary); margin-bottom: 48px; }
+
+    footer { text-align: center; padding: 32px; color: var(--text-tertiary); font-size: 13px; border-top: 1px solid var(--border); }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .page { padding: 100px 20px 40px; }
+      .page h1 { font-size: 28px; }
+      .section h2 { font-size: 22px; }
+      .feature-card, .tab-block { padding: 20px; }
+      .cta-section { padding: 32px 20px; }
+    }
+  </style>
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJ7HH4824R"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RJ7HH4824R');
+  </script>
+  <link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/products/sales.html">
+  <link rel="alternate" hreflang="en" href="https://www.silimind.net/en/products/sales.html">
+  <link rel="alternate" hreflang="ja-JP" href="https://www.silimind.net/ja/products/sales.html">
+  <link rel="alternate" hreflang="ko-KR" href="https://www.silimind.net/ko/products/sales.html">
+  <link rel="alternate" hreflang="x-default" href="https://www.silimind.net/products/sales.html">
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/en/" class="nav-logo">SiliMind</a>
+      <ul class="nav-links">
+        <li><a href="/en/products.html" class="active">Products</a></li>
+        <li><a href="/en/solutions.html">Solutions</a></li>
+        <li><a href="/en/cases.html">Customers</a></li>
+        <li><a href="/en/blog/">Blog</a></li>
+        <li><a href="/en/about.html">About Us</a></li>
+        <li class="lang-switch" style="opacity:.75;font-size:13px;list-style:none"><a href="https://www.silimind.net/products/sales.html">中文</a> · EN · <a href="https://www.silimind.net/ja/products/sales.html">日本語</a> · <a href="https://www.silimind.net/ko/products/sales.html">한국어</a></li>
+      </ul>
+      <a href="https://agent.silimind.net/register" class="nav-cta">Get Started</a>
+    </div>
+  </nav>
+
+  <main class="page">
+    <h1>Sales Management</h1>
+    <p class="page-subtitle">A full-funnel CRM from lead to close.</p>
+
+    <p style="font-size:16px; color:var(--text-secondary); line-height:2; margin-bottom:48px;">The pain points of B2B sales are specific: customer messages scattered across WhatsApp, WeChat, Email, and notebooks; visit notes handwritten; contract drafting slow with inconsistent formats; and when reps change, all the information is lost. Whether your team sells domestically or across borders, these problems are the same. The SiliMind Sales Management module aggregates every channel&#39;s messages onto one timeline, with AI generating notes and analysis automatically — so reps spend their time talking to customers instead of hunting for information in systems.</p>
+
+    <!-- 统一线索池 -->
+    <section class="section">
+      <h2>Unified Lead Pool</h2>
+      <p>Every lead from every channel, managed in one place</p>
+      <p style="font-size:15px; color:var(--text-secondary); line-height:1.85;">Whether leads come from content-marketing forms, AI proactive acquisition, trade-show imports, website inquiries, or referrals — everything converges in the unified lead pool.</p>
+
+      <div class="feature-card">
+        <h3>AI Intent Scoring</h3>
+        <p>Every lead is scored automatically (0-100) — high intent marked green, medium yellow, low gray. Reps prioritize high scores and never miss a valuable inquiry.</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>Smart Assignment + Fallback Claiming</h3>
+        <p>After a lead enters the pool, AI scores it (0-100) and attempts assignment; messages that can&#39;t be auto-assigned land in the &#34;unassigned inbox&#34; where admins claim, assign, or reassign in one click — with real-time notifications to the person.</p>
+      </div>
+    </section>
+
+    <!-- 商机管理 -->
+    <section class="section">
+      <h2>Opportunity Management</h2>
+      <p>See the whole pipeline at a glance; click in for the details</p>
+
+      <div class="feature-card">
+        <h3>Kanban Board</h3>
+        <p>Five stages (new inquiry → in follow-up → quoting → won → lost), advanced by drag and drop. Each card shows only what the decision needs: customer, value, days since last touch (&gt;3 days amber, &gt;7 days red); wins/losses auto-record time and loss reason, and AI reads and writes win probability directly. Click into the detail page for the conversation timeline plus an AI sidebar (auto-extracted core needs, budget range, suggested next step).</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>Opportunity Detail Page</h3>
+        <p>Three areas:</p>
+        <ul class="detail-list">
+          <li>Opportunity info (stage, value, expected close date, competitors, product line items)</li>
+          <li>Conversation timeline (all channel messages in order, each with a channel icon)</li>
+          <li>AI sidebar (auto-extracted: core needs, budget range, decision-maker, competitor leanings, suggested next actions)</li>
+        </ul>
+      </div>
+
+      <div class="feature-card">
+        <h3>AI Auto-Progression</h3>
+        <p>When a rep accepts an AI suggestion card, the system automatically creates a follow-up task or advances the opportunity stage — no manual steps.</p>
+      </div>
+    </section>
+
+    <!-- 客户 360° 画像 -->
+    <section class="section">
+      <h2>Customer 360° Profile</h2>
+      <p>Understand a customer in 5 minutes</p>
+      <p style="font-size:15px; color:var(--text-secondary); line-height:1.85;">Taking over a new customer doesn&#39;t mean digging through chats and emails — the 360° profile aggregates everything on one page.</p>
+
+      <div class="tab-block">
+        <h3>&#34;Sales Touchpoints&#34; Tab</h3>
+        <p>The timeline of every sales interaction since the lead converted — WhatsApp messages, WeChat conversations, emails, call logs, visit notes, and quotes in chronological order. Sentiment shifts are color-coded (positive green, negative red, neutral gray). This is the unified message center — all channels aggregate here; there&#39;s no separate &#34;message center&#34; page.</p>
+      </div>
+
+      <div class="tab-block">
+        <h3>&#34;Marketing Touchpoints&#34; Tab</h3>
+        <p>Content interactions before the lead converted: articles read, social media engagement, website form submissions, trade-show scans. The touchpoint that converted them is highlighted in blue.</p>
+      </div>
+
+      <div class="tab-block">
+        <h3>&#34;AI Insights&#34; Tab</h3>
+        <p>AI&#39;s composite analysis of all data: profile summary, needs analysis, risk flags, and suggested actions.</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>Opportunity Health Score</h3>
+        <p>0-100, auto-calculated across contact frequency, sentiment trend, stage dwell time, inbound/outbound ratio, and value — embedded in the profile: green (70-100) healthy, yellow (40-69) needs attention, red (0-39) alert.</p>
+      </div>
+    </section>
+
+    <!-- 拜访管理 -->
+    <section class="section">
+      <h2>Visit Management</h2>
+      <p>Upload a recording, get structured notes in 1 minute</p>
+
+      <div class="feature-card">
+        <h3>AI Structured Notes</h3>
+        <p>Upload the recording after a visit and AI generates 13 business fields: topics, summary, key points, customer feedback, next actions, attendees, time, location, type, duration, outcome, sentiment, and raw transcript. Reps proofread and save; it auto-links to the customer and opportunity.</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>Auto-Created Tasks</h3>
+        <p>Once notes are confirmed, the system creates follow-up tasks from &#34;next actions&#34; (with due dates and linked opportunities) — no manual task creation after writing notes.</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>Visit Calendar</h3>
+        <p>Month/week views show each day&#39;s visits (color blocks with customer names and type icons), with drag-and-drop rescheduling. Visit types cover on-site, online, phone, and trade shows.</p>
+      </div>
+    </section>
+
+    <!-- 合同与报价 -->
+    <section class="section">
+      <h2>Contracts &amp; Quotes</h2>
+      <p>AI auto-fills contract templates; quotes export to PDF in one click</p>
+
+      <div class="feature-card">
+        <h3>AI Contract Generation</h3>
+        <p>Click &#34;Generate Contract&#34; on the opportunity detail page and AI extracts customer info, product line items, price terms, and payment conditions from conversation records to fill the template. The contract enters approval: draft → pending approval → effective (two steps).</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>Quote Editor</h3>
+        <p>A product selection panel on the left (reading the product list from the knowledge base, with AI auto-filling specs) and a live preview on the right (product/specs/qty/unit price/subtotal/discount/total). Currency conversion and one-click PDF export (with your logo and contact info). Quotes auto-link to the opportunity and appear on the conversation timeline.</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>Contract Status Management</h3>
+        <p>Five statuses (draft / pending approval / effective / expired / terminated) in a table view at a glance.</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>🔐 Sensitive operations: approve first, execute second</h3>
+        <p>Publishing content, creating contracts, deleting customers or opportunities, and exporting data — these 5 sensitive operations can require approval before execution. Multi-person sign-off: everything must approve; any single rejection stops it. Admins are bound by the same rules with no blanket exemption — the bigger the company, the more reassuring. Independent of the contract&#39;s own draft→pending→effective flow, it governs &#34;who nods before anything happens.&#34;</p>
+      </div>
+    </section>
+
+    <!-- 模块打通 -->
+    <div class="integration-note">
+      <strong>Sales Management, connected with Marketing and AI Decisions</strong><br><br>
+      Leads from marketing flow into the unified lead pool, with attribution continuously tracking the source content of every lead. The AI Suggestion Center&#39;s 8 signal types cover the full sales cycle. ChatBI lets reps query opportunity data in natural language. Visit notes and contract data accumulate in the customer 360° profile — zero information lost on handover.
+    </div>
+
+    <!-- CTA -->
+    <section class="cta-section">
+      <h2>From scattered information to full control</h2>
+      <p>An AI-assisted full-funnel CRM, so reps focus on talking to customers.</p>
+      <div class="cta-buttons" style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+        <a href="https://agent.silimind.net/register" class="btn-primary">Get Started →</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>© 2026 SiliMind 思理智能. All rights reserved. &nbsp;·&nbsp; WeChat: 18612418612 &nbsp;·&nbsp; <a href="mailto:micheal@silimind.net">micheal@silimind.net</a></footer>
+  <p style="text-align:center;font-size:12px;opacity:0.6;padding:0 32px 16px;">This language version is machine-assisted translation. In case of any discrepancy, the Chinese version (root site) prevails.</p>
+</body>
+</html>

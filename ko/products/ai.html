@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <title>AI 스마트 의사결정 — SiliMind | B2B 마케팅·영업 올인원 AI 플랫폼</title>
+  <meta name="description" content="AI가 매일 모든 비즈니스 데이터를 분석하고 무엇에 주목해야 할지, 누구를 팔로우업할지, 어떤 전략을 조정할지 능동적으로 알려줍니다." />
+  <link rel="canonical" href="https://www.silimind.net/ko/products/ai.html" />
+  <meta property="og:title" content="AI 스마트 의사결정 — SiliMind" />
+  <meta property="og:description" content="AI가 매일 모든 비즈니스 데이터를 분석하고 무엇에 주목해야 할지 능동적으로 알려줍니다." />
+  <meta property="og:url" content="https://www.silimind.net/ko/products/ai.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="ko_KR" />
+  <meta property="og:site_name" content="SiliMind" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "AI 스마트 의사결정 — SiliMind",
+    "description": "8가지 AI 제안 시그널, ChatBI 자연어 쿼리, 관리 대시보드, 상업 기회 건강도 점수. SiliMind AI 스마트 의사결정 모듈은 데이터가 능동적으로 사람을 찾아갑니다.",
+    "url": "https://www.silimind.net/products/ai.html",
+    "datePublished": "2026-07-31",
+    "author": {
+      "@type": "Organization",
+      "name": "SiliMind"
+    }
+  }
+  </script>
+  <style>
+    :root {
+      --bg-primary: #0a0a0f;
+      --bg-secondary: #12121a;
+      --bg-tertiary: #181824;
+      --accent: #6366f1;
+      --accent-hover: #4f46e5;
+      --accent-light: #818cf8;
+      --accent-glow: rgba(99,102,241,0.15);
+      --text-primary: #f0f0f5;
+      --text-secondary: rgba(240,240,245,0.6);
+      --text-tertiary: rgba(240,240,245,0.4);
+      --border: rgba(99,102,241,0.08);
+      --border-hover: rgba(99,102,241,0.2);
+      --font: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', 'PingFang SC', 'Noto Sans SC', 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font); background: var(--bg-primary); color: var(--text-primary); line-height: 1.7; min-height: 100vh; }
+    a { color: var(--accent-light); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: #fff; }
+    strong { color: var(--text-primary); font-weight: 600; }
+
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(10,10,15,0.92); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); height: 64px; }
+    .nav-inner { max-width: 1120px; margin: 0 auto; padding: 0 32px; height: 100%; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { font-size: 20px; font-weight: 700; color: var(--accent-light); text-decoration: none; letter-spacing: 0.5px; }
+    .nav-links { list-style: none; display: flex; gap: 28px; align-items: center; }
+    .nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--text-primary); }
+    .nav-links a.active { color: var(--accent-light); }
+    .nav-cta { padding: 8px 20px; font-size: 13px; background: var(--accent); color: #fff !important; border-radius: 6px; font-weight: 600; text-decoration: none; transition: all 0.2s; }
+    .nav-cta:hover { background: var(--accent-hover); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(99,102,241,0.3); }
+
+    .page { max-width: 900px; margin: 0 auto; padding: 120px 32px 60px; }
+    .page h1 { font-size: 38px; font-weight: 700; line-height: 1.25; margin-bottom: 16px; background: linear-gradient(135deg, #6366f1, #a78bfa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .page-subtitle { font-size: 17px; color: var(--text-secondary); line-height: 1.8; margin-bottom: 48px; max-width: 720px; }
+
+    .section { margin-bottom: 48px; }
+    .section h2 { font-size: 28px; font-weight: 700; margin-bottom: 8px; color: var(--text-primary); padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+    .section h2 + p { font-size: 15px; color: var(--text-secondary); margin-top: 12px; margin-bottom: 24px; line-height: 1.8; }
+
+    .feature-card { border: 1px solid var(--border); border-radius: 12px; padding: 24px 28px; margin-bottom: 20px; background: var(--bg-secondary); }
+    .feature-card h3 { font-size: 17px; font-weight: 700; color: var(--accent-light); margin-bottom: 10px; }
+    .feature-card p { font-size: 15px; color: var(--text-secondary); line-height: 1.85; }
+
+    /* Table */
+    .data-table-wrapper { overflow-x: auto; margin: 20px 0 24px; border-radius: 12px; border: 1px solid var(--border); }
+    .data-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    .data-table thead th { background: var(--bg-tertiary); color: var(--accent-light); font-weight: 600; padding: 14px 16px; text-align: left; border-bottom: 2px solid var(--border-hover); white-space: nowrap; }
+    .data-table tbody td { padding: 12px 16px; color: var(--text-secondary); border-bottom: 1px solid var(--border); line-height: 1.6; }
+    .data-table tbody tr:hover { background: var(--accent-glow); }
+    .data-table tbody tr:last-child td { border-bottom: none; }
+    .data-table td:first-child, .data-table th:first-child { width: 40px; text-align: center; }
+
+    .example-list { list-style: none; padding: 0; margin: 12px 0 20px; }
+    .example-list li { font-size: 15px; color: var(--text-secondary); line-height: 1.85; padding: 8px 0 8px 20px; position: relative; border-bottom: 1px solid var(--border); }
+    .example-list li:last-child { border-bottom: none; }
+    .example-list li::before { content: ''; position: absolute; left: 0; top: 16px; width: 6px; height: 6px; background: var(--accent); border-radius: 50%; }
+
+    .score-list { list-style: none; padding: 0; margin: 12px 0 24px; }
+    .score-list li { font-size: 15px; color: var(--text-secondary); line-height: 1.85; padding: 10px 0 10px 20px; position: relative; border-bottom: 1px solid var(--border); }
+    .score-list li:last-child { border-bottom: none; }
+    .score-list li::before { content: ''; position: absolute; left: 0; top: 18px; width: 8px; height: 8px; border-radius: 50%; }
+    .score-list li:nth-child(1)::before { background: var(--accent); }
+    .score-list li:nth-child(2)::before { background: #a78bfa; }
+    .score-list li:nth-child(3)::before { background: #f59e0b; }
+    .score-list li:nth-child(4)::before { background: #10b981; }
+    .score-list li:nth-child(5)::before { background: #ec4899; }
+
+    .cta-section { background: linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary)); border: 1px solid var(--border-hover); border-radius: 16px; padding: 48px; text-align: center; margin-bottom: 48px; }
+    .cta-section h2 { font-size: 24px; font-weight: 700; margin-bottom: 12px; border: none; }
+    .cta-section p { font-size: 15px; color: var(--text-secondary); margin-bottom: 28px; }
+    .btn-primary { display: inline-block; padding: 14px 32px; border-radius: 8px; background: var(--accent); color: #fff; text-decoration: none; font-size: 15px; font-weight: 600; transition: all 0.2s; }
+    .btn-primary:hover { background: var(--accent-hover); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(99,102,241,0.3); color: #fff; }
+
+    .integration-note { font-size: 15px; color: var(--text-secondary); line-height: 2; padding: 32px; border: 1px solid var(--border); border-radius: 12px; background: var(--bg-secondary); margin-bottom: 48px; }
+
+    footer { text-align: center; padding: 32px; color: var(--text-tertiary); font-size: 13px; border-top: 1px solid var(--border); }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .page { padding: 100px 20px 40px; }
+      .page h1 { font-size: 28px; }
+      .section h2 { font-size: 22px; }
+      .feature-card { padding: 20px; }
+      .data-table { font-size: 12px; }
+      .data-table thead th, .data-table tbody td { padding: 10px 12px; }
+      .cta-section { padding: 32px 20px; }
+    }
+  </style>
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJ7HH4824R"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RJ7HH4824R');
+  </script>
+  <link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/products/ai.html">
+  <link rel="alternate" hreflang="en" href="https://www.silimind.net/en/products/ai.html">
+  <link rel="alternate" hreflang="ja-JP" href="https://www.silimind.net/ja/products/ai.html">
+  <link rel="alternate" hreflang="ko-KR" href="https://www.silimind.net/ko/products/ai.html">
+  <link rel="alternate" hreflang="x-default" href="https://www.silimind.net/products/ai.html">
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/ko/" class="nav-logo">SiliMind</a>
+      <ul class="nav-links">
+        <li><a href="/ko/products.html" class="active">제품</a></li>
+        <li><a href="/ko/solutions.html">솔루션</a></li>
+        <li><a href="/ko/cases.html">고객 사례</a></li>
+        <li><a href="/ko/blog/">블로그</a></li>
+        <li><a href="/ko/about.html">회사 소개</a></li>
+        <li class="lang-switch" style="opacity:.75;font-size:13px;list-style:none"><a href="https://www.silimind.net/products/ai.html">中文</a> · <a href="https://www.silimind.net/en/products/ai.html">EN</a> · <a href="https://www.silimind.net/ja/products/ai.html">日本語</a> · 한국어</li>
+      </ul>
+      <a href="https://agent.silimind.net/register" class="nav-cta">무료 이용 신청</a>
+    </div>
+  </nav>
+
+  <main class="page">
+    <h1>AI 스마트 의사결정</h1>
+    <p class="page-subtitle">데이터가 당신을 찾아가게 하세요.</p>
+
+    <p style="font-size:16px; color:var(--text-secondary); line-height:2; margin-bottom:48px;">B2B 관리자의 일상: 재무 월간 보고서나 영업 주간 회의에 의존해 의사결정을 하고, 데이터는 뒤처지고 불완전합니다. 영업 팀: 매일 수많은 고객과 상업 기회를 마주하며 무엇을 먼저 처리해야 할지 모릅니다. SiliMind AI 스마트 의사결정 모듈이 이 패턴을 바꿉니다——AI가 매일 모든 비즈니스 데이터를 분석하고, 무엇에 주목해야 할지, 누구를 팔로우업할지, 어떤 전략을 조정할지 능동적으로 알려줍니다.</p>
+
+    <!-- AI 建议中心 -->
+    <section class="section">
+      <h2>AI 제안 센터</h2>
+      <p>8가지 시그널, 영업 전 시나리오 커버</p>
+      <p style="font-size:15px; color:var(--text-secondary); line-height:1.85;">AI 제안 센터가 매일 모든 신규 메시지와 비즈니스 데이터를 자동 분석하여 영업 홈에 3-5장의 제안 카드를 표시합니다. 우선순위별 정렬, 각 카드에는 &#39;채택&#39;과 &#39;무시&#39; 두 버튼이 있습니다.</p>
+
+      <p style="font-size:16px; font-weight:600; color:var(--text-primary); margin: 24px 0 16px;">8가지 제안 시그널:</p>
+
+      <div class="data-table-wrapper">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>시그널 유형</th>
+              <th>설명</th>
+              <th>트리거 조건</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>휴면 고객 재활성화</td><td>N일 이상 상호작용 없는 고객</td><td>설정 가능한 일수 임계값</td></tr>
+            <tr><td>2</td><td>정체 상업 기회 추진</td><td>상업 기회가 특정 단계에 과도하게 체류</td><td>역대 평균 체류 시간 초과</td></tr>
+            <tr><td>3</td><td>고가치 상업 기회 주시</td><td>금액이 팀 평균 이상이고 성사 임박</td><td>예상 성과일 임박</td></tr>
+            <tr><td>4</td><td>기한 도래 작업 알림</td><td>오늘 기한 또는 기한 경과 작업</td><td>시간 트리거</td></tr>
+            <tr><td>5</td><td>방문 후 미팔로우업</td><td>방문 종료 후 작업 미생성</td><td>N일 내 팔로우업 액션 없음</td></tr>
+            <tr><td>6</td><td>방문 임박 준비</td><td>향후 7일 내 방문</td><td>시간 트리거</td></tr>
+            <tr><td>7</td><td>인기 이메일</td><td>AI가 고가치 문의로 판단</td><td>신뢰도 임계값 초과</td></tr>
+            <tr><td>8</td><td>부정 감성 경고</td><td>고객 커뮤니케이션에서 부정 추세 감지</td><td>감성 분석 하락</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="feature-card">
+        <h3>채택 곧 액션</h3>
+        <p>&#39;채택&#39;을 클릭하면 시스템이 자동으로 팔로우업 작업을 생성하거나, 상업 기회 단계를 진행하거나, 고객 주시 상태를 표시합니다. 해당 모듈로 수동 이동할 필요가 없습니다.</p>
+      </div>
+    </section>
+
+    <!-- ChatBI -->
+    <section class="section">
+      <h2>ChatBI 스마트 Q&amp;A</h2>
+      <p>자연어로 데이터를 조회하고 차트를 자동 생성</p>
+      <p style="font-size:15px; color:var(--text-secondary); line-height:1.85;">ChatBI는 SiliMind의 풀스크린 AI Q&amp;A 인터페이스로, ChatGPT 대화 인터페이스와 유사하지만 AI가 모든 CRM 비즈니스 데이터에 접근할 수 있습니다.</p>
+
+      <div class="feature-card">
+        <h3>자연어 쿼리</h3>
+        <p>SQL을 배우거나 데이터베이스 구조를 이해할 필요가 없습니다. 바로 물어보세요:</p>
+        <ul class="example-list">
+          <li>&#34;지난달 어떤 채널의 성과 금액이 가장 높았나요?&#34; → 막대 차트 자동 생성</li>
+          <li>&#34;장삼과 이사의 이번 달 상업 기회 전환율 비교&#34; → 비교 추세선 생성</li>
+          <li>&#34;이번 주 3일 이상 팔로우업되지 않은 상업 기회는?&#34; → 상업 기회 목록 반환</li>
+          <li>&#34;LinkedIn 채널과 WhatsApp 채널의 평균 객단가 차이는?&#34; → 비교 차트</li>
+        </ul>
+      </div>
+
+      <div class="feature-card">
+        <h3>데이터 곧 내보내기</h3>
+        <p>조회 결과를 원클릭 CSV/일괄 데이터 내보내기로 지원하여 주간 회의 보고나 경영진 보고에 바로 사용합니다.</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>임베디드 모드</h3>
+        <p>모든 페이지 오른쪽 하단에 AI 버블 아이콘이 있으며, 클릭하면 사이드 패널이 펼쳐집니다. AI가 현재 페이지 컨텍스트에 따라 답변합니다——상업 기회 관리 페이지에서는 데이터 질문을, 고객 상세 페이지에서는 대화 요약을 물어봅니다.</p>
+      </div>
+    </section>
+
+    <!-- 管理驾驶舱 -->
+    <section class="section">
+      <h2>관리 대시보드</h2>
+      <p>실시간 지표 + AI 경고, 의사결정이 더 이상 감에 의존하지 않습니다</p>
+      <p style="font-size:15px; color:var(--text-secondary); line-height:1.85;">관리 대시보드는 관리자/사장님 전용 홈페이지로, 영업·마케팅 담당자가 보는 Dashboard와 완전히 다릅니다.</p>
+
+      <div class="feature-card">
+        <h3>핵심 지표</h3>
+        <p>이번 달 총 매출, 영업 퍼널 전환율, 마케팅 투자와 ROI(플랫폼/채널/콘텐츠 제작 등 비용 입력 지원, 성과 금액÷투자 자동 계산), 리드와 성과 총량. 각 카드는 색상으로 전월 대비 추세를 표시합니다.</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>팀 실적 순위</h3>
+        <p>이번 달 성과 금액순 정렬 막대 차트. 호버하면 각 영업 담당자의 상업 기회 수, 평균 객단가, 전환율이 표시됩니다.</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>영업 퍼널</h3>
+        <p>리드→상업 기회→견적→성과의 수량과 전환율, 전월 동기 대비.</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>리드 확보 채널 효과</h3>
+        <p>원형 차트로 리드 소스 비중 표시(SEO 아티클/소셜 미디어/WhatsApp/WeChat/공식 홈페이지 문의/전시회/소개), 각 채널의 리드→성과 전환율.</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>AI 경고</h3>
+        <p>경영진의 주의가 필요한 사항: &#34;3개 고가치 상업 기회가 7일 이상 미진행&#34;, &#34;이번 달 리드 수 전월 대비 20% 감소&#34;, &#34;특정 영업 담당자의 응답 속도가 팀 평균 이하&#34;. AI는 관리자가 물어오기를 수동적으로 기다리지 않고 능동적으로 푸시합니다.</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>AI 사용량 투명</h3>
+        <p>8가지 AI 기능(제안 센터/계약 생성/메시지 분석/방문 회의록/지식 베이스/주제/콘텐츠 제작/ChatBI)별로 토큰 소비, 호출 횟수, 평균 소요 시간과 모델 분포를 통계하여 AI 투입 내역을 한눈에 확인합니다(비용은 사용 모델 가격으로 자체 계산).</p>
+      </div>
+    </section>
+
+    <!-- 商机健康度评分 -->
+    <section class="section">
+      <h2>상업 기회 건강도 점수</h2>
+      <p>5개 차원 자동 점수, 리스크 조기 발견</p>
+      <p style="font-size:15px; color:var(--text-secondary); line-height:1.85;">모든 상업 기회에 0-100점 건강도 점수가 자동 계산되며, 5개 차원을 종합합니다:</p>
+
+      <ul class="score-list">
+        <li><strong>커뮤니케이션 빈도</strong> — 최근 커뮤니케이션 빈도 vs 역대 평균</li>
+        <li><strong>감성 추세</strong>——커뮤니케이션 감성이 점점 긍정적인지 부정적인지</li>
+        <li><strong>단계 진행 속도</strong>——현재 단계 체류 시간 vs 역대 평균</li>
+        <li><strong>능동 연락 비율</strong>——고객이 우리에게 능동적으로 연락하는 비율 vs 우리가 고객을 찾는 비율</li>
+        <li><strong>금액 가중치</strong>——상업 기회 금액과 팀 평균 수준의 비율</li>
+      </ul>
+
+      <div class="feature-card">
+        <h3>색상 표시</h3>
+        <p>녹색(70-100) 건강, 노란색(40-69) 주시 필요, 적색(0-39) 경고. 건강도가 60 미만인 상업 기회는 자동으로 AI 상업 기회 진단을 트리거합니다——주요 문제(고객 침묵/가격 이의/경쟁사 언급 등 8가지), 권장 액션과 증거 제시; 정체 상업 기회는 동시에 영업 홈의 AI 제안 카드에 진입합니다.</p>
+      </div>
+    </section>
+
+    <!-- 模块打通 -->
+    <div class="integration-note">
+      <strong>AI 스마트 의사결정, 모든 모듈을 관통</strong><br><br>
+      AI 제안 시그널이 리드 풀, 상업 기회 칸반, 방문 관리, 고객 360° 프로필을 커버합니다. ChatBI로 마케팅 리드 확보와 영업 관리의 모든 데이터를 조회할 수 있습니다. 관리 대시보드가 모든 모듈의 지표와 경고를 집계합니다. 상업 기회 건강도 점수가 상업 기회 카드와 고객 프로필에 내장됩니다.<br><br>
+      AI는 별도의 모듈이 아니라, SiliMind 전체 플랫폼을 관통하는 인텔리전스 레이어입니다.
+    </div>
+
+    <!-- CTA -->
+    <section class="cta-section">
+      <h2>데이터가 당신의 팀을 위해 능동적으로 작동하게 하세요</h2>
+      <p>AI가 매일 비즈니스 데이터를 분석하고 의사결정 제안을 능동적으로 푸시합니다.</p>
+      <div class="cta-buttons" style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+        <a href="https://agent.silimind.net/register" class="btn-primary">Get Started →</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>© 2026 SiliMind 思理智能. All rights reserved. &nbsp;·&nbsp; WeChat: 18612418612 &nbsp;·&nbsp; <a href="mailto:micheal@silimind.net">micheal@silimind.net</a></footer>
+  <p style="text-align:center;font-size:12px;opacity:0.6;padding:0 32px 16px;">이 언어 버전은 기계 번역 보조이며, 불일치가 있을 경우 중국어 버전(루트)이 우선합니다.</p>
+</body>
+</html>

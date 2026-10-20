@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <title>AI Smart Decisions — SiliMind | All-in-One AI Platform for B2B Marketing &amp; Sales</title>
+  <meta name="description" content="AI analyzes all your business data daily and proactively tells you what to focus on, who to follow up with, and which strategy to adjust." />
+  <link rel="canonical" href="https://www.silimind.net/en/products/ai.html" />
+  <meta property="og:title" content="AI Smart Decisions — SiliMind" />
+  <meta property="og:description" content="AI analyzes all your business data daily and proactively tells you what to focus on." />
+  <meta property="og:url" content="https://www.silimind.net/en/products/ai.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="SiliMind" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "AI Smart Decisions — SiliMind",
+    "description": "8 AI suggestion signal types, ChatBI natural-language queries, the management dashboard, and opportunity health scoring. The SiliMind AI Smart Decisions module puts data to work proactively.",
+    "url": "https://www.silimind.net/products/ai.html",
+    "datePublished": "2026-07-31",
+    "author": {
+      "@type": "Organization",
+      "name": "SiliMind"
+    }
+  }
+  </script>
+  <style>
+    :root {
+      --bg-primary: #0a0a0f;
+      --bg-secondary: #12121a;
+      --bg-tertiary: #181824;
+      --accent: #6366f1;
+      --accent-hover: #4f46e5;
+      --accent-light: #818cf8;
+      --accent-glow: rgba(99,102,241,0.15);
+      --text-primary: #f0f0f5;
+      --text-secondary: rgba(240,240,245,0.6);
+      --text-tertiary: rgba(240,240,245,0.4);
+      --border: rgba(99,102,241,0.08);
+      --border-hover: rgba(99,102,241,0.2);
+      --font: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', 'PingFang SC', 'Noto Sans SC', sans-serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font); background: var(--bg-primary); color: var(--text-primary); line-height: 1.7; min-height: 100vh; }
+    a { color: var(--accent-light); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: #fff; }
+    strong { color: var(--text-primary); font-weight: 600; }
+
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(10,10,15,0.92); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); height: 64px; }
+    .nav-inner { max-width: 1120px; margin: 0 auto; padding: 0 32px; height: 100%; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { font-size: 20px; font-weight: 700; color: var(--accent-light); text-decoration: none; letter-spacing: 0.5px; }
+    .nav-links { list-style: none; display: flex; gap: 28px; align-items: center; }
+    .nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--text-primary); }
+    .nav-links a.active { color: var(--accent-light); }
+    .nav-cta { padding: 8px 20px; font-size: 13px; background: var(--accent); color: #fff !important; border-radius: 6px; font-weight: 600; text-decoration: none; transition: all 0.2s; }
+    .nav-cta:hover { background: var(--accent-hover); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(99,102,241,0.3); }
+
+    .page { max-width: 900px; margin: 0 auto; padding: 120px 32px 60px; }
+    .page h1 { font-size: 38px; font-weight: 700; line-height: 1.25; margin-bottom: 16px; background: linear-gradient(135deg, #6366f1, #a78bfa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .page-subtitle { font-size: 17px; color: var(--text-secondary); line-height: 1.8; margin-bottom: 48px; max-width: 720px; }
+
+    .section { margin-bottom: 48px; }
+    .section h2 { font-size: 28px; font-weight: 700; margin-bottom: 8px; color: var(--text-primary); padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+    .section h2 + p { font-size: 15px; color: var(--text-secondary); margin-top: 12px; margin-bottom: 24px; line-height: 1.8; }
+
+    .feature-card { border: 1px solid var(--border); border-radius: 12px; padding: 24px 28px; margin-bottom: 20px; background: var(--bg-secondary); }
+    .feature-card h3 { font-size: 17px; font-weight: 700; color: var(--accent-light); margin-bottom: 10px; }
+    .feature-card p { font-size: 15px; color: var(--text-secondary); line-height: 1.85; }
+
+    /* Table */
+    .data-table-wrapper { overflow-x: auto; margin: 20px 0 24px; border-radius: 12px; border: 1px solid var(--border); }
+    .data-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    .data-table thead th { background: var(--bg-tertiary); color: var(--accent-light); font-weight: 600; padding: 14px 16px; text-align: left; border-bottom: 2px solid var(--border-hover); white-space: nowrap; }
+    .data-table tbody td { padding: 12px 16px; color: var(--text-secondary); border-bottom: 1px solid var(--border); line-height: 1.6; }
+    .data-table tbody tr:hover { background: var(--accent-glow); }
+    .data-table tbody tr:last-child td { border-bottom: none; }
+    .data-table td:first-child, .data-table th:first-child { width: 40px; text-align: center; }
+
+    .example-list { list-style: none; padding: 0; margin: 12px 0 20px; }
+    .example-list li { font-size: 15px; color: var(--text-secondary); line-height: 1.85; padding: 8px 0 8px 20px; position: relative; border-bottom: 1px solid var(--border); }
+    .example-list li:last-child { border-bottom: none; }
+    .example-list li::before { content: ''; position: absolute; left: 0; top: 16px; width: 6px; height: 6px; background: var(--accent); border-radius: 50%; }
+
+    .score-list { list-style: none; padding: 0; margin: 12px 0 24px; }
+    .score-list li { font-size: 15px; color: var(--text-secondary); line-height: 1.85; padding: 10px 0 10px 20px; position: relative; border-bottom: 1px solid var(--border); }
+    .score-list li:last-child { border-bottom: none; }
+    .score-list li::before { content: ''; position: absolute; left: 0; top: 18px; width: 8px; height: 8px; border-radius: 50%; }
+    .score-list li:nth-child(1)::before { background: var(--accent); }
+    .score-list li:nth-child(2)::before { background: #a78bfa; }
+    .score-list li:nth-child(3)::before { background: #f59e0b; }
+    .score-list li:nth-child(4)::before { background: #10b981; }
+    .score-list li:nth-child(5)::before { background: #ec4899; }
+
+    .cta-section { background: linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary)); border: 1px solid var(--border-hover); border-radius: 16px; padding: 48px; text-align: center; margin-bottom: 48px; }
+    .cta-section h2 { font-size: 24px; font-weight: 700; margin-bottom: 12px; border: none; }
+    .cta-section p { font-size: 15px; color: var(--text-secondary); margin-bottom: 28px; }
+    .btn-primary { display: inline-block; padding: 14px 32px; border-radius: 8px; background: var(--accent); color: #fff; text-decoration: none; font-size: 15px; font-weight: 600; transition: all 0.2s; }
+    .btn-primary:hover { background: var(--accent-hover); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(99,102,241,0.3); color: #fff; }
+
+    .integration-note { font-size: 15px; color: var(--text-secondary); line-height: 2; padding: 32px; border: 1px solid var(--border); border-radius: 12px; background: var(--bg-secondary); margin-bottom: 48px; }
+
+    footer { text-align: center; padding: 32px; color: var(--text-tertiary); font-size: 13px; border-top: 1px solid var(--border); }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .page { padding: 100px 20px 40px; }
+      .page h1 { font-size: 28px; }
+      .section h2 { font-size: 22px; }
+      .feature-card { padding: 20px; }
+      .data-table { font-size: 12px; }
+      .data-table thead th, .data-table tbody td { padding: 10px 12px; }
+      .cta-section { padding: 32px 20px; }
+    }
+  </style>
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJ7HH4824R"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RJ7HH4824R');
+  </script>
+  <link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/products/ai.html">
+  <link rel="alternate" hreflang="en" href="https://www.silimind.net/en/products/ai.html">
+  <link rel="alternate" hreflang="ja-JP" href="https://www.silimind.net/ja/products/ai.html">
+  <link rel="alternate" hreflang="ko-KR" href="https://www.silimind.net/ko/products/ai.html">
+  <link rel="alternate" hreflang="x-default" href="https://www.silimind.net/products/ai.html">
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/en/" class="nav-logo">SiliMind</a>
+      <ul class="nav-links">
+        <li><a href="/en/products.html" class="active">Products</a></li>
+        <li><a href="/en/solutions.html">Solutions</a></li>
+        <li><a href="/en/cases.html">Customers</a></li>
+        <li><a href="/en/blog/">Blog</a></li>
+        <li><a href="/en/about.html">About Us</a></li>
+        <li class="lang-switch" style="opacity:.75;font-size:13px;list-style:none"><a href="https://www.silimind.net/products/ai.html">中文</a> · EN · <a href="https://www.silimind.net/ja/products/ai.html">日本語</a> · <a href="https://www.silimind.net/ko/products/ai.html">한국어</a></li>
+      </ul>
+      <a href="https://agent.silimind.net/register" class="nav-cta">Get Started</a>
+    </div>
+  </nav>
+
+  <main class="page">
+    <h1>AI Smart Decisions</h1>
+    <p class="page-subtitle">Let data find you.</p>
+
+    <p style="font-size:16px; color:var(--text-secondary); line-height:2; margin-bottom:48px;">A B2B manager&#39;s daily reality: decisions made on finance&#39;s monthly report or the sales weekly meeting, with stale incomplete data. The sales team: facing a flood of customers and opportunities every day, unsure which to handle first. The SiliMind AI Smart Decisions module changes that — AI analyzes all your business data every day and proactively tells you what to watch, who to follow up with, and which strategy to adjust.</p>
+
+    <!-- AI 建议中心 -->
+    <section class="section">
+      <h2>AI Suggestion Center</h2>
+      <p>8 signal types covering every sales scenario</p>
+      <p style="font-size:15px; color:var(--text-secondary); line-height:1.85;">The AI Suggestion Center analyzes all new messages and business data daily, showing 3-5 suggestion cards on the sales home page. Sorted by priority, each card has Accept and Ignore buttons.</p>
+
+      <p style="font-size:16px; font-weight:600; color:var(--text-primary); margin: 24px 0 16px;">The 8 suggestion signal types:</p>
+
+      <div class="data-table-wrapper">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Signal</th>
+              <th>Description</th>
+              <th>Trigger</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Dormant customer reactivation</td><td>Customers with no interaction for N+ days</td><td>Configurable day threshold</td></tr>
+            <tr><td>2</td><td>Stalled opportunity nudge</td><td>Opportunity dwelling too long in one stage</td><td>Exceeds the historical average dwell time</td></tr>
+            <tr><td>3</td><td>High-value opportunity alert</td><td>Value above team average and nearing close</td><td>Approaching the expected close date</td></tr>
+            <tr><td>4</td><td>Due task reminder</td><td>Tasks due today or overdue</td><td>Time-triggered</td></tr>
+            <tr><td>5</td><td>Un-followed visit</td><td>No task created after a visit</td><td>No follow-up action within N days</td></tr>
+            <tr><td>6</td><td>Upcoming visit prep</td><td>Visits in the next 7 days</td><td>Time-triggered</td></tr>
+            <tr><td>7</td><td>Hot email detection</td><td>AI judged a high-value inquiry</td><td>Confidence above threshold</td></tr>
+            <tr><td>8</td><td>Negative sentiment alert</td><td>Negative trend detected in customer communication</td><td>Sentiment analysis declining</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="feature-card">
+        <h3>Accept means action</h3>
+        <p>Click Accept and the system automatically creates a follow-up task, advances the opportunity stage, or marks the customer for attention. No manual jumping to the relevant module.</p>
+      </div>
+    </section>
+
+    <!-- ChatBI -->
+    <section class="section">
+      <h2>ChatBI Smart Q&amp;A</h2>
+      <p>Query data in natural language; charts auto-generated</p>
+      <p style="font-size:15px; color:var(--text-secondary); line-height:1.85;">ChatBI is SiliMind&#39;s full-screen AI Q&amp;A interface — like a ChatGPT conversation, but with access to all your CRM business data.</p>
+
+      <div class="feature-card">
+        <h3>Natural-language queries</h3>
+        <p>No need to learn SQL or understand the database schema. Just ask:</p>
+        <ul class="example-list">
+          <li>&#34;Which channel had the highest deal value last month?&#34; → bar chart auto-generated</li>
+          <li>&#34;Compare Zhang&#39;s and Li&#39;s conversion rates this month&#34; → comparison trend lines</li>
+          <li>&#34;Which opportunities haven&#39;t been touched in 3+ days this week?&#34; → opportunity list</li>
+          <li>&#34;What&#39;s the average deal size difference between LinkedIn and WhatsApp channels?&#34; → comparison chart</li>
+        </ul>
+      </div>
+
+      <div class="feature-card">
+        <h3>Export-Ready</h3>
+        <p>Query results support one-click CSV/bulk export, ready for weekly meetings or management reports.</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>Embedded Mode</h3>
+        <p>An AI bubble icon sits in the bottom-right of every page; click to expand the side panel. AI answers based on the current page context — ask data questions on the opportunities page, conversation summaries on the customer detail page.</p>
+      </div>
+    </section>
+
+    <!-- 管理驾驶舱 -->
+    <section class="section">
+      <h2>Management Dashboard</h2>
+      <p>Real-time metrics + AI alerts — decisions no longer run on gut feeling</p>
+      <p style="font-size:15px; color:var(--text-secondary); line-height:1.85;">The management dashboard is the exclusive home page for admins/bosses — completely different from what sales and marketing see.</p>
+
+      <div class="feature-card">
+        <h3>Core Metrics</h3>
+        <p>Monthly revenue, funnel conversion rates, marketing spend vs. ROI (enter platform/channel/content costs and it auto-computes deal value ÷ spend), total leads and deals. Each card shows month-over-month trends in color.</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>Team Leaderboard</h3>
+        <p>A bar chart sorted by monthly deal value. Hover shows each rep&#39;s opportunity count, average deal size, and conversion rate.</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>Sales Funnel</h3>
+        <p>Leads → opportunities → quotes → deals, with counts and conversion rates vs. the same period last month.</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>Channel Performance</h3>
+        <p>A pie chart of lead source share (SEO articles / social / WhatsApp / WeChat / website inquiries / trade shows / referrals) and each channel&#39;s lead-to-deal conversion rate.</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>AI Alerts</h3>
+        <p>Items needing management attention: &#34;3 high-value opportunities untouched for 7+ days&#34;, &#34;Lead volume down 20% month-over-month&#34;, &#34;A rep&#39;s response speed below the team average&#34;. AI doesn&#39;t wait for managers to ask — it pushes proactively.</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>Transparent AI Usage</h3>
+        <p>Token consumption, call counts, average latency, and model mix tracked across 8 AI feature categories (suggestion center / contracts / message analysis / visit notes / knowledge base / topics / content creation / ChatBI), so you can see exactly where AI spend goes (costs are self-calculated at each model&#39;s pricing).</p>
+      </div>
+    </section>
+
+    <!-- 商机健康度评分 -->
+    <section class="section">
+      <h2>Opportunity Health Score</h2>
+      <p>Auto-scored across 5 dimensions; risks surface early</p>
+      <p style="font-size:15px; color:var(--text-secondary); line-height:1.85;">Every opportunity gets an automatic 0-100 health score, combining 5 dimensions:</p>
+
+      <ul class="score-list">
+        <li><strong>Contact frequency</strong> — recent frequency vs. historical average</li>
+        <li><strong>Sentiment trend</strong> — is communication getting more positive or negative</li>
+        <li><strong>Stage velocity</strong> — dwell time in the current stage vs. historical average</li>
+        <li><strong>Inbound ratio</strong> — customer-initiated vs. rep-initiated contact</li>
+        <li><strong>Value weighting</strong> — opportunity value vs. the team average</li>
+      </ul>
+
+      <div class="feature-card">
+        <h3>Color Coding</h3>
+        <p>Green (70-100) healthy, yellow (40-69) needs attention, red (0-39) alert. Opportunities below 60 automatically trigger AI opportunity diagnosis — the main issues (customer silence / price objections / competitor mentions, 8 categories), suggested actions, and evidence; stalled opportunities also appear as AI suggestion cards on the sales home page.</p>
+      </div>
+    </section>
+
+    <!-- 模块打通 -->
+    <div class="integration-note">
+      <strong>AI Smart Decisions, running through every module</strong><br><br>
+      AI suggestion signals cover the lead pool, opportunity board, visit management, and customer 360° profiles. ChatBI queries all marketing-acquisition and sales-management data. The management dashboard aggregates every module&#39;s metrics and alerts. Opportunity health scores are embedded in opportunity cards and customer profiles.<br><br>
+      AI isn&#39;t a separate module — it&#39;s the intelligence layer running through the entire SiliMind platform.
+    </div>
+
+    <!-- CTA -->
+    <section class="cta-section">
+      <h2>Put data to work for your team — proactively</h2>
+      <p>AI analyzes your business data daily and pushes decision suggestions proactively.</p>
+      <div class="cta-buttons" style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+        <a href="https://agent.silimind.net/register" class="btn-primary">Get Started →</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>© 2026 SiliMind 思理智能. All rights reserved. &nbsp;·&nbsp; WeChat: 18612418612 &nbsp;·&nbsp; <a href="mailto:micheal@silimind.net">micheal@silimind.net</a></footer>
+  <p style="text-align:center;font-size:12px;opacity:0.6;padding:0 32px 16px;">This language version is machine-assisted translation. In case of any discrepancy, the Chinese version (root site) prevails.</p>
+</body>
+</html>
