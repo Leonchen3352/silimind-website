@@ -399,12 +399,6 @@
   </url>
   <!-- Blog articles — 单语言（中文），发布新文章时在此添加 -->
   <url>
-    <loc>https://www.silimind.net/blog/private-deployment-marketing-crm-guide</loc>
-    <lastmod>2026-10-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://www.silimind.net/blog/private-deployment-b2b-platform-guide-2026</loc>
     <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>

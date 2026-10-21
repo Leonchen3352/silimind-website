@@ -1,4 +1,11 @@
 {
   "framework": null,
-  "cleanUrls": true
+  "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/blog/private-deployment-marketing-crm-guide",
+      "destination": "/blog/private-deployment-b2b-platform-guide-2026",
+      "permanent": true
+    }
+  ]
 }
