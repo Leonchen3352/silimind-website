@@ -355,7 +355,7 @@
   </url>
   <url>
     <loc>https://www.silimind.net/blog/</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/blog/"/>
@@ -398,6 +398,12 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/blog/"/>
   </url>
   <!-- Blog articles — 单语言（中文），发布新文章时在此添加 -->
+  <url>
+    <loc>https://www.silimind.net/blog/ai-content-repurposing-workflow</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
   <url>
     <loc>https://www.silimind.net/blog/b2b-content-playbook-export-teams</loc>
     <lastmod>2026-10-22</lastmod>
