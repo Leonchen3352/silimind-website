@@ -6,6 +6,11 @@
       "source": "/blog/private-deployment-marketing-crm-guide",
       "destination": "/blog/private-deployment-b2b-platform-guide-2026",
       "permanent": true
+    },
+    {
+      "source": "/blog/lead-routing-rules-for-sales-teams",
+      "destination": "/blog/lead-routing-for-telesales-teams",
+      "permanent": true
     }
   ]
 }
