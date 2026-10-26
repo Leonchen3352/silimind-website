@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <title>合同从沟通记录到 PDF：销售最不愿意干的活，怎么交给 AI - SiliMind Blog</title>
+  <meta name="description" content="销售最头疼的合同活：条款散在五处、字段人肉抄、模板自己坑人、审批签字分离、版本靠命名。AI 从沟通记录提取字段填进模板直接导出 PDF，报价单导出走 Word 和 Excel。附 5 卡点对照表和今天就能做的 3 件事。" />
+  <link rel="canonical" href="https://www.silimind.net/blog/contract-chat-to-pdf-ai-workflow" />
+  <meta property="og:title" content="合同从沟通记录到 PDF：销售最不愿意干的活，怎么交给 AI - SiliMind Blog" />
+  <meta property="og:description" content="销售最头疼的合同活：条款散在五处、字段人肉抄、模板自己坑人、审批签字分离、版本靠命名。AI 从沟通记录提取字段填进模板直接导出 PDF，报价单导出走 Word 和 Excel。附 5 卡点对照表和今天就能做的 3 件事。" />
+  <meta property="og:url" content="https://www.silimind.net/blog/contract-chat-to-pdf-ai-workflow" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:site_name" content="SiliMind" />
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJ7HH4824R"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RJ7HH4824R');
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "合同从沟通记录到 PDF：销售最不愿意干的活，怎么交给 AI",
+  "description": "销售最头疼的合同活：条款散在五处、字段人肉抄、模板自己坑人、审批签字分离、版本靠命名。AI 从沟通记录提取字段填进模板直接导出 PDF，报价单导出走 Word 和 Excel。附 5 卡点对照表和今天就能做的 3 件事。",
+  "datePublished": "2026-10-26",
+  "author": {
+    "@type": "Organization",
+    "name": "SiliMind"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "SiliMind",
+    "url": "https://www.silimind.net"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.silimind.net/blog/contract-chat-to-pdf-ai-workflow"
+  }
+}
+  </script>
+  <style>
+    :root {
+      --bg-primary: #0a0a0f;
+      --bg-secondary: #12121a;
+      --bg-card: #16161f;
+      --accent: #6366f1;
+      --accent-light: #818cf8;
+      --text-primary: #f0f0f5;
+      --text-secondary: rgba(240,240,245,0.6);
+      --border: rgba(99,102,241,0.08);
+      --border-hover: rgba(99,102,241,0.25);
+      --font: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'PingFang SC', 'Noto Sans SC', sans-serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* Nav */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(10,10,15,0.9);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      height: 64px;
+    }
+    .nav-inner {
+      max-width: 1100px; margin: 0 auto; padding: 0 32px;
+      height: 100%; display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      font-size: 20px; font-weight: 700; color: var(--accent-light);
+      text-decoration: none; letter-spacing: 1px;
+    }
+    .nav-links { list-style: none; display: flex; gap: 32px; }
+    .nav-links a {
+      color: var(--text-secondary); text-decoration: none; font-size: 14px;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--text-primary); }
+
+    /* Article */
+    .article-container {
+      max-width: 760px; margin: 0 auto;
+      padding: 120px 32px 80px;
+    }
+    .article-header {
+      margin-bottom: 40px;
+    }
+    .article-header h1 {
+      font-size: 32px; font-weight: 700; line-height: 1.3;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #6366f1, #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .article-meta {
+      font-size: 14px; color: var(--text-secondary);
+    }
+    .article-meta time {
+      margin-right: 16px;
+    }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      color: var(--accent-light); text-decoration: none; font-size: 14px;
+      margin-bottom: 24px; transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--text-primary); }
+
+    /* Article body */
+    .article-body h2 {
+      font-size: 24px; font-weight: 600; margin: 40px 0 16px;
+      color: var(--text-primary);
+    }
+    .article-body h3 {
+      font-size: 20px; font-weight: 600; margin: 32px 0 12px;
+      color: var(--text-primary);
+    }
+    .article-body p {
+      font-size: 16px; line-height: 1.8; color: var(--text-secondary);
+      margin-bottom: 20px;
+    }
+    .article-body ul, .article-body ol {
+      margin-bottom: 20px; padding-left: 24px; color: var(--text-secondary);
+    }
+    .article-body li {
+      margin-bottom: 8px; font-size: 16px; line-height: 1.8;
+    }
+    .article-body blockquote {
+      border-left: 3px solid var(--accent);
+      padding: 16px 24px;
+      margin: 24px 0;
+      background: var(--bg-secondary);
+      border-radius: 0 8px 8px 0;
+      color: var(--text-secondary);
+      font-size: 15px;
+    }
+    .article-body code {
+      background: var(--bg-secondary);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 14px;
+      color: var(--accent-light);
+    }
+    .article-body pre {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px 24px;
+      overflow-x: auto;
+      margin-bottom: 20px;
+    }
+    .article-body pre code {
+      background: none; padding: 0; font-size: 14px;
+      color: var(--text-primary);
+    }
+    .article-body img {
+      max-width: 100%; border-radius: 8px; margin: 24px 0;
+    }
+    .article-body a {
+      color: var(--accent-light); text-decoration: underline;
+      text-decoration-color: rgba(129,140,248,0.3);
+      transition: text-decoration-color 0.2s;
+    }
+    .article-body a:hover {
+      text-decoration-color: var(--accent-light);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center; padding: 40px 32px;
+      border-top: 1px solid var(--border);
+      color: var(--text-secondary); font-size: 13px;
+    }
+
+    @media (max-width: 768px) {
+      .article-container { padding: 100px 16px 60px; }
+      .article-header h1 { font-size: 26px; }
+      .article-body h2 { font-size: 20px; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">SiliMind</a>
+      <ul class="nav-links">
+        <li><a href="/blog/" class="active">Blog</a></li>
+        <li><a href="/#features">核心能力</a></li>
+        <li><a href="/solutions.html">解决方案</a></li>
+        <li><a href="/about.html">关于我们</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <article class="article-container">
+    <a href="/blog/" class="back-link">← 返回博客</a>
+    <header class="article-header">
+      <h1>合同从沟通记录到 PDF：销售最不愿意干的活，怎么交给 AI</h1>
+      <div class="article-meta">
+        <time datetime="2026-10-26">2026 年 10 月 26 日</time>
+        <span>SiliMind</span>
+      </div>
+    </header>
+    <div class="article-body">
+      <p>一个做工业配件的销售，跟客户谈了 3 周，条款散在微信、邮件、报价单里。客户催签字，他今天下午要交出一份能签字的合同 PDF，还得走内部审批。难的是他不知道该信哪一份记录，也不知道复制粘贴漏了哪一条。</p>
+      <p>先说明，这是典型场景还原，不是哪一家客户的真实案例。</p>
+      <p>合同出错，根子常常不在法务抠得严。真正的原因在于沟通里的事实没被结构化地搬到纸面上。「记错了」是表象，「同一件事要人肉抄三遍」才是原因。</p>
+      <h2>客户催签字，手上有五份互相打架的记录</h2>
+      <p>交期在微信里说定，付款方式在邮件里改过一次，价格取报价单。质保是电话里口头答应过的，规格是客户自己发来的文件。五个来源，没有一份是完整的。</p>
+      <p>从「跟客户谈好的那几句话」到「能签字的 PDF」，中间要过五道手。每一道都不是技术难题，全是抄写和搬运。</p>
+      <table>
+  <thead>
+    <tr><th>卡点</th><th>以前怎么做</th><th>现在怎么改</th><th>判断做对了没有</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>条款散在五处</td><td>翻聊天记录找交期，再翻邮件找付款方式</td><td>AI 从沟通记录提取字段，填进合同模板</td><td>客户问「交期到底是哪天」，10 秒内指到合同第 3 条</td></tr>
+    <tr><td>字段靠手抄</td><td>把 Word 里的客户名删掉，再把报价单上的价贴过去</td><td>占位符由抽取结果带值，不用手抄</td><td>全文搜客户名，搜不到上一家公司的名字</td></tr>
+    <tr><td>模板自己会坑人</td><td>从上一家客户的文档改，改完忘了删默认条款</td><td>每次从干净模板起</td><td>合同第一句还是「兹有甲方」，甲方那栏是空的</td></tr>
+    <tr><td>审批与签字分在两处</td><td>审批走邮件，签字走微信</td><td>合同状态留在系统里</td><td>问一句「这版走到哪一步了」，不用翻聊天记录</td></tr>
+    <tr><td>交出去的是哪一版</td><td>桌面存了三个文件，名字都叫「合同最终版」</td><td>合同能导出 PDF，版本靠命名约定</td><td>手上只剩一个 PDF，客户收到的就是同一份</td></tr>
+  </tbody>
+</table>
+      <h2>条款散在五处，字段还得人肉抄一遍</h2>
+      <p>抄第一个字段，你去微信里翻交期。抄第二个，去邮件里找付款方式。抄第三个，回到报价单上取价格。抄到第四个，你已经不记得第一个是从哪句原话里摘的了。</p>
+      <p>说实话，这类活总是压在销售身上。InsideSales 与 XANT 的研究（Forbes 2018-02-15 刊载）里，721 名销售自报只有 35.2% 的时间真正在卖东西。剩下那部分里有相当一块，就是这种搬事实的活。</p>
+      <p>SiliMind 把这条路径接起来了：AI 从沟通记录提取字段，填进模板之后渲染成合同。接口测试 5 项全过，浏览器里的操作流程也走通了。</p>
+      <p>模板这边支持 Word 和 Excel。上传一份 .docx 或 .xlsx，系统会把里面写成 <code>{{占位符}}</code> 形式的字段读出来，用抽取到的值填进去就能下载回来。读文件用的是 python-docx 和 openpyxl。我们做模板填充时，13 个占位符是一个一个验过的。这一侧 3 个接口，同一个合同里手写字段和文件占位符可以并存。</p>
+      <p>权限上，合同这块销售自己能建也能用，公司管理员也一样。市场同事看不到这一块。</p>
+      <p>同一套做法用在拜访录音上，录音转文字之后抽 13 个字段存进客户时间线（<a href="https://www.silimind.net/blog/sales-visit-recording-ai-notes">拜访录音转 13 字段纪要</a>）。合同字段的上游就是这些记录。销售那边，这一步对应的阶段叫「报价中」。客户卡在这里，整条商机跟着停。</p>
+      <h2>抄完之后，模板自己还会坑你</h2>
+      <p>老实说，这一段最容易出事。没人会提醒你。</p>
+      <p>模板里写着「兹有甲方」，甲方的名字是空的。你从上一家客户的合同改，改完交出去，客户第一眼看到的是空着的甲方。</p>
+      <p>模板升级过之后，老字段删了，Word 里那个 <code>{{ }}</code> 还留着。填值的时候它没被填上，导出来的 PDF 上就留着一串 <code>{{ }}</code>。这事只有导出之后翻一遍才发现。</p>
+      <p>还有单位。系统里报价单的币种默认美元，合同的默认人民币。从报价单把金额搬进合同就不能只搬数字。金额、币种、单位，这三样得一起过一遍。</p>
+      <p>说到多币种，得说清楚它到哪一步为止。报价单、商机、合同这三个对象都带币种字段，看板按币种分组，美元和人民币不混在一起加。但它不做自动汇率换算。美元报价单变成人民币合同，系统不会替你折算，汇率和口径都得你自己交代清楚。</p>
+      <h2>审批在系统里，签字在系统外</h2>
+      <p>我认为审批和签字得分开看。合同建好之后，状态是 <code>pending_approval</code>，意思是它还在公司内部审批流程里。</p>
+      <p>这里容易误会的是，导出 PDF 跟审批没关系。文件能导出，不代表这份合同可以对外发，能不能发给客户取决于内部审批走到哪一步。</p>
+      <p>签字本身不在系统里发生。客户在哪儿签、扫描件怎么回来，是你们自己的约定。系统不接收签字回传，「这份是不是最终版」说到底得靠人和约定回答。</p>
+      <h2>交出去的那份，得说得清是哪一版</h2>
+      <p>在 SiliMind 里，合同导出 PDF 是通的。报价单的导出还只能走 Word 和 Excel，PDF 那条路没通。这两件事得分清楚。</p>
+      <p>版本这件事，系统这头没替你解决。合同流转几轮，名字不换，桌面上的「合同」「合同2」「合同最终版」长得一模一样。你能做的，是把导出后的命名定成一条死规矩，客户简称加日期加版本号。麻烦，但比事后问清楚强。</p>
+      <h2>一天之内能改的三件事</h2>
+      <p>先做最小的一件：把你常用的合同模板的占位符列成一张表。系统这边验过的是 3 个接口、13 个占位符，你的模板不一定这个数。每行写三列，字段名、通常来自哪份记录、最容易错成什么。这张表的价值不在模板，在后面两次核对。</p>
+      <p>还有一件跟币种有关：报价单上的金额进合同，币种和单位必须一起重写，不能只改数字。</p>
+      <p>再一件是命名。导出之后按客户简称加日期加版本号改名，规则写下来贴在能看见的地方。</p>
+      <p>坦白讲，我觉得最小的那一件收益最大，剩下两件加起来也就半小时。</p>
+      <h2>这套东西不适合谁</h2>
+      <p>三类情况说在前头。</p>
+      <p>手写合同、扫描件、图片形式的合同，目前不在这套流程里。现在能处理的是 .docx 和 .xlsx，以及从沟通记录里抽字段。</p>
+      <p>模板本身写错了，系统不管。默认条款没删、单位错、占位符残留，这些都得你自己看。</p>
+      <p>PDF 导出了也不等于可以对外发。审批走没走完是另一件事。</p>
+      <p>还有一层，抽字段是把事实搬到纸面上，不是替你决定条款。条款该不该签，还是你和法务的事。</p>
+      <h2>今天晚上就能做的一件事</h2>
+      <p>打开你最近签过的那份合同模板，把里面所有写成 <code>{{ }}</code> 的字段数一遍，抄到一张表里。每行三列，字段名、来自哪份记录、最容易错成什么。20 分钟，不用注册任何工具。</p>
+      <p>表填完你会发现两件事。能直接抄的字段没几个。上次真的抄错的那一条，大概率就在这张表上。</p>
+      <p><a href="https://www.silimind.net/">SiliMind 官网</a>里有部署形态和功能边界的完整说明，看完再决定投不投。</p>
+    </div>
+  </article>
+
+
+  <footer>
+    <p>© 2026 SiliMind. All rights reserved. &nbsp;·&nbsp; 微信：18612418612 &nbsp;·&nbsp; <a href="mailto:micheal@silimind.net">micheal@silimind.net</a></p>
+  </footer>
+</body>
+</html>
