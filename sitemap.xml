@@ -1,406 +1,430 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <!-- 多语言页面：根(中文 zh-CN) + /en/ + /ja/ + /ko/，x-default→根 -->
+  <!-- 多语言页面：根(中文 zh-CN) + /en/ + /ja/ + /ko/，x-default→根；URL 取自各页实际 canonical/hreflang -->
   <url>
     <loc>https://www.silimind.net/</loc>
-    <lastmod>2026-10-19</lastmod>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.neten/"/>
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.netja/"/>
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.netko/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.net/en/"/>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.net/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.net/ko/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/"/>
   </url>
   <url>
-    <loc>https://www.silimind.neten/</loc>
-    <lastmod>2026-10-19</lastmod>
+    <loc>https://www.silimind.net/en/</loc>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.neten/"/>
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.netja/"/>
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.netko/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.net/en/"/>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.net/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.net/ko/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/"/>
   </url>
   <url>
-    <loc>https://www.silimind.netja/</loc>
-    <lastmod>2026-10-19</lastmod>
+    <loc>https://www.silimind.net/ja/</loc>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.neten/"/>
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.netja/"/>
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.netko/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.net/en/"/>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.net/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.net/ko/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/"/>
   </url>
   <url>
-    <loc>https://www.silimind.netko/</loc>
-    <lastmod>2026-10-19</lastmod>
+    <loc>https://www.silimind.net/ko/</loc>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.neten/"/>
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.netja/"/>
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.netko/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.net/en/"/>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.net/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.net/ko/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/"/>
   </url>
   <url>
-    <loc>https://www.silimind.net/products.html</loc>
-    <lastmod>2026-10-19</lastmod>
+    <loc>https://www.silimind.net/products</loc>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/products.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.neten/products.html"/>
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.netja/products.html"/>
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.netko/products.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/products.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/products"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.net/en/products"/>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.net/ja/products"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.net/ko/products"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/products"/>
   </url>
   <url>
-    <loc>https://www.silimind.neten/products.html</loc>
-    <lastmod>2026-10-19</lastmod>
+    <loc>https://www.silimind.net/en/products</loc>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/products.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.neten/products.html"/>
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.netja/products.html"/>
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.netko/products.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/products.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/products"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.net/en/products"/>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.net/ja/products"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.net/ko/products"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/products"/>
   </url>
   <url>
-    <loc>https://www.silimind.netja/products.html</loc>
-    <lastmod>2026-10-19</lastmod>
+    <loc>https://www.silimind.net/ja/products</loc>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/products.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.neten/products.html"/>
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.netja/products.html"/>
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.netko/products.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/products.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/products"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.net/en/products"/>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.net/ja/products"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.net/ko/products"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/products"/>
   </url>
   <url>
-    <loc>https://www.silimind.netko/products.html</loc>
-    <lastmod>2026-10-19</lastmod>
+    <loc>https://www.silimind.net/ko/products</loc>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/products.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.neten/products.html"/>
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.netja/products.html"/>
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.netko/products.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/products.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/products"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.net/en/products"/>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.net/ja/products"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.net/ko/products"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/products"/>
   </url>
   <url>
-    <loc>https://www.silimind.net/products/sales.html</loc>
-    <lastmod>2026-10-19</lastmod>
+    <loc>https://www.silimind.net/products/sales</loc>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/products/sales.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.neten/products/sales.html"/>
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.netja/products/sales.html"/>
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.netko/products/sales.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/products/sales.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/products/sales"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.net/en/products/sales"/>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.net/ja/products/sales"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.net/ko/products/sales"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/products/sales"/>
   </url>
   <url>
-    <loc>https://www.silimind.neten/products/sales.html</loc>
-    <lastmod>2026-10-19</lastmod>
+    <loc>https://www.silimind.net/en/products/sales</loc>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/products/sales.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.neten/products/sales.html"/>
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.netja/products/sales.html"/>
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.netko/products/sales.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/products/sales.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/products/sales"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.net/en/products/sales"/>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.net/ja/products/sales"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.net/ko/products/sales"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/products/sales"/>
   </url>
   <url>
-    <loc>https://www.silimind.netja/products/sales.html</loc>
-    <lastmod>2026-10-19</lastmod>
+    <loc>https://www.silimind.net/ja/products/sales</loc>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/products/sales.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.neten/products/sales.html"/>
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.netja/products/sales.html"/>
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.netko/products/sales.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/products/sales.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/products/sales"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.net/en/products/sales"/>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.net/ja/products/sales"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.net/ko/products/sales"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/products/sales"/>
   </url>
   <url>
-    <loc>https://www.silimind.netko/products/sales.html</loc>
-    <lastmod>2026-10-19</lastmod>
+    <loc>https://www.silimind.net/ko/products/sales</loc>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/products/sales.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.neten/products/sales.html"/>
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.netja/products/sales.html"/>
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.netko/products/sales.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/products/sales.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/products/sales"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.net/en/products/sales"/>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.net/ja/products/sales"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.net/ko/products/sales"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/products/sales"/>
   </url>
   <url>
-    <loc>https://www.silimind.net/products/marketing.html</loc>
-    <lastmod>2026-10-19</lastmod>
+    <loc>https://www.silimind.net/products/marketing</loc>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/products/marketing.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.neten/products/marketing.html"/>
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.netja/products/marketing.html"/>
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.netko/products/marketing.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/products/marketing.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/products/marketing"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.net/en/products/marketing"/>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.net/ja/products/marketing"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.net/ko/products/marketing"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/products/marketing"/>
   </url>
   <url>
-    <loc>https://www.silimind.neten/products/marketing.html</loc>
-    <lastmod>2026-10-19</lastmod>
+    <loc>https://www.silimind.net/en/products/marketing</loc>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/products/marketing.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.neten/products/marketing.html"/>
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.netja/products/marketing.html"/>
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.netko/products/marketing.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/products/marketing.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/products/marketing"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.net/en/products/marketing"/>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.net/ja/products/marketing"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.net/ko/products/marketing"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/products/marketing"/>
   </url>
   <url>
-    <loc>https://www.silimind.netja/products/marketing.html</loc>
-    <lastmod>2026-10-19</lastmod>
+    <loc>https://www.silimind.net/ja/products/marketing</loc>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/products/marketing.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.neten/products/marketing.html"/>
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.netja/products/marketing.html"/>
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.netko/products/marketing.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/products/marketing.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/products/marketing"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.net/en/products/marketing"/>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.net/ja/products/marketing"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.net/ko/products/marketing"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/products/marketing"/>
   </url>
   <url>
-    <loc>https://www.silimind.netko/products/marketing.html</loc>
-    <lastmod>2026-10-19</lastmod>
+    <loc>https://www.silimind.net/ko/products/marketing</loc>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/products/marketing.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.neten/products/marketing.html"/>
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.netja/products/marketing.html"/>
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.netko/products/marketing.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/products/marketing.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/products/marketing"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.net/en/products/marketing"/>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.net/ja/products/marketing"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.net/ko/products/marketing"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/products/marketing"/>
   </url>
   <url>
-    <loc>https://www.silimind.net/products/ai.html</loc>
-    <lastmod>2026-10-19</lastmod>
+    <loc>https://www.silimind.net/products/ai</loc>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/products/ai.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.neten/products/ai.html"/>
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.netja/products/ai.html"/>
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.netko/products/ai.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/products/ai.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/products/ai"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.net/en/products/ai"/>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.net/ja/products/ai"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.net/ko/products/ai"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/products/ai"/>
   </url>
   <url>
-    <loc>https://www.silimind.neten/products/ai.html</loc>
-    <lastmod>2026-10-19</lastmod>
+    <loc>https://www.silimind.net/en/products/ai</loc>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/products/ai.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.neten/products/ai.html"/>
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.netja/products/ai.html"/>
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.netko/products/ai.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/products/ai.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/products/ai"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.net/en/products/ai"/>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.net/ja/products/ai"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.net/ko/products/ai"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/products/ai"/>
   </url>
   <url>
-    <loc>https://www.silimind.netja/products/ai.html</loc>
-    <lastmod>2026-10-19</lastmod>
+    <loc>https://www.silimind.net/ja/products/ai</loc>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/products/ai.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.neten/products/ai.html"/>
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.netja/products/ai.html"/>
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.netko/products/ai.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/products/ai.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/products/ai"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.net/en/products/ai"/>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.net/ja/products/ai"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.net/ko/products/ai"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/products/ai"/>
   </url>
   <url>
-    <loc>https://www.silimind.netko/products/ai.html</loc>
-    <lastmod>2026-10-19</lastmod>
+    <loc>https://www.silimind.net/ko/products/ai</loc>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/products/ai.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.neten/products/ai.html"/>
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.netja/products/ai.html"/>
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.netko/products/ai.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/products/ai.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/products/ai"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.net/en/products/ai"/>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.net/ja/products/ai"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.net/ko/products/ai"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/products/ai"/>
   </url>
   <url>
-    <loc>https://www.silimind.net/solutions.html</loc>
-    <lastmod>2026-10-19</lastmod>
+    <loc>https://www.silimind.net/solutions</loc>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/solutions.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.neten/solutions.html"/>
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.netja/solutions.html"/>
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.netko/solutions.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/solutions.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/solutions"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.net/en/solutions"/>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.net/ja/solutions"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.net/ko/solutions"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/solutions"/>
   </url>
   <url>
-    <loc>https://www.silimind.neten/solutions.html</loc>
-    <lastmod>2026-10-19</lastmod>
+    <loc>https://www.silimind.net/en/solutions</loc>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/solutions.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.neten/solutions.html"/>
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.netja/solutions.html"/>
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.netko/solutions.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/solutions.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/solutions"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.net/en/solutions"/>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.net/ja/solutions"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.net/ko/solutions"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/solutions"/>
   </url>
   <url>
-    <loc>https://www.silimind.netja/solutions.html</loc>
-    <lastmod>2026-10-19</lastmod>
+    <loc>https://www.silimind.net/ja/solutions</loc>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/solutions.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.neten/solutions.html"/>
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.netja/solutions.html"/>
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.netko/solutions.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/solutions.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/solutions"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.net/en/solutions"/>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.net/ja/solutions"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.net/ko/solutions"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/solutions"/>
   </url>
   <url>
-    <loc>https://www.silimind.netko/solutions.html</loc>
-    <lastmod>2026-10-19</lastmod>
+    <loc>https://www.silimind.net/ko/solutions</loc>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/solutions.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.neten/solutions.html"/>
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.netja/solutions.html"/>
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.netko/solutions.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/solutions.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/solutions"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.net/en/solutions"/>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.net/ja/solutions"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.net/ko/solutions"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/solutions"/>
   </url>
   <url>
-    <loc>https://www.silimind.net/cases.html</loc>
-    <lastmod>2026-10-19</lastmod>
+    <loc>https://www.silimind.net/cases</loc>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/cases.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.neten/cases.html"/>
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.netja/cases.html"/>
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.netko/cases.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/cases.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/cases"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.net/en/cases"/>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.net/ja/cases"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.net/ko/cases"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/cases"/>
   </url>
   <url>
-    <loc>https://www.silimind.neten/cases.html</loc>
-    <lastmod>2026-10-19</lastmod>
+    <loc>https://www.silimind.net/en/cases</loc>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/cases.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.neten/cases.html"/>
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.netja/cases.html"/>
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.netko/cases.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/cases.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/cases"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.net/en/cases"/>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.net/ja/cases"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.net/ko/cases"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/cases"/>
   </url>
   <url>
-    <loc>https://www.silimind.netja/cases.html</loc>
-    <lastmod>2026-10-19</lastmod>
+    <loc>https://www.silimind.net/ja/cases</loc>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/cases.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.neten/cases.html"/>
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.netja/cases.html"/>
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.netko/cases.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/cases.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/cases"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.net/en/cases"/>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.net/ja/cases"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.net/ko/cases"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/cases"/>
   </url>
   <url>
-    <loc>https://www.silimind.netko/cases.html</loc>
-    <lastmod>2026-10-19</lastmod>
+    <loc>https://www.silimind.net/ko/cases</loc>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/cases.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.neten/cases.html"/>
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.netja/cases.html"/>
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.netko/cases.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/cases.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/cases"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.net/en/cases"/>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.net/ja/cases"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.net/ko/cases"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/cases"/>
   </url>
   <url>
-    <loc>https://www.silimind.net/about.html</loc>
-    <lastmod>2026-10-19</lastmod>
+    <loc>https://www.silimind.net/about</loc>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/about.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.neten/about.html"/>
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.netja/about.html"/>
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.netko/about.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/about.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/about"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.net/en/about"/>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.net/ja/about"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.net/ko/about"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/about"/>
   </url>
   <url>
-    <loc>https://www.silimind.neten/about.html</loc>
-    <lastmod>2026-10-19</lastmod>
+    <loc>https://www.silimind.net/en/about</loc>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/about.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.neten/about.html"/>
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.netja/about.html"/>
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.netko/about.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/about.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/about"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.net/en/about"/>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.net/ja/about"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.net/ko/about"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/about"/>
   </url>
   <url>
-    <loc>https://www.silimind.netja/about.html</loc>
-    <lastmod>2026-10-19</lastmod>
+    <loc>https://www.silimind.net/ja/about</loc>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/about.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.neten/about.html"/>
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.netja/about.html"/>
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.netko/about.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/about.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/about"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.net/en/about"/>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.net/ja/about"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.net/ko/about"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/about"/>
   </url>
   <url>
-    <loc>https://www.silimind.netko/about.html</loc>
-    <lastmod>2026-10-19</lastmod>
+    <loc>https://www.silimind.net/ko/about</loc>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/about.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.neten/about.html"/>
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.netja/about.html"/>
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.netko/about.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/about.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/about"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.net/en/about"/>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.net/ja/about"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.net/ko/about"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/about"/>
   </url>
   <url>
     <loc>https://www.silimind.net/blog/</loc>
-    <lastmod>2026-10-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/blog/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.neten/blog/"/>
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.netja/blog/"/>
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.netko/blog/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/blog/"/>
-  </url>
-  <url>
-    <loc>https://www.silimind.neten/blog/</loc>
-    <lastmod>2026-10-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/blog/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.neten/blog/"/>
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.netja/blog/"/>
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.netko/blog/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/blog/"/>
-  </url>
-  <url>
-    <loc>https://www.silimind.netja/blog/</loc>
-    <lastmod>2026-10-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/blog/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.neten/blog/"/>
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.netja/blog/"/>
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.netko/blog/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/blog/"/>
-  </url>
-  <url>
-    <loc>https://www.silimind.netko/blog/</loc>
-    <lastmod>2026-10-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/blog/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.neten/blog/"/>
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.netja/blog/"/>
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.netko/blog/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/blog/"/>
-  </url>
-  <!-- Blog articles — 单语言（中文），发布新文章时在此添加 -->
-  <url>
-    <loc>https://www.silimind.net/blog/follow-up-email-templates-20-prompts</loc>
     <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/blog/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.net/en/blog/"/>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.net/ja/blog/"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.net/ko/blog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/blog/"/>
+  </url>
+  <url>
+    <loc>https://www.silimind.net/en/blog/</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/blog/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.net/en/blog/"/>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.net/ja/blog/"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.net/ko/blog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/blog/"/>
+  </url>
+  <url>
+    <loc>https://www.silimind.net/ja/blog/</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/blog/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.net/en/blog/"/>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.net/ja/blog/"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.net/ko/blog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/blog/"/>
+  </url>
+  <url>
+    <loc>https://www.silimind.net/ko/blog/</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/blog/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.net/en/blog/"/>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.net/ja/blog/"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.net/ko/blog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/blog/"/>
+  </url>
+  <!-- Blog articles — 单语言（中文），发布新文章时自动收录 -->
+  <url>
+    <loc>https://www.silimind.net/blog/ai-content-repurposing-workflow</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.silimind.net/blog/ai-sdr-china-fit</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.silimind.net/blog/b2b-content-playbook-export-teams</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.silimind.net/blog/b2b-marketing-sales-platform-top7</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.silimind.net/blog/content-attribution-b2b</loc>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -417,20 +441,32 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://www.silimind.net/blog/example-post</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.silimind.net/blog/fenxiangxiaoke-vs-all-in-one-ai-platform</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.silimind.net/blog/follow-up-email-templates-20-prompts</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.silimind.net/blog/lead-routing-for-telesales-teams</loc>
     <lastmod>2026-10-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.silimind.net/blog/ai-content-repurposing-workflow</loc>
-    <lastmod>2026-10-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.silimind.net/blog/b2b-content-playbook-export-teams</loc>
-    <lastmod>2026-10-22</lastmod>
+    <loc>https://www.silimind.net/blog/marketup-crm-integrated-platform</loc>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -441,26 +477,8 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.silimind.net/blog/fenxiangxiaoke-vs-all-in-one-ai-platform</loc>
-    <lastmod>2026-10-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.silimind.net/blog/zoho-crm-content-marketing-gap</loc>
-    <lastmod>2026-10-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.silimind.net/blog/marketup-crm-integrated-platform</loc>
-    <lastmod>2026-10-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.silimind.net/blog/ai-sdr-china-fit</loc>
-    <lastmod>2026-10-18</lastmod>
+    <loc>https://www.silimind.net/blog/sales-visit-recording-ai-notes</loc>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -471,26 +489,8 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.silimind.net/blog/b2b-marketing-sales-platform-top7</loc>
-    <lastmod>2026-10-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.silimind.net/blog/content-attribution-b2b</loc>
-    <lastmod>2026-10-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.silimind.net/blog/sales-visit-recording-ai-notes</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.silimind.net/blog/example-post</loc>
-    <lastmod>2026-10-12</lastmod>
+    <loc>https://www.silimind.net/blog/zoho-crm-content-marketing-gap</loc>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
