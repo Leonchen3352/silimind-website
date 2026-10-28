@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <title>让 AI 答技术问题带出处：FAE 的知识库用法 - SiliMind Blog</title>
+  <meta name="description" content="FAE 答技术问题，风险不在答不出，在答得看起来对。AI 建议回复带文档名和页码，三个动作由人拍板。知识库该放什么、哪三份文档放进去比不放更危险、引用次数是一张反过来的体检表——附今天就能做的 20 分钟清单。" />
+  <link rel="canonical" href="https://www.silimind.net/blog/fae-knowledge-base-citations" />
+  <meta property="og:title" content="让 AI 答技术问题带出处：FAE 的知识库用法 - SiliMind Blog" />
+  <meta property="og:description" content="FAE 答技术问题，风险不在答不出，在答得看起来对。AI 建议回复带文档名和页码，三个动作由人拍板。知识库该放什么、哪三份文档放进去比不放更危险、引用次数是一张反过来的体检表——附今天就能做的 20 分钟清单。" />
+  <meta property="og:url" content="https://www.silimind.net/blog/fae-knowledge-base-citations" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:site_name" content="SiliMind" />
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJ7HH4824R"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RJ7HH4824R');
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "让 AI 答技术问题带出处：FAE 的知识库用法",
+  "description": "FAE 答技术问题，风险不在答不出，在答得看起来对。AI 建议回复带文档名和页码，三个动作由人拍板。知识库该放什么、哪三份文档放进去比不放更危险、引用次数是一张反过来的体检表——附今天就能做的 20 分钟清单。",
+  "datePublished": "2026-10-28",
+  "author": {
+    "@type": "Organization",
+    "name": "SiliMind"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "SiliMind",
+    "url": "https://www.silimind.net"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.silimind.net/blog/fae-knowledge-base-citations"
+  }
+}
+  </script>
+  <style>
+    :root {
+      --bg-primary: #0a0a0f;
+      --bg-secondary: #12121a;
+      --bg-card: #16161f;
+      --accent: #6366f1;
+      --accent-light: #818cf8;
+      --text-primary: #f0f0f5;
+      --text-secondary: rgba(240,240,245,0.6);
+      --border: rgba(99,102,241,0.08);
+      --border-hover: rgba(99,102,241,0.25);
+      --font: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'PingFang SC', 'Noto Sans SC', sans-serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* Nav */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(10,10,15,0.9);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      height: 64px;
+    }
+    .nav-inner {
+      max-width: 1100px; margin: 0 auto; padding: 0 32px;
+      height: 100%; display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      font-size: 20px; font-weight: 700; color: var(--accent-light);
+      text-decoration: none; letter-spacing: 1px;
+    }
+    .nav-links { list-style: none; display: flex; gap: 32px; }
+    .nav-links a {
+      color: var(--text-secondary); text-decoration: none; font-size: 14px;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--text-primary); }
+
+    /* Article */
+    .article-container {
+      max-width: 760px; margin: 0 auto;
+      padding: 120px 32px 80px;
+    }
+    .article-header {
+      margin-bottom: 40px;
+    }
+    .article-header h1 {
+      font-size: 32px; font-weight: 700; line-height: 1.3;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #6366f1, #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .article-meta {
+      font-size: 14px; color: var(--text-secondary);
+    }
+    .article-meta time {
+      margin-right: 16px;
+    }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      color: var(--accent-light); text-decoration: none; font-size: 14px;
+      margin-bottom: 24px; transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--text-primary); }
+
+    /* Article body */
+    .article-body h2 {
+      font-size: 24px; font-weight: 600; margin: 40px 0 16px;
+      color: var(--text-primary);
+    }
+    .article-body h3 {
+      font-size: 20px; font-weight: 600; margin: 32px 0 12px;
+      color: var(--text-primary);
+    }
+    .article-body p {
+      font-size: 16px; line-height: 1.8; color: var(--text-secondary);
+      margin-bottom: 20px;
+    }
+    .article-body ul, .article-body ol {
+      margin-bottom: 20px; padding-left: 24px; color: var(--text-secondary);
+    }
+    .article-body li {
+      margin-bottom: 8px; font-size: 16px; line-height: 1.8;
+    }
+    .article-body blockquote {
+      border-left: 3px solid var(--accent);
+      padding: 16px 24px;
+      margin: 24px 0;
+      background: var(--bg-secondary);
+      border-radius: 0 8px 8px 0;
+      color: var(--text-secondary);
+      font-size: 15px;
+    }
+    .article-body code {
+      background: var(--bg-secondary);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 14px;
+      color: var(--accent-light);
+    }
+    .article-body pre {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px 24px;
+      overflow-x: auto;
+      margin-bottom: 20px;
+    }
+    .article-body pre code {
+      background: none; padding: 0; font-size: 14px;
+      color: var(--text-primary);
+    }
+    .article-body img {
+      max-width: 100%; border-radius: 8px; margin: 24px 0;
+    }
+    .article-body a {
+      color: var(--accent-light); text-decoration: underline;
+      text-decoration-color: rgba(129,140,248,0.3);
+      transition: text-decoration-color 0.2s;
+    }
+    .article-body a:hover {
+      text-decoration-color: var(--accent-light);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center; padding: 40px 32px;
+      border-top: 1px solid var(--border);
+      color: var(--text-secondary); font-size: 13px;
+    }
+
+    @media (max-width: 768px) {
+      .article-container { padding: 100px 16px 60px; }
+      .article-header h1 { font-size: 26px; }
+      .article-body h2 { font-size: 20px; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">SiliMind</a>
+      <ul class="nav-links">
+        <li><a href="/blog/" class="active">Blog</a></li>
+        <li><a href="/#features">核心能力</a></li>
+        <li><a href="/solutions.html">解决方案</a></li>
+        <li><a href="/about.html">关于我们</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <article class="article-container">
+    <a href="/blog/" class="back-link">← 返回博客</a>
+    <header class="article-header">
+      <h1>让 AI 答技术问题带出处：FAE 的知识库用法</h1>
+      <div class="article-meta">
+        <time datetime="2026-10-28">2026 年 10 月 28 日</time>
+        <span>SiliMind</span>
+      </div>
+    </header>
+    <div class="article-body">
+      <p>客户在聊天里甩来一张铭牌照片，问这个能不能用在 -20℃ 的环境里。销售在旁边催，我心里一急，第一反应往往是先把话说完再找依据。</p>
+      <p>先说明，这是典型场景还原，不是哪一家客户的真实记录。</p>
+      <p>FAE 答技术问题，风险不在答不出，在答得看起来对。</p>
+      <h2>答不出和答错，代价不是一回事</h2>
+      <p>答不出，客户会再问一遍。</p>
+      <p>答错，客户照着做了。坏的是设备，是后面的订单，是你在客户心里的信用。哪一样出问题，心里都不会舒服。</p>
+      <p>所以 FAE 真正想要的不是更快的 AI，是一句能被追回原始文档的话。带出处的价值也不在「快」上。它把「我记得是这样」换成「规格书第 12 页写着是这样」，这两句的分量完全不同。</p>
+      <p>凭记忆答是 FAE 最贵的一种省事。手上没资料还能把话说完，靠的是训练出来的印象。印象这东西平时看着挺准，压强一上来就不一定了。</p>
+      <p>我以前也爱这么干。凭印象把话说完，回头想补一句依据，通常补不上。原因很简单，那句话本来就不是从某份文件里长出来的。</p>
+      <p>不少人有另一个想法：反正答不出来的是 AI，又不是我。</p>
+      <p>后来发现反了。答不出来的是我。AI 那边顶多给个空，知识库那边顶多给个旧版本，代价落在答话的人身上。</p>
+      <p>这就是我说的「最贵的一种省事」。省下的几分钟，后面要用别的补。</p>
+      <h2>带出处之后，回话长什么样</h2>
+      <p>客户消息里带技术问题的时候，规格、参数、安装方式、认证标准这几类，消息旁边会多出一个「💡 AI 建议回复」标签。点开是一份草稿，草稿下面挂着引用来源，标着文档名和页码或者章节。</p>
+      <p>草稿底下三个动作：采用、编辑后发送、忽略。</p>
+      <p>发出去这一步是人点的。它给你的是一份可以改的草稿，和一个能点开的出处，不是一条已经躺在客户窗口里的消息。</p>
+      <p>这个区别是要紧的。工业品的技术问题答错，代价落在客户那边的设备上。系统替你按了发送，出了事它不会替你跟客户解释。客户那边出事故，第一个被问的是当时谁回的这句话。</p>
+      <p>出处那行还有个日常用法。看到文档名和页码，你知道该翻哪一页，不用把整份规格书从头读一遍再决定信哪一段。</p>
+      <p>说实话，我更在意草稿底下那行引用来源，而不是草稿本身写得多顺。</p>
+      <h2>知识库里该放什么</h2>
+      <p>格式先说清楚：PDF、Word、Markdown、URL，四种。</p>
+      <p>再说什么该进去。产品资料、认证文件、规格书，这些是本来就该有答案的地方。把它们放进一个能被搜到的地方，比散在三个人的电脑里强。</p>
+      <p>我每份文档进去之前先问一句：客户问技术问题的时候，会不会指着我这份文件说就按这个来。答不上来就别放。</p>
+      <p>体积有个限制。单个文件不超过 50MB，整个库不超过 2GB（按套餐可调）。</p>
+      <p>版本的事也得管。文档更新了，用替换上传换上去，旧版本留着，能回滚。文档作废了，标记成「已失效」，它就不再被引用。</p>
+      <p>这里有个容易搞混的地方：知识库不是文件柜。文件柜讲究收全，它讲究准。</p>
+      <h2>三份文档，放进去比不放更危险</h2>
+      <table>
+  <thead>
+    <tr><th>文档</th><th>危险在哪</th><th>进来之前先做什么</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>旧版认证文件</td><td>AI 引用的是过期结论，客户照着去送样</td><td>换最新版，旧版标「已失效」</td></tr>
+    <tr><td>销售用的彩页</td><td>参数挑着写，跟规格书对不上</td><td>别进库，它属于报价流程</td></tr>
+    <tr><td>报价单当规格书</td><td>报价写的是这一单的条件，不是产品规格</td><td>只当附件，不当依据</td></tr>
+  </tbody>
+</table>
+      <p>放错文档比空着更危险。空着的知识库，AI 会说答不出。放错的知识库，AI 会给出一个带出处、带页码的错答案，看着特别可信。</p>
+      <p>认证这类问题尤其要小心。AI 引到的是哪一版、哪一年，你得自己看一眼。文档上写着有效期的，就对着有效期看一眼。</p>
+      <h2>引用次数，是一张反过来的体检表</h2>
+      <p>管理页的文档列表里，每份文档都带两栏。一栏是 AI 索引状态，分已索引、索引中、索引失败，上传完先看一眼。另一栏是引用次数，这份文档在 AI 回复里被引过多少回。</p>
+      <p>索引失败的那几份，引用次数自然低。两个数放一起看，才知道是文件本身有问题，不是没人问。</p>
+      <p>一般人会盯着次数高的那几份，它们是你的主力资料。更有用的读法是反过来：某个问题反复来，AI 却始终引不到东西，这说明知识库里缺这一份，不是 AI 笨。我觉得这比看谁最常被引更值得花时间。</p>
+      <p>这个体检表还有一层意思。被引最多的那几份，是你的主战场，也是你答错代价最大的地方。回头看一眼它们是不是最新版。</p>
+      <p>管理页右下半是测试面板，能模拟客户提问测效果，看到引用来源对不对，再让它进实战。答得不对还有个「反馈：回答不准确」可以点，点了会记下来。</p>
+      <h2>它会答错的地方，和它不掺和的地方</h2>
+      <p>先说它不掺和的。它只对技术问题触发，规格、参数、安装方式、认证标准这几类。价格、交期这类不触发。这点是优点，你问价它不会抢答。</p>
+      <p>再说它会答错的地方。文档本身过期，答出来就是错的，AI 不认识你文档的寿命。客户问得太口语，就匹配不到，只能我自己去翻，挺无奈的。客户问「这玩意儿能放冰箱里吗」，文档写的是工作温度范围，字面上一个都对不上。</p>
+      <p>跨文档的对比问题也容易只引一半。问两个型号哪个耐温高，它可能只把其中一个的文档拉出来。</p>
+      <p>这几条我一开始也以为是故障，后来才想明白，不是 bug，是资料的形状决定的。文档写得越规整，问法越接近规范用词，它给的出处越靠得住。</p>
+      <h2>你的活儿从打字变成拍板</h2>
+      <p>采用、编辑后发送、忽略，三个动作摆在那儿。</p>
+      <p>我的观察是，「编辑后发送」比「采用」更常见，才算正常状态。真的次次都点采用，只有两种可能：知识库太窄，或者你放弃了判断。这两种都得去修。</p>
+      <p>带出处之后，人要拍的就是那一层。引的是哪一版，对不对客户的项目，答案能不能这么答，出事谁担。这几件事本来就没打算交给机器。</p>
+      <p>我自己的顺序是先看引用那行，再读草稿。反过来做，容易被草稿写得顺带走。上个月那次，引用的版本跟规格书新版对不上，我发出去了才发现。</p>
+      <h2>今天就能做的一件事</h2>
+      <p>把手上客户最常问的 20 个技术问题列出来。翻聊天记录，数哪几个问题在反复来。</p>
+      <p>列完倒推，该传哪 5 份文档。20 分钟，一支笔。</p>
+      <p>你会发现要传的比你想的少。多出来的那几份，标成「已失效」或者干脆别放。</p>
+      <p>传完打开测试面板，把这 20 个问题一个一个输进去。哪一条引不到东西，就知道缺哪一份了。</p>
+      <p>这份清单半年后再列一次，两次的差集就是你知识库的真实缺口在哪。</p>
+      <p><a href="https://www.silimind.net/">SiliMind 官网</a>里有产品能力边界的完整说明，看完再决定投不投。</p>
+    </div>
+  </article>
+
+
+  <footer>
+    <p>© 2026 SiliMind. All rights reserved. &nbsp;·&nbsp; 微信：18612418612 &nbsp;·&nbsp; <a href="mailto:micheal@silimind.net">micheal@silimind.net</a></p>
+  </footer>
+</body>
+</html>
