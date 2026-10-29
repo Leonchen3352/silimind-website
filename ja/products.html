@@ -156,9 +156,6 @@
     .feature-item:last-child { border-bottom: none; }
     .feat-name { color: var(--text-primary); font-weight: 600; }
     .feat-name:hover { color: var(--accent-light); }
-    .status-label { font-size: 12px; padding: 2px 10px; border-radius: 999px; white-space: nowrap; }
-    .st-online { background: rgba(16,185,129,0.14); color: #10b981; }
-    .st-soon { background: rgba(245,158,11,0.14); color: #f59e0b; }
     .feat-desc { color: var(--text-secondary); font-size: 13px; flex: 1 1 100%; }
     .role-more { display: inline-block; margin-top: 12px; color: var(--accent-light); font-size: 14px; }
     @media (max-width: 768px) {
@@ -166,6 +163,28 @@
       .role-block { padding: 20px; }
     }
 
+  
+    /* ===== sm-nav: coffee-style hamburger ===== */
+    .sm-nav { position: sticky; top: 0; z-index: 999; background: rgba(11,12,16,.88); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border, rgba(255,255,255,.08)); }
+    .sm-nav-inner { max-width: 1120px; margin: 0 auto; padding: 14px 32px; display: flex; align-items: center; justify-content: space-between; }
+    .sm-logo { font-size: 20px; font-weight: 700; color: var(--text-primary, #f3f4f6); text-decoration: none; letter-spacing: .5px; }
+    .sm-toggle { background: none; border: 0; cursor: pointer; padding: 10px; display: flex; flex-direction: column; gap: 5px; }
+    .sm-bar { display: block; width: 22px; height: 2px; background: var(--text-primary, #f3f4f6); border-radius: 2px; transition: transform .25s ease, opacity .2s ease; }
+    .sm-open .sm-bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .sm-open .sm-bar:nth-child(2) { opacity: 0; }
+    .sm-open .sm-bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .sm-menu { display: none; position: absolute; top: 100%; right: 16px; width: 300px; max-width: calc(100vw - 24px); background: var(--bg-secondary, #14151b); border: 1px solid var(--border, rgba(255,255,255,.08)); border-radius: 14px; padding: 10px; box-shadow: 0 16px 48px rgba(0,0,0,.5); }
+    .sm-open .sm-menu { display: block; }
+    .sm-menu a { display: block; padding: 10px 14px; border-radius: 8px; color: var(--text-primary, #f3f4f6); text-decoration: none; font-size: 15px; }
+    .sm-menu a:hover { background: rgba(129,140,248,.12); }
+    .sm-top { font-weight: 600; }
+    .sm-sub { margin: 2px 10px 8px 18px; padding-left: 12px; border-left: 2px solid var(--border, rgba(255,255,255,.08)); }
+    .sm-sub a { font-size: 13.5px; color: var(--text-secondary, #9ca3af); padding: 7px 12px; }
+    .sm-cta { margin-top: 8px; text-align: center; background: var(--accent, #6366f1); color: #fff !important; font-weight: 600; border-radius: 10px; }
+    .sm-cta:hover { background: var(--accent-hover, #4f46e5) !important; }
+    .sm-lang { margin-top: 8px; padding: 10px 14px 4px; font-size: 12.5px; color: var(--text-secondary, #9ca3af); border-top: 1px solid var(--border, rgba(255,255,255,.08)); }
+    .sm-lang a { display: inline; padding: 0 2px; font-size: 12.5px; color: var(--text-secondary, #9ca3af); }
+    @media (max-width: 640px) { .sm-nav-inner { padding: 12px 16px; } .sm-menu { left: 12px; right: 12px; width: auto; } }
   </style>
   <link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/products">
   <link rel="alternate" hreflang="en" href="https://www.silimind.net/en/products">
@@ -174,20 +193,28 @@
   <link rel="alternate" hreflang="x-default" href="https://www.silimind.net/products">
 </head>
 <body>
-  <nav class="nav">
-    <div class="nav-inner">
-      <a href="/ja/" class="nav-logo">SiliMind</a>
-      <ul class="nav-links">
-        <li><a href="/ja/products.html" class="active">製品</a></li>
-        <li><a href="/ja/solutions.html">ソリューション</a></li>
-        <li><a href="/ja/cases.html">導入事例</a></li>
-        <li><a href="/ja/blog/">Blog</a></li>
-        <li><a href="/ja/about.html">会社概要</a></li>
-        <li class="lang-switch" style="opacity:.75;font-size:13px;list-style:none"><a href="https://www.silimind.net/products.html">中文</a> · <a href="https://www.silimind.net/en/products.html">EN</a> · 日本語 · <a href="https://www.silimind.net/ko/products.html">한국어</a></li>
-      </ul>
-      <a href="https://agent.silimind.net/register" class="nav-cta">個人トライアルを申込</a>
+  <nav class="sm-nav">
+  <div class="sm-nav-inner">
+    <a href="/ja/" class="sm-logo">SiliMind</a>
+    <button class="sm-toggle" aria-label="メニュー" aria-expanded="false" aria-controls="sm-menu"><span class="sm-bar"></span><span class="sm-bar"></span><span class="sm-bar"></span></button>
+  </div>
+  <div class="sm-menu" id="sm-menu">
+    <a href="/ja/products" class="sm-link sm-top">製品</a>
+    <div class="sm-sub">
+      <a href="/ja/products#role-sales">for Sales · 営業/FAE</a>
+      <a href="/ja/products#role-marketing">for Marketing · マーケ運営</a>
+      <a href="/ja/products#role-ceo">for CEO · 経営者</a>
     </div>
-  </nav>
+    <a href="/ja/solutions" class="sm-link">プラットフォーム</a>
+    <a href="/ja/#metrics" class="sm-link">実績</a>
+    <a href="/ja/#pricing" class="sm-link">料金</a>
+    <a href="/ja/about" class="sm-link">会社情報</a>
+    <a href="/ja/cases" class="sm-link">導入事例</a>
+    <a href="/ja/blog/" class="sm-link">ブログ</a>
+    <a href="https://agent.silimind.net/register" class="sm-link sm-cta">個人トライアルを申込</a>
+    <div class="sm-lang"><a href="/">中文</a> · <a href="/en/">EN</a> · 日本語 · <a href="/ko/">한국어</a></div>
+  </div>
+</nav>
 
   <main class="page">
     <h1>3 つのモジュール、1 つのプラットフォーム</h1>
@@ -228,169 +255,140 @@
       <h2 class="section-title">3 つのロール、1 つの機能リスト</h2>
       <p class="section-subtitle">長文を読む必要はありません——あなたのロール別に SiliMind の全機能を整理し、各項目から詳細へジャンプできます。</p>
 
-      <div class="role-block">
+      <div class="role-block" id="role-sales">
         <h3 class="role-block-title">💼 営業 / FAE / テクニカルサポート —— AI 営業アシスタント</h3>
         <p class="role-block-sub">雑務は AI に任せ、判断はあなたが。</p>
         <ul class="feature-list">
             <li class="feature-item">
               <a href="#module-sales" class="feat-name">10 チャネル統一メッセージタイムライン</a>
-              <span class="status-label st-online">Live</span>
               <span class="feat-desc">WhatsApp / Email / 電話 / メモ / Telegram / Instagram / Messenger / LinkedIn / WeChat / 企業用 WeChat、1 本のタイムライン</span>
             </li>
             <li class="feature-item">
               <a href="#feat-360" class="feat-name">顧客 360° ビュー</a>
-              <span class="status-label st-online">Live</span>
               <span class="feat-desc">営業タッチポイント + マーケタッチポイント + AI インサイト——1 つの顧客を 3 つの視点で</span>
             </li>
             <li class="feature-item">
               <a href="#feat-leadpool" class="feat-name">統一リードプール</a>
-              <span class="status-label st-online">Live</span>
               <span class="feat-desc">AI 意向スコアリング + スマート割当 + SLA カウントダウン警報</span>
             </li>
             <li class="feature-item">
               <a href="#feat-kanban" class="feat-name">商機 5 段階パイプライン</a>
-              <span class="status-label st-online">Live</span>
               <span class="feat-desc">5 次元ヘルススコア + AI 商機診断（8 種類の病因）</span>
             </li>
             <li class="feature-item">
               <a href="#feat-visits" class="feat-name">AI 訪問議事録</a>
-              <span class="status-label st-online">Live</span>
               <span class="feat-desc">録音 → 13 の構造化フィールド、修正可能な下書きをタイムラインに書き込み</span>
             </li>
             <li class="feature-item">
               <a href="#module-sales" class="feat-name">AI メール作成 &amp; AI 週報</a>
-              <span class="status-label st-online">Live</span>
               <span class="feat-desc">3 トーン × zh/en/ja、personal / team の 2 視点週報</span>
             </li>
             <li class="feature-item">
               <a href="#module-sales" class="feat-name">RAG ナレッジベース</a>
-              <span class="status-label st-online">Live</span>
               <span class="feat-desc">PDF/Word/MD/URL、セミオート確認 + 引用追跡</span>
             </li>
             <li class="feature-item">
               <a href="#feat-contract" class="feat-name">AI 契約抽出</a>
-              <span class="status-label st-online">Live</span>
               <span class="feat-desc">コミュニケーション記録からフィールド抽出 → テンプレート → レンダリング</span>
             </li>
             <li class="feature-item">
               <a href="#feat-outbound" class="feat-name">能動的なリード獲得 Outbound</a>
-              <span class="status-label st-online">Live</span>
               <span class="feat-desc">プロファイル → AI 検索 → 人が絞り込み → AI がアウトリーチ下書き</span>
             </li>
             <li class="feature-item">
               <a href="#module-sales" class="feat-name">承認ゲートと監査</a>
-              <span class="status-label st-online">Live</span>
               <span class="feat-desc">5 種類のセンシティブ操作は先承認後実行 + 120 分パス + 監査ログ 100% カバー</span>
             </li>
         </ul>
         <a class="role-more" href="#module-sales">営業管理の詳細 →</a>
       </div>
 
-      <div class="role-block">
+      <div class="role-block" id="role-marketing">
         <h3 class="role-block-title">📢 マーケティング / マーケオペレーション —— AI マーケティングチーム</h3>
         <p class="role-block-sub">テーマは根拠あり、産出はスケール、効果は見える。</p>
         <ul class="feature-list">
             <li class="feature-item">
               <a href="#feat-topic" class="feat-name">AI テーマ選定センター</a>
-              <span class="status-label st-soon">Delivered · coming soon</span>
               <span class="feat-desc">検索ボリューム + 競合難易度 + 機会スコア、週次テーマレポート</span>
             </li>
             <li class="feature-item">
               <a href="#feat-workbench" class="feat-name">AI 初稿 + SEO リアルタイムチェック</a>
-              <span class="status-label st-soon">Delivered · coming soon</span>
               <span class="feat-desc">1 人 1 日 5-10 本の初稿——推敲は人の仕事</span>
             </li>
             <li class="feature-item">
               <a href="#feat-landing" class="feat-name">ランディングページ + Cookie + UTM 5 フィールド</a>
-              <span class="status-label st-online">Live</span>
               <span class="feat-desc">コンテンツ流入の自社ランディング地点、ソースは自動記録</span>
             </li>
             <li class="feature-item">
               <a href="#feat-distribution" class="feat-name">マルチチャネル配信</a>
-              <span class="status-label st-soon">Delivered · coming soon</span>
               <span class="feat-desc">公式アカウント api_draft 下書き、発注単 + チャネルアカウント</span>
             </li>
             <li class="feature-item">
               <a href="#feat-attribution" class="feat-name">効果アトリビューション</a>
-              <span class="status-label st-soon">Delivered · coming soon</span>
               <span class="feat-desc">contact 作成時に 4 ルールを自動実行</span>
             </li>
             <li class="feature-item">
               <a href="#feat-attribution" class="feat-name">アトリビューション ROI ダッシュボード</a>
-              <span class="status-label st-soon">Delivered · coming soon</span>
               <span class="feat-desc">コンテンツ → 訪問 → 問い合わせ → 成約 → 金額を 1 枚の図で</span>
             </li>
             <li class="feature-item">
               <a href="#feat-attribution" class="feat-name">コンテンツ ↔ 商機マッチング</a>
-              <span class="status-label st-soon">Delivered · coming soon</span>
               <span class="feat-desc">会社名 / 業種 / キーワード overlap で自動紐付け</span>
             </li>
             <li class="feature-item">
               <a href="#module-marketing" class="feat-name">5 チャネルアダプタ + Identity Resolution</a>
-              <span class="status-label st-online">Live</span>
               <span class="feat-desc">パフォーマンスデータが自動還流、5 段階確率マージ</span>
             </li>
             <li class="feature-item">
               <a href="#module-marketing" class="feat-name">メール IMAP 取り込み + ソースbackfill</a>
-              <span class="status-label st-online">Live</span>
               <span class="feat-desc">履歴メール一括取り込み、ソース追跡可能</span>
             </li>
         </ul>
         <a class="role-more" href="#module-marketing">マーケティング獲客の詳細 →</a>
       </div>
 
-      <div class="role-block">
+      <div class="role-block" id="role-ceo">
         <h3 class="role-block-title">📊 経営層 —— AI 経営参謀</h3>
         <p class="role-block-sub">同じデータを見ているので、意思決定は月次報告を待ちません。</p>
         <ul class="feature-list">
             <li class="feature-item">
               <a href="#module-ai" class="feat-name">経営ダッシュボード</a>
-              <span class="status-label st-online">Live</span>
               <span class="feat-desc">7 / 30 / 90 日ビュー + 顧客 / 会社 / タスク指標、リアルタイム</span>
             </li>
             <li class="feature-item">
               <a href="#feat-suggest" class="feat-name">AI 能動アラート</a>
-              <span class="status-label st-online">Live</span>
               <span class="feat-desc">8 種類の提案シグナル、1 件ずつ審査採択</span>
             </li>
             <li class="feature-item">
               <a href="#feat-health" class="feat-name">商機ヘルススコア + AI 診断</a>
-              <span class="status-label st-online">Live</span>
               <span class="feat-desc">5 次元 0-100 紅黄緑 + 8 種類の病因診断</span>
             </li>
             <li class="feature-item">
               <a href="#feat-chatbi" class="feat-name">ChatBI 自然言語データ照会</a>
-              <span class="status-label st-online">Live</span>
               <span class="feat-desc">マーケ + 営業の全量データ、自動グラフ、ワンクリック出力</span>
             </li>
             <li class="feature-item">
               <a href="#module-ai" class="feat-name">AI 週報</a>
-              <span class="status-label st-online">Live</span>
               <span class="feat-desc">team ビュー、admin 閲覧可能</span>
             </li>
             <li class="feature-item">
               <a href="#module-ai" class="feat-name">全ファネルビュー</a>
-              <span class="status-label st-online">Live</span>
               <span class="feat-desc">マーケ情報と営業情報が同じ DB に</span>
             </li>
             <li class="feature-item">
               <a href="#module-ai" class="feat-name">監査と権限</a>
-              <span class="status-label st-online">Live</span>
               <span class="feat-desc">監査ログ 100% カバー + 5 種類のセンシティブ操作承認 + 120 分パス</span>
             </li>
             <li class="feature-item">
               <a href="#module-ai" class="feat-name">マルチテナント行レベル分離</a>
-              <span class="status-label st-online">Live</span>
               <span class="feat-desc">PG RLS 14 テーブル + 非特権ロール + トランザクションレベル query_scope</span>
             </li>
             <li class="feature-item">
               <a href="#module-ai" class="feat-name">オンプレミス導入</a>
-              <span class="status-label st-online">Live</span>
               <span class="feat-desc">PostgreSQL + Redis、データは企業外に出ません</span>
             </li>
             <li class="feature-item">
               <a href="#module-ai" class="feat-name">AI コストダッシュボード</a>
-              <span class="status-label st-online">Live</span>
               <span class="feat-desc">8 種類の呼び出し元計装、admin 専用</span>
             </li>
         </ul>
@@ -528,5 +526,15 @@
 
   <footer>© 2026 SiliMind. All rights reserved. &nbsp;·&nbsp; WeChat：18612418612 &nbsp;·&nbsp; <a href="mailto:micheal@silimind.net">micheal@silimind.net</a>  <p style="font-size:12px;opacity:.6;margin-top:12px">本言語版は機械翻訳による補助です。解釈に相違がある場合は中国語版（ルートサイト）が優先されます。</p>
 </footer>
-</body>
+  <script>
+    (function(){
+      var nav=document.querySelector('.sm-nav');var t=document.querySelector('.sm-toggle');
+      if(!nav||!t)return;
+      t.addEventListener('click',function(e){e.stopPropagation();var o=nav.classList.toggle('sm-open');t.setAttribute('aria-expanded',o?'true':'false');});
+      document.addEventListener('click',function(e){if(nav.classList.contains('sm-open')&&!nav.contains(e.target)){nav.classList.remove('sm-open');t.setAttribute('aria-expanded','false');}});
+      var m=nav.querySelector('.sm-menu');
+      if(m){m.addEventListener('click',function(e){if(e.target.closest('a')){nav.classList.remove('sm-open');t.setAttribute('aria-expanded','false');}});}
+    })();
+  </script>
+  </body>
 </html>

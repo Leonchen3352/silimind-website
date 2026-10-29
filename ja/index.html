@@ -782,6 +782,39 @@
     }
     .section-stats a { color: var(--accent-light); text-decoration: none; border-bottom: 1px dashed rgba(129,140,248,.4); }
 
+  
+    /* ===== sm-nav: coffee-style hamburger ===== */
+    .sm-nav { position: sticky; top: 0; z-index: 999; background: rgba(11,12,16,.88); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border, rgba(255,255,255,.08)); }
+    .sm-nav-inner { max-width: 1120px; margin: 0 auto; padding: 14px 32px; display: flex; align-items: center; justify-content: space-between; }
+    .sm-logo { font-size: 20px; font-weight: 700; color: var(--text-primary, #f3f4f6); text-decoration: none; letter-spacing: .5px; }
+    .sm-toggle { background: none; border: 0; cursor: pointer; padding: 10px; display: flex; flex-direction: column; gap: 5px; }
+    .sm-bar { display: block; width: 22px; height: 2px; background: var(--text-primary, #f3f4f6); border-radius: 2px; transition: transform .25s ease, opacity .2s ease; }
+    .sm-open .sm-bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .sm-open .sm-bar:nth-child(2) { opacity: 0; }
+    .sm-open .sm-bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .sm-menu { display: none; position: absolute; top: 100%; right: 16px; width: 300px; max-width: calc(100vw - 24px); background: var(--bg-secondary, #14151b); border: 1px solid var(--border, rgba(255,255,255,.08)); border-radius: 14px; padding: 10px; box-shadow: 0 16px 48px rgba(0,0,0,.5); }
+    .sm-open .sm-menu { display: block; }
+    .sm-menu a { display: block; padding: 10px 14px; border-radius: 8px; color: var(--text-primary, #f3f4f6); text-decoration: none; font-size: 15px; }
+    .sm-menu a:hover { background: rgba(129,140,248,.12); }
+    .sm-top { font-weight: 600; }
+    .sm-sub { margin: 2px 10px 8px 18px; padding-left: 12px; border-left: 2px solid var(--border, rgba(255,255,255,.08)); }
+    .sm-sub a { font-size: 13.5px; color: var(--text-secondary, #9ca3af); padding: 7px 12px; }
+    .sm-cta { margin-top: 8px; text-align: center; background: var(--accent, #6366f1); color: #fff !important; font-weight: 600; border-radius: 10px; }
+    .sm-cta:hover { background: var(--accent-hover, #4f46e5) !important; }
+    .sm-lang { margin-top: 8px; padding: 10px 14px 4px; font-size: 12.5px; color: var(--text-secondary, #9ca3af); border-top: 1px solid var(--border, rgba(255,255,255,.08)); }
+    .sm-lang a { display: inline; padding: 0 2px; font-size: 12.5px; color: var(--text-secondary, #9ca3af); }
+    @media (max-width: 640px) { .sm-nav-inner { padding: 12px 16px; } .sm-menu { left: 12px; right: 12px; width: auto; } }
+  
+    /* ===== pricing-mini ===== */
+    .pricing-mini { max-width: 1120px; margin: 0 auto; padding: 88px 32px 72px; }
+    .pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 36px; }
+    .pricing-card { background: var(--bg-secondary, #14151b); border: 1px solid var(--border, rgba(255,255,255,.08)); border-radius: 16px; padding: 32px; display: flex; flex-direction: column; gap: 12px; }
+    .pricing-tag { align-self: flex-start; font-size: 12px; color: var(--accent-light, #818cf8); border: 1px solid var(--border-hover, rgba(129,140,248,.4)); border-radius: 999px; padding: 2px 12px; }
+    .pricing-card h3 { font-size: 22px; margin: 0; color: var(--text-primary, #f3f4f6); }
+    .pricing-card p { color: var(--text-secondary, #9ca3af); font-size: 14.5px; line-height: 1.8; margin: 0; flex: 1; }
+    .pricing-btn { text-align: center; padding: 11px 18px; border-radius: 10px; background: var(--accent, #6366f1); color: #fff; text-decoration: none; font-size: 14.5px; font-weight: 600; }
+    .pricing-btn-ghost { background: transparent; border: 1px solid var(--border-hover, rgba(129,140,248,.4)); color: var(--text-primary, #f3f4f6); }
+    @media (max-width: 768px) { .pricing-grid { grid-template-columns: 1fr; } .pricing-mini { padding: 64px 16px 48px; } }
   </style>
   <link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/">
   <link rel="alternate" hreflang="en" href="https://www.silimind.net/en/">
@@ -792,19 +825,28 @@
 <body>
 
   <!-- ===== 1. Navigation ===== -->
-  <nav class="nav">
-    <div class="nav-inner">
-      <a href="/ja/" class="nav-logo">SiliMind</a>
-      <ul class="nav-links">
-        <li><a href="/ja/products">製品</a></li>
-        <li><a href="/ja/solutions">ソリューション</a></li>
-        <li><a href="/ja/cases">導入事例</a></li>
-        <li><a href="/ja/blog/">Blog</a></li>
-        <li><a href="https://agent.silimind.net/register" class="nav-cta">個人トライアルを申込</a></li>
-        <li class="lang-switch" style="opacity:.75;font-size:13px;list-style:none"><a href="https://www.silimind.net/">中文</a> · <a href="https://www.silimind.net/en/">EN</a> · 日本語 · <a href="https://www.silimind.net/ko/">한국어</a></li>
-      </ul>
+  <nav class="sm-nav">
+  <div class="sm-nav-inner">
+    <a href="/ja/" class="sm-logo">SiliMind</a>
+    <button class="sm-toggle" aria-label="メニュー" aria-expanded="false" aria-controls="sm-menu"><span class="sm-bar"></span><span class="sm-bar"></span><span class="sm-bar"></span></button>
+  </div>
+  <div class="sm-menu" id="sm-menu">
+    <a href="/ja/products" class="sm-link sm-top">製品</a>
+    <div class="sm-sub">
+      <a href="/ja/products#role-sales">for Sales · 営業/FAE</a>
+      <a href="/ja/products#role-marketing">for Marketing · マーケ運営</a>
+      <a href="/ja/products#role-ceo">for CEO · 経営者</a>
     </div>
-  </nav>
+    <a href="/ja/solutions" class="sm-link">プラットフォーム</a>
+    <a href="/ja/#metrics" class="sm-link">実績</a>
+    <a href="/ja/#pricing" class="sm-link">料金</a>
+    <a href="/ja/about" class="sm-link">会社情報</a>
+    <a href="/ja/cases" class="sm-link">導入事例</a>
+    <a href="/ja/blog/" class="sm-link">ブログ</a>
+    <a href="https://agent.silimind.net/register" class="sm-link sm-cta">個人トライアルを申込</a>
+    <div class="sm-lang"><a href="/">中文</a> · <a href="/en/">EN</a> · 日本語 · <a href="/ko/">한국어</a></div>
+  </div>
+</nav>
 
   <!-- ===== 2. Hero ===== -->
   <section class="hero" id="hero">
@@ -921,7 +963,7 @@
   </section>
 
   <!-- ===== 6. Metrics ===== -->
-  <section class="metrics">
+  <section class="metrics" id="metrics">
     <div class="container">
       <div class="section-header">
         <p class="section-label">データが語る</p>
@@ -1098,7 +1140,26 @@
   </section>
 
   <!-- ===== 10. Bottom CTA ===== -->
-  <section class="bottom-cta">
+    <section class="pricing-mini" id="pricing">
+    <p class="section-label">料金</p>
+    <h2 class="section-title">個人は無料枠、企業は個別評価</h2>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <span class="pricing-tag">個人プラン</span>
+        <h3>無料枠 1,000万トークン</h3>
+        <p>統一リードプール、AI コンテンツ作成、訪問議事録の自動生成——個人枠内でフルに使えます。</p>
+        <a href="https://agent.silimind.net/register" class="pricing-btn">個人トライアルを申込</a>
+      </div>
+      <div class="pricing-card">
+        <span class="pricing-tag">エンタープライズ</span>
+        <h3>導入を相談</h3>
+        <p>チーム規模と導入方式に応じて評価：ロール権限、経営ダッシュボード、監査フルカバー、オンプレミス導入。</p>
+        <a href="mailto:micheal@silimind.net" class="pricing-btn pricing-btn-ghost">導入を相談</a>
+      </div>
+    </div>
+  </section>
+
+<section class="bottom-cta">
     <div class="container">
       <h2>AI をあなたのチームのために働かせる準備はできましたか？</h2>
       <p class="section-subtitle">個人トライアルを申込んで、SiliMind がマーケ×営業の全ファネルをどうつなぐか 30 分でご説明します</p>
@@ -1188,5 +1249,15 @@
       });
     });
   </script>
-</body>
+  <script>
+    (function(){
+      var nav=document.querySelector('.sm-nav');var t=document.querySelector('.sm-toggle');
+      if(!nav||!t)return;
+      t.addEventListener('click',function(e){e.stopPropagation();var o=nav.classList.toggle('sm-open');t.setAttribute('aria-expanded',o?'true':'false');});
+      document.addEventListener('click',function(e){if(nav.classList.contains('sm-open')&&!nav.contains(e.target)){nav.classList.remove('sm-open');t.setAttribute('aria-expanded','false');}});
+      var m=nav.querySelector('.sm-menu');
+      if(m){m.addEventListener('click',function(e){if(e.target.closest('a')){nav.classList.remove('sm-open');t.setAttribute('aria-expanded','false');}});}
+    })();
+  </script>
+  </body>
 </html>

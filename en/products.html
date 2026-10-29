@@ -156,9 +156,6 @@
     .feature-item:last-child { border-bottom: none; }
     .feat-name { color: var(--text-primary); font-weight: 600; }
     .feat-name:hover { color: var(--accent-light); }
-    .status-label { font-size: 12px; padding: 2px 10px; border-radius: 999px; white-space: nowrap; }
-    .st-online { background: rgba(16,185,129,0.14); color: #10b981; }
-    .st-soon { background: rgba(245,158,11,0.14); color: #f59e0b; }
     .feat-desc { color: var(--text-secondary); font-size: 13px; flex: 1 1 100%; }
     .role-more { display: inline-block; margin-top: 12px; color: var(--accent-light); font-size: 14px; }
     @media (max-width: 768px) {
@@ -166,6 +163,28 @@
       .role-block { padding: 20px; }
     }
 
+  
+    /* ===== sm-nav: coffee-style hamburger ===== */
+    .sm-nav { position: sticky; top: 0; z-index: 999; background: rgba(11,12,16,.88); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border, rgba(255,255,255,.08)); }
+    .sm-nav-inner { max-width: 1120px; margin: 0 auto; padding: 14px 32px; display: flex; align-items: center; justify-content: space-between; }
+    .sm-logo { font-size: 20px; font-weight: 700; color: var(--text-primary, #f3f4f6); text-decoration: none; letter-spacing: .5px; }
+    .sm-toggle { background: none; border: 0; cursor: pointer; padding: 10px; display: flex; flex-direction: column; gap: 5px; }
+    .sm-bar { display: block; width: 22px; height: 2px; background: var(--text-primary, #f3f4f6); border-radius: 2px; transition: transform .25s ease, opacity .2s ease; }
+    .sm-open .sm-bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .sm-open .sm-bar:nth-child(2) { opacity: 0; }
+    .sm-open .sm-bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .sm-menu { display: none; position: absolute; top: 100%; right: 16px; width: 300px; max-width: calc(100vw - 24px); background: var(--bg-secondary, #14151b); border: 1px solid var(--border, rgba(255,255,255,.08)); border-radius: 14px; padding: 10px; box-shadow: 0 16px 48px rgba(0,0,0,.5); }
+    .sm-open .sm-menu { display: block; }
+    .sm-menu a { display: block; padding: 10px 14px; border-radius: 8px; color: var(--text-primary, #f3f4f6); text-decoration: none; font-size: 15px; }
+    .sm-menu a:hover { background: rgba(129,140,248,.12); }
+    .sm-top { font-weight: 600; }
+    .sm-sub { margin: 2px 10px 8px 18px; padding-left: 12px; border-left: 2px solid var(--border, rgba(255,255,255,.08)); }
+    .sm-sub a { font-size: 13.5px; color: var(--text-secondary, #9ca3af); padding: 7px 12px; }
+    .sm-cta { margin-top: 8px; text-align: center; background: var(--accent, #6366f1); color: #fff !important; font-weight: 600; border-radius: 10px; }
+    .sm-cta:hover { background: var(--accent-hover, #4f46e5) !important; }
+    .sm-lang { margin-top: 8px; padding: 10px 14px 4px; font-size: 12.5px; color: var(--text-secondary, #9ca3af); border-top: 1px solid var(--border, rgba(255,255,255,.08)); }
+    .sm-lang a { display: inline; padding: 0 2px; font-size: 12.5px; color: var(--text-secondary, #9ca3af); }
+    @media (max-width: 640px) { .sm-nav-inner { padding: 12px 16px; } .sm-menu { left: 12px; right: 12px; width: auto; } }
   </style>
   <link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/products">
   <link rel="alternate" hreflang="en" href="https://www.silimind.net/en/products">
@@ -174,20 +193,28 @@
   <link rel="alternate" hreflang="x-default" href="https://www.silimind.net/products">
 </head>
 <body>
-  <nav class="nav">
-    <div class="nav-inner">
-      <a href="/en/" class="nav-logo">SiliMind</a>
-      <ul class="nav-links">
-        <li><a href="/en/products.html" class="active">Products</a></li>
-        <li><a href="/en/solutions.html">Solutions</a></li>
-        <li><a href="/en/cases.html">Customers</a></li>
-        <li><a href="/en/blog/">Blog</a></li>
-        <li><a href="/en/about.html">About Us</a></li>
-        <li class="lang-switch" style="opacity:.75;font-size:13px;list-style:none"><a href="https://www.silimind.net/products.html">中文</a> · EN · <a href="https://www.silimind.net/ja/products.html">日本語</a> · <a href="https://www.silimind.net/ko/products.html">한국어</a></li>
-      </ul>
-      <a href="https://agent.silimind.net/register" class="nav-cta">Start Personal Trial</a>
+  <nav class="sm-nav">
+  <div class="sm-nav-inner">
+    <a href="/en/" class="sm-logo">SiliMind</a>
+    <button class="sm-toggle" aria-label="Menu" aria-expanded="false" aria-controls="sm-menu"><span class="sm-bar"></span><span class="sm-bar"></span><span class="sm-bar"></span></button>
+  </div>
+  <div class="sm-menu" id="sm-menu">
+    <a href="/en/products" class="sm-link sm-top">Product</a>
+    <div class="sm-sub">
+      <a href="/en/products#role-sales">for Sales</a>
+      <a href="/en/products#role-marketing">for Marketing</a>
+      <a href="/en/products#role-ceo">for CEO</a>
     </div>
-  </nav>
+    <a href="/en/solutions" class="sm-link">Platform</a>
+    <a href="/en/#metrics" class="sm-link">Performance</a>
+    <a href="/en/#pricing" class="sm-link">Pricing</a>
+    <a href="/en/about" class="sm-link">About</a>
+    <a href="/en/cases" class="sm-link">Cases</a>
+    <a href="/en/blog/" class="sm-link">Blog</a>
+    <a href="https://agent.silimind.net/register" class="sm-link sm-cta">Start Personal Trial</a>
+    <div class="sm-lang"><a href="/">中文</a> · EN · <a href="/ja/">日本語</a> · <a href="/ko/">한국어</a></div>
+  </div>
+</nav>
 
   <main class="page">
     <h1>Three modules, one platform</h1>
@@ -228,169 +255,140 @@
       <h2 class="section-title">Three roles, one feature list</h2>
       <p class="section-subtitle">Skip the long read — SiliMind&#39;s full capability set organized by your role, every item linked to its details.</p>
 
-      <div class="role-block">
+      <div class="role-block" id="role-sales">
         <h3 class="role-block-title">💼 Sales / FAE / Tech Support — an AI sales assistant</h3>
         <p class="role-block-sub">Let it handle the grunt work; you make the calls.</p>
         <ul class="feature-list">
             <li class="feature-item">
               <a href="#module-sales" class="feat-name">10-channel unified message timeline</a>
-              <span class="status-label st-online">Live</span>
               <span class="feat-desc">WhatsApp / Email / phone / memos / Telegram / Instagram / Messenger / LinkedIn / WeChat / WeCom — one timeline</span>
             </li>
             <li class="feature-item">
               <a href="#feat-360" class="feat-name">Customer 360° view</a>
-              <span class="status-label st-online">Live</span>
               <span class="feat-desc">Sales touchpoints + marketing touchpoints + AI insights — three views of one customer</span>
             </li>
             <li class="feature-item">
               <a href="#feat-leadpool" class="feat-name">Unified lead pool</a>
-              <span class="status-label st-online">Live</span>
               <span class="feat-desc">AI intent scoring + smart assignment + SLA countdown alerts</span>
             </li>
             <li class="feature-item">
               <a href="#feat-kanban" class="feat-name">5-stage opportunity pipeline</a>
-              <span class="status-label st-online">Live</span>
               <span class="feat-desc">5-dimension health scoring + AI deal diagnostics (8 causes)</span>
             </li>
             <li class="feature-item">
               <a href="#feat-visits" class="feat-name">AI visit notes</a>
-              <span class="status-label st-online">Live</span>
               <span class="feat-desc">Recording → 13 structured fields, editable draft written to the timeline</span>
             </li>
             <li class="feature-item">
               <a href="#module-sales" class="feat-name">AI email writing &amp; AI weekly reports</a>
-              <span class="status-label st-online">Live</span>
               <span class="feat-desc">3 tones × zh/en/ja, personal / team dual-view reports</span>
             </li>
             <li class="feature-item">
               <a href="#module-sales" class="feat-name">RAG knowledge base</a>
-              <span class="status-label st-online">Live</span>
               <span class="feat-desc">PDF/Word/MD/URL, semi-automatic confirmation + citation tracking</span>
             </li>
             <li class="feature-item">
               <a href="#feat-contract" class="feat-name">AI contract extraction</a>
-              <span class="status-label st-online">Live</span>
               <span class="feat-desc">Extract fields from conversations → template → render</span>
             </li>
             <li class="feature-item">
               <a href="#feat-outbound" class="feat-name">Proactive outbound</a>
-              <span class="status-label st-online">Live</span>
               <span class="feat-desc">Profile → AI search → human filtering → AI-drafted outreach</span>
             </li>
             <li class="feature-item">
               <a href="#module-sales" class="feat-name">Approval gates &amp; audit</a>
-              <span class="status-label st-online">Live</span>
               <span class="feat-desc">5 sensitive action types with approve-first execution + 120-min passes + 100% audit coverage</span>
             </li>
         </ul>
         <a class="role-more" href="#module-sales">Explore Sales Management →</a>
       </div>
 
-      <div class="role-block">
+      <div class="role-block" id="role-marketing">
         <h3 class="role-block-title">📢 Marketing / Market Ops — an AI marketing team</h3>
         <p class="role-block-sub">Grounded topics, scaled output, visible results.</p>
         <ul class="feature-list">
             <li class="feature-item">
               <a href="#feat-topic" class="feat-name">AI topic center</a>
-              <span class="status-label st-soon">Delivered · coming soon</span>
               <span class="feat-desc">Search volume + competition difficulty + opportunity score, weekly topic reports</span>
             </li>
             <li class="feature-item">
               <a href="#feat-workbench" class="feat-name">AI first drafts + real-time SEO check</a>
-              <span class="status-label st-soon">Delivered · coming soon</span>
               <span class="feat-desc">5-10 drafts per person per day — human editing remains the craft</span>
             </li>
             <li class="feature-item">
               <a href="#feat-landing" class="feat-name">Landing pages + Cookie + 5 UTM fields</a>
-              <span class="status-label st-online">Live</span>
               <span class="feat-desc">The first-party landing point for content traffic, sources auto-recorded</span>
             </li>
             <li class="feature-item">
               <a href="#feat-distribution" class="feat-name">Multi-channel publishing &amp; distribution</a>
-              <span class="status-label st-soon">Delivered · coming soon</span>
               <span class="feat-desc">WeChat official account api_draft drafts, publish orders + channel accounts</span>
             </li>
             <li class="feature-item">
               <a href="#feat-attribution" class="feat-name">Effect attribution</a>
-              <span class="status-label st-soon">Delivered · coming soon</span>
               <span class="feat-desc">4 attribution rules run automatically at contact creation</span>
             </li>
             <li class="feature-item">
               <a href="#feat-attribution" class="feat-name">Attribution ROI dashboard</a>
-              <span class="status-label st-soon">Delivered · coming soon</span>
               <span class="feat-desc">Content → visits → inquiries → deals → value on one chart</span>
             </li>
             <li class="feature-item">
               <a href="#feat-attribution" class="feat-name">Content ↔ opportunity matching</a>
-              <span class="status-label st-soon">Delivered · coming soon</span>
               <span class="feat-desc">Auto-linked by company name / industry / keyword overlap</span>
             </li>
             <li class="feature-item">
               <a href="#module-marketing" class="feat-name">5-channel adapters + Identity Resolution</a>
-              <span class="status-label st-online">Live</span>
               <span class="feat-desc">Performance data flows back; 5-stage probability merging</span>
             </li>
             <li class="feature-item">
               <a href="#module-marketing" class="feat-name">Email IMAP import + source backfill</a>
-              <span class="status-label st-online">Live</span>
               <span class="feat-desc">Historical email batch import, sources traceable</span>
             </li>
         </ul>
         <a class="role-more" href="#module-marketing">Explore Marketing &amp; Acquisition →</a>
       </div>
 
-      <div class="role-block">
+      <div class="role-block" id="role-ceo">
         <h3 class="role-block-title">📊 Leadership — an AI business advisor</h3>
         <p class="role-block-sub">You see the same data; decisions don&#39;t wait for monthly reports.</p>
         <ul class="feature-list">
             <li class="feature-item">
               <a href="#module-ai" class="feat-name">Management dashboard</a>
-              <span class="status-label st-online">Live</span>
               <span class="feat-desc">7 / 30 / 90-day views + customer / company / task metrics, real-time</span>
             </li>
             <li class="feature-item">
               <a href="#feat-suggest" class="feat-name">AI proactive alerts</a>
-              <span class="status-label st-online">Live</span>
               <span class="feat-desc">8 suggestion signal types, reviewed and accepted one by one</span>
             </li>
             <li class="feature-item">
               <a href="#feat-health" class="feat-name">Opportunity health scoring + AI diagnostics</a>
-              <span class="status-label st-online">Live</span>
               <span class="feat-desc">5 dimensions 0–100 red/yellow/green + 8-cause diagnostics</span>
             </li>
             <li class="feature-item">
               <a href="#feat-chatbi" class="feat-name">ChatBI natural-language queries</a>
-              <span class="status-label st-online">Live</span>
               <span class="feat-desc">All marketing + sales data, auto charts, one-click export</span>
             </li>
             <li class="feature-item">
               <a href="#module-ai" class="feat-name">AI weekly reports</a>
-              <span class="status-label st-online">Live</span>
               <span class="feat-desc">team view, visible to admins</span>
             </li>
             <li class="feature-item">
               <a href="#module-ai" class="feat-name">Full-funnel view</a>
-              <span class="status-label st-online">Live</span>
               <span class="feat-desc">Marketing and sales information in one database</span>
             </li>
             <li class="feature-item">
               <a href="#module-ai" class="feat-name">Audit &amp; permissions</a>
-              <span class="status-label st-online">Live</span>
               <span class="feat-desc">100% audit coverage + 5 approval-gated actions + 120-min passes</span>
             </li>
             <li class="feature-item">
               <a href="#module-ai" class="feat-name">Multi-tenant row isolation</a>
-              <span class="status-label st-online">Live</span>
               <span class="feat-desc">PG RLS across 14 tables + non-privileged roles + transaction-level query_scope</span>
             </li>
             <li class="feature-item">
               <a href="#module-ai" class="feat-name">Private deployment</a>
-              <span class="status-label st-online">Live</span>
               <span class="feat-desc">PostgreSQL + Redis, data never leaves your company</span>
             </li>
             <li class="feature-item">
               <a href="#module-ai" class="feat-name">AI cost dashboard</a>
-              <span class="status-label st-online">Live</span>
               <span class="feat-desc">8 caller-type instrumentation, admin-only</span>
             </li>
         </ul>
@@ -528,5 +526,15 @@
 
   <footer>© 2026 SiliMind 思理智能. All rights reserved. &nbsp;·&nbsp; WeChat: 18612418612 &nbsp;·&nbsp; <a href="mailto:micheal@silimind.net">micheal@silimind.net</a></footer>
   <p style="text-align:center;font-size:12px;opacity:0.6;padding:0 32px 16px;">This language version is machine-assisted translation. In case of any discrepancy, the Chinese version (root site) prevails.</p>
-</body>
+  <script>
+    (function(){
+      var nav=document.querySelector('.sm-nav');var t=document.querySelector('.sm-toggle');
+      if(!nav||!t)return;
+      t.addEventListener('click',function(e){e.stopPropagation();var o=nav.classList.toggle('sm-open');t.setAttribute('aria-expanded',o?'true':'false');});
+      document.addEventListener('click',function(e){if(nav.classList.contains('sm-open')&&!nav.contains(e.target)){nav.classList.remove('sm-open');t.setAttribute('aria-expanded','false');}});
+      var m=nav.querySelector('.sm-menu');
+      if(m){m.addEventListener('click',function(e){if(e.target.closest('a')){nav.classList.remove('sm-open');t.setAttribute('aria-expanded','false');}});}
+    })();
+  </script>
+  </body>
 </html>

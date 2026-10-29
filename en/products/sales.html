@@ -100,6 +100,28 @@
       .feature-card, .tab-block { padding: 20px; }
       .cta-section { padding: 32px 20px; }
     }
+  
+    /* ===== sm-nav: coffee-style hamburger ===== */
+    .sm-nav { position: sticky; top: 0; z-index: 999; background: rgba(11,12,16,.88); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border, rgba(255,255,255,.08)); }
+    .sm-nav-inner { max-width: 1120px; margin: 0 auto; padding: 14px 32px; display: flex; align-items: center; justify-content: space-between; }
+    .sm-logo { font-size: 20px; font-weight: 700; color: var(--text-primary, #f3f4f6); text-decoration: none; letter-spacing: .5px; }
+    .sm-toggle { background: none; border: 0; cursor: pointer; padding: 10px; display: flex; flex-direction: column; gap: 5px; }
+    .sm-bar { display: block; width: 22px; height: 2px; background: var(--text-primary, #f3f4f6); border-radius: 2px; transition: transform .25s ease, opacity .2s ease; }
+    .sm-open .sm-bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .sm-open .sm-bar:nth-child(2) { opacity: 0; }
+    .sm-open .sm-bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .sm-menu { display: none; position: absolute; top: 100%; right: 16px; width: 300px; max-width: calc(100vw - 24px); background: var(--bg-secondary, #14151b); border: 1px solid var(--border, rgba(255,255,255,.08)); border-radius: 14px; padding: 10px; box-shadow: 0 16px 48px rgba(0,0,0,.5); }
+    .sm-open .sm-menu { display: block; }
+    .sm-menu a { display: block; padding: 10px 14px; border-radius: 8px; color: var(--text-primary, #f3f4f6); text-decoration: none; font-size: 15px; }
+    .sm-menu a:hover { background: rgba(129,140,248,.12); }
+    .sm-top { font-weight: 600; }
+    .sm-sub { margin: 2px 10px 8px 18px; padding-left: 12px; border-left: 2px solid var(--border, rgba(255,255,255,.08)); }
+    .sm-sub a { font-size: 13.5px; color: var(--text-secondary, #9ca3af); padding: 7px 12px; }
+    .sm-cta { margin-top: 8px; text-align: center; background: var(--accent, #6366f1); color: #fff !important; font-weight: 600; border-radius: 10px; }
+    .sm-cta:hover { background: var(--accent-hover, #4f46e5) !important; }
+    .sm-lang { margin-top: 8px; padding: 10px 14px 4px; font-size: 12.5px; color: var(--text-secondary, #9ca3af); border-top: 1px solid var(--border, rgba(255,255,255,.08)); }
+    .sm-lang a { display: inline; padding: 0 2px; font-size: 12.5px; color: var(--text-secondary, #9ca3af); }
+    @media (max-width: 640px) { .sm-nav-inner { padding: 12px 16px; } .sm-menu { left: 12px; right: 12px; width: auto; } }
   </style>
   <!-- GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJ7HH4824R"></script>
@@ -116,20 +138,28 @@
   <link rel="alternate" hreflang="x-default" href="https://www.silimind.net/products/sales">
 </head>
 <body>
-  <nav class="nav">
-    <div class="nav-inner">
-      <a href="/en/" class="nav-logo">SiliMind</a>
-      <ul class="nav-links">
-        <li><a href="/en/products.html" class="active">Products</a></li>
-        <li><a href="/en/solutions.html">Solutions</a></li>
-        <li><a href="/en/cases.html">Customers</a></li>
-        <li><a href="/en/blog/">Blog</a></li>
-        <li><a href="/en/about.html">About Us</a></li>
-        <li class="lang-switch" style="opacity:.75;font-size:13px;list-style:none"><a href="https://www.silimind.net/products/sales.html">中文</a> · EN · <a href="https://www.silimind.net/ja/products/sales.html">日本語</a> · <a href="https://www.silimind.net/ko/products/sales.html">한국어</a></li>
-      </ul>
-      <a href="https://agent.silimind.net/register" class="nav-cta">Get Started</a>
+  <nav class="sm-nav">
+  <div class="sm-nav-inner">
+    <a href="/en/" class="sm-logo">SiliMind</a>
+    <button class="sm-toggle" aria-label="Menu" aria-expanded="false" aria-controls="sm-menu"><span class="sm-bar"></span><span class="sm-bar"></span><span class="sm-bar"></span></button>
+  </div>
+  <div class="sm-menu" id="sm-menu">
+    <a href="/en/products" class="sm-link sm-top">Product</a>
+    <div class="sm-sub">
+      <a href="/en/products#role-sales">for Sales</a>
+      <a href="/en/products#role-marketing">for Marketing</a>
+      <a href="/en/products#role-ceo">for CEO</a>
     </div>
-  </nav>
+    <a href="/en/solutions" class="sm-link">Platform</a>
+    <a href="/en/#metrics" class="sm-link">Performance</a>
+    <a href="/en/#pricing" class="sm-link">Pricing</a>
+    <a href="/en/about" class="sm-link">About</a>
+    <a href="/en/cases" class="sm-link">Cases</a>
+    <a href="/en/blog/" class="sm-link">Blog</a>
+    <a href="https://agent.silimind.net/register" class="sm-link sm-cta">Start Personal Trial</a>
+    <div class="sm-lang"><a href="/">中文</a> · EN · <a href="/ja/">日本語</a> · <a href="/ko/">한국어</a></div>
+  </div>
+</nav>
 
   <main class="page">
     <h1>Sales Management</h1>
@@ -272,5 +302,15 @@
 
   <footer>© 2026 SiliMind 思理智能. All rights reserved. &nbsp;·&nbsp; WeChat: 18612418612 &nbsp;·&nbsp; <a href="mailto:micheal@silimind.net">micheal@silimind.net</a></footer>
   <p style="text-align:center;font-size:12px;opacity:0.6;padding:0 32px 16px;">This language version is machine-assisted translation. In case of any discrepancy, the Chinese version (root site) prevails.</p>
-</body>
+  <script>
+    (function(){
+      var nav=document.querySelector('.sm-nav');var t=document.querySelector('.sm-toggle');
+      if(!nav||!t)return;
+      t.addEventListener('click',function(e){e.stopPropagation();var o=nav.classList.toggle('sm-open');t.setAttribute('aria-expanded',o?'true':'false');});
+      document.addEventListener('click',function(e){if(nav.classList.contains('sm-open')&&!nav.contains(e.target)){nav.classList.remove('sm-open');t.setAttribute('aria-expanded','false');}});
+      var m=nav.querySelector('.sm-menu');
+      if(m){m.addEventListener('click',function(e){if(e.target.closest('a')){nav.classList.remove('sm-open');t.setAttribute('aria-expanded','false');}});}
+    })();
+  </script>
+  </body>
 </html>

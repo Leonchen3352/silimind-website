@@ -784,6 +784,39 @@
     }
     .section-stats a { color: var(--accent-light); text-decoration: none; border-bottom: 1px dashed rgba(129,140,248,.4); }
 
+  
+    /* ===== sm-nav: coffee-style hamburger ===== */
+    .sm-nav { position: sticky; top: 0; z-index: 999; background: rgba(11,12,16,.88); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border, rgba(255,255,255,.08)); }
+    .sm-nav-inner { max-width: 1120px; margin: 0 auto; padding: 14px 32px; display: flex; align-items: center; justify-content: space-between; }
+    .sm-logo { font-size: 20px; font-weight: 700; color: var(--text-primary, #f3f4f6); text-decoration: none; letter-spacing: .5px; }
+    .sm-toggle { background: none; border: 0; cursor: pointer; padding: 10px; display: flex; flex-direction: column; gap: 5px; }
+    .sm-bar { display: block; width: 22px; height: 2px; background: var(--text-primary, #f3f4f6); border-radius: 2px; transition: transform .25s ease, opacity .2s ease; }
+    .sm-open .sm-bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .sm-open .sm-bar:nth-child(2) { opacity: 0; }
+    .sm-open .sm-bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .sm-menu { display: none; position: absolute; top: 100%; right: 16px; width: 300px; max-width: calc(100vw - 24px); background: var(--bg-secondary, #14151b); border: 1px solid var(--border, rgba(255,255,255,.08)); border-radius: 14px; padding: 10px; box-shadow: 0 16px 48px rgba(0,0,0,.5); }
+    .sm-open .sm-menu { display: block; }
+    .sm-menu a { display: block; padding: 10px 14px; border-radius: 8px; color: var(--text-primary, #f3f4f6); text-decoration: none; font-size: 15px; }
+    .sm-menu a:hover { background: rgba(129,140,248,.12); }
+    .sm-top { font-weight: 600; }
+    .sm-sub { margin: 2px 10px 8px 18px; padding-left: 12px; border-left: 2px solid var(--border, rgba(255,255,255,.08)); }
+    .sm-sub a { font-size: 13.5px; color: var(--text-secondary, #9ca3af); padding: 7px 12px; }
+    .sm-cta { margin-top: 8px; text-align: center; background: var(--accent, #6366f1); color: #fff !important; font-weight: 600; border-radius: 10px; }
+    .sm-cta:hover { background: var(--accent-hover, #4f46e5) !important; }
+    .sm-lang { margin-top: 8px; padding: 10px 14px 4px; font-size: 12.5px; color: var(--text-secondary, #9ca3af); border-top: 1px solid var(--border, rgba(255,255,255,.08)); }
+    .sm-lang a { display: inline; padding: 0 2px; font-size: 12.5px; color: var(--text-secondary, #9ca3af); }
+    @media (max-width: 640px) { .sm-nav-inner { padding: 12px 16px; } .sm-menu { left: 12px; right: 12px; width: auto; } }
+  
+    /* ===== pricing-mini ===== */
+    .pricing-mini { max-width: 1120px; margin: 0 auto; padding: 88px 32px 72px; }
+    .pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 36px; }
+    .pricing-card { background: var(--bg-secondary, #14151b); border: 1px solid var(--border, rgba(255,255,255,.08)); border-radius: 16px; padding: 32px; display: flex; flex-direction: column; gap: 12px; }
+    .pricing-tag { align-self: flex-start; font-size: 12px; color: var(--accent-light, #818cf8); border: 1px solid var(--border-hover, rgba(129,140,248,.4)); border-radius: 999px; padding: 2px 12px; }
+    .pricing-card h3 { font-size: 22px; margin: 0; color: var(--text-primary, #f3f4f6); }
+    .pricing-card p { color: var(--text-secondary, #9ca3af); font-size: 14.5px; line-height: 1.8; margin: 0; flex: 1; }
+    .pricing-btn { text-align: center; padding: 11px 18px; border-radius: 10px; background: var(--accent, #6366f1); color: #fff; text-decoration: none; font-size: 14.5px; font-weight: 600; }
+    .pricing-btn-ghost { background: transparent; border: 1px solid var(--border-hover, rgba(129,140,248,.4)); color: var(--text-primary, #f3f4f6); }
+    @media (max-width: 768px) { .pricing-grid { grid-template-columns: 1fr; } .pricing-mini { padding: 64px 16px 48px; } }
   </style>
   <link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/">
   <link rel="alternate" hreflang="en" href="https://www.silimind.net/en/">
@@ -794,19 +827,28 @@
 <body>
 
   <!-- ===== 1. Navigation ===== -->
-  <nav class="nav">
-    <div class="nav-inner">
-      <a href="/" class="nav-logo">SiliMind</a>
-      <ul class="nav-links">
-        <li><a href="/products">产品</a></li>
-        <li><a href="/solutions">解决方案</a></li>
-        <li><a href="/cases">客户案例</a></li>
-        <li><a href="/blog/">Blog</a></li>
-        <li><a href="https://agent.silimind.net/register" class="nav-cta">申请个人试用</a></li>
-        <li class="lang-switch" style="opacity:.75;font-size:13px;list-style:none">中文 · <a href="https://www.silimind.net/en/">EN</a> · <a href="https://www.silimind.net/ja/">日本語</a> · <a href="https://www.silimind.net/ko/">한국어</a></li>
-      </ul>
+  <nav class="sm-nav">
+  <div class="sm-nav-inner">
+    <a href="/" class="sm-logo">SiliMind</a>
+    <button class="sm-toggle" aria-label="菜单" aria-expanded="false" aria-controls="sm-menu"><span class="sm-bar"></span><span class="sm-bar"></span><span class="sm-bar"></span></button>
+  </div>
+  <div class="sm-menu" id="sm-menu">
+    <a href="/products" class="sm-link sm-top">产品</a>
+    <div class="sm-sub">
+      <a href="/products#role-sales">for Sales · 销售/FAE</a>
+      <a href="/products#role-marketing">for Marketing · 市场运营</a>
+      <a href="/products#role-ceo">for CEO · 老板/CEO</a>
     </div>
-  </nav>
+    <a href="/solutions" class="sm-link">平台</a>
+    <a href="/#metrics" class="sm-link">性能</a>
+    <a href="/#pricing" class="sm-link">价格</a>
+    <a href="/about" class="sm-link">关于</a>
+    <a href="/cases" class="sm-link">案例</a>
+    <a href="/blog/" class="sm-link">博客</a>
+    <a href="https://agent.silimind.net/register" class="sm-link sm-cta">申请个人试用</a>
+    <div class="sm-lang">中文 · <a href="/en/">EN</a> · <a href="/ja/">日本語</a> · <a href="/ko/">한국어</a></div>
+  </div>
+</nav>
 
   <!-- ===== 2. Hero ===== -->
   <section class="hero" id="hero">
@@ -922,7 +964,7 @@
   </section>
 
   <!-- ===== 6. Metrics ===== -->
-  <section class="metrics">
+  <section class="metrics" id="metrics">
     <div class="container">
       <div class="section-header">
         <p class="section-label">数据说话</p>
@@ -1117,7 +1159,26 @@
   </section>
 
   <!-- ===== 10. Bottom CTA ===== -->
-  <section class="bottom-cta">
+    <section class="pricing-mini" id="pricing">
+    <p class="section-label">价格</p>
+    <h2 class="section-title">个人免费额度，企业按需评估</h2>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <span class="pricing-tag">个人版</span>
+        <h3>免费额度 1000 万 token</h3>
+        <p>统一线索池、AI 内容创作、访问纪要自动生成——个人额度内完整可用。</p>
+        <a href="https://agent.silimind.net/register" class="pricing-btn">申请个人试用</a>
+      </div>
+      <div class="pricing-card">
+        <span class="pricing-tag">企业版</span>
+        <h3>联系销售</h3>
+        <p>按团队规模与部署方式评估：角色权限、经营看板、审计全覆盖、私有化部署。</p>
+        <a href="mailto:micheal@silimind.net" class="pricing-btn pricing-btn-ghost">联系销售</a>
+      </div>
+    </div>
+  </section>
+
+<section class="bottom-cta">
     <div class="container">
       <h2>准备好让 AI 为你的团队工作了吗？</h2>
       <p class="section-subtitle">申请个人试用，30 分钟了解 SiliMind 如何打通你的营销销售全链路</p>
@@ -1217,5 +1278,15 @@
       });
     });
   </script>
-</body>
+  <script>
+    (function(){
+      var nav=document.querySelector('.sm-nav');var t=document.querySelector('.sm-toggle');
+      if(!nav||!t)return;
+      t.addEventListener('click',function(e){e.stopPropagation();var o=nav.classList.toggle('sm-open');t.setAttribute('aria-expanded',o?'true':'false');});
+      document.addEventListener('click',function(e){if(nav.classList.contains('sm-open')&&!nav.contains(e.target)){nav.classList.remove('sm-open');t.setAttribute('aria-expanded','false');}});
+      var m=nav.querySelector('.sm-menu');
+      if(m){m.addEventListener('click',function(e){if(e.target.closest('a')){nav.classList.remove('sm-open');t.setAttribute('aria-expanded','false');}});}
+    })();
+  </script>
+  </body>
 </html>

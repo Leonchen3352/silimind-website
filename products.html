@@ -156,9 +156,6 @@
     .feature-item:last-child { border-bottom: none; }
     .feat-name { color: var(--text-primary); font-weight: 600; }
     .feat-name:hover { color: var(--accent-light); }
-    .status-label { font-size: 12px; padding: 2px 10px; border-radius: 999px; white-space: nowrap; }
-    .st-online { background: rgba(16,185,129,0.14); color: #10b981; }
-    .st-soon { background: rgba(245,158,11,0.14); color: #f59e0b; }
     .feat-desc { color: var(--text-secondary); font-size: 13px; flex: 1 1 100%; }
     .role-more { display: inline-block; margin-top: 12px; color: var(--accent-light); font-size: 14px; }
     @media (max-width: 768px) {
@@ -166,6 +163,28 @@
       .role-block { padding: 20px; }
     }
 
+  
+    /* ===== sm-nav: coffee-style hamburger ===== */
+    .sm-nav { position: sticky; top: 0; z-index: 999; background: rgba(11,12,16,.88); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border, rgba(255,255,255,.08)); }
+    .sm-nav-inner { max-width: 1120px; margin: 0 auto; padding: 14px 32px; display: flex; align-items: center; justify-content: space-between; }
+    .sm-logo { font-size: 20px; font-weight: 700; color: var(--text-primary, #f3f4f6); text-decoration: none; letter-spacing: .5px; }
+    .sm-toggle { background: none; border: 0; cursor: pointer; padding: 10px; display: flex; flex-direction: column; gap: 5px; }
+    .sm-bar { display: block; width: 22px; height: 2px; background: var(--text-primary, #f3f4f6); border-radius: 2px; transition: transform .25s ease, opacity .2s ease; }
+    .sm-open .sm-bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .sm-open .sm-bar:nth-child(2) { opacity: 0; }
+    .sm-open .sm-bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .sm-menu { display: none; position: absolute; top: 100%; right: 16px; width: 300px; max-width: calc(100vw - 24px); background: var(--bg-secondary, #14151b); border: 1px solid var(--border, rgba(255,255,255,.08)); border-radius: 14px; padding: 10px; box-shadow: 0 16px 48px rgba(0,0,0,.5); }
+    .sm-open .sm-menu { display: block; }
+    .sm-menu a { display: block; padding: 10px 14px; border-radius: 8px; color: var(--text-primary, #f3f4f6); text-decoration: none; font-size: 15px; }
+    .sm-menu a:hover { background: rgba(129,140,248,.12); }
+    .sm-top { font-weight: 600; }
+    .sm-sub { margin: 2px 10px 8px 18px; padding-left: 12px; border-left: 2px solid var(--border, rgba(255,255,255,.08)); }
+    .sm-sub a { font-size: 13.5px; color: var(--text-secondary, #9ca3af); padding: 7px 12px; }
+    .sm-cta { margin-top: 8px; text-align: center; background: var(--accent, #6366f1); color: #fff !important; font-weight: 600; border-radius: 10px; }
+    .sm-cta:hover { background: var(--accent-hover, #4f46e5) !important; }
+    .sm-lang { margin-top: 8px; padding: 10px 14px 4px; font-size: 12.5px; color: var(--text-secondary, #9ca3af); border-top: 1px solid var(--border, rgba(255,255,255,.08)); }
+    .sm-lang a { display: inline; padding: 0 2px; font-size: 12.5px; color: var(--text-secondary, #9ca3af); }
+    @media (max-width: 640px) { .sm-nav-inner { padding: 12px 16px; } .sm-menu { left: 12px; right: 12px; width: auto; } }
   </style>
   <link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/products">
   <link rel="alternate" hreflang="en" href="https://www.silimind.net/en/products">
@@ -174,20 +193,28 @@
   <link rel="alternate" hreflang="x-default" href="https://www.silimind.net/products">
 </head>
 <body>
-  <nav class="nav">
-    <div class="nav-inner">
-      <a href="/" class="nav-logo">SiliMind</a>
-      <ul class="nav-links">
-        <li><a href="/products.html" class="active">产品</a></li>
-        <li><a href="/solutions.html">解决方案</a></li>
-        <li><a href="/cases.html">客户案例</a></li>
-        <li><a href="/blog/">Blog</a></li>
-        <li><a href="/about.html">关于我们</a></li>
-        <li class="lang-switch" style="opacity:.75;font-size:13px;list-style:none">中文 · <a href="https://www.silimind.net/en/products.html">EN</a> · <a href="https://www.silimind.net/ja/products.html">日本語</a> · <a href="https://www.silimind.net/ko/products.html">한국어</a></li>
-      </ul>
-      <a href="https://agent.silimind.net/register" class="nav-cta">申请个人试用</a>
+  <nav class="sm-nav">
+  <div class="sm-nav-inner">
+    <a href="/" class="sm-logo">SiliMind</a>
+    <button class="sm-toggle" aria-label="菜单" aria-expanded="false" aria-controls="sm-menu"><span class="sm-bar"></span><span class="sm-bar"></span><span class="sm-bar"></span></button>
+  </div>
+  <div class="sm-menu" id="sm-menu">
+    <a href="/products" class="sm-link sm-top">产品</a>
+    <div class="sm-sub">
+      <a href="/products#role-sales">for Sales · 销售/FAE</a>
+      <a href="/products#role-marketing">for Marketing · 市场运营</a>
+      <a href="/products#role-ceo">for CEO · 老板/CEO</a>
     </div>
-  </nav>
+    <a href="/solutions" class="sm-link">平台</a>
+    <a href="/#metrics" class="sm-link">性能</a>
+    <a href="/#pricing" class="sm-link">价格</a>
+    <a href="/about" class="sm-link">关于</a>
+    <a href="/cases" class="sm-link">案例</a>
+    <a href="/blog/" class="sm-link">博客</a>
+    <a href="https://agent.silimind.net/register" class="sm-link sm-cta">申请个人试用</a>
+    <div class="sm-lang">中文 · <a href="/en/">EN</a> · <a href="/ja/">日本語</a> · <a href="/ko/">한국어</a></div>
+  </div>
+</nav>
 
   <main class="page">
     <h1>三个模块，一个平台</h1>
@@ -228,169 +255,140 @@
       <h2 class="section-title">三类角色，一份功能清单</h2>
       <p class="section-subtitle">不用读长文——按你的角色分区列出 SiliMind 的全部能力，每条都可点进详情。</p>
 
-      <div class="role-block">
+      <div class="role-block" id="role-sales">
         <h3 class="role-block-title">💼 销售 / FAE / 技术支持 —— AI 销售助理</h3>
         <p class="role-block-sub">把杂活交给它，你只做判断。</p>
         <ul class="feature-list">
             <li class="feature-item">
               <a href="#module-sales" class="feat-name">10 渠道消息统一时间线</a>
-              <span class="status-label st-online">已上线</span>
               <span class="feat-desc">WhatsApp / Email / 电话 / 备忘录 / Telegram / Instagram / Messenger / LinkedIn / 微信 / 企业微信，一条时间线</span>
             </li>
             <li class="feature-item">
               <a href="#feat-360" class="feat-name">客户 360° 视图</a>
-              <span class="status-label st-online">已上线</span>
               <span class="feat-desc">销售触点 + 营销触点 + AI 洞察，三个视角看一个客户</span>
             </li>
             <li class="feature-item">
               <a href="#feat-leadpool" class="feat-name">统一线索池</a>
-              <span class="status-label st-online">已上线</span>
               <span class="feat-desc">AI 意向评分 + 智能分配 + SLA 倒计时超时报警</span>
             </li>
             <li class="feature-item">
               <a href="#feat-kanban" class="feat-name">商机 5 阶段 Pipeline</a>
-              <span class="status-label st-online">已上线</span>
               <span class="feat-desc">健康度评分 5 维度 + AI 商机诊断（8 种病因）</span>
             </li>
             <li class="feature-item">
               <a href="#feat-visits" class="feat-name">AI 拜访纪要</a>
-              <span class="status-label st-online">已上线</span>
               <span class="feat-desc">录音 → 13 字段结构化，草稿可修正后写入时间线</span>
             </li>
             <li class="feature-item">
               <a href="#module-sales" class="feat-name">AI 写邮件与 AI 周报</a>
-              <span class="status-label st-online">已上线</span>
               <span class="feat-desc">3 种语气 × 中/英/日，personal / team 双视角周报</span>
             </li>
             <li class="feature-item">
               <a href="#module-sales" class="feat-name">RAG 知识库</a>
-              <span class="status-label st-online">已上线</span>
               <span class="feat-desc">PDF/Word/MD/URL，半自动确认 + 引用追踪</span>
             </li>
             <li class="feature-item">
               <a href="#feat-contract" class="feat-name">AI 合同抽取</a>
-              <span class="status-label st-online">已上线</span>
               <span class="feat-desc">从沟通记录提取字段 → 模板 → 渲染</span>
             </li>
             <li class="feature-item">
               <a href="#feat-outbound" class="feat-name">主动获客 Outbound</a>
-              <span class="status-label st-online">已上线</span>
               <span class="feat-desc">画像 → AI 搜索 → 人工筛选 → AI 起草开发信</span>
             </li>
             <li class="feature-item">
               <a href="#module-sales" class="feat-name">审批闸门与审计</a>
-              <span class="status-label st-online">已上线</span>
               <span class="feat-desc">5 类敏感动作先审批后操作 + 120 分钟通行证 + 审计日志 100% 覆盖</span>
             </li>
         </ul>
         <a class="role-more" href="#module-sales">了解销售管理详情 →</a>
       </div>
 
-      <div class="role-block">
+      <div class="role-block" id="role-marketing">
         <h3 class="role-block-title">📢 市场 / 市场运营 —— AI 市场运营团队</h3>
         <p class="role-block-sub">选题有依据，产出有规模，效果看得见。</p>
         <ul class="feature-list">
             <li class="feature-item">
               <a href="#feat-topic" class="feat-name">AI 选题中心</a>
-              <span class="status-label st-soon">已交付 · 即将上线</span>
               <span class="feat-desc">搜索量 + 竞争难度 + 机会分，每周选题周报</span>
             </li>
             <li class="feature-item">
               <a href="#feat-workbench" class="feat-name">AI 内容初稿 + SEO 实时检查</a>
-              <span class="status-label st-soon">已交付 · 即将上线</span>
               <span class="feat-desc">1 人 1 天 5–10 篇初稿，改稿仍是人的活</span>
             </li>
             <li class="feature-item">
               <a href="#feat-landing" class="feat-name">落地页 + Cookie + UTM 5 字段</a>
-              <span class="status-label st-online">已上线</span>
               <span class="feat-desc">内容引流的第一方落点，来源自动记录</span>
             </li>
             <li class="feature-item">
               <a href="#feat-distribution" class="feat-name">多渠道发布分发</a>
-              <span class="status-label st-soon">已交付 · 即将上线</span>
               <span class="feat-desc">公众号 api_draft 草稿箱，发布单 + 渠道账号</span>
             </li>
             <li class="feature-item">
               <a href="#feat-attribution" class="feat-name">效果归因</a>
-              <span class="status-label st-soon">已交付 · 即将上线</span>
               <span class="feat-desc">contact 创建时自动跑 4 条归因规则</span>
             </li>
             <li class="feature-item">
               <a href="#feat-attribution" class="feat-name">归因 ROI 看板</a>
-              <span class="status-label st-soon">已交付 · 即将上线</span>
               <span class="feat-desc">内容 → 访问 → 询盘 → 成交 → 金额，一张图看完</span>
             </li>
             <li class="feature-item">
               <a href="#feat-attribution" class="feat-name">内容 ↔ 商机匹配</a>
-              <span class="status-label st-soon">已交付 · 即将上线</span>
               <span class="feat-desc">公司名 / 行业 / 关键词 overlap 自动关联</span>
             </li>
             <li class="feature-item">
               <a href="#module-marketing" class="feat-name">5 渠道 adapter + Identity Resolution</a>
-              <span class="status-label st-online">已上线</span>
               <span class="feat-desc">表现数据自动回流，5 阶段概率合并</span>
             </li>
             <li class="feature-item">
               <a href="#module-marketing" class="feat-name">邮箱 IMAP 导入 + 来源标注回填</a>
-              <span class="status-label st-online">已上线</span>
               <span class="feat-desc">历史邮件批量入库，来源可查</span>
             </li>
         </ul>
         <a class="role-more" href="#module-marketing">了解营销获客详情 →</a>
       </div>
 
-      <div class="role-block">
+      <div class="role-block" id="role-ceo">
         <h3 class="role-block-title">📊 老板 / 管理层 —— AI 经营参谋</h3>
         <p class="role-block-sub">你看到的是同一份数据，决策不用等月报。</p>
         <ul class="feature-list">
             <li class="feature-item">
               <a href="#module-ai" class="feat-name">管理驾驶舱</a>
-              <span class="status-label st-online">已上线</span>
               <span class="feat-desc">7 / 30 / 90 天维度 + 客户 / 公司 / 任务指标，实时</span>
             </li>
             <li class="feature-item">
               <a href="#feat-suggest" class="feat-name">AI 主动预警</a>
-              <span class="status-label st-online">已上线</span>
               <span class="feat-desc">8 类建议信号，逐条审核采纳</span>
             </li>
             <li class="feature-item">
               <a href="#feat-health" class="feat-name">商机健康度评分 + AI 诊断</a>
-              <span class="status-label st-online">已上线</span>
               <span class="feat-desc">5 维度 0–100 红黄绿 + 8 种病因诊断</span>
             </li>
             <li class="feature-item">
               <a href="#feat-chatbi" class="feat-name">ChatBI 自然语言查数</a>
-              <span class="status-label st-online">已上线</span>
               <span class="feat-desc">营销 + 销售全量数据，自动出图，一键导出</span>
             </li>
             <li class="feature-item">
               <a href="#module-ai" class="feat-name">AI 周报</a>
-              <span class="status-label st-online">已上线</span>
               <span class="feat-desc">team 视角，admin 可见</span>
             </li>
             <li class="feature-item">
               <a href="#module-ai" class="feat-name">全链路视图</a>
-              <span class="status-label st-online">已上线</span>
               <span class="feat-desc">市场信息与销售信息在同一个库里</span>
             </li>
             <li class="feature-item">
               <a href="#module-ai" class="feat-name">审计与权限</a>
-              <span class="status-label st-online">已上线</span>
               <span class="feat-desc">审计日志 100% 覆盖 + 5 类敏感动作审批 + 120 分钟通行证</span>
             </li>
             <li class="feature-item">
               <a href="#module-ai" class="feat-name">多租户行级隔离</a>
-              <span class="status-label st-online">已上线</span>
               <span class="feat-desc">PG RLS 14 表 + 非特权角色 + 事务级 query_scope</span>
             </li>
             <li class="feature-item">
               <a href="#module-ai" class="feat-name">私有化部署</a>
-              <span class="status-label st-online">已上线</span>
               <span class="feat-desc">PostgreSQL + Redis，数据不出企业</span>
             </li>
             <li class="feature-item">
               <a href="#module-ai" class="feat-name">AI 成本仪表盘</a>
-              <span class="status-label st-online">已上线</span>
               <span class="feat-desc">8 类调用方埋点，admin 专属</span>
             </li>
         </ul>
@@ -527,5 +525,15 @@
   </main>
 
   <footer>© 2026 SiliMind 思理智能. All rights reserved. &nbsp;·&nbsp; 微信：18612418612 &nbsp;·&nbsp; <a href="mailto:micheal@silimind.net">micheal@silimind.net</a></footer>
-</body>
+  <script>
+    (function(){
+      var nav=document.querySelector('.sm-nav');var t=document.querySelector('.sm-toggle');
+      if(!nav||!t)return;
+      t.addEventListener('click',function(e){e.stopPropagation();var o=nav.classList.toggle('sm-open');t.setAttribute('aria-expanded',o?'true':'false');});
+      document.addEventListener('click',function(e){if(nav.classList.contains('sm-open')&&!nav.contains(e.target)){nav.classList.remove('sm-open');t.setAttribute('aria-expanded','false');}});
+      var m=nav.querySelector('.sm-menu');
+      if(m){m.addEventListener('click',function(e){if(e.target.closest('a')){nav.classList.remove('sm-open');t.setAttribute('aria-expanded','false');}});}
+    })();
+  </script>
+  </body>
 </html>
