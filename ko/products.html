@@ -136,6 +136,36 @@
       .cta-section { padding: 32px 20px; }
       .cta-buttons { flex-direction: column; align-items: center; }
     }
+  
+    /* ===== Features by role ===== */
+    .role-features { padding: 0 32px 56px; }
+    .role-block {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px 32px;
+      margin-bottom: 24px;
+    }
+    .role-block-title { font-size: 20px; font-weight: 700; margin-bottom: 4px; }
+    .role-block-sub { color: var(--text-secondary); font-size: 14px; margin-bottom: 18px; }
+    .feature-list { list-style: none; }
+    .feature-item {
+      display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap;
+      padding: 9px 0; border-bottom: 1px dashed var(--border);
+    }
+    .feature-item:last-child { border-bottom: none; }
+    .feat-name { color: var(--text-primary); font-weight: 600; }
+    .feat-name:hover { color: var(--accent-light); }
+    .status-label { font-size: 12px; padding: 2px 10px; border-radius: 999px; white-space: nowrap; }
+    .st-online { background: rgba(16,185,129,0.14); color: #10b981; }
+    .st-soon { background: rgba(245,158,11,0.14); color: #f59e0b; }
+    .feat-desc { color: var(--text-secondary); font-size: 13px; flex: 1 1 100%; }
+    .role-more { display: inline-block; margin-top: 12px; color: var(--accent-light); font-size: 14px; }
+    @media (max-width: 768px) {
+      .role-features { padding: 0 16px 40px; }
+      .role-block { padding: 20px; }
+    }
+
   </style>
   <link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/products">
   <link rel="alternate" hreflang="en" href="https://www.silimind.net/en/products">
@@ -192,45 +222,193 @@
     <p style="font-size:16px; color:var(--text-secondary); line-height:2; margin-bottom:48px;">SiliMind은 콘텐츠 리드 확보, 리드 관리, 상업 기회 팔로우업, 계약 성과를 한 플랫폼에 담습니다. AI가 모든 단계를 관통합니다——주제 선정, 콘텐츠 작성, 고객 팔로우업, 회의록 생성, 데이터 분석을 지원합니다. &#39;한 편의 SEO 아티클이 가져온 리드&#39;부터 &#39;이 성과의 금액&#39;까지 전체를 추적할 수 있습니다.</p>
 
     <!-- 营销获客 -->
-    <section class="module-section">
-      <h2><span class="emoji">📢</span>마케팅 리드 확보</h2>
-      <p>&#39;무엇을 써야 할지 모르는&#39;부터 &#39;어떤 콘텐츠가 성과를 가져왔는지&#39;까지 전체를 추적할 수 있습니다.</p>
 
-      <div class="feature-block">
-        <h3>AI 주제 선정 센터</h3>
-        <p>업종 키워드를 입력하면 AI가 검색량 추정치, 경쟁 난이도, 기회 점수가 포함된 주제 10개를 반환합니다. 감으로 쓸 주제를 정하지 말고 검색 데이터가 판단하게 하세요. 매주 월요일 자동으로 &#39;금주 주제 보고서&#39;를 푸시합니다——지난주 콘텐츠의 검색 순위 변화와 업계 트렌드 기반.</p>
+    <section class="role-features" id="features-by-role">
+      <p class="section-label">역할별 기능</p>
+      <h2 class="section-title">3가지 역할, 하나의 기능 목록</h2>
+      <p class="section-subtitle">긴 글을 읽을 필요 없습니다——당신의 역할별로 SiliMind의 전체 기능을 정리하고, 각 항목에서 상세로 이동할 수 있습니다.</p>
+
+      <div class="role-block">
+        <h3 class="role-block-title">💼 영업 / FAE / 기술 지원 —— AI 영업 어시스턴트</h3>
+        <p class="role-block-sub">잡무는 AI에게, 판단은 당신이.</p>
+        <ul class="feature-list">
+            <li class="feature-item">
+              <a href="#module-sales" class="feat-name">10채널 통일 메시지 타임라인</a>
+              <span class="status-label st-online">Live</span>
+              <span class="feat-desc">WhatsApp / Email / 전화 / 메모 / Telegram / Instagram / Messenger / LinkedIn / WeChat / 기업용 WeChat, 하나의 타임라인</span>
+            </li>
+            <li class="feature-item">
+              <a href="#feat-360" class="feat-name">고객 360° 뷰</a>
+              <span class="status-label st-online">Live</span>
+              <span class="feat-desc">영업 터치포인트 + 마케팅 터치포인트 + AI 인사이트——하나의 고객을 세 가지 시각으로</span>
+            </li>
+            <li class="feature-item">
+              <a href="#feat-leadpool" class="feat-name">통일 리드 풀</a>
+              <span class="status-label st-online">Live</span>
+              <span class="feat-desc">AI 의도 점수 + 스마트 배정 + SLA 카운트다운 경보</span>
+            </li>
+            <li class="feature-item">
+              <a href="#feat-kanban" class="feat-name">상업 기회 5단계 파이프라인</a>
+              <span class="status-label st-online">Live</span>
+              <span class="feat-desc">5차원 건강도 점수 + AI 상업 기회 진단(8가지 원인)</span>
+            </li>
+            <li class="feature-item">
+              <a href="#feat-visits" class="feat-name">AI 방문 회의록</a>
+              <span class="status-label st-online">Live</span>
+              <span class="feat-desc">녹음 → 13개 구조화 필드, 수정 가능한 초안을 타임라인에 기록</span>
+            </li>
+            <li class="feature-item">
+              <a href="#module-sales" class="feat-name">AI 이메일 작성 &amp; AI 주간 보고</a>
+              <span class="status-label st-online">Live</span>
+              <span class="feat-desc">3가지 톤 × zh/en/ja, personal / team 이중 시점 주간 보고</span>
+            </li>
+            <li class="feature-item">
+              <a href="#module-sales" class="feat-name">RAG 지식 베이스</a>
+              <span class="status-label st-online">Live</span>
+              <span class="feat-desc">PDF/Word/MD/URL, 세미오토 확인 + 인용 추적</span>
+            </li>
+            <li class="feature-item">
+              <a href="#feat-contract" class="feat-name">AI 계약 추출</a>
+              <span class="status-label st-online">Live</span>
+              <span class="feat-desc">대화 기록에서 필드 추출 → 템플릿 → 렌더링</span>
+            </li>
+            <li class="feature-item">
+              <a href="#feat-outbound" class="feat-name">능동 리드 확보 Outbound</a>
+              <span class="status-label st-online">Live</span>
+              <span class="feat-desc">프로필 → AI 검색 → 사람이 선별 → AI가 아웃리치 초안 작성</span>
+            </li>
+            <li class="feature-item">
+              <a href="#module-sales" class="feat-name">승인 게이트와 감사</a>
+              <span class="status-label st-online">Live</span>
+              <span class="feat-desc">5가지 민감 작업 선승인 후실행 + 120분 패스 + 감사 로그 100% 커버</span>
+            </li>
+        </ul>
+        <a class="role-more" href="#module-sales">영업 관리 자세히 →</a>
       </div>
 
-      <div class="feature-block">
-        <h3>콘텐츠 워크벤치</h3>
-        <p>3열 칸반(초안→검토 대기→발행됨)으로 모든 콘텐츠를 관리합니다. AI가 주제에 따라 초안을 자동 생성하고, 편집기에 SEO 실시간 점검 패널이 내장되어 있습니다——키워드 밀도, H 태그 구조, 내부 링크 제안, 가독성 점수. 검토 통과 콘텐츠는 통일 배포 흐름으로 진입합니다——서드파티 배포 서비스(이샤오얼, Zernio 등)와 연동 개발이 완료되었으며, 자격 증명 연결 후 국내외 여러 플랫폼을 커버합니다.</p>
+      <div class="role-block">
+        <h3 class="role-block-title">📢 마케팅 / 마케팅 운영 —— AI 마케팅 팀</h3>
+        <p class="role-block-sub">주제는 근거 있게, 산출은 규모 있게, 효과는 보이게.</p>
+        <ul class="feature-list">
+            <li class="feature-item">
+              <a href="#feat-topic" class="feat-name">AI 주제 선정 센터</a>
+              <span class="status-label st-soon">Delivered · coming soon</span>
+              <span class="feat-desc">검색량 + 경쟁 난이도 + 기회 점수, 주간 주제 보고서</span>
+            </li>
+            <li class="feature-item">
+              <a href="#feat-workbench" class="feat-name">AI 초안 + SEO 실시간 점검</a>
+              <span class="status-label st-soon">Delivered · coming soon</span>
+              <span class="feat-desc">1인 1일 5-10개 초안——다듬기는 사람의 일</span>
+            </li>
+            <li class="feature-item">
+              <a href="#feat-landing" class="feat-name">랜딩 페이지 + Cookie + UTM 5필드</a>
+              <span class="status-label st-online">Live</span>
+              <span class="feat-desc">콘텐츠 트래픽의 자사 랜딩 지점, 소스 자동 기록</span>
+            </li>
+            <li class="feature-item">
+              <a href="#feat-distribution" class="feat-name">멀티채널 배포</a>
+              <span class="status-label st-soon">Delivered · coming soon</span>
+              <span class="feat-desc">공식 계정 api_draft 초안, 발주서 + 채널 계정</span>
+            </li>
+            <li class="feature-item">
+              <a href="#feat-attribution" class="feat-name">효과 어트리뷰션</a>
+              <span class="status-label st-soon">Delivered · coming soon</span>
+              <span class="feat-desc">contact 생성 시 4개 규칙 자동 실행</span>
+            </li>
+            <li class="feature-item">
+              <a href="#feat-attribution" class="feat-name">어트리뷰션 ROI 대시보드</a>
+              <span class="status-label st-soon">Delivered · coming soon</span>
+              <span class="feat-desc">콘텐츠 → 방문 → 문의 → 성과 → 금액을 한 장의 차트로</span>
+            </li>
+            <li class="feature-item">
+              <a href="#feat-attribution" class="feat-name">콘텐츠 ↔ 상업 기회 매칭</a>
+              <span class="status-label st-soon">Delivered · coming soon</span>
+              <span class="feat-desc">회사명 / 업종 / 키워드 overlap 자동 연결</span>
+            </li>
+            <li class="feature-item">
+              <a href="#module-marketing" class="feat-name">5채널 어댑터 + Identity Resolution</a>
+              <span class="status-label st-online">Live</span>
+              <span class="feat-desc">성과 데이터 자동 환류, 5단계 확률 병합</span>
+            </li>
+            <li class="feature-item">
+              <a href="#module-marketing" class="feat-name">이메일 IMAP 가져오기 + 소스 백필</a>
+              <span class="status-label st-online">Live</span>
+              <span class="feat-desc">과거 이메일 일괄 가져오기, 소스 추적 가능</span>
+            </li>
+        </ul>
+        <a class="role-more" href="#module-marketing">마케팅 리드 확보 자세히 →</a>
       </div>
 
-      <div class="feature-block">
-        <h3>효과 어트리뷰션 대시보드</h3>
-        <p>Sankey 다이어그램이 콘텐츠 발행→페이지 방문→리드 문의→리드 입력→상업 기회 생성→성과의 전체 데이터 흐름을 표시합니다. ROI 리더보드는 &#39;가져온 성과 금액&#39;순으로 정렬되어, 마케팅 팀이 처음으로 &#39;어떤 콘텐츠가 실제로 돈을 가져왔는지&#39;를 봅니다.</p>
+      <div class="role-block">
+        <h3 class="role-block-title">📊 경영층 —— AI 경영 참모</h3>
+        <p class="role-block-sub">같은 데이터를 보고 있으니, 의사결정이 월간 보고를 기다리지 않습니다.</p>
+        <ul class="feature-list">
+            <li class="feature-item">
+              <a href="#module-ai" class="feat-name">관리 대시보드</a>
+              <span class="status-label st-online">Live</span>
+              <span class="feat-desc">7 / 30 / 90일 뷰 + 고객 / 회사 / 작업 지표, 실시간</span>
+            </li>
+            <li class="feature-item">
+              <a href="#feat-suggest" class="feat-name">AI 능동 경고</a>
+              <span class="status-label st-online">Live</span>
+              <span class="feat-desc">8가지 제안 시그널, 하나씩 검토 채택</span>
+            </li>
+            <li class="feature-item">
+              <a href="#feat-health" class="feat-name">상업 기회 건강도 점수 + AI 진단</a>
+              <span class="status-label st-online">Live</span>
+              <span class="feat-desc">5차원 0-100 적황녹 + 8가지 원인 진단</span>
+            </li>
+            <li class="feature-item">
+              <a href="#feat-chatbi" class="feat-name">ChatBI 자연어 데이터 조회</a>
+              <span class="status-label st-online">Live</span>
+              <span class="feat-desc">마케팅 + 영업 전체 데이터, 자동 차트, 원클릭 내보내기</span>
+            </li>
+            <li class="feature-item">
+              <a href="#module-ai" class="feat-name">AI 주간 보고</a>
+              <span class="status-label st-online">Live</span>
+              <span class="feat-desc">team 뷰, admin 열람 가능</span>
+            </li>
+            <li class="feature-item">
+              <a href="#module-ai" class="feat-name">전 퍼널 뷰</a>
+              <span class="status-label st-online">Live</span>
+              <span class="feat-desc">마케팅 정보와 영업 정보가 같은 DB에</span>
+            </li>
+            <li class="feature-item">
+              <a href="#module-ai" class="feat-name">감사와 권한</a>
+              <span class="status-label st-online">Live</span>
+              <span class="feat-desc">감사 로그 100% 커버 + 5가지 민감 작업 승인 + 120분 패스</span>
+            </li>
+            <li class="feature-item">
+              <a href="#module-ai" class="feat-name">멀티테넌트 행 수준 격리</a>
+              <span class="status-label st-online">Live</span>
+              <span class="feat-desc">PG RLS 14개 테이블 + 비특권 역할 + 트랜잭션 수준 query_scope</span>
+            </li>
+            <li class="feature-item">
+              <a href="#module-ai" class="feat-name">온프레미스 배포</a>
+              <span class="status-label st-online">Live</span>
+              <span class="feat-desc">PostgreSQL + Redis, 데이터는 기업 밖으로 나가지 않습니다</span>
+            </li>
+            <li class="feature-item">
+              <a href="#module-ai" class="feat-name">AI 비용 대시보드</a>
+              <span class="status-label st-online">Live</span>
+              <span class="feat-desc">8가지 호출자 계측, admin 전용</span>
+            </li>
+        </ul>
+        <a class="role-more" href="#module-ai">AI 스마트 의사결정 자세히 →</a>
       </div>
-
-      <div class="feature-block">
-        <h3>멀티채널 메시지 통합</h3>
-        <p>WhatsApp, Email, Telegram, Instagram, Messenger, LinkedIn 메시지가 고객 360° 타임라인에 자동 집중됩니다; 전화, 메모, WeChat, 기업용 WeChat 상호작용도 하나의 타임라인에 수동 기록 가능합니다——여러 앱을 전환할 필요가 없습니다.</p>
-      </div>
-
-      <a href="/ko/products/marketing.html" class="module-link">마케팅 리드 확보 자세히 →</a>
     </section>
 
-    <!-- 销售管理 -->
-    <section class="module-section">
+    <section class="module-section" id="module-sales">
       <h2><span class="emoji">💼</span>영업 관리</h2>
       <p>통일 리드 풀, 상업 기회 칸반, 고객 360° 프로필, 방문 회의록 자동 생성, 계약 스마트 관리. 모든 채널 메시지가 한곳에 모이며, 영업 담당자가 바뀌어도 정보가 사라지지 않습니다.</p>
 
       <div class="feature-block">
-        <h3>통일 리드 풀</h3>
+        <h3 id="feat-leadpool">통일 리드 풀</h3>
         <p>콘텐츠 폼, 채널 메시지, AI 능동 확보, 전시회 가져오기 리드가 모두 한곳에 모입니다; AI가 규칙에 따라 자동 점수(0-100)를 매기고 고가치 리드가 우선 표시됩니다; 자동 귀속이 불가능한 메시지는 &#39;미배정 수신함&#39;으로 들어가 관리자가 원클릭으로 수령·지정하며, 배정 결과가 실시간으로 담당자에게 알림됩니다.</p>
       </div>
 
       <div class="feature-block">
-        <h3>🧹 데이터 중복 제거, 원클릭 병합</h3>
+        <h3 id="feat-dedup">🧹 데이터 중복 제거, 원클릭 병합</h3>
         <p>같은 고객이 &#39;구호&#39;와 &#39;구호 로봇틱스&#39;로 입력되었나요? 시스템이 회사명 유사도로 의심 중복 회사를 자동으로 찾아내고, 같은 회사 내에서는 이름·이메일로 중복 연락처를 매칭합니다. 병합을 확인하면 상호작용, 상업 기회, 작업, 방문 기록, 계약 템플릿 등 관련 데이터가 모두 마스터 레코드로 이전되고 변경 기록이 남습니다. 여러 중복 쌍을 선택해 일괄 병합을 지원하며 쌍별 성공/실패 결과를 반환하여 데이터 정제를 한 번에 완료합니다.</p>
         <ul style="list-style:none; padding:0; margin:12px 0 0;">
           <li style="font-size:15px; color:var(--text-secondary); line-height:1.85; padding:8px 0 8px 20px; position:relative; border-bottom:1px solid var(--border);"><span style="position:absolute; left:0; top:16px; width:6px; height:6px; background:var(--accent); border-radius:50%;"></span><strong>스마트 유사성 감지</strong>: 회사명 유사도 가중 비교, 짧은 이름이 긴 이름에 포함된 경우(&#39;구호&#39;→&#39;구호 로봇틱스&#39;)도 인식</li>
@@ -239,50 +417,86 @@
       </div>
 
       <div class="feature-block">
-        <h3>상업 기회 칸반</h3>
+        <h3 id="feat-kanban">상업 기회 칸반</h3>
         <p>5단계(신규 문의→팔로우업→견적→수주→유실), 드래그로 진행. 각 상업 기회 카드는 의사결정에 필요한 정보만 표시: 고객 회사, 금액, 마지막 팔로우업 이후 일수(&gt;3일 주황, &gt;7일 적색); 수주/유실 시간과 유실 사유가 자동 기록되고, 성사 확률은 AI가 직접 읽고 씁니다. 클릭하여 상세 페이지로 이동하면 대화 타임라인 + AI 사이드바(고객 핵심 니즈, 예산 범위, 권장 다음 단계 자동 추출).</p>
       </div>
 
       <div class="feature-block">
-        <h3>고객 360° 프로필</h3>
+        <h3 id="feat-360">고객 360° 프로필</h3>
         <p>3개 탭 뷰: &#39;영업 터치포인트&#39;는 모든 채널 메시지의 타임라인을 표시(감성 태그 포함); &#39;마케팅 터치포인트&#39;는 리드 전환 전 콘텐츠 상호작용을 표시; &#39;AI 인사이트&#39;는 종합 프로필과 리스크 경고를 제공합니다. 상업 기회 건강도 점수(0-100)가 프로필에 내장: 커뮤니케이션 빈도, 감성 추세, 단계 체류, 주도 비율, 금액 5개 차원으로 자동 계산되어 녹색 건강/노란색 주시/적색 경고.</p>
       </div>
 
       <div class="feature-block">
-        <h3>방문 관리</h3>
+        <h3 id="feat-visits">방문 관리</h3>
         <p>녹음을 업로드하면 AI가 1분 만에 구조화된 회의록을 생성합니다(13개 업무 필드: 안건, 요약, 핵심 포인트, 고객 피드백, 다음 액션 등). 방문 캘린더는 월/주 뷰 전환을 지원하며 드래그로 날짜 조정 가능.</p>
       </div>
 
       <div class="feature-block">
-        <h3>계약 및 견적</h3>
+        <h3 id="feat-contract">계약 및 견적</h3>
         <p>AI가 대화 기록에서 계약 필드를 자동 추출해 템플릿을 채우고, 승인 프로세스(초안→승인 대기→효력 발생). 견적 편집기는 제품 선택, 통화 변환, PDF 내보내기를 지원하며 상업 기회와 대화 타임라인에 자동 연동됩니다.</p>
       </div>
 
       <a href="/ko/products/sales.html" class="module-link">영업 관리 자세히 →</a>
     </section>
+    <section class="module-section" id="module-marketing">
+      <h2><span class="emoji">📢</span>마케팅 리드 확보</h2>
+      <p>&#39;무엇을 써야 할지 모르는&#39;부터 &#39;어떤 콘텐츠가 성과를 가져왔는지&#39;까지 전체를 추적할 수 있습니다.</p>
+
+      <div class="feature-block">
+        <h3 id="feat-topic">AI 주제 선정 센터</h3>
+        <p>업종 키워드를 입력하면 AI가 검색량 추정치, 경쟁 난이도, 기회 점수가 포함된 주제 10개를 반환합니다. 감으로 쓸 주제를 정하지 말고 검색 데이터가 판단하게 하세요. 매주 월요일 자동으로 &#39;금주 주제 보고서&#39;를 푸시합니다——지난주 콘텐츠의 검색 순위 변화와 업계 트렌드 기반.</p>
+      </div>
+
+      <div class="feature-block">
+        <h3 id="feat-workbench">콘텐츠 워크벤치</h3>
+        <p>3열 칸반(초안→검토 대기→발행됨)으로 모든 콘텐츠를 관리합니다. AI가 주제에 따라 초안을 자동 생성하고, 편집기에 SEO 실시간 점검 패널이 내장되어 있습니다——키워드 밀도, H 태그 구조, 내부 링크 제안, 가독성 점수. 검토 통과 콘텐츠는 통일 배포 흐름으로 진입합니다——서드파티 배포 서비스(이샤오얼, Zernio 등)와 연동 개발이 완료되었으며, 자격 증명 연결 후 국내외 여러 플랫폼을 커버합니다.</p>
+      </div>
+
+      <div class="feature-block">
+        <h3 id="feat-attribution">효과 어트리뷰션 대시보드</h3>
+        <p>Sankey 다이어그램이 콘텐츠 발행→페이지 방문→리드 문의→리드 입력→상업 기회 생성→성과의 전체 데이터 흐름을 표시합니다. ROI 리더보드는 &#39;가져온 성과 금액&#39;순으로 정렬되어, 마케팅 팀이 처음으로 &#39;어떤 콘텐츠가 실제로 돈을 가져왔는지&#39;를 봅니다.</p>
+      </div>
+
+      <div class="feature-block">
+        <h3 id="feat-channels">멀티채널 메시지 통합</h3>
+        <p>WhatsApp, Email, Telegram, Instagram, Messenger, LinkedIn 메시지가 고객 360° 타임라인에 자동 집중됩니다; 전화, 메모, WeChat, 기업용 WeChat 상호작용도 하나의 타임라인에 수동 기록 가능합니다——여러 앱을 전환할 필요가 없습니다.</p>
+      </div>
+
+      <h3 id="feat-distribution">통일 배포 게이트웨이</h3>
+      <p>승인된 콘텐츠는 통일 배포 게이트웨이를 통해 이샤오얼, Zernio 등 서드파티 배포 서비스로 푸시되어 국내외 플랫폼을 커버합니다——배포 프레임워크가 준비되었으며, 자격 증명 연결 후 원클릭 배포가 가능해집니다. 발행 상태와 상호작용 데이터는 어트리뷰션 대시보드로 자동 환류, 비디오 콘텐츠는 수동 URL+UTM 추적 방식을 지원합니다.</p>
+      <h3 id="feat-landing">🚀 랜딩 페이지와 리드 캡처</h3>
+      <p>각 콘텐츠에는 자사 리드 캡처 페이지가 함께 제공됩니다——방문자가 도착하는 순간 소스, 채널, 캠페인 파라미터가 자동 기록되며, 어트리뷰션 대시보드의 데이터는 이 페이지부터 시작됩니다. 5개 UTM 필드의 전 퍼널 해석과 Cookie + Pixel로 폼을 작성하지 않은 재방문자도 식별됩니다.</p>
+      <h3 id="feat-outbound">능동 리드 확보</h3>
+      <p>타깃 고객 프로필을 정의하면 AI가 공개 데이터 소스를 통해 매칭되는 잠재 고객 기업을 검색하고, 영업 담당자가 선별·확인하여 선택한 기업을 원클릭으로 리드로 전환하며, AI가 아웃리치 이메일 초안을 작성합니다. 공개 데이터만 사용, 출처 표기, 수신 거부 링크 포함, 빈도 제한, GDPR 점검.</p>
+      <h3 id="feat-sequence">✉️ 자동 아웃리치 시퀀스</h3>
+      <p>다단계 터치가 리듬에 따라 자동 발송됩니다——회답 시 중단, 수신 거부 시 차단, 단계별 전송률과 응답률 추적. 괴롭힘식 연발은 하지 않습니다.</p>
+      <a href="/ko/products/marketing.html" class="module-link">마케팅 리드 확보 자세히 →</a>
+    </section>
+
+    <!-- 销售管理 -->
 
     <!-- AI 智能决策 -->
-    <section class="module-section">
+    <section class="module-section" id="module-ai">
       <h2><span class="emoji">🤖</span>AI 스마트 의사결정</h2>
       <p>8가지 AI 제안 시그널이 매일 영업 홈에 푸시됩니다. ChatBI 자연어 쿼리, 관리 대시보드 실시간 지표. &#39;사람이 데이터를 찾는&#39;에서 &#39;데이터가 사람을 찾는&#39;으로.</p>
 
       <div class="feature-block">
-        <h3>AI 제안 센터</h3>
+        <h3 id="feat-suggest">AI 제안 센터</h3>
         <p>8가지 시그널이 영업 전 시나리오를 커버: 휴면 고객 재활성화, 정체 상업 기회 추진, 고가치 상업 기회 경고, 기한 임박 작업 알림, 방문 후 미팔로우업, 방문 임박 준비, 인기 이메일 식별, 부정 감성 경고. 각 제안 카드에는 &#39;채택&#39;과 &#39;무시&#39; 버튼이 있으며, 채택 시 작업이 자동 생성되거나 상업 기회 단계가 진행됩니다.</p>
       </div>
 
       <div class="feature-block">
-        <h3>ChatBI 스마트 Q&amp;A</h3>
+        <h3 id="feat-chatbi">ChatBI 스마트 Q&amp;A</h3>
         <p>자연어로 데이터를 조회하고 AI가 차트를 자동 생성합니다(막대/원형/추세선), 원클릭 내보내기 지원. &#39;지난달 어떤 채널의 성과 금액이 가장 높았나요?&#39; &#39;장삼과 이사의 상업 기회 전환율 비교&#39;——SQL을 배울 필요 없이 바로 물어보세요.</p>
       </div>
 
       <div class="feature-block">
-        <h3>관리 대시보드</h3>
+        <h3 id="feat-dashboard">관리 대시보드</h3>
         <p>전사 수준 지표: 영업 퍼널, 마케팅 투자와 ROI(플랫폼/채널/콘텐츠 제작 등 비용 입력 지원, 성과 금액÷투자 자동 계산), 팀 실적 순위, 리드 확보 채널 효과. AI가 능동적으로 경고: 리드 수 감소, 고가치 상업 기회 정체, 영업 응답 속도가 평균 이하. AI 사용량 투명: 8가지 AI 기능(ChatBI/추천/메시지 분석/계약/프로필/방문/지식 베이스/주제 등)별로 토큰 소비, 호출 횟수, 평균 소요 시간과 모델 분포를 통계하여 AI 투입 내역을 한눈에 확인합니다(비용은 사용 모델 가격으로 자체 계산).</p>
       </div>
 
       <div class="feature-block">
-        <h3>상업 기회 건강도 점수</h3>
+        <h3 id="feat-health">상업 기회 건강도 점수</h3>
         <p>5개 차원 자동 점수: 커뮤니케이션 빈도, 감성 추세, 단계 진행 속도, 능동 연락 비율, 금액 가중치. 녹색(70-100) 건강, 노란색(40-69) 주시, 적색(0-39) 경고.</p>
       </div>
 

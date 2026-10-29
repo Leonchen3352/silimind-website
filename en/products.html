@@ -136,6 +136,36 @@
       .cta-section { padding: 32px 20px; }
       .cta-buttons { flex-direction: column; align-items: center; }
     }
+  
+    /* ===== Features by role ===== */
+    .role-features { padding: 0 32px 56px; }
+    .role-block {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px 32px;
+      margin-bottom: 24px;
+    }
+    .role-block-title { font-size: 20px; font-weight: 700; margin-bottom: 4px; }
+    .role-block-sub { color: var(--text-secondary); font-size: 14px; margin-bottom: 18px; }
+    .feature-list { list-style: none; }
+    .feature-item {
+      display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap;
+      padding: 9px 0; border-bottom: 1px dashed var(--border);
+    }
+    .feature-item:last-child { border-bottom: none; }
+    .feat-name { color: var(--text-primary); font-weight: 600; }
+    .feat-name:hover { color: var(--accent-light); }
+    .status-label { font-size: 12px; padding: 2px 10px; border-radius: 999px; white-space: nowrap; }
+    .st-online { background: rgba(16,185,129,0.14); color: #10b981; }
+    .st-soon { background: rgba(245,158,11,0.14); color: #f59e0b; }
+    .feat-desc { color: var(--text-secondary); font-size: 13px; flex: 1 1 100%; }
+    .role-more { display: inline-block; margin-top: 12px; color: var(--accent-light); font-size: 14px; }
+    @media (max-width: 768px) {
+      .role-features { padding: 0 16px 40px; }
+      .role-block { padding: 20px; }
+    }
+
   </style>
   <link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/products">
   <link rel="alternate" hreflang="en" href="https://www.silimind.net/en/products">
@@ -192,45 +222,193 @@
     <p style="font-size:16px; color:var(--text-secondary); line-height:2; margin-bottom:48px;">SiliMind puts content acquisition, lead management, opportunity follow-up, and deal closing on one platform. AI runs through every step — picking topics, writing content, following up with customers, generating notes, analyzing data. From &#34;the lead one SEO article brought in&#34; to &#34;the money in this deal&#34;, everything is traceable.</p>
 
     <!-- 营销获客 -->
-    <section class="module-section">
-      <h2><span class="emoji">📢</span>Marketing &amp; Lead Acquisition</h2>
-      <p>From &#34;don&#39;t know what to write&#34; to &#34;which article drove the deal&#34; — traceable end to end.</p>
 
-      <div class="feature-block">
-        <h3>AI Topic Center</h3>
-        <p>Enter industry keywords and AI returns 10 topic suggestions, each with a search-volume estimate, competition difficulty, and opportunity score. Stop guessing what to write — let search data decide. Every Monday, an automated weekly topic report arrives based on last week&#39;s ranking changes and industry trends.</p>
+    <section class="role-features" id="features-by-role">
+      <p class="section-label">Features by Role</p>
+      <h2 class="section-title">Three roles, one feature list</h2>
+      <p class="section-subtitle">Skip the long read — SiliMind&#39;s full capability set organized by your role, every item linked to its details.</p>
+
+      <div class="role-block">
+        <h3 class="role-block-title">💼 Sales / FAE / Tech Support — an AI sales assistant</h3>
+        <p class="role-block-sub">Let it handle the grunt work; you make the calls.</p>
+        <ul class="feature-list">
+            <li class="feature-item">
+              <a href="#module-sales" class="feat-name">10-channel unified message timeline</a>
+              <span class="status-label st-online">Live</span>
+              <span class="feat-desc">WhatsApp / Email / phone / memos / Telegram / Instagram / Messenger / LinkedIn / WeChat / WeCom — one timeline</span>
+            </li>
+            <li class="feature-item">
+              <a href="#feat-360" class="feat-name">Customer 360° view</a>
+              <span class="status-label st-online">Live</span>
+              <span class="feat-desc">Sales touchpoints + marketing touchpoints + AI insights — three views of one customer</span>
+            </li>
+            <li class="feature-item">
+              <a href="#feat-leadpool" class="feat-name">Unified lead pool</a>
+              <span class="status-label st-online">Live</span>
+              <span class="feat-desc">AI intent scoring + smart assignment + SLA countdown alerts</span>
+            </li>
+            <li class="feature-item">
+              <a href="#feat-kanban" class="feat-name">5-stage opportunity pipeline</a>
+              <span class="status-label st-online">Live</span>
+              <span class="feat-desc">5-dimension health scoring + AI deal diagnostics (8 causes)</span>
+            </li>
+            <li class="feature-item">
+              <a href="#feat-visits" class="feat-name">AI visit notes</a>
+              <span class="status-label st-online">Live</span>
+              <span class="feat-desc">Recording → 13 structured fields, editable draft written to the timeline</span>
+            </li>
+            <li class="feature-item">
+              <a href="#module-sales" class="feat-name">AI email writing &amp; AI weekly reports</a>
+              <span class="status-label st-online">Live</span>
+              <span class="feat-desc">3 tones × zh/en/ja, personal / team dual-view reports</span>
+            </li>
+            <li class="feature-item">
+              <a href="#module-sales" class="feat-name">RAG knowledge base</a>
+              <span class="status-label st-online">Live</span>
+              <span class="feat-desc">PDF/Word/MD/URL, semi-automatic confirmation + citation tracking</span>
+            </li>
+            <li class="feature-item">
+              <a href="#feat-contract" class="feat-name">AI contract extraction</a>
+              <span class="status-label st-online">Live</span>
+              <span class="feat-desc">Extract fields from conversations → template → render</span>
+            </li>
+            <li class="feature-item">
+              <a href="#feat-outbound" class="feat-name">Proactive outbound</a>
+              <span class="status-label st-online">Live</span>
+              <span class="feat-desc">Profile → AI search → human filtering → AI-drafted outreach</span>
+            </li>
+            <li class="feature-item">
+              <a href="#module-sales" class="feat-name">Approval gates &amp; audit</a>
+              <span class="status-label st-online">Live</span>
+              <span class="feat-desc">5 sensitive action types with approve-first execution + 120-min passes + 100% audit coverage</span>
+            </li>
+        </ul>
+        <a class="role-more" href="#module-sales">Explore Sales Management →</a>
       </div>
 
-      <div class="feature-block">
-        <h3>Content Workbench</h3>
-        <p>A three-column board (draft → pending review → published) manages all content. AI generates drafts from each topic; the editor has a built-in real-time SEO check panel — keyword density, H-tag structure, internal-link suggestions, readability score. Approved content enters the unified distribution flow — integrated with third-party distribution services (Yixiaoer, Zernio, etc.); coverage of platforms at home and abroad begins once credentials are connected.</p>
+      <div class="role-block">
+        <h3 class="role-block-title">📢 Marketing / Market Ops — an AI marketing team</h3>
+        <p class="role-block-sub">Grounded topics, scaled output, visible results.</p>
+        <ul class="feature-list">
+            <li class="feature-item">
+              <a href="#feat-topic" class="feat-name">AI topic center</a>
+              <span class="status-label st-soon">Delivered · coming soon</span>
+              <span class="feat-desc">Search volume + competition difficulty + opportunity score, weekly topic reports</span>
+            </li>
+            <li class="feature-item">
+              <a href="#feat-workbench" class="feat-name">AI first drafts + real-time SEO check</a>
+              <span class="status-label st-soon">Delivered · coming soon</span>
+              <span class="feat-desc">5-10 drafts per person per day — human editing remains the craft</span>
+            </li>
+            <li class="feature-item">
+              <a href="#feat-landing" class="feat-name">Landing pages + Cookie + 5 UTM fields</a>
+              <span class="status-label st-online">Live</span>
+              <span class="feat-desc">The first-party landing point for content traffic, sources auto-recorded</span>
+            </li>
+            <li class="feature-item">
+              <a href="#feat-distribution" class="feat-name">Multi-channel publishing &amp; distribution</a>
+              <span class="status-label st-soon">Delivered · coming soon</span>
+              <span class="feat-desc">WeChat official account api_draft drafts, publish orders + channel accounts</span>
+            </li>
+            <li class="feature-item">
+              <a href="#feat-attribution" class="feat-name">Effect attribution</a>
+              <span class="status-label st-soon">Delivered · coming soon</span>
+              <span class="feat-desc">4 attribution rules run automatically at contact creation</span>
+            </li>
+            <li class="feature-item">
+              <a href="#feat-attribution" class="feat-name">Attribution ROI dashboard</a>
+              <span class="status-label st-soon">Delivered · coming soon</span>
+              <span class="feat-desc">Content → visits → inquiries → deals → value on one chart</span>
+            </li>
+            <li class="feature-item">
+              <a href="#feat-attribution" class="feat-name">Content ↔ opportunity matching</a>
+              <span class="status-label st-soon">Delivered · coming soon</span>
+              <span class="feat-desc">Auto-linked by company name / industry / keyword overlap</span>
+            </li>
+            <li class="feature-item">
+              <a href="#module-marketing" class="feat-name">5-channel adapters + Identity Resolution</a>
+              <span class="status-label st-online">Live</span>
+              <span class="feat-desc">Performance data flows back; 5-stage probability merging</span>
+            </li>
+            <li class="feature-item">
+              <a href="#module-marketing" class="feat-name">Email IMAP import + source backfill</a>
+              <span class="status-label st-online">Live</span>
+              <span class="feat-desc">Historical email batch import, sources traceable</span>
+            </li>
+        </ul>
+        <a class="role-more" href="#module-marketing">Explore Marketing &amp; Acquisition →</a>
       </div>
 
-      <div class="feature-block">
-        <h3>Attribution Dashboard</h3>
-        <p>A Sankey diagram shows the complete data flow from content publication → page visits → form fills → leads → opportunities → deals. The ROI leaderboard ranks by &#34;deal value driven&#34; — the marketing team finally sees which content actually makes money.</p>
+      <div class="role-block">
+        <h3 class="role-block-title">📊 Leadership — an AI business advisor</h3>
+        <p class="role-block-sub">You see the same data; decisions don&#39;t wait for monthly reports.</p>
+        <ul class="feature-list">
+            <li class="feature-item">
+              <a href="#module-ai" class="feat-name">Management dashboard</a>
+              <span class="status-label st-online">Live</span>
+              <span class="feat-desc">7 / 30 / 90-day views + customer / company / task metrics, real-time</span>
+            </li>
+            <li class="feature-item">
+              <a href="#feat-suggest" class="feat-name">AI proactive alerts</a>
+              <span class="status-label st-online">Live</span>
+              <span class="feat-desc">8 suggestion signal types, reviewed and accepted one by one</span>
+            </li>
+            <li class="feature-item">
+              <a href="#feat-health" class="feat-name">Opportunity health scoring + AI diagnostics</a>
+              <span class="status-label st-online">Live</span>
+              <span class="feat-desc">5 dimensions 0–100 red/yellow/green + 8-cause diagnostics</span>
+            </li>
+            <li class="feature-item">
+              <a href="#feat-chatbi" class="feat-name">ChatBI natural-language queries</a>
+              <span class="status-label st-online">Live</span>
+              <span class="feat-desc">All marketing + sales data, auto charts, one-click export</span>
+            </li>
+            <li class="feature-item">
+              <a href="#module-ai" class="feat-name">AI weekly reports</a>
+              <span class="status-label st-online">Live</span>
+              <span class="feat-desc">team view, visible to admins</span>
+            </li>
+            <li class="feature-item">
+              <a href="#module-ai" class="feat-name">Full-funnel view</a>
+              <span class="status-label st-online">Live</span>
+              <span class="feat-desc">Marketing and sales information in one database</span>
+            </li>
+            <li class="feature-item">
+              <a href="#module-ai" class="feat-name">Audit &amp; permissions</a>
+              <span class="status-label st-online">Live</span>
+              <span class="feat-desc">100% audit coverage + 5 approval-gated actions + 120-min passes</span>
+            </li>
+            <li class="feature-item">
+              <a href="#module-ai" class="feat-name">Multi-tenant row isolation</a>
+              <span class="status-label st-online">Live</span>
+              <span class="feat-desc">PG RLS across 14 tables + non-privileged roles + transaction-level query_scope</span>
+            </li>
+            <li class="feature-item">
+              <a href="#module-ai" class="feat-name">Private deployment</a>
+              <span class="status-label st-online">Live</span>
+              <span class="feat-desc">PostgreSQL + Redis, data never leaves your company</span>
+            </li>
+            <li class="feature-item">
+              <a href="#module-ai" class="feat-name">AI cost dashboard</a>
+              <span class="status-label st-online">Live</span>
+              <span class="feat-desc">8 caller-type instrumentation, admin-only</span>
+            </li>
+        </ul>
+        <a class="role-more" href="#module-ai">Explore AI Smart Decisions →</a>
       </div>
-
-      <div class="feature-block">
-        <h3>Multi-channel message aggregation</h3>
-        <p>WhatsApp, Email, Telegram, Instagram, Messenger, and LinkedIn messages auto-aggregate onto the customer 360° timeline; phone calls, memos, WeChat, and WeCom interactions can also be logged manually on one timeline — no more switching between apps.</p>
-      </div>
-
-      <a href="/en/products/marketing.html" class="module-link">Explore Marketing &amp; Acquisition →</a>
     </section>
 
-    <!-- 销售管理 -->
-    <section class="module-section">
+    <section class="module-section" id="module-sales">
       <h2><span class="emoji">💼</span>Sales Management</h2>
       <p>Unified lead pool, opportunity board, customer 360° profiles, automatic visit notes, smart contract management. All channel messages converge in one place — nothing lost when reps change.</p>
 
       <div class="feature-block">
-        <h3>Unified Lead Pool</h3>
+        <h3 id="feat-leadpool">Unified Lead Pool</h3>
         <p>Leads from content forms, channel messages, AI proactive acquisition, and trade-show imports all converge in one place; AI scores them automatically (0-100) so high-value leads surface first; messages that can&#39;t be auto-assigned land in the &#34;unassigned inbox&#34; where admins claim and assign in one click — with real-time notifications to the person.</p>
       </div>
 
       <div class="feature-block">
-        <h3>🧹 Deduplication &amp; one-click merge</h3>
+        <h3 id="feat-dedup">🧹 Deduplication &amp; one-click merge</h3>
         <p>The same customer entered as both &#34;Nine&#34; and &#34;Nine Robotics&#34;? The system finds suspected duplicate companies by name similarity, then matches duplicate contacts within a company by name and email. Confirm the merge and interactions, opportunities, tasks, visit records, and contract templates all migrate with the master record — no orphans left. Select multiple duplicate pairs for batch merging with per-pair success/failure results; data cleansing done in one pass.</p>
         <ul style="list-style:none; padding:0; margin:12px 0 0;">
           <li style="font-size:15px; color:var(--text-secondary); line-height:1.85; padding:8px 0 8px 20px; position:relative; border-bottom:1px solid var(--border);"><span style="position:absolute; left:0; top:16px; width:6px; height:6px; background:var(--accent); border-radius:50%;"></span><strong>Smart similarity detection</strong>: weighted company-name similarity matching — even short names contained in long ones (&#34;Nine&#34; → &#34;Nine Robotics&#34;) are recognized</li>
@@ -239,50 +417,86 @@
       </div>
 
       <div class="feature-block">
-        <h3>Opportunity Kanban</h3>
+        <h3 id="feat-kanban">Opportunity Kanban</h3>
         <p>Five stages (new inquiry → in follow-up → quoting → won → lost), advanced by drag and drop. Each card shows only what the decision needs: customer, value, days since last touch (&gt;3 days amber, &gt;7 days red); wins/losses auto-record time and loss reason, and AI reads and writes win probability directly. Click into the detail page for the conversation timeline plus an AI sidebar (auto-extracted core needs, budget range, suggested next step).</p>
       </div>
 
       <div class="feature-block">
-        <h3>Customer 360° Profile</h3>
+        <h3 id="feat-360">Customer 360° Profile</h3>
         <p>Three tab views: &#34;Sales touchpoints&#34; shows the timeline of all channel messages (with sentiment tags); &#34;Marketing touchpoints&#34; shows content interactions before the lead converted; &#34;AI insights&#34; provides a composite profile with risk flags. An opportunity health score (0-100) is embedded in the profile: auto-calculated across five dimensions — contact frequency, sentiment trend, stage velocity, inbound/outbound ratio, and value — green healthy / yellow watch / red alert.</p>
       </div>
 
       <div class="feature-block">
-        <h3>Visit Management</h3>
+        <h3 id="feat-visits">Visit Management</h3>
         <p>Upload a recording and AI generates structured notes in 1 minute (13 business fields: topics, summary, key points, customer feedback, next actions, and more). The visit calendar switches between month/week views with drag-and-drop rescheduling.</p>
       </div>
 
       <div class="feature-block">
-        <h3>Contracts &amp; Quotes</h3>
+        <h3 id="feat-contract">Contracts &amp; Quotes</h3>
         <p>AI extracts contract fields from conversation records to fill templates, with an approval flow (draft → pending approval → effective). The quote editor supports product selection, currency conversion, and PDF export, auto-linked to the opportunity and conversation timeline.</p>
       </div>
 
       <a href="/en/products/sales.html" class="module-link">Explore Sales Management →</a>
     </section>
+    <section class="module-section" id="module-marketing">
+      <h2><span class="emoji">📢</span>Marketing &amp; Lead Acquisition</h2>
+      <p>From &#34;don&#39;t know what to write&#34; to &#34;which article drove the deal&#34; — traceable end to end.</p>
+
+      <div class="feature-block">
+        <h3 id="feat-topic">AI Topic Center</h3>
+        <p>Enter industry keywords and AI returns 10 topic suggestions, each with a search-volume estimate, competition difficulty, and opportunity score. Stop guessing what to write — let search data decide. Every Monday, an automated weekly topic report arrives based on last week&#39;s ranking changes and industry trends.</p>
+      </div>
+
+      <div class="feature-block">
+        <h3 id="feat-workbench">Content Workbench</h3>
+        <p>A three-column board (draft → pending review → published) manages all content. AI generates drafts from each topic; the editor has a built-in real-time SEO check panel — keyword density, H-tag structure, internal-link suggestions, readability score. Approved content enters the unified distribution flow — integrated with third-party distribution services (Yixiaoer, Zernio, etc.); coverage of platforms at home and abroad begins once credentials are connected.</p>
+      </div>
+
+      <div class="feature-block">
+        <h3 id="feat-attribution">Attribution Dashboard</h3>
+        <p>A Sankey diagram shows the complete data flow from content publication → page visits → form fills → leads → opportunities → deals. The ROI leaderboard ranks by &#34;deal value driven&#34; — the marketing team finally sees which content actually makes money.</p>
+      </div>
+
+      <div class="feature-block">
+        <h3 id="feat-channels">Multi-channel message aggregation</h3>
+        <p>WhatsApp, Email, Telegram, Instagram, Messenger, and LinkedIn messages auto-aggregate onto the customer 360° timeline; phone calls, memos, WeChat, and WeCom interactions can also be logged manually on one timeline — no more switching between apps.</p>
+      </div>
+
+      <h3 id="feat-distribution">Unified Distribution Gateway</h3>
+      <p>Approved content pushes through the unified distribution gateway to third-party distribution services such as Yixiaoer and Zernio, covering platforms at home and abroad — the distribution framework is ready; one-click distribution becomes available once credentials are connected. Publish status and engagement data flow back to the attribution dashboard; video content supports manual URL+UTM tracking.</p>
+      <h3 id="feat-landing">🚀 Landing Pages &amp; Lead Capture</h3>
+      <p>Each piece of content comes with your own lead-capture page — sources, channels, and campaign parameters are recorded the moment a visitor arrives; that&#39;s where the attribution dashboard&#39;s data begins. Full-funnel parsing of five UTM fields, plus Cookie + Pixel so returning visitors are recognized even without a form.</p>
+      <h3 id="feat-outbound">Proactive Acquisition</h3>
+      <p>Define your target customer profile and AI searches matching prospect companies through public data sources; reps filter and confirm, converting selected companies to leads in one click with AI-drafted outreach. Public data only, sources labeled, unsubscribe links included, frequency limits, GDPR checks.</p>
+      <h3 id="feat-sequence">✉️ Automated Outreach Sequences</h3>
+      <p>Multi-step touches go out automatically on a rhythm — a reply stops the sequence, an unsubscribe blocks it, with delivery and reply rates tracked per step. No harassment-style spamming.</p>
+      <a href="/en/products/marketing.html" class="module-link">Explore Marketing &amp; Acquisition →</a>
+    </section>
+
+    <!-- 销售管理 -->
 
     <!-- AI 智能决策 -->
-    <section class="module-section">
+    <section class="module-section" id="module-ai">
       <h2><span class="emoji">🤖</span>AI Smart Decisions</h2>
       <p>8 types of AI suggestion signals push to the sales home page daily. ChatBI natural-language queries; management dashboard with real-time metrics. From &#34;people looking for data&#34; to &#34;data finding people&#34;.</p>
 
       <div class="feature-block">
-        <h3>AI Suggestion Center</h3>
+        <h3 id="feat-suggest">AI Suggestion Center</h3>
         <p>8 signal types cover every sales scenario: dormant customer reactivation, stalled opportunity nudges, high-value opportunity alerts, due-task reminders, un-followed visits, upcoming-visit prep, hot-email detection, and negative-sentiment alerts. Each suggestion card has Accept and Ignore buttons; accepting auto-creates a task or advances the opportunity stage.</p>
       </div>
 
       <div class="feature-block">
-        <h3>ChatBI Smart Q&amp;A</h3>
+        <h3 id="feat-chatbi">ChatBI Smart Q&amp;A</h3>
         <p>Query data in natural language and AI generates charts automatically (bar/pie/trend lines) with one-click export. &#34;Which channel had the highest deal value last month?&#34; &#34;Compare Zhang&#39;s and Li&#39;s conversion rates&#34; — no SQL required, just ask.</p>
       </div>
 
       <div class="feature-block">
-        <h3>Management Dashboard</h3>
+        <h3 id="feat-dashboard">Management Dashboard</h3>
         <p>Company-wide metrics: sales funnel, marketing spend vs. ROI (enter platform/channel/content costs and it auto-computes deal value ÷ spend), team leaderboards, and channel performance. AI proactively alerts: lead volume dropping, high-value opportunities stalling, response speeds below average. AI usage is transparent: token consumption, call counts, average latency, and model mix tracked across 8 AI feature categories (ChatBI / suggestions / message analysis / contracts / profiles / visits / knowledge base / topics), so you can see exactly where AI spend goes (costs are self-calculated at each model&#39;s pricing).</p>
       </div>
 
       <div class="feature-block">
-        <h3>Opportunity Health Score</h3>
+        <h3 id="feat-health">Opportunity Health Score</h3>
         <p>Auto-scored across 5 dimensions: contact frequency, sentiment trend, stage velocity, inbound/outbound ratio, and value weighting. Green (70-100) healthy, yellow (40-69) watch, red (0-39) alert.</p>
       </div>
 

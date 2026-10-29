@@ -136,6 +136,36 @@
       .cta-section { padding: 32px 20px; }
       .cta-buttons { flex-direction: column; align-items: center; }
     }
+  
+    /* ===== 按角色看功能（role features） ===== */
+    .role-features { padding: 0 32px 56px; }
+    .role-block {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px 32px;
+      margin-bottom: 24px;
+    }
+    .role-block-title { font-size: 20px; font-weight: 700; margin-bottom: 4px; }
+    .role-block-sub { color: var(--text-secondary); font-size: 14px; margin-bottom: 18px; }
+    .feature-list { list-style: none; }
+    .feature-item {
+      display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap;
+      padding: 9px 0; border-bottom: 1px dashed var(--border);
+    }
+    .feature-item:last-child { border-bottom: none; }
+    .feat-name { color: var(--text-primary); font-weight: 600; }
+    .feat-name:hover { color: var(--accent-light); }
+    .status-label { font-size: 12px; padding: 2px 10px; border-radius: 999px; white-space: nowrap; }
+    .st-online { background: rgba(16,185,129,0.14); color: #10b981; }
+    .st-soon { background: rgba(245,158,11,0.14); color: #f59e0b; }
+    .feat-desc { color: var(--text-secondary); font-size: 13px; flex: 1 1 100%; }
+    .role-more { display: inline-block; margin-top: 12px; color: var(--accent-light); font-size: 14px; }
+    @media (max-width: 768px) {
+      .role-features { padding: 0 16px 40px; }
+      .role-block { padding: 20px; }
+    }
+
   </style>
   <link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/products">
   <link rel="alternate" hreflang="en" href="https://www.silimind.net/en/products">
@@ -192,45 +222,193 @@
     <p style="font-size:16px; color:var(--text-secondary); line-height:2; margin-bottom:48px;">SiliMind 把内容获客、线索管理、商机跟进、合同成交放在一个平台里。AI 贯穿每个环节——帮你选题、写内容、跟进客户、生成纪要、分析数据。从「一篇 SEO 文章带来的线索」到「这笔成交的钱」，全链路可追溯。</p>
 
     <!-- 营销获客 -->
-    <section class="module-section">
-      <h2><span class="emoji">📢</span>营销获客</h2>
-      <p>从「不知道写什么」到「哪篇内容带来了成交」，全链路可追溯。</p>
 
-      <div class="feature-block">
-        <h3>AI 选题中心</h3>
-        <p>输入行业关键词，AI 返回 10 个选题建议，每个带搜索量估算、竞争难度和机会分。不再拍脑袋决定写什么，让搜索数据替你做判断。每周一自动推送「本周选题周报」，基于上周内容的搜索排名变化和行业热点。</p>
+    <section class="role-features" id="features-by-role">
+      <p class="section-label">按角色看功能</p>
+      <h2 class="section-title">三类角色，一份功能清单</h2>
+      <p class="section-subtitle">不用读长文——按你的角色分区列出 SiliMind 的全部能力，每条都可点进详情。</p>
+
+      <div class="role-block">
+        <h3 class="role-block-title">💼 销售 / FAE / 技术支持 —— AI 销售助理</h3>
+        <p class="role-block-sub">把杂活交给它，你只做判断。</p>
+        <ul class="feature-list">
+            <li class="feature-item">
+              <a href="#module-sales" class="feat-name">10 渠道消息统一时间线</a>
+              <span class="status-label st-online">已上线</span>
+              <span class="feat-desc">WhatsApp / Email / 电话 / 备忘录 / Telegram / Instagram / Messenger / LinkedIn / 微信 / 企业微信，一条时间线</span>
+            </li>
+            <li class="feature-item">
+              <a href="#feat-360" class="feat-name">客户 360° 视图</a>
+              <span class="status-label st-online">已上线</span>
+              <span class="feat-desc">销售触点 + 营销触点 + AI 洞察，三个视角看一个客户</span>
+            </li>
+            <li class="feature-item">
+              <a href="#feat-leadpool" class="feat-name">统一线索池</a>
+              <span class="status-label st-online">已上线</span>
+              <span class="feat-desc">AI 意向评分 + 智能分配 + SLA 倒计时超时报警</span>
+            </li>
+            <li class="feature-item">
+              <a href="#feat-kanban" class="feat-name">商机 5 阶段 Pipeline</a>
+              <span class="status-label st-online">已上线</span>
+              <span class="feat-desc">健康度评分 5 维度 + AI 商机诊断（8 种病因）</span>
+            </li>
+            <li class="feature-item">
+              <a href="#feat-visits" class="feat-name">AI 拜访纪要</a>
+              <span class="status-label st-online">已上线</span>
+              <span class="feat-desc">录音 → 13 字段结构化，草稿可修正后写入时间线</span>
+            </li>
+            <li class="feature-item">
+              <a href="#module-sales" class="feat-name">AI 写邮件与 AI 周报</a>
+              <span class="status-label st-online">已上线</span>
+              <span class="feat-desc">3 种语气 × 中/英/日，personal / team 双视角周报</span>
+            </li>
+            <li class="feature-item">
+              <a href="#module-sales" class="feat-name">RAG 知识库</a>
+              <span class="status-label st-online">已上线</span>
+              <span class="feat-desc">PDF/Word/MD/URL，半自动确认 + 引用追踪</span>
+            </li>
+            <li class="feature-item">
+              <a href="#feat-contract" class="feat-name">AI 合同抽取</a>
+              <span class="status-label st-online">已上线</span>
+              <span class="feat-desc">从沟通记录提取字段 → 模板 → 渲染</span>
+            </li>
+            <li class="feature-item">
+              <a href="#feat-outbound" class="feat-name">主动获客 Outbound</a>
+              <span class="status-label st-online">已上线</span>
+              <span class="feat-desc">画像 → AI 搜索 → 人工筛选 → AI 起草开发信</span>
+            </li>
+            <li class="feature-item">
+              <a href="#module-sales" class="feat-name">审批闸门与审计</a>
+              <span class="status-label st-online">已上线</span>
+              <span class="feat-desc">5 类敏感动作先审批后操作 + 120 分钟通行证 + 审计日志 100% 覆盖</span>
+            </li>
+        </ul>
+        <a class="role-more" href="#module-sales">了解销售管理详情 →</a>
       </div>
 
-      <div class="feature-block">
-        <h3>内容工作台</h3>
-        <p>三列看板（草稿→待审核→已发布）管理所有内容。AI 根据选题自动生成初稿，编辑器内嵌 SEO 实时检查面板——关键词密度、H 标签结构、内链建议、可读性评分。审核通过的内容进入统一分发流程——对接第三方分发服务（蚁小二、Zernio 等），凭证接入完成后覆盖国内外多个平台。</p>
+      <div class="role-block">
+        <h3 class="role-block-title">📢 市场 / 市场运营 —— AI 市场运营团队</h3>
+        <p class="role-block-sub">选题有依据，产出有规模，效果看得见。</p>
+        <ul class="feature-list">
+            <li class="feature-item">
+              <a href="#feat-topic" class="feat-name">AI 选题中心</a>
+              <span class="status-label st-soon">已交付 · 即将上线</span>
+              <span class="feat-desc">搜索量 + 竞争难度 + 机会分，每周选题周报</span>
+            </li>
+            <li class="feature-item">
+              <a href="#feat-workbench" class="feat-name">AI 内容初稿 + SEO 实时检查</a>
+              <span class="status-label st-soon">已交付 · 即将上线</span>
+              <span class="feat-desc">1 人 1 天 5–10 篇初稿，改稿仍是人的活</span>
+            </li>
+            <li class="feature-item">
+              <a href="#feat-landing" class="feat-name">落地页 + Cookie + UTM 5 字段</a>
+              <span class="status-label st-online">已上线</span>
+              <span class="feat-desc">内容引流的第一方落点，来源自动记录</span>
+            </li>
+            <li class="feature-item">
+              <a href="#feat-distribution" class="feat-name">多渠道发布分发</a>
+              <span class="status-label st-soon">已交付 · 即将上线</span>
+              <span class="feat-desc">公众号 api_draft 草稿箱，发布单 + 渠道账号</span>
+            </li>
+            <li class="feature-item">
+              <a href="#feat-attribution" class="feat-name">效果归因</a>
+              <span class="status-label st-soon">已交付 · 即将上线</span>
+              <span class="feat-desc">contact 创建时自动跑 4 条归因规则</span>
+            </li>
+            <li class="feature-item">
+              <a href="#feat-attribution" class="feat-name">归因 ROI 看板</a>
+              <span class="status-label st-soon">已交付 · 即将上线</span>
+              <span class="feat-desc">内容 → 访问 → 询盘 → 成交 → 金额，一张图看完</span>
+            </li>
+            <li class="feature-item">
+              <a href="#feat-attribution" class="feat-name">内容 ↔ 商机匹配</a>
+              <span class="status-label st-soon">已交付 · 即将上线</span>
+              <span class="feat-desc">公司名 / 行业 / 关键词 overlap 自动关联</span>
+            </li>
+            <li class="feature-item">
+              <a href="#module-marketing" class="feat-name">5 渠道 adapter + Identity Resolution</a>
+              <span class="status-label st-online">已上线</span>
+              <span class="feat-desc">表现数据自动回流，5 阶段概率合并</span>
+            </li>
+            <li class="feature-item">
+              <a href="#module-marketing" class="feat-name">邮箱 IMAP 导入 + 来源标注回填</a>
+              <span class="status-label st-online">已上线</span>
+              <span class="feat-desc">历史邮件批量入库，来源可查</span>
+            </li>
+        </ul>
+        <a class="role-more" href="#module-marketing">了解营销获客详情 →</a>
       </div>
 
-      <div class="feature-block">
-        <h3>效果归因看板</h3>
-        <p>Sankey 图展示从内容发布→页面访问→留资询盘→线索入库→商机创建→成交的完整数据流。ROI 排行榜按「带来的成交金额」排序，市场团队第一次看到「哪篇内容真正带来了钱」。</p>
+      <div class="role-block">
+        <h3 class="role-block-title">📊 老板 / 管理层 —— AI 经营参谋</h3>
+        <p class="role-block-sub">你看到的是同一份数据，决策不用等月报。</p>
+        <ul class="feature-list">
+            <li class="feature-item">
+              <a href="#module-ai" class="feat-name">管理驾驶舱</a>
+              <span class="status-label st-online">已上线</span>
+              <span class="feat-desc">7 / 30 / 90 天维度 + 客户 / 公司 / 任务指标，实时</span>
+            </li>
+            <li class="feature-item">
+              <a href="#feat-suggest" class="feat-name">AI 主动预警</a>
+              <span class="status-label st-online">已上线</span>
+              <span class="feat-desc">8 类建议信号，逐条审核采纳</span>
+            </li>
+            <li class="feature-item">
+              <a href="#feat-health" class="feat-name">商机健康度评分 + AI 诊断</a>
+              <span class="status-label st-online">已上线</span>
+              <span class="feat-desc">5 维度 0–100 红黄绿 + 8 种病因诊断</span>
+            </li>
+            <li class="feature-item">
+              <a href="#feat-chatbi" class="feat-name">ChatBI 自然语言查数</a>
+              <span class="status-label st-online">已上线</span>
+              <span class="feat-desc">营销 + 销售全量数据，自动出图，一键导出</span>
+            </li>
+            <li class="feature-item">
+              <a href="#module-ai" class="feat-name">AI 周报</a>
+              <span class="status-label st-online">已上线</span>
+              <span class="feat-desc">team 视角，admin 可见</span>
+            </li>
+            <li class="feature-item">
+              <a href="#module-ai" class="feat-name">全链路视图</a>
+              <span class="status-label st-online">已上线</span>
+              <span class="feat-desc">市场信息与销售信息在同一个库里</span>
+            </li>
+            <li class="feature-item">
+              <a href="#module-ai" class="feat-name">审计与权限</a>
+              <span class="status-label st-online">已上线</span>
+              <span class="feat-desc">审计日志 100% 覆盖 + 5 类敏感动作审批 + 120 分钟通行证</span>
+            </li>
+            <li class="feature-item">
+              <a href="#module-ai" class="feat-name">多租户行级隔离</a>
+              <span class="status-label st-online">已上线</span>
+              <span class="feat-desc">PG RLS 14 表 + 非特权角色 + 事务级 query_scope</span>
+            </li>
+            <li class="feature-item">
+              <a href="#module-ai" class="feat-name">私有化部署</a>
+              <span class="status-label st-online">已上线</span>
+              <span class="feat-desc">PostgreSQL + Redis，数据不出企业</span>
+            </li>
+            <li class="feature-item">
+              <a href="#module-ai" class="feat-name">AI 成本仪表盘</a>
+              <span class="status-label st-online">已上线</span>
+              <span class="feat-desc">8 类调用方埋点，admin 专属</span>
+            </li>
+        </ul>
+        <a class="role-more" href="#module-ai">了解 AI 智能决策详情 →</a>
       </div>
-
-      <div class="feature-block">
-        <h3>多渠道消息聚合</h3>
-        <p>WhatsApp、Email、Telegram、Instagram、Messenger、LinkedIn 消息自动汇聚到客户 360° 时间线；电话、备忘录、微信、企业微信等互动也可统一手工记录在一条时间线上——不需要切换多个 App。</p>
-      </div>
-
-      <a href="/products/marketing.html" class="module-link">了解营销获客 →</a>
     </section>
 
-    <!-- 销售管理 -->
-    <section class="module-section">
+    <section class="module-section" id="module-sales">
       <h2><span class="emoji">💼</span>销售管理</h2>
       <p>统一线索池、商机看板、客户 360° 画像、拜访纪要自动生成、合同智能管理。所有渠道消息汇聚一处，销售换人信息不丢。</p>
 
       <div class="feature-block">
-        <h3>统一线索池</h3>
+        <h3 id="feat-leadpool">统一线索池</h3>
         <p>内容表单、渠道消息、AI 主动获客、展会导入的线索全部汇聚一处；AI 按规则自动打分（0-100），高价值线索优先浮现；无法自动归属的消息进入『未分配收件箱』，管理员一键认领、指派，分配结果实时通知到人。</p>
       </div>
 
       <div class="feature-block">
-        <h3>🧹 数据查重，一键合并</h3>
+        <h3 id="feat-dedup">🧹 数据查重，一键合并</h3>
         <p>同一个客户被录成「九号」和「九号机器人」？系统按公司名相似度自动找出疑似重复的公司，同公司内按姓名、邮箱匹配重复联系人。确认合并后，互动、商机、任务、拜访记录、合同模板等关联数据全部随迁，不留孤儿记录。支持勾选多组重复对批量合并，逐对返回成功与失败结果，数据清洗一次做完。</p>
         <ul style="list-style:none; padding:0; margin:12px 0 0;">
           <li style="font-size:15px; color:var(--text-secondary); line-height:1.85; padding:8px 0 8px 20px; position:relative; border-bottom:1px solid var(--border);"><span style="position:absolute; left:0; top:16px; width:6px; height:6px; background:var(--accent); border-radius:50%;"></span><strong>智能相似检测</strong>：公司名相似度加权比对，短名包含长名（「九号」→「九号机器人」）也能识别</li>
@@ -239,50 +417,86 @@
       </div>
 
       <div class="feature-block">
-        <h3>商机 Kanban 看板</h3>
+        <h3 id="feat-kanban">商机 Kanban 看板</h3>
         <p>5 个阶段（新询盘→跟进中→报价中→赢单→输单），拖拽推进。每个商机卡只显示决策所需信息：客户公司、金额、距上次跟进天数（&gt;3 天橙色，&gt;7 天红色）；赢单/输单自动记录时间与输单原因，成交概率由 AI 直接读写。点击进入详情页，沟通时间线 + AI 侧边栏（自动提取客户核心需求、预算范围、建议下一步）。</p>
       </div>
 
       <div class="feature-block">
-        <h3>客户 360° 画像</h3>
+        <h3 id="feat-360">客户 360° 画像</h3>
         <p>三个 Tab 视角：「销售触点」展示所有渠道消息的时间线（带情绪标注）；「营销触点」展示转化为线索前的内容互动；「AI 洞察」提供综合画像和风险提示。商机健康度评分（0-100）嵌入画像：随沟通频率、情绪趋势、阶段停留、主被动占比、金额 5 个维度自动计算，绿色健康/黄色关注/红色预警。</p>
       </div>
 
       <div class="feature-block">
-        <h3>拜访管理</h3>
+        <h3 id="feat-visits">拜访管理</h3>
         <p>上传录音，AI 1 分钟生成结构化纪要（13 个业务字段：议题、摘要、关键要点、客户反馈、下一步行动等）。拜访日历支持月/周视图切换，可拖拽调整日期。</p>
       </div>
 
       <div class="feature-block">
-        <h3>合同与报价</h3>
+        <h3 id="feat-contract">合同与报价</h3>
         <p>AI 从沟通记录中自动提取合同字段填充模板，审批流程（草拟→待审批→生效）。报价单编辑器支持产品选择、币种转换、PDF 导出，自动关联商机和沟通时间线。</p>
       </div>
 
       <a href="/products/sales.html" class="module-link">了解销售管理 →</a>
     </section>
+    <section class="module-section" id="module-marketing">
+      <h2><span class="emoji">📢</span>营销获客</h2>
+      <p>从「不知道写什么」到「哪篇内容带来了成交」，全链路可追溯。</p>
+
+      <div class="feature-block">
+        <h3 id="feat-topic">AI 选题中心</h3>
+        <p>输入行业关键词，AI 返回 10 个选题建议，每个带搜索量估算、竞争难度和机会分。不再拍脑袋决定写什么，让搜索数据替你做判断。每周一自动推送「本周选题周报」，基于上周内容的搜索排名变化和行业热点。</p>
+      </div>
+
+      <div class="feature-block">
+        <h3 id="feat-workbench">内容工作台</h3>
+        <p>三列看板（草稿→待审核→已发布）管理所有内容。AI 根据选题自动生成初稿，编辑器内嵌 SEO 实时检查面板——关键词密度、H 标签结构、内链建议、可读性评分。审核通过的内容进入统一分发流程——对接第三方分发服务（蚁小二、Zernio 等），凭证接入完成后覆盖国内外多个平台。</p>
+      </div>
+
+      <div class="feature-block">
+        <h3 id="feat-attribution">效果归因看板</h3>
+        <p>Sankey 图展示从内容发布→页面访问→留资询盘→线索入库→商机创建→成交的完整数据流。ROI 排行榜按「带来的成交金额」排序，市场团队第一次看到「哪篇内容真正带来了钱」。</p>
+      </div>
+
+      <div class="feature-block">
+        <h3>多渠道消息聚合</h3>
+        <p>WhatsApp、Email、Telegram、Instagram、Messenger、LinkedIn 消息自动汇聚到客户 360° 时间线；电话、备忘录、微信、企业微信等互动也可统一手工记录在一条时间线上——不需要切换多个 App。</p>
+      </div>
+
+      <h3 id="feat-distribution">统一分发入口</h3>
+      <p>审核通过的内容通过统一分发入口推送至第三方分发服务（蚁小二、Zernio 等），覆盖国内外多个平台——分发框架已就绪，凭证接入完成后即可一键分发；发布状态与互动数据自动回流归因看板，视频类内容支持手动登记 URL+UTM 归因。</p>
+      <h3 id="feat-landing">🚀 落地页与留资</h3>
+      <p>内容配套你自己的留资页，访客进入即自动记录来源、渠道与活动参数——归因看板的数据从这一页开始。UTM 五字段全链路解析，Cookie + Pixel 让没留联系方式的访客回访也能识别。</p>
+      <h3 id="feat-outbound">主动获客</h3>
+      <p>定义目标客户画像，AI 通过公开数据源搜索匹配的潜在客户公司，销售逐条筛选确认后一键转为线索，AI 起草开发信。只使用公开数据、标注来源、带退订链接、频率限制、GDPR 检查。</p>
+      <h3 id="feat-sequence">✉️ 开发信自动跟进序列</h3>
+      <p>多步触达按节奏自动发出——回复即停、退订即屏蔽，送达率与回复率按每一步统计。不做骚扰式连发。</p>
+      <a href="/products/marketing.html" class="module-link">了解营销获客 →</a>
+    </section>
+
+    <!-- 销售管理 -->
 
     <!-- AI 智能决策 -->
-    <section class="module-section">
+    <section class="module-section" id="module-ai">
       <h2><span class="emoji">🤖</span>AI 智能决策</h2>
       <p>8 类 AI 建议信号每天推送到销售首页。ChatBI 自然语言查询，管理驾驶舱实时指标。从「人找数据」到「数据找人」。</p>
 
       <div class="feature-block">
-        <h3>AI 建议中心</h3>
+        <h3 id="feat-suggest">AI 建议中心</h3>
         <p>8 类信号覆盖销售全场景：沉默客户唤醒、停滞商机推进、高价值商机预警、到期任务提醒、拜访后未跟进、即将拜访准备、热门邮件识别、负面情绪预警。每张建议卡有「采纳」和「忽略」按钮，采纳后自动创建任务或推进商机阶段。</p>
       </div>
 
       <div class="feature-block">
-        <h3>ChatBI 智能问答</h3>
+        <h3 id="feat-chatbi">ChatBI 智能问答</h3>
         <p>用自然语言查数据，AI 自动生成图表（柱状图/饼图/趋势线），支持一键导出。「上个月哪个渠道成交金额最高？」「对比张三和李四的商机转化率」——不需要学 SQL，直接问。</p>
       </div>
 
       <div class="feature-block">
-        <h3>管理驾驶舱</h3>
+        <h3 id="feat-dashboard">管理驾驶舱</h3>
         <p>全公司级指标：销售漏斗、营销投入与 ROI（支持录入平台/渠道/内容制作等成本，自动算成交金额÷投入）、团队业绩排行、获客渠道效果。AI 主动预警：线索量下降、高价值商机停滞、销售响应速度低于平均水平。AI 用量透明：按 8 类 AI 功能（ChatBI/推荐/消息分析/合同/画像/拜访/知识库/选题等）统计 token 消耗、调用次数、平均耗时与模型分布，AI 投入去向一目了然（费用按所用模型定价自行核算）。</p>
       </div>
 
       <div class="feature-block">
-        <h3>商机健康度评分</h3>
+        <h3 id="feat-health">商机健康度评分</h3>
         <p>5 个维度自动评分：沟通频率、情绪趋势、阶段推进速度、主动联系占比、金额权重。绿色（70-100）健康、黄色（40-69）关注、红色（0-39）预警。</p>
       </div>
 
