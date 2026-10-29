@@ -158,6 +158,9 @@
     .sm-lang { margin-top: 8px; padding: 10px 14px 4px; font-size: 12.5px; color: var(--text-secondary, #9ca3af); border-top: 1px solid var(--border, rgba(255,255,255,.08)); }
     .sm-lang a { display: inline; padding: 0 2px; font-size: 12.5px; color: var(--text-secondary, #9ca3af); }
     @media (max-width: 640px) { .sm-nav-inner { padding: 12px 16px; } .sm-menu { left: 12px; right: 12px; width: auto; } }
+  
+    .dev-note { text-align: center; padding: 0 32px 40px; font-size: 15px; color: var(--text-secondary, #9ca3af); }
+    .dev-note a { color: var(--accent-light, #818cf8); font-weight: 600; text-decoration: none; border-bottom: 1px dashed rgba(129,140,248,.4); }
   </style>
   <link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/solutions">
   <link rel="alternate" hreflang="en" href="https://www.silimind.net/en/solutions">
@@ -361,7 +364,12 @@
       </ul>
     </section>
 
-    <!-- CTA -->
+        <!-- Developers note -->
+    <section class="dev-note">
+      <p>Building a developer integration? All SiliMind capabilities are open via API and MCP: <a href="/developers">View developer documentation →</a></p>
+    </section>
+
+<!-- CTA -->
     <section class="cta-section">
       <h2>为你的外贸团队定制解决方案</h2>
       <p>申请个人试用，了解 SiliMind 如何帮助你的外贸团队提升获客效率和成交转化率。</p>
@@ -372,7 +380,7 @@
     </section>
   </main>
 
-  <footer>© 2026 SiliMind 思理智能. All rights reserved. &nbsp;·&nbsp; 微信：18612418612 &nbsp;·&nbsp; <a href="mailto:micheal@silimind.net">micheal@silimind.net</a></footer>
+  <footer>© 2026 SiliMind 思理智能. All rights reserved. &nbsp;·&nbsp; 微信：18612418612 &nbsp;·&nbsp; <a href="mailto:micheal@silimind.net">micheal@silimind.net</a> &nbsp;·&nbsp; <a href="/developers">开发者</a></footer>
   <script>
     (function(){
       var nav=document.querySelector('.sm-nav');var t=document.querySelector('.sm-toggle');

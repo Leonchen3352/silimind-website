@@ -506,4 +506,48 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://www.silimind.net/developers</loc>
+    <lastmod>2026-10-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/developers"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.net/en/developers"/>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.net/ja/developers"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.net/ko/developers"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/developers"/>
+  </url>
+  <url>
+    <loc>https://www.silimind.net/en/developers</loc>
+    <lastmod>2026-10-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/developers"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.net/en/developers"/>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.net/ja/developers"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.net/ko/developers"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/developers"/>
+  </url>
+  <url>
+    <loc>https://www.silimind.net/ja/developers</loc>
+    <lastmod>2026-10-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/developers"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.net/en/developers"/>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.net/ja/developers"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.net/ko/developers"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/developers"/>
+  </url>
+  <url>
+    <loc>https://www.silimind.net/ko/developers</loc>
+    <lastmod>2026-10-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/developers"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.silimind.net/en/developers"/>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://www.silimind.net/ja/developers"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.net/ko/developers"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/developers"/>
+  </url>
 </urlset>

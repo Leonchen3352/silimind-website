@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <title>Developers · SiliMind API & MCP Docs</title>
+  <meta name="description" content="SiliMind developer docs: connect via REST API and MCP (Model Context Protocol) to leads, contacts, deals, tasks and your knowledge base; works with Claude Desktop, ChatGPT, Cursor and any MCP client." />
+  <link rel="canonical" href="https://www.silimind.net/en/developers" />
+  <link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/developers" />
+  <link rel="alternate" hreflang="en" href="https://www.silimind.net/en/developers" />
+  <link rel="alternate" hreflang="ja-JP" href="https://www.silimind.net/ja/developers" />
+  <link rel="alternate" hreflang="ko-KR" href="https://www.silimind.net/ko/developers" />
+  <link rel="alternate" hreflang="x-default" href="https://www.silimind.net/developers" />
+  <meta property="og:title" content="Developers · SiliMind API & MCP Docs" />
+  <meta property="og:description" content="SiliMind developer docs: connect via REST API and MCP (Model Context Protocol) to leads, contacts, deals, tasks and your knowledge base; works with Claude Desktop, ChatGPT, Cursor and any MCP client." />
+  <meta property="og:url" content="https://www.silimind.net/en/developers" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="SiliMind" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJ7HH4824R"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RJ7HH4824R');
+  </script>
+
+  <style>
+    :root {
+      --bg: #0b0c10; --bg-secondary: #14151b;
+      --text-primary: #f3f4f6; --text-secondary: #9ca3af;
+      --accent: #6366f1; --accent-hover: #4f46e5; --accent-light: #818cf8;
+      --border: rgba(255,255,255,.08); --border-hover: rgba(129,140,248,.4);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans", "Malgun Gothic", sans-serif; background: var(--bg); color: var(--text-primary); line-height: 1.7; }
+    a { color: var(--accent-light); }
+    .wrap { max-width: 1000px; margin: 0 auto; padding: 0 32px; }
+    /* ===== sm-nav: coffee-style hamburger ===== */
+    .sm-nav { position: sticky; top: 0; z-index: 999; background: rgba(11,12,16,.88); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+    .sm-nav-inner { max-width: 1120px; margin: 0 auto; padding: 14px 32px; display: flex; align-items: center; justify-content: space-between; }
+    .sm-logo { font-size: 20px; font-weight: 700; color: var(--text-primary); text-decoration: none; letter-spacing: .5px; }
+    .sm-toggle { background: none; border: 0; cursor: pointer; padding: 10px; display: flex; flex-direction: column; gap: 5px; }
+    .sm-bar { display: block; width: 22px; height: 2px; background: var(--text-primary); border-radius: 2px; transition: transform .25s ease, opacity .2s ease; }
+    .sm-open .sm-bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .sm-open .sm-bar:nth-child(2) { opacity: 0; }
+    .sm-open .sm-bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .sm-menu { display: none; position: absolute; top: 100%; right: 16px; width: 300px; max-width: calc(100vw - 24px); background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 14px; padding: 10px; box-shadow: 0 16px 48px rgba(0,0,0,.5); }
+    .sm-open .sm-menu { display: block; }
+    .sm-menu a { display: block; padding: 10px 14px; border-radius: 8px; color: var(--text-primary); text-decoration: none; font-size: 15px; }
+    .sm-menu a:hover { background: rgba(129,140,248,.12); }
+    .sm-top { font-weight: 600; }
+    .sm-sub { margin: 2px 10px 8px 18px; padding-left: 12px; border-left: 2px solid var(--border); }
+    .sm-sub a { font-size: 13.5px; color: var(--text-secondary); padding: 7px 12px; }
+    .sm-cta { margin-top: 8px; text-align: center; background: var(--accent); color: #fff !important; font-weight: 600; border-radius: 10px; }
+    .sm-lang { margin-top: 8px; padding: 10px 14px 4px; font-size: 12.5px; color: var(--text-secondary); border-top: 1px solid var(--border); }
+    .sm-lang a { display: inline; padding: 0 2px; font-size: 12.5px; color: var(--text-secondary); }
+    @media (max-width: 640px) { .sm-nav-inner { padding: 12px 16px; } .sm-menu { left: 12px; right: 12px; width: auto; } }
+    /* ===== hero ===== */
+    .dev-hero { padding: 88px 0 64px; text-align: center; background: radial-gradient(ellipse 80% 50% at 50% -10%, rgba(99,102,241,.18), transparent); }
+    .dev-label { display: inline-block; font-size: 13px; letter-spacing: 3px; font-weight: 700; color: var(--accent-light); text-transform: uppercase; margin-bottom: 18px; }
+    .dev-hero h1 { font-size: 44px; line-height: 1.25; margin-bottom: 18px; }
+    .dev-hero p { max-width: 720px; margin: 0 auto 30px; color: var(--text-secondary); font-size: 17px; }
+    .hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn { display: inline-block; padding: 12px 26px; border-radius: 10px; text-decoration: none; font-size: 15px; font-weight: 600; }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-primary:hover { background: var(--accent-hover); }
+    .btn-ghost { border: 1px solid var(--border-hover); color: var(--text-primary); }
+    .btn-ghost:hover { background: rgba(129,140,248,.1); }
+    /* ===== sections ===== */
+    .dev-section { padding: 64px 0; border-top: 1px solid var(--border); }
+    .sec-label { font-size: 13px; letter-spacing: 2.5px; font-weight: 700; color: var(--accent-light); text-transform: uppercase; margin-bottom: 10px; }
+    .dev-section h2 { font-size: 30px; margin-bottom: 14px; }
+    .sec-sub { color: var(--text-secondary); max-width: 760px; margin-bottom: 36px; }
+    .dev-section h3 { font-size: 19px; margin: 40px 0 16px; }
+    .cards3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .card { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 14px; padding: 22px; }
+    .card .ico { font-size: 26px; margin-bottom: 10px; }
+    .card h4 { font-size: 16px; margin-bottom: 6px; }
+    .card p { color: var(--text-secondary); font-size: 14px; }
+    .ai-table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+    .ai-table td { padding: 12px 14px; border-bottom: 1px solid var(--border); font-size: 14.5px; }
+    .ai-table td:first-child { font-weight: 600; white-space: nowrap; }
+    .ai-table td:last-child { color: var(--text-secondary); font-style: italic; }
+    .steps { display: grid; gap: 18px; }
+    .step { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 14px; padding: 22px; }
+    .step .step-eyebrow { display: inline-block; font-size: 12px; letter-spacing: 2px; color: var(--accent-light); font-weight: 700; margin-bottom: 8px; }
+    .step p { color: var(--text-secondary); font-size: 14.5px; margin-bottom: 10px; }
+    .sec-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .sec-item { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 16px 20px; font-size: 14.5px; color: var(--text-secondary); }
+    .sec-item b { color: var(--text-primary); display: block; margin-bottom: 4px; }
+    /* ===== api ===== */
+    .baseurl { display: inline-block; background: var(--bg-secondary); border: 1px solid var(--border-hover); border-radius: 8px; padding: 8px 16px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 14px; margin-bottom: 8px; }
+    .codeblock { background: #0d0e13; border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px; overflow-x: auto; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; line-height: 1.65; color: #d1d5db; margin: 12px 0 20px; }
+    .ep-table { width: 100%; border-collapse: collapse; margin: 12px 0 8px; }
+    .ep-table th { text-align: left; font-size: 12.5px; letter-spacing: 1px; text-transform: uppercase; color: var(--text-secondary); padding: 8px 12px; border-bottom: 1px solid var(--border-hover); }
+    .ep-table td { padding: 9px 12px; border-bottom: 1px solid var(--border); font-size: 13.5px; }
+    .ep-table td:nth-child(2) { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--accent-light); white-space: nowrap; }
+    .conv-list { list-style: none; }
+    .conv-list li { padding: 7px 0; border-bottom: 1px solid var(--border); font-size: 14.5px; color: var(--text-secondary); }
+    .conv-list code, .inline-code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 6px; padding: 1px 8px; font-size: 13px; color: var(--accent-light); }
+    .note { font-size: 13.5px; color: var(--text-secondary); margin: -8px 0 20px; }
+    /* ===== gh cta + footer ===== */
+    .gh-cta { text-align: center; padding: 72px 0 88px; border-top: 1px solid var(--border); background: radial-gradient(ellipse 60% 80% at 50% 110%, rgba(99,102,241,.14), transparent); }
+    .gh-cta h2 { font-size: 28px; margin-bottom: 12px; }
+    .gh-cta p { color: var(--text-secondary); margin-bottom: 26px; }
+    .site-footer { border-top: 1px solid var(--border); padding: 26px 0; text-align: center; color: var(--text-secondary); font-size: 13.5px; }
+    .site-footer a { color: var(--text-secondary); }
+    @media (max-width: 768px) {
+      .dev-hero { padding: 60px 0 44px; } .dev-hero h1 { font-size: 32px; }
+      .cards3, .sec-grid { grid-template-columns: 1fr; }
+      .wrap { padding: 0 16px; } .dev-section { padding: 48px 0; }
+    }
+  </style>
+
+</head>
+<body>
+<nav class="sm-nav">
+  <div class="sm-nav-inner">
+    <a href="/en/" class="sm-logo">SiliMind</a>
+    <button class="sm-toggle" aria-label="Menu" aria-expanded="false" aria-controls="sm-menu"><span class="sm-bar"></span><span class="sm-bar"></span><span class="sm-bar"></span></button>
+  </div>
+  <div class="sm-menu" id="sm-menu">
+    <a href="/en/products" class="sm-link sm-top">Product</a>
+    <div class="sm-sub">
+      <a href="/en/products#role-sales">for Sales</a>
+      <a href="/en/products#role-marketing">for Marketing</a>
+      <a href="/en/products#role-ceo">for CEO</a>
+    </div>
+    <a href="/en/solutions" class="sm-link">Platform</a>
+    <a href="/en/#metrics" class="sm-link">Performance</a>
+    <a href="/en/#pricing" class="sm-link">Pricing</a>
+    <a href="/en/about" class="sm-link">About</a>
+    <a href="/en/cases" class="sm-link">Cases</a>
+    <a href="/en/blog/" class="sm-link">Blog</a>
+    <a href="https://agent.silimind.net/register" class="sm-link sm-cta">Start Personal Trial</a>
+    <div class="sm-lang"><a href="/developers">中文</a> · EN · <a href="/ja/developers">日本語</a> · <a href="/ko/developers">한국어</a></div>
+  </div>
+</nav>
+  <main>
+    <!-- hero -->
+    <section class="dev-hero">
+      <div class="wrap">
+        <span class="dev-label">DEVELOPERS</span>
+        <h1>Open to AI and automation</h1>
+        <p>Two ways in: the REST API plugs contacts, deals, tasks and your knowledge base into your own workflows; MCP lets Claude, ChatGPT and Cursor read — and safely write to — your CRM. All endpoints are live in production.</p>
+        <div class="hero-btns">
+          <a href="https://github.com/Leonchen3352/silimind-mcp" class="btn btn-primary">GitHub repo</a>
+          <a href="https://agent.silimind.net/register" class="btn btn-ghost">Start Personal Trial</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- MCP -->
+    <section class="dev-section" id="mcp">
+      <div class="wrap">
+        <p class="sec-label">MCP</p>
+        <h2>Connect your AI assistant to your CRM</h2>
+        <p class="sec-sub">SiliMind speaks MCP (Model Context Protocol) — the standard way for AI assistants to use external tools. Your assistant can directly read (and, with your approval, write to) your SiliMind CRM.</p>
+        <h3>What it connects to</h3>
+        <div class="cards3"><div class="card"><div class="ico">🤖</div><h4>Claude Desktop</h4><p>Ask Claude about your deals, customers, tasks</p></div><div class="card"><div class="ico">💬</div><h4>ChatGPT</h4><p>Query your pipeline through custom GPTs</p></div><div class="card"><div class="ico">⚙️</div><h4>Cursor / any MCP client</h4><p>Build your own AI workflows on SiliMind data</p></div></div>
+        <h3>What your AI can do</h3>
+        <table class="ai-table"><tr><td>🔍 Search customers</td><td>“Find all contacts at Acme Corp”</td></tr><tr><td>📊 Check deals</td><td>“What’s in my follow-up pipeline?”</td></tr><tr><td>📅 View calendar</td><td>“What’s on my schedule tomorrow?”</td></tr><tr><td>📝 Create tasks</td><td>“Add a follow-up task for John” (requires your approval in SiliMind)</td></tr><tr><td>🧠 Query anything</td><td>Natural language questions about your allowed data</td></tr></table>
+        <h3>Connect in three steps</h3>
+        <div class="steps">
+          <div class="step"><span class="step-eyebrow">STEP 1 · Get your token</span><p>SiliMind → Settings → MCP Access → Generate.</p></div>
+          <div class="step"><span class="step-eyebrow">STEP 2 · Add to Claude Desktop</span><p>Add this to your Claude Desktop config:</p>
+<pre class="codeblock"><code>{
+  "mcpServers": {
+    "silimind": {
+      "command": "python",
+      "args": ["-m", "silimind_mcp.stdio_bridge"],
+      "env": {
+        "SILIMIND_URL": "https://agent.silimind.net",
+        "SILIMIND_TOKEN": "smcp_your_token"
+      }
+    }
+  }
+}</code></pre>          </div>
+          <div class="step"><span class="step-eyebrow">STEP 3 · Ask away</span><p>“Hey Claude, what are my top deals this week?”</p></div>
+        </div>
+        <h3>Security first</h3>
+        <div class="sec-grid"><div class="sec-item"><b>🔒 Per-token permissions</b>readonly / readwrite granularity</div><div class="sec-item"><b>🔒 Tenant isolation</b>your AI sees only your data</div><div class="sec-item"><b>🔒 Rate-limited, fully audit-logged</b>every call is traceable</div><div class="sec-item"><b>🔒 Writes need your approval</b>AI proposes, you approve inside SiliMind</div></div>
+      </div>
+    </section>
+
+    <!-- API -->
+    <section class="dev-section" id="api">
+      <div class="wrap">
+        <p class="sec-label">API</p>
+        <h2>REST API</h2>
+        <p class="sec-sub">All endpoints use Bearer token auth and cover core-resource CRUD, AI suggestions and knowledge-base semantic search.</p>
+        <span class="baseurl">Base URL: https://agent.silimind.net/api</span>
+        <h3>Authentication</h3>
+<pre class="codeblock"><code>POST /api/auth/login
+Content-Type: application/json
+
+{
+  "email": "you@company.com",
+  "password": "your_password"
+}</code></pre>        <p class="note"><b>Response:</b></p>
+<pre class="codeblock"><code>{
+  "accessToken": "eyJhbGciOiJIUzI1NiIs...",
+  "tokenType": "bearer",
+  "role": "sales"
+}</code></pre>        <p class="note">Use the token in all subsequent requests:</p>
+<pre class="codeblock"><code>Authorization: Bearer eyJhbG…s...</code></pre>
+        <h3>Core resources</h3>
+      <h4>Contacts</h4>
+      <table class="ep-table"><thead><tr><th>Method</th><th>Endpoint</th><th>Description</th></tr></thead><tbody><tr><td>GET</td><td>/contacts</td><td>List contacts (paginated, searchable)</td></tr><tr><td>POST</td><td>/contacts</td><td>Create a contact</td></tr><tr><td>GET</td><td>/contacts/{id}</td><td>Get contact detail</td></tr><tr><td>PUT</td><td>/contacts/{id}</td><td>Update a contact</td></tr><tr><td>DELETE</td><td>/contacts/{id}</td><td>Delete a contact</td></tr></tbody></table>
+      <h4>Companies</h4>
+      <table class="ep-table"><thead><tr><th>Method</th><th>Endpoint</th><th>Description</th></tr></thead><tbody><tr><td>GET</td><td>/companies</td><td>List companies</td></tr><tr><td>POST</td><td>/companies</td><td>Create a company</td></tr><tr><td>GET</td><td>/companies/{id}</td><td>Get company detail</td></tr><tr><td>PUT</td><td>/companies/{id}</td><td>Update</td></tr><tr><td>DELETE</td><td>/companies/{id}</td><td>Delete</td></tr></tbody></table>
+      <h4>Deals</h4>
+      <table class="ep-table"><thead><tr><th>Method</th><th>Endpoint</th><th>Description</th></tr></thead><tbody><tr><td>GET</td><td>/deals</td><td>List deals</td></tr><tr><td>POST</td><td>/deals</td><td>Create a deal</td></tr><tr><td>GET</td><td>/deals/{id}</td><td>Get deal detail</td></tr><tr><td>PUT</td><td>/deals/{id}</td><td>Update deal (stage, amount, etc.)</td></tr><tr><td>DELETE</td><td>/deals/{id}</td><td>Delete</td></tr></tbody></table>
+      <h4>Tasks</h4>
+      <table class="ep-table"><thead><tr><th>Method</th><th>Endpoint</th><th>Description</th></tr></thead><tbody><tr><td>GET</td><td>/tasks</td><td>List tasks</td></tr><tr><td>POST</td><td>/tasks</td><td>Create a task</td></tr><tr><td>PUT</td><td>/tasks/{id}</td><td>Update (complete, reschedule)</td></tr><tr><td>DELETE</td><td>/tasks/{id}</td><td>Delete</td></tr></tbody></table>
+      <h4>Interactions</h4>
+      <table class="ep-table"><thead><tr><th>Method</th><th>Endpoint</th><th>Description</th></tr></thead><tbody><tr><td>GET</td><td>/interactions</td><td>List interaction records</td></tr><tr><td>POST</td><td>/interactions</td><td>Log an interaction (call, email, meeting)</td></tr></tbody></table>
+      <h4>Visits</h4>
+      <table class="ep-table"><thead><tr><th>Method</th><th>Endpoint</th><th>Description</th></tr></thead><tbody><tr><td>GET</td><td>/visits</td><td>List visits</td></tr><tr><td>POST</td><td>/visits</td><td>Schedule a visit</td></tr></tbody></table>
+        <div style="display:grid;gap:6px">
+          <h4>Example — search contacts</h4>
+<pre class="codeblock"><code>GET /api/contacts?q=acme&amp;page=1&amp;page_size=20
+Authorization: Bearer ***</code></pre>          <h4>Example — create a contact</h4>
+<pre class="codeblock"><code>POST /api/contacts
+Content-Type: application/json
+Authorization: Bearer ***
+
+{
+  "name": "John Smith",
+  "email": "john@acme.com",
+  "company": "Acme Corp",
+  "phone": "+86 138 0000 0000"
+}</code></pre>          <h4>Example — list your pipeline</h4>
+<pre class="codeblock"><code>GET /api/deals?stage=follow_up
+Authorization: Bearer ***</code></pre>        </div>
+        <h3>AI features</h3>
+        <h4>AI suggestions</h4>
+<pre class="codeblock"><code>GET /api/ai/suggestions
+Authorization: Bearer ***</code></pre>        <h4>AI chat (agent)</h4>
+<pre class="codeblock"><code>POST /api/agent-chat/{agent_id}/message
+Content-Type: application/json
+Authorization: Bearer ***
+
+{"content": "帮我总结这个客户最近的沟通"}</code></pre>        <p class="note">Streaming SSE response.</p>
+        <h3>Knowledge base</h3>
+        <table class="ep-table"><thead><tr><th>Method</th><th>Endpoint</th><th>Description</th></tr></thead><tbody><tr><td>GET</td><td>/knowledge/docs</td><td>List documents</td></tr><tr><td>POST</td><td>/knowledge/docs/upload</td><td>Upload document (PDF/DOCX/MD)</td></tr><tr><td>POST</td><td>/knowledge/search</td><td>Semantic search</td></tr></tbody></table>
+        <h4>Example — semantic search</h4>
+<pre class="codeblock"><code>POST /api/knowledge/search
+Content-Type: application/json
+Authorization: Bearer ***
+
+{"query": "产品规格参数", "top_k": 5}</code></pre>
+        <h3>Response conventions</h3>
+        <ul class="conv-list"><li><b>Success</b> — <code>200 / 201 (created)</code></li><li><b>Auth failure</b> — <code>401 — token expired or invalid</code></li><li><b>Permission denied</b> — <code>403</code></li><li><b>Not found</b> — <code>404</code></li><li><b>Validation error</b> — <code>422 with field details</code></li><li><b>Rate limit</b> — <code>429</code></li></ul>
+        <h3>Pagination</h3>
+        <p class="sec-sub">List endpoints use page and page_size query parameters (default: 20, max: 100).</p>
+        <h3>Rate limits</h3>
+        <ul class="conv-list"><li>Per-token rate limiting applies</li><li>Exceeding limits returns 429 with a Retry-After header</li></ul>
+        <h3>Support</h3>
+        <p class="sec-sub">Docs: https://www.silimind.net · MCP integration: github.com/Leonchen3352/silimind-mcp · Contact: micheal@silimind.net</p>
+      </div>
+    </section>
+
+    <!-- GitHub CTA -->
+    <section class="gh-cta">
+      <div class="wrap">
+        <h2>Browse the MCP integration on GitHub</h2>
+        <p>Client source, setup examples and issue tracker.</p>
+        <a href="https://github.com/Leonchen3352/silimind-mcp" class="btn btn-primary">Open the silimind-mcp repo →</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">© 2026 SiliMind 思理智能. All rights reserved. &nbsp;·&nbsp; WeChat: 18612418612 &nbsp;·&nbsp; <a href="mailto:micheal@silimind.net">micheal@silimind.net</a></div>
+  </footer>
+  <script>
+    (function(){
+      var nav=document.querySelector('.sm-nav');var t=document.querySelector('.sm-toggle');
+      if(!nav||!t)return;
+      t.addEventListener('click',function(e){e.stopPropagation();var o=nav.classList.toggle('sm-open');t.setAttribute('aria-expanded',o?'true':'false');});
+      document.addEventListener('click',function(e){if(nav.classList.contains('sm-open')&&!nav.contains(e.target)){nav.classList.remove('sm-open');t.setAttribute('aria-expanded','false');}});
+      var m=nav.querySelector('.sm-menu');
+      if(m){m.addEventListener('click',function(e){if(e.target.closest('a')){nav.classList.remove('sm-open');t.setAttribute('aria-expanded','false');}});}
+    })();
+  </script>
+  </body>
+</html>
