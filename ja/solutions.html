@@ -126,6 +126,16 @@
       .cta-section { padding: 32px 20px; }
       .cta-buttons { flex-direction: column; align-items: center; }
     }
+  
+    .dual-path { padding: 0 32px 56px; }
+    .dual-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 960px; margin: 0 auto; }
+    .dual-card { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 14px; padding: 28px 32px; }
+    .dual-tag { display: inline-block; font-size: 12px; color: var(--accent-light); border: 1px solid var(--border-hover); border-radius: 999px; padding: 2px 12px; margin-bottom: 12px; }
+    .dual-card h3 { font-size: 18px; margin-bottom: 8px; }
+    .dual-card p { color: var(--text-secondary); font-size: 14px; line-height: 1.8; }
+    .dual-note { text-align: center; color: var(--text-secondary); font-size: 14px; margin-top: 20px; }
+    @media (max-width: 768px) { .dual-grid { grid-template-columns: 1fr; } .dual-path { padding: 0 16px 40px; } }
+
   </style>
   <link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/solutions">
   <link rel="alternate" hreflang="en" href="https://www.silimind.net/en/solutions">
@@ -236,7 +246,27 @@
 
     <!-- 推奨機能セット -->
     <section class="section">
-      <h2>推奨機能セット</h2>
+      
+    <section class="dual-path">
+      <p class="section-label">2 つの始め方</p>
+      <h2 class="section-title">2 つの道、同じプラットフォームへ</h2>
+      <p class="section-subtitle">一人ではじめるか、チーム級で一気に——どちらの道も現実に使えて、いつでも合流できます。</p>
+      <div class="dual-grid">
+        <div class="dual-card">
+          <div class="dual-tag">個人ではじめる</div>
+          <h3>一人ではじめる</h3>
+          <p>統一リードプール、AI 訪問議事録、メッセージ集約——一人でもすぐ使い始めて、雑務を手放せます。</p>
+        </div>
+        <div class="dual-card">
+          <div class="dual-tag">チーム級導入</div>
+          <h3>チーム級で最初から</h3>
+          <p>完全なロール権限、経営ダッシュボード、監査フルカバー、オンプレミス導入——組織級のコントロールを最初から。</p>
+        </div>
+      </div>
+      <p class="dual-note">一人ではじめて、チームが育ったらシームレスにエンタープライズプランへ——同じプラットフォーム、データとワークフローは摩擦なく接続します。</p>
+    </section>
+
+<h2>推奨機能セット</h2>
       <p style="font-size:15px; color:var(--text-secondary); line-height:1.8; margin-bottom:32px;">貿易・越境ECチーム（国内販売兼営含む）には、以下の機能モジュールから優先的に有効化することをおすすめします：</p>
 
       <div class="table-section">

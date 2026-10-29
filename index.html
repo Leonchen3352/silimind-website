@@ -140,6 +140,8 @@
 
     /* ==================== Typography ==================== */
     .section-label {
+      letter-spacing: 2.5px;
+      font-weight: 700;
       font-size: 14px;
       font-weight: 600;
       color: var(--accent-light);
@@ -772,6 +774,16 @@
       .footer-inner { grid-template-columns: 1fr; gap: 24px; }
       .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
     }
+      .step-eyebrow {
+      display: inline-block; font-size: 12px; letter-spacing: 2px;
+      color: var(--accent-light); font-weight: 700; margin-bottom: 8px;
+    }
+
+      .section-stats {
+      font-size: 14px; color: var(--accent-light); margin: -6px 0 40px;
+    }
+    .section-stats a { color: var(--accent-light); text-decoration: none; border-bottom: 1px dashed rgba(129,140,248,.4); }
+
   </style>
   <link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/">
   <link rel="alternate" hreflang="en" href="https://www.silimind.net/en/">
@@ -833,12 +845,13 @@
         <p class="section-label">产品能力</p>
         <h2 class="section-title">三个模块，一个平台</h2>
         <p class="section-subtitle">不再在营销工具和 CRM 之间反复切换，数据真正打通。</p>
+    <p class="section-stats">36 名数字员工协同运转 · 10 渠道统一时间线 · 16 种创作技能 · <a href="/blog/email-customer-mining">198 封邮件实测挖出 819 家公司</a></p>
       </div>
       <div class="modules-grid">
         <!-- Module 1: Marketing -->
         <div class="module-card">
           <div class="module-icon">📢</div>
-          <h3>AI 驱动的营销获客引擎</h3>
+          <h3>让内容获客有据可依、有量可产、有效可查</h3>
           <p class="module-desc">AI 智能选题 → 内容创作 → 多平台分发 → 效果归因。从「不知道写什么」到「哪篇内容带来了成交」，全链路可追溯。</p>
           <ul class="module-features">
             <li><strong>AI 选题中心</strong> — 基于搜索量和竞争度智能推荐选题</li>
@@ -851,7 +864,7 @@
         <!-- Module 2: Sales -->
         <div class="module-card">
           <div class="module-icon">💼</div>
-          <h3>从线索到成交的全流程 CRM</h3>
+          <h3>客户信息一条时间线看全，交接零丢失</h3>
           <p class="module-desc">统一线索池、商机看板、客户 360° 画像、拜访纪要自动生成、合同智能管理。所有渠道消息汇聚一处，销售换人信息不丢。</p>
           <ul class="module-features">
             <li><strong>统一线索池</strong> — 多渠道汇聚，AI 评分＋兜底认领</li>
@@ -887,17 +900,20 @@
         <div class="step">
           <div class="step-number">1</div>
           <span class="step-arrow">→</span>
+          <span class="step-eyebrow">STEP 1 · 数据进去</span>
           <h3>📥 导入存量，接通渠道</h3>
           <p>原系统数据（OKKI、Salesforce、HubSpot、Zoho 等导出表）Excel/CSV 一键导入，自动字段映射与去重；WhatsApp、Email 等渠道消息自动汇聚到客户时间线——SiliMind 本身就是你的 CRM，不需要再『接入某个 CRM』。</p>
         </div>
         <div class="step">
           <div class="step-number">2</div>
           <span class="step-arrow">→</span>
+          <span class="step-eyebrow">STEP 2 · 资产沉淀</span>
           <h3>🤖 AI 自动运转</h3>
           <p>AI 智能选题、辅助写内容、分析商机、跟进线索、生成拜访纪要，后台自动工作。</p>
         </div>
         <div class="step">
           <div class="step-number">3</div>
+          <span class="step-eyebrow">STEP 3 · 价值出来</span>
           <h3>📊 数据驱动增长</h3>
           <p>归因看板知道哪篇内容带来了成交，ChatBI 随时查数据，AI 主动推送增长建议。</p>
         </div>

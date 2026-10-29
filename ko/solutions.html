@@ -126,6 +126,16 @@
       .cta-section { padding: 32px 20px; }
       .cta-buttons { flex-direction: column; align-items: center; }
     }
+  
+    .dual-path { padding: 0 32px 56px; }
+    .dual-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 960px; margin: 0 auto; }
+    .dual-card { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 14px; padding: 28px 32px; }
+    .dual-tag { display: inline-block; font-size: 12px; color: var(--accent-light); border: 1px solid var(--border-hover); border-radius: 999px; padding: 2px 12px; margin-bottom: 12px; }
+    .dual-card h3 { font-size: 18px; margin-bottom: 8px; }
+    .dual-card p { color: var(--text-secondary); font-size: 14px; line-height: 1.8; }
+    .dual-note { text-align: center; color: var(--text-secondary); font-size: 14px; margin-top: 20px; }
+    @media (max-width: 768px) { .dual-grid { grid-template-columns: 1fr; } .dual-path { padding: 0 16px 40px; } }
+
   </style>
   <link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/solutions">
   <link rel="alternate" hreflang="en" href="https://www.silimind.net/en/solutions">
@@ -236,7 +246,27 @@
 
     <!-- 推荐功能组合 -->
     <section class="section">
-      <h2>추천 기능 조합</h2>
+      
+    <section class="dual-path">
+      <p class="section-label">2가지 시작 방식</p>
+      <h2 class="section-title">두 갈래 길, 같은 플랫폼으로 이어집니다</h2>
+      <p class="section-subtitle">혼자 먼저 달릴지, 팀급으로 한 번에——두 갈래 모두 실제로 사용 가능하며 언제든 합류할 수 있습니다.</p>
+      <div class="dual-grid">
+        <div class="dual-card">
+          <div class="dual-tag">개인 시작</div>
+          <h3>혼자 먼저 달립니다</h3>
+          <p>통일 리드 풀, AI 방문 회의록, 메시지 통합——혼자서도 바로 시작하고 잡무를 넘기세요.</p>
+        </div>
+        <div class="dual-card">
+          <div class="dual-tag">엔터프라이즈 도입</div>
+          <h3>팀급으로 한 번에</h3>
+          <p>전체 역할 권한, 관리 대시보드, 감사 전면 커버, 온프레미스 배포——조직급 관제를 처음부터.</p>
+        </div>
+      </div>
+      <p class="dual-note">개인으로 시작하고 팀이 성장하면 엔터프라이즈 플랜으로 원활하게 업그레이드——같은 플랫폼, 데이터와 워크플로우가 마찰 없이 연결됩니다.</p>
+    </section>
+
+<h2>추천 기능 조합</h2>
       <p style="font-size:15px; color:var(--text-secondary); line-height:1.8; margin-bottom:32px;">무역·크로스보더 팀(내수 판매 포함)을 위해 다음 기능 모듈을 우선 활성화할 것을 권장합니다:</p>
 
       <div class="table-section">

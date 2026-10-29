@@ -126,6 +126,16 @@
       .cta-section { padding: 32px 20px; }
       .cta-buttons { flex-direction: column; align-items: center; }
     }
+  
+    .dual-path { padding: 0 32px 56px; }
+    .dual-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 960px; margin: 0 auto; }
+    .dual-card { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 14px; padding: 28px 32px; }
+    .dual-tag { display: inline-block; font-size: 12px; color: var(--accent-light); border: 1px solid var(--border-hover); border-radius: 999px; padding: 2px 12px; margin-bottom: 12px; }
+    .dual-card h3 { font-size: 18px; margin-bottom: 8px; }
+    .dual-card p { color: var(--text-secondary); font-size: 14px; line-height: 1.8; }
+    .dual-note { text-align: center; color: var(--text-secondary); font-size: 14px; margin-top: 20px; }
+    @media (max-width: 768px) { .dual-grid { grid-template-columns: 1fr; } .dual-path { padding: 0 16px 40px; } }
+
   </style>
   <link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/solutions">
   <link rel="alternate" hreflang="en" href="https://www.silimind.net/en/solutions">
@@ -236,7 +246,27 @@
 
     <!-- 推荐功能组合 -->
     <section class="section">
-      <h2>推荐功能组合</h2>
+      
+    <section class="dual-path">
+      <p class="section-label">两种起步方式</p>
+      <h2 class="section-title">两条路，都通往同一个平台</h2>
+      <p class="section-subtitle">一个人先跑起来，还是团队级一步到位——两条路都真实可用，且随时可以汇合。</p>
+      <div class="dual-grid">
+        <div class="dual-card">
+          <div class="dual-tag">个人起步</div>
+          <h3>一个人先跑起来</h3>
+          <p>统一线索池、AI 拜访纪要、消息聚合——一个人先用起来，把杂活交出去。</p>
+        </div>
+        <div class="dual-card">
+          <div class="dual-tag">企业部署</div>
+          <h3>团队级一步到位</h3>
+          <p>完整角色权限、管理驾驶舱、审计全覆盖、私有化部署——组织级管控一步到位。</p>
+        </div>
+      </div>
+      <p class="dual-note">从个人起步，团队壮大后无缝升级企业方案——同一个平台，数据与流程无缝衔接。</p>
+    </section>
+
+<h2>推荐功能组合</h2>
       <p style="font-size:15px; color:var(--text-secondary); line-height:1.8; margin-bottom:32px;">针对外贸/跨境贸易团队（含内销业务），建议优先启用以下功能模块：</p>
 
       <div class="table-section">
