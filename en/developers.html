@@ -221,10 +221,10 @@ Content-Type: application/json
         <div style="display:grid;gap:6px">
           <h4>Example — search contacts</h4>
 <pre class="codeblock"><code>GET /api/contacts?q=acme&amp;page=1&amp;page_size=20
-Authorization: Bearer ***</code></pre>          <h4>Example — create a contact</h4>
+Authorization: Bearer &lt;your-token&gt;</code></pre>          <h4>Example — create a contact</h4>
 <pre class="codeblock"><code>POST /api/contacts
 Content-Type: application/json
-Authorization: Bearer ***
+Authorization: Bearer &lt;your-token&gt;
 
 {
   "name": "John Smith",
@@ -233,14 +233,14 @@ Authorization: Bearer ***
   "phone": "+86 138 0000 0000"
 }</code></pre>          <h4>Example — list your pipeline</h4>
 <pre class="codeblock"><code>GET /api/deals?stage=follow_up
-Authorization: Bearer ***</code></pre>        </div>
+Authorization: Bearer &lt;your-token&gt;</code></pre>        </div>
         <h3>AI features</h3>
         <h4>AI suggestions</h4>
 <pre class="codeblock"><code>GET /api/ai/suggestions
-Authorization: Bearer ***</code></pre>        <h4>AI chat (agent)</h4>
+Authorization: Bearer &lt;your-token&gt;</code></pre>        <h4>AI chat (agent)</h4>
 <pre class="codeblock"><code>POST /api/agent-chat/{agent_id}/message
 Content-Type: application/json
-Authorization: Bearer ***
+Authorization: Bearer &lt;your-token&gt;
 
 {"content": "帮我总结这个客户最近的沟通"}</code></pre>        <p class="note">Streaming SSE response.</p>
         <h3>Knowledge base</h3>
@@ -248,7 +248,7 @@ Authorization: Bearer ***
         <h4>Example — semantic search</h4>
 <pre class="codeblock"><code>POST /api/knowledge/search
 Content-Type: application/json
-Authorization: Bearer ***
+Authorization: Bearer &lt;your-token&gt;
 
 {"query": "产品规格参数", "top_k": 5}</code></pre>
         <h3>Response conventions</h3>

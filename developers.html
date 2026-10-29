@@ -221,10 +221,10 @@ Content-Type: application/json
         <div style="display:grid;gap:6px">
           <h4>示例 — 搜索客户</h4>
 <pre class="codeblock"><code>GET /api/contacts?q=acme&amp;page=1&amp;page_size=20
-Authorization: Bearer ***</code></pre>          <h4>示例 — 创建客户</h4>
+Authorization: Bearer &lt;your-token&gt;</code></pre>          <h4>示例 — 创建客户</h4>
 <pre class="codeblock"><code>POST /api/contacts
 Content-Type: application/json
-Authorization: Bearer ***
+Authorization: Bearer &lt;your-token&gt;
 
 {
   "name": "John Smith",
@@ -233,14 +233,14 @@ Authorization: Bearer ***
   "phone": "+86 138 0000 0000"
 }</code></pre>          <h4>示例 — 查看跟进管线</h4>
 <pre class="codeblock"><code>GET /api/deals?stage=follow_up
-Authorization: Bearer ***</code></pre>        </div>
+Authorization: Bearer &lt;your-token&gt;</code></pre>        </div>
         <h3>AI 能力</h3>
         <h4>AI 建议</h4>
 <pre class="codeblock"><code>GET /api/ai/suggestions
-Authorization: Bearer ***</code></pre>        <h4>AI 对话（agent）</h4>
+Authorization: Bearer &lt;your-token&gt;</code></pre>        <h4>AI 对话（agent）</h4>
 <pre class="codeblock"><code>POST /api/agent-chat/{agent_id}/message
 Content-Type: application/json
-Authorization: Bearer ***
+Authorization: Bearer &lt;your-token&gt;
 
 {"content": "帮我总结这个客户最近的沟通"}</code></pre>        <p class="note">流式 SSE 响应。</p>
         <h3>知识库</h3>
@@ -248,7 +248,7 @@ Authorization: Bearer ***
         <h4>示例 — 语义搜索</h4>
 <pre class="codeblock"><code>POST /api/knowledge/search
 Content-Type: application/json
-Authorization: Bearer ***
+Authorization: Bearer &lt;your-token&gt;
 
 {"query": "产品规格参数", "top_k": 5}</code></pre>
         <h3>响应约定</h3>

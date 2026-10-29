@@ -221,10 +221,10 @@ Content-Type: application/json
         <div style="display:grid;gap:6px">
           <h4>例 — 顧客を検索</h4>
 <pre class="codeblock"><code>GET /api/contacts?q=acme&amp;page=1&amp;page_size=20
-Authorization: Bearer ***</code></pre>          <h4>例 — 顧客を作成</h4>
+Authorization: Bearer &lt;your-token&gt;</code></pre>          <h4>例 — 顧客を作成</h4>
 <pre class="codeblock"><code>POST /api/contacts
 Content-Type: application/json
-Authorization: Bearer ***
+Authorization: Bearer &lt;your-token&gt;
 
 {
   "name": "John Smith",
@@ -233,14 +233,14 @@ Authorization: Bearer ***
   "phone": "+86 138 0000 0000"
 }</code></pre>          <h4>例 — パイプラインを一覧</h4>
 <pre class="codeblock"><code>GET /api/deals?stage=follow_up
-Authorization: Bearer ***</code></pre>        </div>
+Authorization: Bearer &lt;your-token&gt;</code></pre>        </div>
         <h3>AI 機能</h3>
         <h4>AI 提案</h4>
 <pre class="codeblock"><code>GET /api/ai/suggestions
-Authorization: Bearer ***</code></pre>        <h4>AI チャット（agent）</h4>
+Authorization: Bearer &lt;your-token&gt;</code></pre>        <h4>AI チャット（agent）</h4>
 <pre class="codeblock"><code>POST /api/agent-chat/{agent_id}/message
 Content-Type: application/json
-Authorization: Bearer ***
+Authorization: Bearer &lt;your-token&gt;
 
 {"content": "帮我总结这个客户最近的沟通"}</code></pre>        <p class="note">ストリーミング SSE レスポンス。</p>
         <h3>ナレッジベース</h3>
@@ -248,7 +248,7 @@ Authorization: Bearer ***
         <h4>例 — セマンティック検索</h4>
 <pre class="codeblock"><code>POST /api/knowledge/search
 Content-Type: application/json
-Authorization: Bearer ***
+Authorization: Bearer &lt;your-token&gt;
 
 {"query": "产品规格参数", "top_k": 5}</code></pre>
         <h3>レスポンス規約</h3>
