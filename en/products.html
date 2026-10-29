@@ -185,6 +185,20 @@
     .sm-lang { margin-top: 8px; padding: 10px 14px 4px; font-size: 12.5px; color: var(--text-secondary, #9ca3af); border-top: 1px solid var(--border, rgba(255,255,255,.08)); }
     .sm-lang a { display: inline; padding: 0 2px; font-size: 12.5px; color: var(--text-secondary, #9ca3af); }
     @media (max-width: 640px) { .sm-nav-inner { padding: 12px 16px; } .sm-menu { left: 12px; right: 12px; width: auto; } }
+  
+    /* ===== two-ways (dual usage) ===== */
+    .two-ways { margin: 24px 0 4px; padding: 26px 28px; background: var(--bg-secondary, #14151b); border: 1px solid var(--border, rgba(255,255,255,.08)); border-radius: 14px; }
+    .two-ways-title { font-size: 17px; font-weight: 700; color: var(--text-primary, #f3f4f6); letter-spacing: .5px; margin: 0 0 4px; }
+    .two-ways-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; }
+    .two-ways-card { background: rgba(99,102,241,.06); border: 1px solid var(--border, rgba(255,255,255,.08)); border-radius: 10px; padding: 18px 20px; }
+    .two-ways-tag { margin: 0 0 10px; font-size: 14.5px; }
+    .two-ways-tag strong { color: var(--accent-light, #818cf8); }
+    .two-ways-body { margin: 0; font-size: 13.5px; line-height: 1.85; color: var(--text-secondary, #9ca3af); }
+    .two-ways-cta { margin: 12px 0 0; }
+    .two-ways-cta a { font-size: 13.5px; font-weight: 600; color: var(--accent-light, #818cf8); text-decoration: none; }
+    .two-ways-cta a:hover { text-decoration: underline; }
+    .two-ways-close { margin: 18px 0 0; text-align: center; font-size: 14.5px; color: var(--text-primary, #f3f4f6); }
+    @media (max-width: 768px) { .two-ways-grid { grid-template-columns: 1fr; } .two-ways { padding: 20px 16px; } }
   </style>
   <link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/products">
   <link rel="alternate" hreflang="en" href="https://www.silimind.net/en/products">
@@ -301,6 +315,22 @@
             </li>
         </ul>
         <a class="role-more" href="#module-sales">Explore Sales Management →</a>
+              <div class="two-ways">
+          <h3 class="two-ways-title">Two ways to run it. Your call.</h3>
+          <div class="two-ways-grid">
+            <div class="two-ways-card">
+              <p class="two-ways-tag"><strong>Option 1: Run on SiliMind.</strong></p>
+              <p class="two-ways-body">No second system to install. SiliMind ships with an AI-native marketing &amp; sales CRM built in: messages from 10 channels land on one timeline, the 360° customer view puts sales, marketing and AI insights on a single page, the shared lead pool scores and routes automatically, SLA timers keep every follow-up on the clock, visit recordings turn into 13-field notes, AI drafts emails and weekly reports and pulls contract fields out of your conversations, and the RAG knowledge base answers with sources attached. Once it’s in, it goes to work.</p>
+              <p class="two-ways-cta"><a href="https://agent.silimind.net/register">Start Personal Trial →</a></p>
+            </div>
+            <div class="two-ways-card">
+              <p class="two-ways-tag"><strong>Option 2: Keep your current CRM.</strong></p>
+              <p class="two-ways-body">Already on OKKI, Salesforce, HubSpot, Zoho or another CRM? No need to switch. Drag in an Excel or CSV export, map the fields once when prompted, and the system deduplicates and imports for you — with source backfill measured at 92% to 97% in real runs. Once your records are in, AI visit notes, email drafting and the knowledge base keep working as usual.</p>
+              <p class="two-ways-cta"><a href="#contact">Talk to sales →</a></p>
+            </div>
+          </div>
+          <p class="two-ways-close"><strong>Your call.</strong></p>
+        </div>
       </div>
 
       <div class="role-block" id="role-marketing">
