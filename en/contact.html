@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <title>Contact · SiliMind</title>
+  <meta name="description" content="Personal trial, enterprise plan, or just a question — three doors, all open." />
+  <link rel="canonical" href="https://www.silimind.net/en/contact" />
+  <link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/contact" />
+  <link rel="alternate" hreflang="en" href="https://www.silimind.net/en/contact" />
+  <link rel="alternate" hreflang="ja-JP" href="https://www.silimind.net/ja/contact" />
+  <link rel="alternate" hreflang="ko-KR" href="https://www.silimind.net/ko/contact" />
+  <link rel="alternate" hreflang="x-default" href="https://www.silimind.net/contact" />
+  <meta property="og:title" content="Contact · SiliMind" />
+  <meta property="og:description" content="Personal trial, enterprise plan, or just a question — three doors, all open." />
+  <meta property="og:url" content="https://www.silimind.net/en/contact" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="SiliMind" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJ7HH4824R"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RJ7HH4824R');
+  </script>
+
+  <style>
+    :root {
+      --bg: #0b0c10; --bg-secondary: #14151b;
+      --text-primary: #f3f4f6; --text-secondary: #9ca3af;
+      --accent: #6366f1; --accent-hover: #4f46e5; --accent-light: #818cf8;
+      --border: rgba(255,255,255,.08); --border-hover: rgba(129,140,248,.4);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans", "Malgun Gothic", sans-serif; background: var(--bg); color: var(--text-primary); line-height: 1.7; }
+    a { color: var(--accent-light); }
+    .wrap { max-width: 1000px; margin: 0 auto; padding: 0 32px; }
+    /* ===== sm-nav ===== */
+    .sm-nav { position: sticky; top: 0; z-index: 999; background: rgba(11,12,16,.88); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+    .sm-nav-inner { max-width: 1120px; margin: 0 auto; padding: 14px 32px; display: flex; align-items: center; justify-content: space-between; }
+    .sm-logo { font-size: 20px; font-weight: 700; color: var(--text-primary); text-decoration: none; letter-spacing: .5px; }
+    .sm-toggle { background: none; border: 0; cursor: pointer; padding: 10px; display: flex; flex-direction: column; gap: 5px; }
+    .sm-bar { display: block; width: 22px; height: 2px; background: var(--text-primary); border-radius: 2px; transition: transform .25s ease, opacity .2s ease; }
+    .sm-open .sm-bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .sm-open .sm-bar:nth-child(2) { opacity: 0; }
+    .sm-open .sm-bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .sm-menu { display: none; position: absolute; top: 100%; right: 16px; width: 300px; max-width: calc(100vw - 24px); background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 14px; padding: 10px; box-shadow: 0 16px 48px rgba(0,0,0,.5); }
+    .sm-open .sm-menu { display: block; }
+    .sm-menu a { display: block; padding: 10px 14px; border-radius: 8px; color: var(--text-primary); text-decoration: none; font-size: 15px; }
+    .sm-menu a:hover { background: rgba(129,140,248,.12); }
+    .sm-top { font-weight: 600; }
+    .sm-sub { margin: 2px 10px 8px 18px; padding-left: 12px; border-left: 2px solid var(--border); }
+    .sm-sub a { font-size: 13.5px; color: var(--text-secondary); padding: 7px 12px; }
+    .sm-cta { margin-top: 8px; text-align: center; background: var(--accent); color: #fff !important; font-weight: 600; border-radius: 10px; }
+    .sm-lang { margin-top: 8px; padding: 10px 14px 4px; font-size: 12.5px; color: var(--text-secondary); border-top: 1px solid var(--border); }
+    .sm-lang a { display: inline; padding: 0 2px; font-size: 12.5px; color: var(--text-secondary); }
+    @media (max-width: 640px) { .sm-nav-inner { padding: 12px 16px; } .sm-menu { left: 12px; right: 12px; width: auto; } }
+    /* ===== hero ===== */
+    .ct-hero { padding: 84px 0 56px; text-align: center; background: radial-gradient(ellipse 80% 50% at 50% -10%, rgba(99,102,241,.18), transparent); }
+    .ct-label { display: inline-block; font-size: 13px; letter-spacing: 3px; font-weight: 700; color: var(--accent-light); text-transform: uppercase; margin-bottom: 18px; }
+    .ct-hero h1 { font-size: 46px; line-height: 1.25; margin-bottom: 16px; }
+    .ct-hero p { max-width: 680px; margin: 0 auto; color: var(--text-secondary); font-size: 17px; }
+    /* ===== dual cards ===== */
+    .ct-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; padding: 26px 0 8px; }
+    .ct-card { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 18px; padding: 34px 36px; display: flex; flex-direction: column; }
+    .ct-tag { align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; letter-spacing: 1.5px; color: var(--accent-light); border: 1px solid var(--border-hover); border-radius: 999px; padding: 4px 14px; margin-bottom: 18px; text-transform: uppercase; }
+    .ct-card h2 { font-size: 24px; line-height: 1.4; margin-bottom: 12px; }
+    .ct-card p { color: var(--text-secondary); font-size: 15px; line-height: 1.85; flex: 1; }
+    .ct-card .btn { margin-top: 22px; text-align: center; padding: 13px 24px; border-radius: 11px; text-decoration: none; font-size: 15px; font-weight: 600; }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-primary:hover { background: var(--accent-hover); }
+    .btn-ghost { border: 1px solid var(--border-hover); color: var(--text-primary); }
+    .btn-ghost:hover { background: rgba(129,140,248,.1); }
+    /* ===== wechat block ===== */
+    .wx-block { margin: 30px 0 10px; text-align: center; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 18px; padding: 52px 32px 46px; background-image: radial-gradient(ellipse 60% 90% at 50% 120%, rgba(99,102,241,.14), transparent); }
+    .wx-label { display: inline-flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 700; letter-spacing: 2.5px; color: var(--accent-light); text-transform: uppercase; margin-bottom: 20px; }
+    .wx-label .dot { width: 8px; height: 8px; border-radius: 50%; background: #10b981; box-shadow: 0 0 12px rgba(16,185,129,.6); }
+    .wx-number { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: clamp(34px, 7vw, 58px); font-weight: 700; letter-spacing: 2px; color: var(--text-primary); margin-bottom: 10px; }
+    .wx-hint { color: var(--text-secondary); font-size: 14px; margin-bottom: 24px; }
+    .wx-copy-btn { display: inline-block; background: var(--accent); color: #fff; border: 0; border-radius: 999px; padding: 12px 34px; font-size: 15px; font-weight: 600; cursor: pointer; transition: background .2s ease, transform .15s ease; }
+    .wx-copy-btn:hover { background: var(--accent-hover); transform: translateY(-1px); }
+    .wx-copy-btn.copied { background: #10b981; }
+    /* ===== email row ===== */
+    .ct-email { text-align: center; padding: 18px 0 8px; color: var(--text-secondary); font-size: 15px; }
+    .ct-email a { color: var(--text-primary); text-decoration: none; border-bottom: 1px dashed var(--border-hover); padding-bottom: 2px; }
+    /* ===== footer ===== */
+    .site-footer { border-top: 1px solid var(--border); padding: 26px 0; text-align: center; color: var(--text-secondary); font-size: 13.5px; margin-top: 48px; }
+    .site-footer a { color: var(--text-secondary); }
+    @media (max-width: 768px) {
+      .ct-hero { padding: 56px 0 40px; } .ct-hero h1 { font-size: 34px; }
+      .ct-cards { grid-template-columns: 1fr; padding-top: 18px; }
+      .ct-card { padding: 26px 22px; }
+      .wx-block { padding: 40px 18px 36px; }
+      .wrap { padding: 0 16px; }
+    }
+  </style>
+
+</head>
+<body>
+<nav class="sm-nav">
+  <div class="sm-nav-inner">
+    <a href="/en/" class="sm-logo">SiliMind</a>
+    <button class="sm-toggle" aria-label="Menu" aria-expanded="false" aria-controls="sm-menu"><span class="sm-bar"></span><span class="sm-bar"></span><span class="sm-bar"></span></button>
+  </div>
+  <div class="sm-menu" id="sm-menu">
+    <a href="/en/products" class="sm-link sm-top">Product</a>
+    <div class="sm-sub">
+      <a href="/en/products#role-sales">for Sales</a>
+      <a href="/en/products#role-marketing">for Marketing</a>
+      <a href="/en/products#role-ceo">for CEO</a>
+    </div>
+    <a href="/en/solutions" class="sm-link">Platform</a>
+    <a href="/en/#metrics" class="sm-link">Performance</a>
+    <a href="/en/#pricing" class="sm-link">Pricing</a>
+    <a href="/en/contact" class="sm-link">Contact</a>
+    <a href="/en/about" class="sm-link">About</a>
+    <a href="/en/cases" class="sm-link">Cases</a>
+    <a href="/en/blog/" class="sm-link">Blog</a>
+    <a href="https://agent.silimind.net/register" class="sm-link sm-cta">Start Personal Trial</a>
+    <div class="sm-lang"><a href="/contact">中文</a> · EN · <a href="/ja/contact">日本語</a> · <a href="/ko/contact">한국어</a></div>
+  </div>
+</nav>
+  <main>
+    <!-- hero -->
+    <section class="ct-hero">
+      <div class="wrap">
+        <span class="ct-label">CONTACT</span>
+        <h1>Talk to us</h1>
+        <p>Personal trial, enterprise plan, or just a question — three doors, all open.</p>
+      </div>
+    </section>
+
+    <!-- dual cards -->
+    <section class="wrap">
+      <div class="ct-cards">
+        <div class="ct-card">
+          <span class="ct-tag">🚀 Personal trial</span>
+          <h2>Submit a request, get approved, go live</h2>
+          <p>Comes with a free quota of 10M tokens.</p>
+          <a href="https://agent.silimind.net/register" class="btn btn-primary">Start Personal Trial →</a>
+        </div>
+        <div class="ct-card">
+          <span class="ct-tag">🏢 Enterprise</span>
+          <h2>Full permissions, private deployment</h2>
+          <p>Scoped to your team size — talk to sales for an enterprise plan.</p>
+          <a href="mailto:micheal@silimind.net" class="btn btn-ghost">Talk to sales →</a>
+        </div>
+      </div>
+
+      <!-- wechat -->
+      <div class="wx-block">
+        <div class="wx-label"><span class="dot"></span>WeChat</div>
+        <div class="wx-number">18612418612</div>
+        <p class="wx-hint">Click to copy — mention what you're reaching out about when adding us</p>
+        <button class="wx-copy-btn" id="wx-copy" type="button">Copy WeChat ID</button>
+      </div>
+      <p class="ct-email">Email · <a href="mailto:micheal@silimind.net">micheal@silimind.net</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">© 2026 SiliMind 思理智能. All rights reserved. &nbsp;·&nbsp; WeChat: 18612418612 &nbsp;·&nbsp; <a href="mailto:micheal@silimind.net">micheal@silimind.net</a></div>
+  </footer>
+  <script>
+    (function(){
+      var nav=document.querySelector('.sm-nav');var t=document.querySelector('.sm-toggle');
+      if(!nav||!t)return;
+      t.addEventListener('click',function(e){e.stopPropagation();var o=nav.classList.toggle('sm-open');t.setAttribute('aria-expanded',o?'true':'false');});
+      document.addEventListener('click',function(e){if(nav.classList.contains('sm-open')&&!nav.contains(e.target)){nav.classList.remove('sm-open');t.setAttribute('aria-expanded','false');}});
+      var m=nav.querySelector('.sm-menu');
+      if(m){m.addEventListener('click',function(e){if(e.target.closest('a')){nav.classList.remove('sm-open');t.setAttribute('aria-expanded','false');}});}
+    })();
+  </script>
+
+  <script>
+    (function(){
+      var btn=document.getElementById('wx-copy');
+      if(!btn)return;
+      var WXID='18612418612', DONE='✓ Copied', ORIG=btn.textContent, tm=null;
+      function done(){btn.textContent=DONE;btn.classList.add('copied');if(tm)clearTimeout(tm);tm=setTimeout(function(){btn.textContent=ORIG;btn.classList.remove('copied');},2200);}
+      function fallback(){var t=document.createElement('textarea');t.value=WXID;t.style.position='fixed';t.style.opacity='0';document.body.appendChild(t);t.select();try{document.execCommand('copy');done();}catch(e){}document.body.removeChild(t);}
+      btn.addEventListener('click',function(){
+        if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(WXID).then(done,fallback);}
+        else{fallback();}
+      });
+    })();
+  </script>
+  </body>
+</html>

@@ -215,17 +215,29 @@
 </head>
 <body>
 
-  <nav class="nav">
-    <div class="nav-inner">
-      <a href="/" class="nav-logo">SiliMind</a>
-      <ul class="nav-links">
-        <li><a href="/blog/" class="active">Blog</a></li>
-        <li><a href="/#features">核心能力</a></li>
-        <li><a href="/solutions.html">解决方案</a></li>
-        <li><a href="/about.html">关于我们</a></li>
-      </ul>
+  <nav class="sm-nav">
+  <div class="sm-nav-inner">
+    <a href="/" class="sm-logo">SiliMind</a>
+    <button class="sm-toggle" aria-label="菜单" aria-expanded="false" aria-controls="sm-menu"><span class="sm-bar"></span><span class="sm-bar"></span><span class="sm-bar"></span></button>
+  </div>
+  <div class="sm-menu" id="sm-menu">
+    <a href="/products" class="sm-link sm-top">产品</a>
+    <div class="sm-sub">
+      <a href="/products#role-sales">for Sales · 销售/FAE</a>
+      <a href="/products#role-marketing">for Marketing · 市场运营</a>
+      <a href="/products#role-ceo">for CEO · 老板/CEO</a>
     </div>
-  </nav>
+    <a href="/solutions" class="sm-link">平台</a>
+    <a href="/#metrics" class="sm-link">性能</a>
+    <a href="/#pricing" class="sm-link">价格</a>
+    <a href="/contact" class="sm-link">联系我们</a>
+    <a href="/about" class="sm-link">关于</a>
+    <a href="/cases" class="sm-link">案例</a>
+    <a href="/blog/" class="sm-link">博客</a>
+    <a href="https://agent.silimind.net/register" class="sm-link sm-cta">申请个人试用</a>
+    <div class="sm-lang">中文 · <a href="/en/">EN</a> · <a href="/ja/">日本語</a> · <a href="/ko/">한국어</a></div>
+  </div>
+</nav>
 
   <article class="article-container">
     <a href="/blog/" class="back-link">← 返回博客</a>
