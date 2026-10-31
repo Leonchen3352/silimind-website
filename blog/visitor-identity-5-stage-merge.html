@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <title>没填表单的访客，也该知道他是谁：5 阶段概率合并 - SiliMind Blog</title>
+  <meta name="description" content="同一人在不同时间从不同入口进来，留下的是互不相干的碎片。5 阶段概率合并的权重是把握程度不是覆盖率——附信号强弱表、合错代价分析与今晚就能做的手工分档法。" />
+  <link rel="canonical" href="https://www.silimind.net/blog/visitor-identity-5-stage-merge" />
+  <meta property="og:title" content="没填表单的访客，也该知道他是谁：5 阶段概率合并 - SiliMind Blog" />
+  <meta property="og:description" content="同一人在不同时间从不同入口进来，留下的是互不相干的碎片。5 阶段概率合并的权重是把握程度不是覆盖率——附信号强弱表、合错代价分析与今晚就能做的手工分档法。" />
+  <meta property="og:url" content="https://www.silimind.net/blog/visitor-identity-5-stage-merge" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:site_name" content="SiliMind" />
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJ7HH4824R"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RJ7HH4824R');
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "没填表单的访客，也该知道他是谁：5 阶段概率合并",
+  "description": "同一人在不同时间从不同入口进来，留下的是互不相干的碎片。5 阶段概率合并的权重是把握程度不是覆盖率——附信号强弱表、合错代价分析与今晚就能做的手工分档法。",
+  "datePublished": "2026-10-31",
+  "author": {
+    "@type": "Organization",
+    "name": "SiliMind"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "SiliMind",
+    "url": "https://www.silimind.net"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.silimind.net/blog/visitor-identity-5-stage-merge"
+  }
+}
+  </script>
+  <style>
+    :root {
+      --bg-primary: #0a0a0f;
+      --bg-secondary: #12121a;
+      --bg-card: #16161f;
+      --accent: #6366f1;
+      --accent-light: #818cf8;
+      --text-primary: #f0f0f5;
+      --text-secondary: rgba(240,240,245,0.6);
+      --border: rgba(99,102,241,0.08);
+      --border-hover: rgba(99,102,241,0.25);
+      --font: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'PingFang SC', 'Noto Sans SC', sans-serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* Nav */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(10,10,15,0.9);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      height: 64px;
+    }
+    .nav-inner {
+      max-width: 1100px; margin: 0 auto; padding: 0 32px;
+      height: 100%; display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      font-size: 20px; font-weight: 700; color: var(--accent-light);
+      text-decoration: none; letter-spacing: 1px;
+    }
+    .nav-links { list-style: none; display: flex; gap: 32px; }
+    .nav-links a {
+      color: var(--text-secondary); text-decoration: none; font-size: 14px;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--text-primary); }
+
+    /* Article */
+    .article-container {
+      max-width: 760px; margin: 0 auto;
+      padding: 120px 32px 80px;
+    }
+    .article-header {
+      margin-bottom: 40px;
+    }
+    .article-header h1 {
+      font-size: 32px; font-weight: 700; line-height: 1.3;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #6366f1, #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .article-meta {
+      font-size: 14px; color: var(--text-secondary);
+    }
+    .article-meta time {
+      margin-right: 16px;
+    }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      color: var(--accent-light); text-decoration: none; font-size: 14px;
+      margin-bottom: 24px; transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--text-primary); }
+
+    /* Article body */
+    .article-body h2 {
+      font-size: 24px; font-weight: 600; margin: 40px 0 16px;
+      color: var(--text-primary);
+    }
+    .article-body h3 {
+      font-size: 20px; font-weight: 600; margin: 32px 0 12px;
+      color: var(--text-primary);
+    }
+    .article-body p {
+      font-size: 16px; line-height: 1.8; color: var(--text-secondary);
+      margin-bottom: 20px;
+    }
+    .article-body ul, .article-body ol {
+      margin-bottom: 20px; padding-left: 24px; color: var(--text-secondary);
+    }
+    .article-body li {
+      margin-bottom: 8px; font-size: 16px; line-height: 1.8;
+    }
+    .article-body blockquote {
+      border-left: 3px solid var(--accent);
+      padding: 16px 24px;
+      margin: 24px 0;
+      background: var(--bg-secondary);
+      border-radius: 0 8px 8px 0;
+      color: var(--text-secondary);
+      font-size: 15px;
+    }
+    .article-body code {
+      background: var(--bg-secondary);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 14px;
+      color: var(--accent-light);
+    }
+    .article-body pre {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px 24px;
+      overflow-x: auto;
+      margin-bottom: 20px;
+    }
+    .article-body pre code {
+      background: none; padding: 0; font-size: 14px;
+      color: var(--text-primary);
+    }
+    .article-body img {
+      max-width: 100%; border-radius: 8px; margin: 24px 0;
+    }
+    .article-body a {
+      color: var(--accent-light); text-decoration: underline;
+      text-decoration-color: rgba(129,140,248,0.3);
+      transition: text-decoration-color 0.2s;
+    }
+    .article-body a:hover {
+      text-decoration-color: var(--accent-light);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center; padding: 40px 32px;
+      border-top: 1px solid var(--border);
+      color: var(--text-secondary); font-size: 13px;
+    }
+
+    @media (max-width: 768px) {
+      .article-container { padding: 100px 16px 60px; }
+      .article-header h1 { font-size: 26px; }
+      .article-body h2 { font-size: 20px; }
+      .nav-links { display: none; }
+    }
+  
+    /* ===== sm-nav: coffee-style hamburger ===== */
+    .sm-nav { position: sticky; top: 0; z-index: 999; background: rgba(11,12,16,.88); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border, rgba(255,255,255,.08)); }
+    .sm-nav-inner { max-width: 1120px; margin: 0 auto; padding: 14px 32px; display: flex; align-items: center; justify-content: space-between; }
+    .sm-logo { font-size: 20px; font-weight: 700; color: var(--text-primary, #f3f4f6); text-decoration: none; letter-spacing: .5px; }
+    .sm-toggle { background: none; border: 0; cursor: pointer; padding: 10px; display: flex; flex-direction: column; gap: 5px; }
+    .sm-bar { display: block; width: 22px; height: 2px; background: var(--text-primary, #f3f4f6); border-radius: 2px; transition: transform .25s ease, opacity .2s ease; }
+    .sm-open .sm-bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .sm-open .sm-bar:nth-child(2) { opacity: 0; }
+    .sm-open .sm-bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .sm-menu { display: none; position: absolute; top: 100%; right: 16px; width: 300px; max-width: calc(100vw - 24px); background: var(--bg-secondary, #14151b); border: 1px solid var(--border, rgba(255,255,255,.08)); border-radius: 14px; padding: 10px; box-shadow: 0 16px 48px rgba(0,0,0,.5); }
+    .sm-open .sm-menu { display: block; }
+    .sm-menu a { display: block; padding: 10px 14px; border-radius: 8px; color: var(--text-primary, #f3f4f6); text-decoration: none; font-size: 15px; }
+    .sm-menu a:hover { background: rgba(129,140,248,.12); }
+    .sm-top { font-weight: 600; }
+    .sm-sub { margin: 2px 10px 8px 18px; padding-left: 12px; border-left: 2px solid var(--border, rgba(255,255,255,.08)); }
+    .sm-sub a { font-size: 13.5px; color: var(--text-secondary, #9ca3af); padding: 7px 12px; }
+    .sm-cta { margin-top: 8px; text-align: center; background: var(--accent, #6366f1); color: #fff !important; font-weight: 600; border-radius: 10px; }
+    .sm-cta:hover { background: var(--accent-hover, #4f46e5) !important; }
+    .sm-langbar { margin-left: auto; margin-right: 10px; font-size: 12.5px; color: var(--text-secondary, #9ca3af); white-space: nowrap; }
+    .sm-langbar a { color: var(--text-secondary, #9ca3af); text-decoration: none; padding: 2px 4px; border-radius: 6px; }
+    .sm-langbar a:hover { color: var(--text-primary, #f3f4f6); background: rgba(129,140,248,.12); }
+    @media (max-width: 640px) { .sm-nav-inner { padding: 12px 16px; } .sm-menu { left: 12px; right: 12px; width: auto; } }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">SiliMind</a>
+      <ul class="nav-links">
+        <li><a href="/blog/" class="active">Blog</a></li>
+        <li><a href="/#features">核心能力</a></li>
+        <li><a href="/solutions.html">解决方案</a></li>
+        <li><a href="/about.html">关于我们</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <article class="article-container">
+    <a href="/blog/" class="back-link">← 返回博客</a>
+    <header class="article-header">
+      <h1>没填表单的访客，也该知道他是谁：5 阶段概率合并</h1>
+      <div class="article-meta">
+        <time datetime="2026-10-31">2026 年 10 月 31 日</time>
+        <span>SiliMind</span>
+      </div>
+    </header>
+    <div class="article-body">
+      <h2>3400 个访客，41 个电话</h2>
+      <p>周一早上九点半，一家做工业设备的公司开市场例会。后台显示上周来了 3400 多个访客，留下电话的 41 个。老板问剩下那批人在干什么、有没有值得追的，市场经理答不上来，只能说大部分是同行和爬虫。会议就这么过去了，第三个月还是这句话。</p>
+      <p>这是典型场景还原，不是某一家公司的真实经历，数字为示意。</p>
+      <p>问题不在访客少，也不在表单长。同一个人在不同时间、从不同入口、换着设备进来，留下的本来就是几条互不相干的记录。每一条都残缺，摆在一起却能确认是他。「认不出」常常不是数据不够，是没把碎片拼起来。</p>
+      <h2>表单是一个小概率动作</h2>
+      <p>大部分访客不会填表单。看到一个陌生公司的介绍页就留下电话和邮箱，这是一个有成本的动作，多数人只愿意看。</p>
+      <p>十个进来的人里，多数连产品页都没看完就走了。等表单的人，等的是一个大概率不会发生的动作。</p>
+      <p>以留资为起点的统计，只能看见那一小部分人。剩下那部分不是不重要，是报表里没给他们位置。</p>
+      <h2>认出一个人靠哪些信号</h2>
+      <p>认出一个人，靠的不是某一个字段，是几条信号叠在一起。每条信号能证明的东西不一样，断掉的方式也不一样。</p>
+      <table>
+  <thead>
+    <tr><th>信号</th><th>它能证明什么</th><th>它不能证明什么</th><th>它什么时候会断</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>主动留下的标识（邮箱、电话、外部平台账号）</td><td>这个人主动报过身份，是同一个人</td><td>没留的人就碰不到，大多数人属于这类</td><td>换邮箱，换平台账号</td></tr>
+    <tr><td>浏览器 cookie 标识</td><td>同一个浏览器，同一个人</td><td>共用一台电脑的人分不开</td><td>换设备，清缓存，开隐私窗口</td></tr>
+    <tr><td>设备指纹</td><td>同一台设备，同一类环境</td><td>同型号机器批量撞在一起时会张冠李戴</td><td>系统升级，换浏览器，重装系统</td></tr>
+    <tr><td>网络出口地址加浏览器参数加时间窗</td><td>这一格对上时有多确定是同一个人</td><td>分不出同一间办公室里坐着不同的人</td><td>换网络，地址变动，超出时间窗</td></tr>
+    <tr><td>什么都没有</td><td>什么都证明不了</td><td>只能证明这是个新访客</td><td>等他下一次再来</td></tr>
+  </tbody>
+</table>
+      <p>横着读这张表，能看出两件事。信号强弱是一回事，能撑住什么动作是另一回事。一条 cookie 对上了，你可以放心把这个人当成同一个人往下走。一条 IP 对上了，你只知道某个地址那边有个人在看你。</p>
+      <h2>5 阶段怎么降级</h2>
+      <p>没留下联系方式的访客，收进系统靠的是 5 阶段概率合并。顺序固定：先找确定标识，没有就退一格，退到底什么都没有，就新建一条。</p>
+      <p>表里那个权重是这一格判定的把握程度，不是能认出多少访客的比例。</p>
+      <table>
+  <thead>
+    <tr><th>阶段</th><th>这一格靠什么</th><th>权重</th><th>对上了可以做的事</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>外部平台身份 external_user_id</td><td>微信、领英、TikTok、Instagram、Reddit 那边返回的账号标识</td><td>0.95</td><td>当成一个人，跟进资料和内容直接推给他</td></tr>
+    <tr><td>浏览器 cookie 标识 cookie_id</td><td>浏览器里发给这个网站的小纸条</td><td>1.0</td><td>当成一个人，还能带上他上次看过的页面</td></tr>
+    <tr><td>设备指纹 fingerprint_hash</td><td>把设备的一堆环境特征揉出来的一个编号</td><td>0.85</td><td>推内容，留一个待确认标记</td></tr>
+    <tr><td>网络加浏览器 IP+UA+30 分钟</td><td>出口地址、浏览器自报的一串参数、半小时窗口</td><td>0.70</td><td>只能做内容层面的推荐，不能打电话</td></tr>
+    <tr><td>新建</td><td>什么都没有</td><td>0.0</td><td>诚实建档，等他下一次再来</td></tr>
+  </tbody>
+</table>
+      <p>外部平台身份那档 0.95，cookie 那档 1.0，说的都是同一件事：这格的信号对上时，我们有多确定是同一个人。0.70 也是这个意思，指的是 IP 加浏览器参数加 30 分钟这一格对上了有多确定。它跟访客里有多少比例能被认出来没有关系，也不是覆盖率。权重最高的那一格并不排在最前面，顺序和权重是两件事。</p>
+      <p>反过来，已经留下邮箱或者电话的人走的是另一套规则，四条规则和阈值写在 <a href="https://www.silimind.net/blog/content-attribution-b2b">《内容归因实操指南》</a> 里，本文不重复。</p>
+      <h2>合错的代价</h2>
+      <p>合错的代价不在于错一条，而在于合错之后拆不回来。</p>
+      <p>把 A 公司的采购和 B 公司的工程师做成同一个人，之后每一步都从这一步错起。推给他的内容是按另一个人看过的页面挑的，发过去的邮件是按另一家公司的情况写的，销售电话打过去，问的是八竿子打不着的事。这一错还不容易被发现，因为页面看起来还挺完整。</p>
+      <p>客户 360° 视图把销售触点、营销触点和 AI 洞察放在一个页面，本来是为了省掉到处翻记录的麻烦。人一旦被认错，这个页面上的每一条都会跟着错。</p>
+      <p>所以低置信度的记录宁可先标成「待确认」，不要直接并进客户档案。这五档排下来是先降级再新建，不是先合并再校正。理由不难想，不确定的东西一旦合并就很难拆。</p>
+      <p>我们自己看访客报表的时候，最常被误读的就是那一列 IP。看到同一个地址出现几十次，正确的反应是「那边有一批人」，不是「那边有一个客户」。</p>
+      <h2>产品里的位置</h2>
+      <p>SiliMind 里对应的实现分两档。第 1 档给每个访客发一个 cookie 标识（<code>silmind_visitor_id</code>），记下 5 个来源标记（UTM），内部 5 项验证全过。第 2 档把微信、领英、TikTok、Instagram、Reddit 五个渠道接进身份归并，内部 25 个端到端场景跑通。第 2 档代码已实现、待部署，渠道凭证还没到位，五个渠道的账号目前一个都还没接上。</p>
+      <h2>这套东西不适合谁</h2>
+      <p>同一间办公室里分不出人，甚至会帮倒忙。十个人共用一个出口地址，只能知道这间公司有人感兴趣，不知道是谁。把整间公司合并成一个人，销售拿着这个去谈，谈崩了还不知道错在哪一步。</p>
+      <p>换设备就断。客户在手机上看了内容，回公司用桌面再看一遍，两条记录接不上。跨设备只能靠猜，没有确定的办法。</p>
+      <p>隐私与合规。这类识别在部分市场受当地法规限制，落地前要过法务，不能默认全开。做之前先想清楚数据留多久、谁能看、给不给导出。</p>
+      <p>流量小的站没意义。每天几十个访客的站，拼出来的东西还不如人工判断准。</p>
+      <h2>今天就能做的一件事</h2>
+      <p>打开上周的访客报表，手工分一次档。</p>
+      <p>先看每条记录有没有 cookie 标识、有没有主动填过的联系方式，一个都没有的标成匿名。再在剩下的里面找那些只有一列 IP 加浏览器参数的，单独列一张表，标成「待确认」。</p>
+      <p>这张表就是你下周该知道的全部。先别推，也别急着合并，先看数量。如果「只有一个 IP」的记录占了大多数，那说明现在的报表分不出人。承认这一点，比猜一个客户强。</p>
+      <p>再往下才轮到内容。给这批待确认的人挑一份他大概想看的内容做推荐，不打电话，不报价。这批人里到底有几个是采购，等有人自己回来留了联系方式再说。</p>
+    </div>
+  </article>
+
+
+  <footer>
+    <p>© 2026 SiliMind. All rights reserved. · <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">京ICP备2026058447号-1</a> &nbsp;·&nbsp; 微信：18612418612 &nbsp;·&nbsp; <a href="mailto:micheal@silimind.net">micheal@silimind.net</a> &nbsp;·&nbsp; <a href="/developers">开发者</a></p></footer>
+  <script>
+    (function(){
+      var nav=document.querySelector('.sm-nav');var t=document.querySelector('.sm-toggle');
+      if(!nav||!t)return;
+      t.addEventListener('click',function(e){e.stopPropagation();var o=nav.classList.toggle('sm-open');t.setAttribute('aria-expanded',o?'true':'false');});
+      document.addEventListener('click',function(e){if(nav.classList.contains('sm-open')&&!nav.contains(e.target)){nav.classList.remove('sm-open');t.setAttribute('aria-expanded','false');}});
+      var m=nav.querySelector('.sm-menu');
+      if(m){m.addEventListener('click',function(e){if(e.target.closest('a')){nav.classList.remove('sm-open');t.setAttribute('aria-expanded','false');}});}
+    })();
+  </script>
+  </body>
+</html>
