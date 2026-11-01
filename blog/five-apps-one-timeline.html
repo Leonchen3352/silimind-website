@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <title>5 个 App 里的客户，一条时间线收拢 - SiliMind Blog</title>
+  <meta name="description" content="WhatsApp 里的交期、微信里的样品照、邮箱里的报价单——一个客户被切成五份。10 渠道统一时间线怎么排、线索前后为什么分两段历史，附今晚就能做的手抄梳理法。" />
+  <link rel="canonical" href="https://www.silimind.net/blog/five-apps-one-timeline" />
+  <meta property="og:title" content="5 个 App 里的客户，一条时间线收拢 - SiliMind Blog" />
+  <meta property="og:description" content="WhatsApp 里的交期、微信里的样品照、邮箱里的报价单——一个客户被切成五份。10 渠道统一时间线怎么排、线索前后为什么分两段历史，附今晚就能做的手抄梳理法。" />
+  <meta property="og:url" content="https://www.silimind.net/blog/five-apps-one-timeline" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:site_name" content="SiliMind" />
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJ7HH4824R"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RJ7HH4824R');
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "5 个 App 里的客户，一条时间线收拢",
+  "description": "WhatsApp 里的交期、微信里的样品照、邮箱里的报价单——一个客户被切成五份。10 渠道统一时间线怎么排、线索前后为什么分两段历史，附今晚就能做的手抄梳理法。",
+  "datePublished": "2026-11-01",
+  "author": {
+    "@type": "Organization",
+    "name": "SiliMind"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "SiliMind",
+    "url": "https://www.silimind.net"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.silimind.net/blog/five-apps-one-timeline"
+  }
+}
+  </script>
+  <style>
+    :root {
+      --bg-primary: #0a0a0f;
+      --bg-secondary: #12121a;
+      --bg-card: #16161f;
+      --accent: #6366f1;
+      --accent-light: #818cf8;
+      --text-primary: #f0f0f5;
+      --text-secondary: rgba(240,240,245,0.6);
+      --border: rgba(99,102,241,0.08);
+      --border-hover: rgba(99,102,241,0.25);
+      --font: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'PingFang SC', 'Noto Sans SC', sans-serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* Nav */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(10,10,15,0.9);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      height: 64px;
+    }
+    .nav-inner {
+      max-width: 1100px; margin: 0 auto; padding: 0 32px;
+      height: 100%; display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      font-size: 20px; font-weight: 700; color: var(--accent-light);
+      text-decoration: none; letter-spacing: 1px;
+    }
+    .nav-links { list-style: none; display: flex; gap: 32px; }
+    .nav-links a {
+      color: var(--text-secondary); text-decoration: none; font-size: 14px;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--text-primary); }
+
+    /* Article */
+    .article-container {
+      max-width: 760px; margin: 0 auto;
+      padding: 120px 32px 80px;
+    }
+    .article-header {
+      margin-bottom: 40px;
+    }
+    .article-header h1 {
+      font-size: 32px; font-weight: 700; line-height: 1.3;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #6366f1, #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .article-meta {
+      font-size: 14px; color: var(--text-secondary);
+    }
+    .article-meta time {
+      margin-right: 16px;
+    }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      color: var(--accent-light); text-decoration: none; font-size: 14px;
+      margin-bottom: 24px; transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--text-primary); }
+
+    /* Article body */
+    .article-body h2 {
+      font-size: 24px; font-weight: 600; margin: 40px 0 16px;
+      color: var(--text-primary);
+    }
+    .article-body h3 {
+      font-size: 20px; font-weight: 600; margin: 32px 0 12px;
+      color: var(--text-primary);
+    }
+    .article-body p {
+      font-size: 16px; line-height: 1.8; color: var(--text-secondary);
+      margin-bottom: 20px;
+    }
+    .article-body ul, .article-body ol {
+      margin-bottom: 20px; padding-left: 24px; color: var(--text-secondary);
+    }
+    .article-body li {
+      margin-bottom: 8px; font-size: 16px; line-height: 1.8;
+    }
+    .article-body blockquote {
+      border-left: 3px solid var(--accent);
+      padding: 16px 24px;
+      margin: 24px 0;
+      background: var(--bg-secondary);
+      border-radius: 0 8px 8px 0;
+      color: var(--text-secondary);
+      font-size: 15px;
+    }
+    .article-body code {
+      background: var(--bg-secondary);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 14px;
+      color: var(--accent-light);
+    }
+    .article-body pre {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px 24px;
+      overflow-x: auto;
+      margin-bottom: 20px;
+    }
+    .article-body pre code {
+      background: none; padding: 0; font-size: 14px;
+      color: var(--text-primary);
+    }
+    .article-body img {
+      max-width: 100%; border-radius: 8px; margin: 24px 0;
+    }
+    .article-body a {
+      color: var(--accent-light); text-decoration: underline;
+      text-decoration-color: rgba(129,140,248,0.3);
+      transition: text-decoration-color 0.2s;
+    }
+    .article-body a:hover {
+      text-decoration-color: var(--accent-light);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center; padding: 40px 32px;
+      border-top: 1px solid var(--border);
+      color: var(--text-secondary); font-size: 13px;
+    }
+
+    @media (max-width: 768px) {
+      .article-container { padding: 100px 16px 60px; }
+      .article-header h1 { font-size: 26px; }
+      .article-body h2 { font-size: 20px; }
+      .nav-links { display: none; }
+    }
+  
+    /* ===== sm-nav: coffee-style hamburger ===== */
+    .sm-nav { position: sticky; top: 0; z-index: 999; background: rgba(11,12,16,.88); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border, rgba(255,255,255,.08)); }
+    .sm-nav-inner { max-width: 1120px; margin: 0 auto; padding: 14px 32px; display: flex; align-items: center; justify-content: space-between; }
+    .sm-logo { font-size: 20px; font-weight: 700; color: var(--text-primary, #f3f4f6); text-decoration: none; letter-spacing: .5px; }
+    .sm-toggle { background: none; border: 0; cursor: pointer; padding: 10px; display: flex; flex-direction: column; gap: 5px; }
+    .sm-bar { display: block; width: 22px; height: 2px; background: var(--text-primary, #f3f4f6); border-radius: 2px; transition: transform .25s ease, opacity .2s ease; }
+    .sm-open .sm-bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .sm-open .sm-bar:nth-child(2) { opacity: 0; }
+    .sm-open .sm-bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .sm-menu { display: none; position: absolute; top: 100%; right: 16px; width: 300px; max-width: calc(100vw - 24px); background: var(--bg-secondary, #14151b); border: 1px solid var(--border, rgba(255,255,255,.08)); border-radius: 14px; padding: 10px; box-shadow: 0 16px 48px rgba(0,0,0,.5); }
+    .sm-open .sm-menu { display: block; }
+    .sm-menu a { display: block; padding: 10px 14px; border-radius: 8px; color: var(--text-primary, #f3f4f6); text-decoration: none; font-size: 15px; }
+    .sm-menu a:hover { background: rgba(129,140,248,.12); }
+    .sm-top { font-weight: 600; }
+    .sm-sub { margin: 2px 10px 8px 18px; padding-left: 12px; border-left: 2px solid var(--border, rgba(255,255,255,.08)); }
+    .sm-sub a { font-size: 13.5px; color: var(--text-secondary, #9ca3af); padding: 7px 12px; }
+    .sm-cta { margin-top: 8px; text-align: center; background: var(--accent, #6366f1); color: #fff !important; font-weight: 600; border-radius: 10px; }
+    .sm-cta:hover { background: var(--accent-hover, #4f46e5) !important; }
+    .sm-langbar { margin-left: auto; margin-right: 10px; font-size: 12.5px; color: var(--text-secondary, #9ca3af); white-space: nowrap; }
+    .sm-langbar a { color: var(--text-secondary, #9ca3af); text-decoration: none; padding: 2px 4px; border-radius: 6px; }
+    .sm-langbar a:hover { color: var(--text-primary, #f3f4f6); background: rgba(129,140,248,.12); }
+    @media (max-width: 640px) { .sm-nav-inner { padding: 12px 16px; } .sm-menu { left: 12px; right: 12px; width: auto; } }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">SiliMind</a>
+      <ul class="nav-links">
+        <li><a href="/blog/" class="active">Blog</a></li>
+        <li><a href="/#features">核心能力</a></li>
+        <li><a href="/solutions.html">解决方案</a></li>
+        <li><a href="/about.html">关于我们</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <article class="article-container">
+    <a href="/blog/" class="back-link">← 返回博客</a>
+    <header class="article-header">
+      <h1>5 个 App 里的客户，一条时间线收拢</h1>
+      <div class="article-meta">
+        <time datetime="2026-11-01">2026 年 11 月 01 日</time>
+        <span>SiliMind</span>
+      </div>
+    </header>
+    <div class="article-body">
+      <h2>交接的第一小时</h2>
+      <p>小陈接手了一个老客户的单子。他在群里问了一句「这客户什么情况」，前任回「还行，你跟进一下」。</p>
+      <p>然后他自己去翻。上周三，客户在 WhatsApp 上问过交期。周四，邮箱里补来一版规格。周五，主管在个人微信上发了张样品照片，说客户盯的是这一批料。周一，客户在 LinkedIn 上给公司的帖子点了个赞。中间还打过一通电话，通话内容只有销售自己记得。</p>
+      <p>这几条单独看都完整，合起来才拼得出一个人。丢的不是信息，是信息不在一处。</p>
+      <p>这段是多个共性情况的合成，不是某一家公司的真实经历。</p>
+      <p>动笔之前我把自己手机上的聊天记录看了一遍。同一个人，我在三个地方找到他提过的三件事，每件事单独看都清楚，没有一件能看出先后。</p>
+      <h2>客户为什么散</h2>
+      <p>不是销售懒，是渠道本来就分裂。</p>
+      <p>一个客户同时活在 5 个 App 里。WhatsApp 问他交期和价格，个人微信里主管丢过来一张样品照片，企业微信里客户确认一版规格，邮箱里躺着报价单和合同扫描件，领英上他随手点个赞。每个地方都不缺东西，缺的是把它们排到同一条轴上。</p>
+      <p>有人说这是 App 多闹的，把人和软件绑到一处就好办了。绑定管的是一台设备，不是一条记录归谁。WhatsApp 里的那句话归 WhatsApp，个人微信里的那张照片归个人微信，邮箱里的附件归邮箱，纸笔和录音里的内容连个地方都没有。单独看，每一个都好用。合起来，一个人被切成了五份。</p>
+      <p>更麻烦的是每一条都带着自己的上下文。你知道那张照片是客户周三要的规格图，但那个周三是哪一周，只有发照片的人知道。你知道邮件里那版规格是第二稿还是第三稿，但邮件按主题归了档，按时间翻不到。</p>
+      <p>记录本身不显示年份，这件事最容易被忽略。人脑记得最近三个月的先后，半年前的顺序早就乱了。</p>
+      <h2>一条时间线怎么排</h2>
+      <p>SiliMind 里这条时间线收的是 10 个渠道：WhatsApp、Email、电话、备忘录、Telegram、Instagram、Messenger、LinkedIn、个人微信、企业微信。这项能力是已上线的。</p>
+      <p>客户 360° 视图分成三个 Tab。销售触点默认打开，放的是成为线索之后的销售互动，消息气泡配渠道图标，按时间排列，沟通里的情绪变化用颜色标出来，正面绿、负面红、中性灰。营销触点放成为线索之前的内容互动，读过哪篇文章、领英上的互动、官网表单的提交，转成线索的那个触点用蓝色高亮。AI 洞察另开一格，给的是客户画像摘要、需求分析、风险提示和建议行动。</p>
+      <p>回到开头那 5 个 App，它们各自的东西落在哪一段，可以对着看。</p>
+      <table>
+  <thead>
+    <tr><th>客户在哪儿</th><th>里面通常躺着什么</th><th>落在时间线的哪一段</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>WhatsApp</td><td>交期、价格、临时改的需求</td><td>销售触点</td></tr>
+    <tr><td>个人微信</td><td>主管转发的样品照片、领导口头的要求</td><td>销售触点</td></tr>
+    <tr><td>企业微信</td><td>客户确认下来的那版规格</td><td>销售触点</td></tr>
+    <tr><td>邮箱</td><td>报价单、合同扫描件、正式往来</td><td>销售触点</td></tr>
+    <tr><td>领英</td><td>点赞、关注、加同事好友</td><td>线索之前那段进营销触点</td></tr>
+  </tbody>
+</table>
+      <p>还有两类内容，本来就长在 App 外面：一通电话，半句随手记在备忘录上的话。电话里的内容怎么落回线上，拜访纪要是一条现成的路。录音转成 13 个字段的结构化纪要，纪要是草稿，可以改，改完写回这条时间线。商机详情页中间那段沟通时间线用的也是同一套聚合，报价记录放在里面。</p>
+      <h2>线索前和线索后，是两段历史</h2>
+      <p>线索之前的他和线索之后的他，是两段不同的历史。前半段解释他为什么找上门，后半段解释你和他谈到哪一步。混在一条列表里，前半段的动态会挡住后半段的关键记录。</p>
+      <p>所以 360° 把它们分成两个 Tab，各自一根轴。销售触点默认打开，因为销售接手一个客户，先要知道的永远是后半段：他最近说了什么，哪一件事让他不高兴了。</p>
+      <p>分开看还有一个好处。线索前那段是拿来判断人的：这个人是随手点了个赞，还是读了整篇技术文档才留下邮箱，性质差很远。线索后那段是拿来判断事的：他现在卡在哪一步，报价发出去多久了没回。这两件事的判断依据不一样，混在一起，两边都看不清楚。</p>
+      <h2>时间线在什么时候兑现</h2>
+      <p>三个时刻。</p>
+      <p><strong>交接。</strong> 销售换人，FAE 支援，时间线接手就行，不用口头交接。</p>
+      <p><strong>支援。</strong> 客户 360° 一页看完全部历史。做方案的人不用再去翻聊天记录找上次对方提的那个规格。</p>
+      <p><strong>过问。</strong> 老板在走廊里问一句这个客户什么情况，销售不用当场翻五个 App。页面顶上那行概览卡片就是给这种时刻准备的：公司名、行业、地区、客户等级 A/B/C、健康度 0 到 100 分、首次接触时间、累计成交金额。</p>
+      <p>这三种时刻有个共同点，都发生在一个人的注意力被临时叫走的时候。交接是前任的注意力已经撤了，支援是支援者要分出精力，过问是老板的一句话要立刻接住。都不是销售主动坐下来整理记录的时段。</p>
+      <p>平时这条线很安静。它不响，也不催你，只在你需要的时候把散掉的东西摆到一起。</p>
+      <h2>两个常见误解</h2>
+      <p><strong>一、把这条时间线当成监控。</strong> 它解决的是记录散在五处，不是让你从此不用打开聊天软件。它按渠道把已有的往来排成一条线，谁在什么时候说了什么，前后一眼能看出来。真要回消息，还是得回原来的地方回。</p>
+      <p><strong>二、什么都往里塞。</strong> 销售触点放销售互动，营销触点放线索之前的内容互动，AI 洞察另开一格。三样东西挤在一个列表里，第一眼就找不着该看的那一样，翻到第八条才想起要看什么。</p>
+      <h2>今天就能做的一件事</h2>
+      <p>拿一个你熟到不用查的老客户，打开手机里那 5 个 App，把最近两周跟这个客户有关的往来按时间抄到一张纸上。不用抄内容，抄三样：日期、渠道、一句话要点。</p>
+      <p>抄完你会看到两件事。一是有几段关键信息只存在于电话和备忘录里，从来没被写下来过。二是这些信息其实排得出一个先后，只是以前没人排过。</p>
+      <p>第二件事才是重点。信息丢在哪，从来不是数量问题，是位置问题。</p>
+      <p>产品侧对应的就是这两项，都在已上线清单里：10 渠道消息统一时间线，客户 360° 视图的三个 Tab。统一消息中心不是一个另外的页面，它就是销售触点这个 Tab 的视图。</p>
+    </div>
+  </article>
+
+
+  <footer>
+    <p>© 2026 SiliMind. All rights reserved. · <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">京ICP备2026058447号-1</a> &nbsp;·&nbsp; 微信：18612418612 &nbsp;·&nbsp; <a href="mailto:micheal@silimind.net">micheal@silimind.net</a> &nbsp;·&nbsp; <a href="/developers">开发者</a></p></footer>
+  <script>
+    (function(){
+      var nav=document.querySelector('.sm-nav');var t=document.querySelector('.sm-toggle');
+      if(!nav||!t)return;
+      t.addEventListener('click',function(e){e.stopPropagation();var o=nav.classList.toggle('sm-open');t.setAttribute('aria-expanded',o?'true':'false');});
+      document.addEventListener('click',function(e){if(nav.classList.contains('sm-open')&&!nav.contains(e.target)){nav.classList.remove('sm-open');t.setAttribute('aria-expanded','false');}});
+      var m=nav.querySelector('.sm-menu');
+      if(m){m.addEventListener('click',function(e){if(e.target.closest('a')){nav.classList.remove('sm-open');t.setAttribute('aria-expanded','false');}});}
+    })();
+  </script>
+  </body>
+</html>
