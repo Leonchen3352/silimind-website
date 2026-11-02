@@ -1024,6 +1024,25 @@
     </div>
   </section>
 
+  <!-- ===== Campaign entry strip ===== -->
+  <style>
+    .cp-strip { border-top: 1px solid var(--border, rgba(255,255,255,.08)); border-bottom: 1px solid var(--border, rgba(255,255,255,.08)); background: linear-gradient(90deg, rgba(99,102,241,.10), rgba(139,92,246,.05) 55%, transparent); }
+    .cp-strip-inner { max-width: 1120px; margin: 0 auto; padding: 14px 32px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .cp-strip-tag { flex: none; font-size: 11.5px; font-weight: 600; letter-spacing: .12em; color: #c7d2fe; padding: 3px 10px; border-radius: 999px; border: 1px solid rgba(129,140,248,.28); background: rgba(129,140,248,.1); }
+    .cp-strip-text { flex: 1 1 320px; min-width: 0; font-size: 14px; line-height: 1.6; color: var(--text-secondary, rgba(240,240,245,.62)); }
+    .cp-strip-text b { color: var(--text-primary, #f0f0f5); font-weight: 600; }
+    .cp-strip-link { flex: none; font-size: 13px; font-weight: 600; color: var(--accent-light, #818cf8); text-decoration: none; padding: 6px 14px; border-radius: 999px; border: 1px solid rgba(129,140,248,.3); transition: background .2s, border-color .2s, color .2s; }
+    .cp-strip-link:hover { background: rgba(129,140,248,.12); border-color: rgba(129,140,248,.55); color: var(--text-primary, #f0f0f5); }
+    @media (max-width: 640px) { .cp-strip-inner { padding: 12px 16px; gap: 10px; } .cp-strip-text { font-size: 13px; flex-basis: 100%; } }
+  </style>
+  <div class="cp-strip" data-campaign-entry>
+    <div class="cp-strip-inner">
+      <span class="cp-strip-tag">限时体验</span>
+      <span class="cp-strip-text">申请个人试用，<b>审核通过即赠 1,000 万 token 免费额度</b></span>
+      <a href="/campaign.html" class="cp-strip-link">查看活动 →</a>
+    </div>
+  </div>
+
   <!-- ===== 3. Social Proof ===== -->
   <section class="social-proof">
     <p class="social-proof-label">为外贸 / 跨境与 B2B 销售场景而生，一个人起步也能用</p>
