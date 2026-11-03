@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <title>周报的信息量是怎么没的：从系统数据长出来的周报结构 - SiliMind Blog</title>
+  <meta name="description" content="周报写成流水账不是态度问题，是结构问题。14 个字段、8 项数字的周报结构怎么用：摘要怎么挑、亮点留几条、挑战写什么，附今天就能照着改的五件事。" />
+  <link rel="canonical" href="https://www.silimind.net/blog/sales-weekly-report-structure" />
+  <meta property="og:title" content="周报的信息量是怎么没的：从系统数据长出来的周报结构 - SiliMind Blog" />
+  <meta property="og:description" content="周报写成流水账不是态度问题，是结构问题。14 个字段、8 项数字的周报结构怎么用：摘要怎么挑、亮点留几条、挑战写什么，附今天就能照着改的五件事。" />
+  <meta property="og:url" content="https://www.silimind.net/blog/sales-weekly-report-structure" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:site_name" content="SiliMind" />
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJ7HH4824R"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RJ7HH4824R');
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "周报的信息量是怎么没的：从系统数据长出来的周报结构",
+  "description": "周报写成流水账不是态度问题，是结构问题。14 个字段、8 项数字的周报结构怎么用：摘要怎么挑、亮点留几条、挑战写什么，附今天就能照着改的五件事。",
+  "datePublished": "2026-11-03",
+  "author": {
+    "@type": "Organization",
+    "name": "SiliMind"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "SiliMind",
+    "url": "https://www.silimind.net"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.silimind.net/blog/sales-weekly-report-structure"
+  }
+}
+  </script>
+  <style>
+    :root {
+      --bg-primary: #0a0a0f;
+      --bg-secondary: #12121a;
+      --bg-card: #16161f;
+      --accent: #6366f1;
+      --accent-light: #818cf8;
+      --text-primary: #f0f0f5;
+      --text-secondary: rgba(240,240,245,0.6);
+      --border: rgba(99,102,241,0.08);
+      --border-hover: rgba(99,102,241,0.25);
+      --font: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'PingFang SC', 'Noto Sans SC', sans-serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* Nav */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(10,10,15,0.9);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      height: 64px;
+    }
+    .nav-inner {
+      max-width: 1100px; margin: 0 auto; padding: 0 32px;
+      height: 100%; display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      font-size: 20px; font-weight: 700; color: var(--accent-light);
+      text-decoration: none; letter-spacing: 1px;
+    }
+    .nav-links { list-style: none; display: flex; gap: 32px; }
+    .nav-links a {
+      color: var(--text-secondary); text-decoration: none; font-size: 14px;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--text-primary); }
+
+    /* Article */
+    .article-container {
+      max-width: 760px; margin: 0 auto;
+      padding: 120px 32px 80px;
+    }
+    .article-header {
+      margin-bottom: 40px;
+    }
+    .article-header h1 {
+      font-size: 32px; font-weight: 700; line-height: 1.3;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #6366f1, #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .article-meta {
+      font-size: 14px; color: var(--text-secondary);
+    }
+    .article-meta time {
+      margin-right: 16px;
+    }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      color: var(--accent-light); text-decoration: none; font-size: 14px;
+      margin-bottom: 24px; transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--text-primary); }
+
+    /* Article body */
+    .article-body h2 {
+      font-size: 24px; font-weight: 600; margin: 40px 0 16px;
+      color: var(--text-primary);
+    }
+    .article-body h3 {
+      font-size: 20px; font-weight: 600; margin: 32px 0 12px;
+      color: var(--text-primary);
+    }
+    .article-body p {
+      font-size: 16px; line-height: 1.8; color: var(--text-secondary);
+      margin-bottom: 20px;
+    }
+    .article-body ul, .article-body ol {
+      margin-bottom: 20px; padding-left: 24px; color: var(--text-secondary);
+    }
+    .article-body li {
+      margin-bottom: 8px; font-size: 16px; line-height: 1.8;
+    }
+    .article-body blockquote {
+      border-left: 3px solid var(--accent);
+      padding: 16px 24px;
+      margin: 24px 0;
+      background: var(--bg-secondary);
+      border-radius: 0 8px 8px 0;
+      color: var(--text-secondary);
+      font-size: 15px;
+    }
+    .article-body code {
+      background: var(--bg-secondary);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 14px;
+      color: var(--accent-light);
+    }
+    .article-body pre {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px 24px;
+      overflow-x: auto;
+      margin-bottom: 20px;
+    }
+    .article-body pre code {
+      background: none; padding: 0; font-size: 14px;
+      color: var(--text-primary);
+    }
+    .article-body img {
+      max-width: 100%; border-radius: 8px; margin: 24px 0;
+    }
+    .article-body a {
+      color: var(--accent-light); text-decoration: underline;
+      text-decoration-color: rgba(129,140,248,0.3);
+      transition: text-decoration-color 0.2s;
+    }
+    .article-body a:hover {
+      text-decoration-color: var(--accent-light);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center; padding: 40px 32px;
+      border-top: 1px solid var(--border);
+      color: var(--text-secondary); font-size: 13px;
+    }
+
+    @media (max-width: 768px) {
+      .article-container { padding: 100px 16px 60px; }
+      .article-header h1 { font-size: 26px; }
+      .article-body h2 { font-size: 20px; }
+      .nav-links { display: none; }
+    }
+  
+    /* ===== sm-nav: coffee-style hamburger ===== */
+    .sm-nav { position: sticky; top: 0; z-index: 999; background: rgba(11,12,16,.88); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border, rgba(255,255,255,.08)); }
+    .sm-nav-inner { max-width: 1120px; margin: 0 auto; padding: 14px 32px; display: flex; align-items: center; justify-content: space-between; }
+    .sm-logo { font-size: 20px; font-weight: 700; color: var(--text-primary, #f3f4f6); text-decoration: none; letter-spacing: .5px; }
+    .sm-toggle { background: none; border: 0; cursor: pointer; padding: 10px; display: flex; flex-direction: column; gap: 5px; }
+    .sm-bar { display: block; width: 22px; height: 2px; background: var(--text-primary, #f3f4f6); border-radius: 2px; transition: transform .25s ease, opacity .2s ease; }
+    .sm-open .sm-bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .sm-open .sm-bar:nth-child(2) { opacity: 0; }
+    .sm-open .sm-bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .sm-menu { display: none; position: absolute; top: 100%; right: 16px; width: 300px; max-width: calc(100vw - 24px); background: var(--bg-secondary, #14151b); border: 1px solid var(--border, rgba(255,255,255,.08)); border-radius: 14px; padding: 10px; box-shadow: 0 16px 48px rgba(0,0,0,.5); }
+    .sm-open .sm-menu { display: block; }
+    .sm-menu a { display: block; padding: 10px 14px; border-radius: 8px; color: var(--text-primary, #f3f4f6); text-decoration: none; font-size: 15px; }
+    .sm-menu a:hover { background: rgba(129,140,248,.12); }
+    .sm-top { font-weight: 600; }
+    .sm-sub { margin: 2px 10px 8px 18px; padding-left: 12px; border-left: 2px solid var(--border, rgba(255,255,255,.08)); }
+    .sm-sub a { font-size: 13.5px; color: var(--text-secondary, #9ca3af); padding: 7px 12px; }
+    .sm-cta { margin-top: 8px; text-align: center; background: var(--accent, #6366f1); color: #fff !important; font-weight: 600; border-radius: 10px; }
+    .sm-cta:hover { background: var(--accent-hover, #4f46e5) !important; }
+    .sm-langbar { margin-left: auto; margin-right: 10px; font-size: 12.5px; color: var(--text-secondary, #9ca3af); white-space: nowrap; }
+    .sm-langbar a { color: var(--text-secondary, #9ca3af); text-decoration: none; padding: 2px 4px; border-radius: 6px; }
+    .sm-langbar a:hover { color: var(--text-primary, #f3f4f6); background: rgba(129,140,248,.12); }
+    @media (max-width: 640px) { .sm-nav-inner { padding: 12px 16px; } .sm-menu { left: 12px; right: 12px; width: auto; } }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">SiliMind</a>
+      <ul class="nav-links">
+        <li><a href="/blog/" class="active">Blog</a></li>
+        <li><a href="/#features">核心能力</a></li>
+        <li><a href="/solutions.html">解决方案</a></li>
+        <li><a href="/about.html">关于我们</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <article class="article-container">
+    <a href="/blog/" class="back-link">← 返回博客</a>
+    <header class="article-header">
+      <h1>5 个 App 里的客户，一条时间线收拢</h1>
+      <div class="article-meta">
+        <time datetime="2026-11-03">2026 年 11 月 03 日</time>
+        <span>SiliMind</span>
+      </div>
+    </header>
+    <div class="article-body">
+      <h2>一份周报，写着写着就空了</h2>
+      <p>上周我去看一个销售总监的周会，四个人轮流念自己那份周报。第一个念了八分钟，句子里全是“跟进了”“沟通过了”“往下推了”。第二个更省事，把上周那份复制过来改了三个字。总监听完问了一句“这周有哪个单子真往下走了”，四个人都没接上话。</p>
+      <p>（这段是合成场景。周会流程、那句问话、没人接话都是虚构的，只保留了周报写成流水账这个现象。）</p>
+      <p>散会以后，我把这几份周报和系统里的记录摆在一块看。数据一条没少，跟进的次数、通话时间、阶段变化全都在。掉信息的地方不在态度上。它在把数据变成文字的那一步。</p>
+      <h2>流水账不是懒，是没地方填</h2>
+      <p>写周报的人不懒。他们记得客户上次问了什么，也记得哪一单卡住了两周。问题是拿到“这周发生了什么”这个问题，手里只有一堆散着的点，没有可以往里填的格子。</p>
+      <p>没有格子的时候，人能做的只有翻记忆。翻出来的东西天然是流水账，因为流水账是记忆的原始形态，先来的先记，不分轻重。一个销售一周跟了三十个客户，脑子里按顺序存着三十件事，写出来就是三十行。</p>
+      <p>所以流水账不是态度问题，是结构问题，这两件事得分开看。想让一份周报不流水，光说“你写得认真点”没用，得先给出一个能填的位置。</p>
+      <h2>掉信息的地方在从数据到文字这一段</h2>
+      <p>这件事可以拆开看。数据先落在系统里，聚合成几个数字，再变成一段文字，最后人来读。信息量是在变成文字那一段掉的。人读的时候一般不会再掉，读到的东西已经定型了。</p>
+      <p>数据落在系统里不丢，聚合成数字也不丢，数字本身是准的。这份周报在系统里占 14 个字段，能从相关数据里聚出 8 项数字。家底不算薄。问题出在数字变文字。数字是死的，文字要活，从死的变活的这一步全靠一段生成过程，这段过程有自己的偏好，而偏好是会丢东西的。</p>
+      <p>丢在哪儿呢。一个数字旁边如果挤着好几个别的数字，读的人只会记住其中一个。三十行流水账里，最先被读到往往是字最少的那一行，别的行太满，挤不进去。</p>
+      <p>更常见的丢法是把数字换成形容词。“推进了 5 个阶段”变成“推进顺利”，“本周新增 12 条有效记录”变成“记录有所增加”。前者读者还能回头查，后者连查的念头都没了。</p>
+      <p>顺带说一句，这条路走完也不等于周报就写好了。周报做的是把数据摆成一个结构，让人顺着看下去。哪一句算结论，还得人来写。系统摆得再齐，判断一单该不该放弃的还是你自己，只是判断之前不用再去把数据翻一遍。</p>
+      <p>互动记录是从哪儿攒起来的，可以看 <a href="https://www.silimind.net/blog/sales-visit-recording-ai-notes">拜访录音转纪要</a>。</p>
+      <h2>四块内容，四种不同的坑</h2>
+      <p>现在的周报是一段一段长出来的。开头一段摘要，底下分几个板块，最后固定放亮点、挑战、下周重点三块，再跟一个置信度。这里只把最容易写歪的地方单独拎出来。</p>
+      <table>
+  <thead>
+    <tr><th>板块</th><th>它该装什么</th><th>常见写法</th><th>一句话判断</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>摘要</td><td>150 到 300 字，说清这周整体怎么样</td><td>把数字按顺序念一遍</td><td>读完知道这周是顺还是卡</td></tr>
+    <tr><td>亮点</td><td>有分量的一两件事</td><td>好事清单</td><td>每条带上了对方的反应或金额</td></tr>
+    <tr><td>挑战</td><td>真正卡住的那个环节</td><td>客套话</td><td>里面出现了具体的人名或单号</td></tr>
+    <tr><td>下周重点</td><td>下周动作，写清名字和时间</td><td>继续跟进</td><td>每条都能落到某个人头上</td></tr>
+  </tbody>
+</table>
+      <p>摘要最容易写成数字目录。它把 8 项数字按顺序念一遍，看着齐全，其实读完记不住任何一件，因为没有取舍。那 150 到 300 字不是用来把数据讲完的，是替读者做一次挑选。</p>
+      <p>亮点最容易写成好事清单，这一种最要命。亮点写成清单以后，它就只是摘要的一个短版本，读者的反应是“知道了”，然后翻页。超过两条以后，亮点这一栏基本没人细看，建议直接删掉。</p>
+      <p>挑战这一块经常写成客套话。“资源不足”“时间紧张”“客户决策慢”，这几句放进任何一份周报都成立，也就等于什么都没说。这一块宁可只写一条真卡住的。</p>
+      <p>下周重点最容易写成愿望。“继续跟进重点客户”“加强与团队的沟通”，这种话没有落点，看的人不知道派给谁。</p>
+      <p>还有个容易被忽略的东西：置信度。周报给出一段结论，同时告诉你它有多确定。这个数字的价值不在给结论背书，而在提醒你哪句话需要人再确认一遍。置信度低的那几句，别直接拿去做决定。</p>
+      <h2>两个视角，看的不是同一份东西</h2>
+      <p>周报有两个视角。个人视角是你只看自己的数据，团队视角是聚合整个团队的情况，只有管理员能看。</p>
+      <p>这两个视角不是同一份东西换个标题。个人视角里“这周有 4 个机会没推进”，你知道是哪 4 个。团队视角里，同一个数字变成“某几个机会连续两周没动”，具体哪几个，得点进去才知道。</p>
+      <p>所以给管理层的周报不能只堆总量。团队视角真正有用的地方是它能看出分布，哪些事只有一个人在扛，哪些事全组卡在同一类问题上。这种判断看总数字看不出来。看总数字只能知道这周行不行，看分布才知道该找谁聊。</p>
+      <p>有一点得说清楚。现在这份周报还得有人点一下才出得来。按周自动触发的这条能力目前没有生效，手动生成是唯一可用的方式。也就是说，现在还不存在“到了时间周报自己出现在收件箱里”这回事。</p>
+      <h2>今天就能照着改的五件事</h2>
+      <ol>
+        <li>先写挑战，再写亮点，顺序反着来。拿到反馈最想先写的是亮点，可最难写的是挑战。挑战放前面，才不会被前面几段好事带跑。</li>
+        <li>摘要只留三句话。150 到 300 字是上限，不是目标。三句话讲完这周的整体走向，剩下的字让给具体的事。</li>
+        <li>亮点最多留两条，每条带一个对方的反应或者一个数字。第三条写不出来，它多半就算不上亮点。</li>
+        <li>下周重点每条都要有主人，比如“张三，周三前给某某客户发报价”。找不到主人的重点，写进来也推不动。</li>
+        <li>读周报的人先看置信度。低置信度那一句，就是要人来补判断的地方。</li>
+      </ol>
+      <p>这些格子不用自己画。思理智能（SiliMind）把销售部和市场部装进同一个数字平台，周报要的字段、数字和两个视角都是现成的，AI 出初稿，结论你来写。销售有助手，市场有团队，老板决策看得清。</p>
+    
+    </div>
+  </article>
+
+
+  <footer>
+    <p>© 2026 SiliMind. All rights reserved. · <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">京ICP备2026058447号-1</a> &nbsp;·&nbsp; 微信：18612418612 &nbsp;·&nbsp; <a href="mailto:micheal@silimind.net">micheal@silimind.net</a> &nbsp;·&nbsp; <a href="/developers">开发者</a></p></footer>
+  <script>
+    (function(){
+      var nav=document.querySelector('.sm-nav');var t=document.querySelector('.sm-toggle');
+      if(!nav||!t)return;
+      t.addEventListener('click',function(e){e.stopPropagation();var o=nav.classList.toggle('sm-open');t.setAttribute('aria-expanded',o?'true':'false');});
+      document.addEventListener('click',function(e){if(nav.classList.contains('sm-open')&&!nav.contains(e.target)){nav.classList.remove('sm-open');t.setAttribute('aria-expanded','false');}});
+      var m=nav.querySelector('.sm-menu');
+      if(m){m.addEventListener('click',function(e){if(e.target.closest('a')){nav.classList.remove('sm-open');t.setAttribute('aria-expanded','false');}});}
+    })();
+  </script>
+  </body>
+</html>
