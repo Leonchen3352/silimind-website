@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <title>ChatBI 入门：销售经理怎么用大白话查自己的数据</title>
+  <meta name="description" content="销售经理问不出数据，多半卡在把大白话翻成系统能认的问法。三层问法、连问技巧、查到数之后的边界，一篇讲清 ChatBI 入门。" />
+  <link rel="canonical" href="https://www.silimind.net/blog/chatbi-sales-manager-guide" />
+  <meta property="og:title" content="ChatBI 入门：销售经理怎么用大白话查自己的数据" />
+  <meta property="og:description" content="销售经理问不出数据，多半卡在把大白话翻成系统能认的问法。三层问法、连问技巧、查到数之后的边界，一篇讲清 ChatBI 入门。" />
+  <meta property="og:url" content="https://www.silimind.net/blog/chatbi-sales-manager-guide" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:site_name" content="SiliMind" />
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJ7HH4824R"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RJ7HH4824R');
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "ChatBI 入门：销售经理怎么用大白话查自己的数据",
+  "description": "销售经理问不出数据，多半卡在把大白话翻成系统能认的问法。三层问法、连问技巧、查到数之后的边界，一篇讲清 ChatBI 入门。",
+  "datePublished": "2026-11-08",
+  "author": {
+    "@type": "Organization",
+    "name": "SiliMind"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "SiliMind",
+    "url": "https://www.silimind.net"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.silimind.net/blog/chatbi-sales-manager-guide"
+  }
+}
+  </script>
+  <style>
+    :root {
+      --bg-primary: #0a0a0f;
+      --bg-secondary: #12121a;
+      --bg-card: #16161f;
+      --accent: #6366f1;
+      --accent-light: #818cf8;
+      --text-primary: #f0f0f5;
+      --text-secondary: rgba(240,240,245,0.6);
+      --border: rgba(99,102,241,0.08);
+      --border-hover: rgba(99,102,241,0.25);
+      --font: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'PingFang SC', 'Noto Sans SC', sans-serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* Nav */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(10,10,15,0.9);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      height: 64px;
+    }
+    .nav-inner {
+      max-width: 1100px; margin: 0 auto; padding: 0 32px;
+      height: 100%; display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      font-size: 20px; font-weight: 700; color: var(--accent-light);
+      text-decoration: none; letter-spacing: 1px;
+    }
+    .nav-links { list-style: none; display: flex; gap: 32px; }
+    .nav-links a {
+      color: var(--text-secondary); text-decoration: none; font-size: 14px;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--text-primary); }
+
+    /* Article */
+    .article-container {
+      max-width: 760px; margin: 0 auto;
+      padding: 120px 32px 80px;
+    }
+    .article-header {
+      margin-bottom: 40px;
+    }
+    .article-header h1 {
+      font-size: 32px; font-weight: 700; line-height: 1.3;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #6366f1, #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .article-meta {
+      font-size: 14px; color: var(--text-secondary);
+    }
+    .article-meta time {
+      margin-right: 16px;
+    }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      color: var(--accent-light); text-decoration: none; font-size: 14px;
+      margin-bottom: 24px; transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--text-primary); }
+
+    /* Article body */
+    .article-body h2 {
+      font-size: 24px; font-weight: 600; margin: 40px 0 16px;
+      color: var(--text-primary);
+    }
+    .article-body h3 {
+      font-size: 20px; font-weight: 600; margin: 32px 0 12px;
+      color: var(--text-primary);
+    }
+    .article-body p {
+      font-size: 16px; line-height: 1.8; color: var(--text-secondary);
+      margin-bottom: 20px;
+    }
+    .article-body ul, .article-body ol {
+      margin-bottom: 20px; padding-left: 24px; color: var(--text-secondary);
+    }
+    .article-body li {
+      margin-bottom: 8px; font-size: 16px; line-height: 1.8;
+    }
+    .article-body blockquote {
+      border-left: 3px solid var(--accent);
+      padding: 16px 24px;
+      margin: 24px 0;
+      background: var(--bg-secondary);
+      border-radius: 0 8px 8px 0;
+      color: var(--text-secondary);
+      font-size: 15px;
+    }
+    .article-body code {
+      background: var(--bg-secondary);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 14px;
+      color: var(--accent-light);
+    }
+    .article-body pre {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px 24px;
+      overflow-x: auto;
+      margin-bottom: 20px;
+    }
+    .article-body pre code {
+      background: none; padding: 0; font-size: 14px;
+      color: var(--text-primary);
+    }
+    .article-body img {
+      max-width: 100%; border-radius: 8px; margin: 24px 0;
+    }
+    .article-body a {
+      color: var(--accent-light); text-decoration: underline;
+      text-decoration-color: rgba(129,140,248,0.3);
+      transition: text-decoration-color 0.2s;
+    }
+    .article-body a:hover {
+      text-decoration-color: var(--accent-light);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center; padding: 40px 32px;
+      border-top: 1px solid var(--border);
+      color: var(--text-secondary); font-size: 13px;
+    }
+
+    @media (max-width: 768px) {
+      .article-container { padding: 100px 16px 60px; }
+      .article-header h1 { font-size: 26px; }
+      .article-body h2 { font-size: 20px; }
+      .nav-links { display: none; }
+    }
+  
+    /* ===== sm-nav: coffee-style hamburger ===== */
+    .sm-nav { position: sticky; top: 0; z-index: 999; background: rgba(11,12,16,.88); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border, rgba(255,255,255,.08)); }
+    .sm-nav-inner { max-width: 1120px; margin: 0 auto; padding: 14px 32px; display: flex; align-items: center; justify-content: space-between; }
+    .sm-logo { font-size: 20px; font-weight: 700; color: var(--text-primary, #f3f4f6); text-decoration: none; letter-spacing: .5px; }
+    .sm-toggle { background: none; border: 0; cursor: pointer; padding: 10px; display: flex; flex-direction: column; gap: 5px; }
+    .sm-bar { display: block; width: 22px; height: 2px; background: var(--text-primary, #f3f4f6); border-radius: 2px; transition: transform .25s ease, opacity .2s ease; }
+    .sm-open .sm-bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .sm-open .sm-bar:nth-child(2) { opacity: 0; }
+    .sm-open .sm-bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .sm-menu { display: none; position: absolute; top: 100%; right: 16px; width: 300px; max-width: calc(100vw - 24px); background: var(--bg-secondary, #14151b); border: 1px solid var(--border, rgba(255,255,255,.08)); border-radius: 14px; padding: 10px; box-shadow: 0 16px 48px rgba(0,0,0,.5); }
+    .sm-open .sm-menu { display: block; }
+    .sm-menu a { display: block; padding: 10px 14px; border-radius: 8px; color: var(--text-primary, #f3f4f6); text-decoration: none; font-size: 15px; }
+    .sm-menu a:hover { background: rgba(129,140,248,.12); }
+    .sm-top { font-weight: 600; }
+    .sm-sub { margin: 2px 10px 8px 18px; padding-left: 12px; border-left: 2px solid var(--border, rgba(255,255,255,.08)); }
+    .sm-sub a { font-size: 13.5px; color: var(--text-secondary, #9ca3af); padding: 7px 12px; }
+    .sm-cta { margin-top: 8px; text-align: center; background: var(--accent, #6366f1); color: #fff !important; font-weight: 600; border-radius: 10px; }
+    .sm-cta:hover { background: var(--accent-hover, #4f46e5) !important; }
+    .sm-langbar { margin-left: auto; margin-right: 10px; font-size: 12.5px; color: var(--text-secondary, #9ca3af); white-space: nowrap; }
+    .sm-langbar a { color: var(--text-secondary, #9ca3af); text-decoration: none; padding: 2px 4px; border-radius: 6px; }
+    .sm-langbar a:hover { color: var(--text-primary, #f3f4f6); background: rgba(129,140,248,.12); }
+    @media (max-width: 640px) { .sm-nav-inner { padding: 12px 16px; } .sm-menu { left: 12px; right: 12px; width: auto; } }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">SiliMind</a>
+      <ul class="nav-links">
+        <li><a href="/blog/" class="active">Blog</a></li>
+        <li><a href="/#features">核心能力</a></li>
+        <li><a href="/solutions.html">解决方案</a></li>
+        <li><a href="/about.html">关于我们</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <article class="article-container">
+    <a href="/blog/" class="back-link">← 返回博客</a>
+    <header class="article-header">
+      <h1>ChatBI 入门：销售经理怎么用大白话查自己的数据</h1>
+      <div class="article-meta">
+        <time datetime="2026-11-08">2026 年 11 月 08 日</time>
+        <span>SiliMind</span>
+      </div>
+    </header>
+    <div class="article-body">
+      <h2>一次会上被问住</h2>
+            <p>去年冬天我陪一个区域销售经理开月会。老板翻到第三页问了一句，上个月华东区报价之后卡住没动的单子有几张。</p>
+            <p>会议室安静了几秒。他说大概七八张吧。老板追问具体哪几张。他报了三个客户名字，报完自己也知道漏了。</p>
+            <p>散会后他去找数据组。数据组说手上排了三个需求，最快下周给一份表。他回到工位，打开 CRM，一张一张翻，四十分钟，翻出九张。第三天的表来了，十一张。</p>
+            <p>差的不是他不够勤快。他问了一个自己答不出来的问题，系统也没有给他一句能用的问法。</p>
+            <p>（这段按几个团队碰到的同类情况合起来写，不指向哪一家公司，里面的数字也不是我照着表抄的。）</p>
+      <h2>问数卡住，多半卡在翻译这一步</h2>
+            <p>销售经理嘴上说的和系统里存的，用的是两套词。</p>
+            <p>他说业绩怎么样。系统里没有业绩这个字段，只有金额、阶段、更新时间、负责人、区域。他说这个客户跟得怎么样。系统里也没有跟得怎么样，只有最近一次互动隔了几天、健康分多少、有没有被诊断过。</p>
+            <p>所以查不到数的时候，第一反应常常是工具不好用。我的看法偏另一个方向，问题多半没落地。把一句含糊的话翻成带时间、带范围、带状态的那种句子，这件事没人教，也没人替你干。</p>
+            <p>翻完以后问法大概是这个形状。9 月创建、当前在报价中阶段、超过十四天没有新互动的商机，按金额从高到低排。这一句里每个词系统都认得。刚才那一句，它大半不认识。</p>
+      <h2>三层问法，跳层就问不准</h2>
+            <p>我把自己天天要问的东西分成三层。能跳着问，是常态。答不准也就从这儿来。</p>
+      <table>
+  <thead>
+    <tr><th>层级</th><th>常听到的问法</th><th>能用的问法</th><th>拿到什么</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>---</td><td>---</td><td>---</td><td>---</td></tr>
+    <tr><td>第一层 总览</td><td>这个月业绩怎么样</td><td>本月新询盘、跟进中、报价中、赢单、输单各多少张，金额分别多少</td><td>五个阶段的盘子，一眼看到哪一段堵</td></tr>
+    <tr><td>第二层 切片</td><td>华东区是不是出问题了</td><td>华东区近三十天新增商机里，卡在报价中超过十四天的占几成</td><td>一个比例，能跟别的区域比</td></tr>
+    <tr><td>第三层 名单</td><td>谁的单子要黄了</td><td>健康分低于六十、十天以上没有新互动的商机，连负责人一起列出来</td><td>一张能直接开进会的名单</td></tr>
+  </tbody>
+</table>
+            <p>多数人张口就是第三层。老板问卡住几张，脑子里想的是名单，嘴上说的是概览。名单当然能问。麻烦在前面两层没问过的时候，名单出来也对不上心里那个预期，因为心里本来就没有数。</p>
+            <p>第一层看盘子。商机在系统里分五个阶段，新询盘、跟进中、报价中、赢单、输单。问一句各阶段多少张，盘子在哪个位置就有数了。这一层随便问，问错成本也低。</p>
+            <p>第二层是切。区域、负责人、创建时间、阶段，一次切一个维度。切完想要的不该是一串名字，是一句「占几成」。比例能跟别人比，名字不能。</p>
+            <p>第三层才落到人。走到这一层，前两层口径已经对上了，名单出来才敢信。</p>
+      <h2>一句问完就散的毛病</h2>
+            <p>多数查数的事死在第二步。第一句问对了，拿到一张表，看完就关。第二天想问个相关的，条件范围从头再描述一遍。</p>
+            <p>能接着上一句往下追问，才算真的在查数。第一句问出报价中超过十四天的商机，第二句就该是这里面金额过十万的有几张，第三句是这几张是谁在跟。</p>
+            <p>这两句之间差的是上下文。上一句问过的东西还留着，第二句只补新增的那半句就行。我自己最常用的就是这一口气连问三句，比第一句问得多漂亮都管用，它决定你能不能一路问到真正想去的地方。</p>
+            <p>连问五句，本身就是一次梳理。问到第三句常有这种发现。卡住的地方不集中在一个区域，集中在一个人的手上，他那些单子都堵在报价阶段。这个结论第一句问不出来。</p>
+      <h2>数据长什么样，决定你能问出什么</h2>
+            <p>问法对不对，一半看你怎么说，一半看库里存了什么。存得粗，问得再准也只能拿回粗答案。</p>
+            <p>几个跟销售经理直接相关的字段，值得先摸清楚。</p>
+            <p>商机有五个阶段，也有健康分。五个维度合起来打一个零到一百分，分档显示红黄绿。健康分低于六十，系统会出一份诊断，列出八类可能的原因，每类附一句证据和一句置信度。这些是给判断打底的材料，不是判决书。</p>
+            <p>客户这一头，十个渠道的互动记录按时间倒序排进同一条线，聊天、邮件、电话、拜访记录都在里头。翻一个客户的那一页，销售这边做过什么、市场这边做过什么、系统怎么分析，摆在一起看。</p>
+            <p>营销那边还有一条线，从内容走到访问，再走到询盘、成交、金额，四张卡加一个转化率。</p>
+            <p>知道这些东西存在，问法才落得下去。不知道，就只剩一句业绩怎么样。</p>
+      <h2>查到数只是第一步</h2>
+            <p>有一条边界得先讲明白，免得后面扫兴。</p>
+            <p>系统能把卡住的单子列出来，标出卡了几天，给出健康分，列出八类可能的原因。这张单该不该放弃，价格让到哪一档能签，它答不了。这两件事本来也不该由它答。</p>
+            <p>我见过的用法里，顺的一种是把查数放在开会之前。会前十分钟问清五个阶段怎么分布，问清哪几个人手上的红单多，会上就只聊这几张，不再花二十分钟核数字。</p>
+            <p>另一种，拿它来质询自己。每周固定问同一组问题，看比例动没动。数字没动，上周干的那些事就是白干。数字变好，回头翻是哪一步起的效，下周接着做。</p>
+            <p>反过来最典型的一种，把系统当报警器。一周不问，等红色跳出来再看。跳出来的时候，那几张单子多半已经没救了。</p>
+      <h2>五个问题，先问第一个</h2>
+            <p>今天只做一件事的话，会前先问这一句。本月商机五个阶段各多少张。</p>
+            <p>这一个数出来，下一个该往哪儿切会有数。不必一次问全，问出一个，下一个自己会浮上来。</p>
+            <p>剩下四个按顺序试，别跳。</p>
+            <p>一是哪个阶段的张数比上个月明显少。二是哪个负责人手上的商机集中在某一个阶段出不来。三是健康分低于六十的单子这几周是多了还是少了。四是这些单子的最近一次互动，隔了几天。五是这五天里，你本人有没有为了某几张单子做过一件具体的事。</p>
+            <p>最后一条最不好答。它问的是你自己，不是数。</p>
+            <p>内容带来的客户怎么归到具体文章上，另有<a href="https://www.silimind.net/blog/content-attribution-b2b">一篇</a>讲四条规则和阈值怎么定。流量该往哪儿放，可以看<a href="https://www.silimind.net/blog/brand-search-content-gap">品牌词之外的内容缺口</a>。</p>
+            <p>这页工具不用从零摸索。思理智能（SiliMind）把销售部和市场部装进同一个数字平台，ChatBI 就在其中，用大白话问一句，数据自己开口。销售有助手，市场有团队，老板决策看得清。</p>
+            <p>---</p>
+    
+    </div>
+  </article>
+
+
+  <footer>
+    <p>© 2026 SiliMind. All rights reserved. · <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">京ICP备2026058447号-1</a> &nbsp;·&nbsp; 微信：18612418612 &nbsp;·&nbsp; <a href="mailto:micheal@silimind.net">micheal@silimind.net</a> &nbsp;·&nbsp; <a href="/developers">开发者</a></p></footer>
+  <script>
+    (function(){
+      var nav=document.querySelector('.sm-nav');var t=document.querySelector('.sm-toggle');
+      if(!nav||!t)return;
+      t.addEventListener('click',function(e){e.stopPropagation();var o=nav.classList.toggle('sm-open');t.setAttribute('aria-expanded',o?'true':'false');});
+      document.addEventListener('click',function(e){if(nav.classList.contains('sm-open')&&!nav.contains(e.target)){nav.classList.remove('sm-open');t.setAttribute('aria-expanded','false');}});
+      var m=nav.querySelector('.sm-menu');
+      if(m){m.addEventListener('click',function(e){if(e.target.closest('a')){nav.classList.remove('sm-open');t.setAttribute('aria-expanded','false');}});}
+    })();
+  </script>
+  </body>
+</html>
