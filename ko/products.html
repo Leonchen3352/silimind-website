@@ -200,6 +200,12 @@
     .two-ways-cta a:hover { text-decoration: underline; }
     .two-ways-close { margin: 18px 0 0; text-align: center; font-size: 14.5px; color: var(--text-primary, #f3f4f6); }
     @media (max-width: 768px) { .two-ways-grid { grid-template-columns: 1fr; } .two-ways { padding: 20px 16px; } }
+  
+    .two-ways-points { list-style: none; margin: 16px 0 0; padding: 14px 18px; background: rgba(99,102,241,.05); border: 1px dashed var(--border, rgba(255,255,255,.08)); border-radius: 10px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px 24px; }
+    .two-ways-points li { font-size: 13px; line-height: 1.7; color: var(--text-secondary, #9ca3af); padding-left: 18px; position: relative; }
+    .two-ways-points li::before { content: "✓"; position: absolute; left: 0; color: var(--accent-light, #818cf8); font-weight: 700; }
+    .two-ways-points li strong { color: var(--text-primary, #f3f4f6); }
+    @media (max-width: 768px) { .two-ways-points { grid-template-columns: 1fr; } }
   </style>
   <link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/products">
   <link rel="alternate" hreflang="en" href="https://www.silimind.net/en/products">
@@ -320,7 +326,7 @@
           <div class="two-ways-grid">
             <div class="two-ways-card">
               <p class="two-ways-tag"><strong>방법 1: SiliMind으로 모으기.</strong></p>
-              <p class="two-ways-body">시스템을 하나 더 설치할 필요가 없습니다. SiliMind에는 AI 네이티브 마케팅·영업 CRM이 기본 내장되어 있습니다. 10개 채널의 메시지가 하나의 타임라인으로 모이고, 360° 고객 뷰 한 페이지에 영업·마케팅·AI 인사이트가 담기며, 리드 풀은 자동으로 점수를 매기고 배분하고, SLA 카운트다운이 모든 후속 조치를 지켜보고, 방문 녹음은 13개 필드 회의록으로 바뀝니다. AI가 이메일과 주간 보고를 쓰고 대화에서 계약 필드를 뽑아내며, RAG 지식 베이스는 출처를 들어 바로 답합니다. 설치해 두면 알아서 일합니다.</p>
+              <p class="two-ways-body">시스템을 하나 더 설치할 필요가 없습니다. SiliMind에는 AI 네이티브 마케팅·영업 CRM이 기본 내장되어 있습니다. 여러 채널의 메시지가 하나의 타임라인으로 모이고, 360° 고객 뷰 한 페이지에 영업·마케팅·AI 인사이트가 담기며, 리드 풀은 한곳에 모아 자동으로 점수를 매기고, 방문 녹음은 원클릭 업로드로 구조화된 회의록이 됩니다. AI가 이메일과 주간 보고를 쓰고 대화에서 계약 필드를 뽑아내며, RAG 지식 베이스는 출처를 들어 바로 답합니다. 설치해 두면 알아서 일합니다.</p>
               <p class="two-ways-cta"><a href="https://agent.silimind.net/register">개인 체험 신청 →</a></p>
             </div>
             <div class="two-ways-card">
@@ -329,6 +335,7 @@
               <p class="two-ways-cta"><a href="/ko/contact">영업팀 문의 →</a></p>
             </div>
           </div>
+                    <ul class="two-ways-points"><li><strong>갈아탈 필요 없음: </strong>SiliMind을 바로 쓰거나 기존 CRM을 유지하거나, 두 길 모두 됩니다</li><li><strong>가져오기는 간편: </strong>내보내기 파일을 끌어다 놓고 필드 매핑을 한 번만 설정하면 중복 제거와 병합이 자동</li><li><strong>메시지는 한 줄: </strong>채널 메시지, 방문 기록, 계약, 지식 베이스를 같은 타임라인에</li><li><strong>데이터는 쓸수록 깨끗: </strong>중복 제거와 병합이 내장—수작업 정리가 필요 없습니다</li></ul>
           <p class="two-ways-close"><strong>무엇을 쓸지는, 당신이 정합니다.</strong></p>
         </div>
       </div>

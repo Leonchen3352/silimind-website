@@ -200,6 +200,12 @@
     .two-ways-cta a:hover { text-decoration: underline; }
     .two-ways-close { margin: 18px 0 0; text-align: center; font-size: 14.5px; color: var(--text-primary, #f3f4f6); }
     @media (max-width: 768px) { .two-ways-grid { grid-template-columns: 1fr; } .two-ways { padding: 20px 16px; } }
+  
+    .two-ways-points { list-style: none; margin: 16px 0 0; padding: 14px 18px; background: rgba(99,102,241,.05); border: 1px dashed var(--border, rgba(255,255,255,.08)); border-radius: 10px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px 24px; }
+    .two-ways-points li { font-size: 13px; line-height: 1.7; color: var(--text-secondary, #9ca3af); padding-left: 18px; position: relative; }
+    .two-ways-points li::before { content: "✓"; position: absolute; left: 0; color: var(--accent-light, #818cf8); font-weight: 700; }
+    .two-ways-points li strong { color: var(--text-primary, #f3f4f6); }
+    @media (max-width: 768px) { .two-ways-points { grid-template-columns: 1fr; } }
   </style>
   <link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/products">
   <link rel="alternate" hreflang="en" href="https://www.silimind.net/en/products">
@@ -320,7 +326,7 @@
           <div class="two-ways-grid">
             <div class="two-ways-card">
               <p class="two-ways-tag"><strong>使い方 1：SiliMind にまとめる。</strong></p>
-              <p class="two-ways-body">システムをもう 1 つ入れる必要はありません。SiliMind には AI ネイティブのマーケ・営業 CRM が最初から入っています。10 チャネルのメッセージは 1 本のタイムラインに集約、360°顧客ビューに営業・マーケ・AI のインサイトが 1 ページに。リードプールは自動でスコアリング＆割り当て、SLA カウントダウンがすべてのフォローアップを見守り、訪問録音は 13 項目の議事録に変換。AI がメールと週報を書き、やり取りから契約項目を抽出し、RAG ナレッジベースは引用元つきで即答します。導入すれば、あとは働いてくれます。</p>
+              <p class="two-ways-body">システムをもう 1 つ入れる必要はありません。SiliMind には AI ネイティブのマーケ・営業 CRM が最初から入っています。複数チャネルのメッセージは 1 本のタイムラインに集約、360°顧客ビューに営業・マーケ・AI のインサイトが 1 ページに。リードプールは一元管理して自動スコアリング、訪問録音はワンクリックでアップロードして構造化議事録に。AI がメールと週報を書き、やり取りから契約項目を抽出し、RAG ナレッジベースは引用元つきで即答します。導入すれば、あとは働いてくれます。</p>
               <p class="two-ways-cta"><a href="https://agent.silimind.net/register">個人トライアルを申込 →</a></p>
             </div>
             <div class="two-ways-card">
@@ -329,6 +335,7 @@
               <p class="two-ways-cta"><a href="/ja/contact">導入を相談 →</a></p>
             </div>
           </div>
+                    <ul class="two-ways-points"><li><strong>乗り換え不要: </strong>SiliMind をそのまま使っても、今の CRM を残しても、どちらの道も通ります</li><li><strong>導入はかんたん: </strong>エクスポートをドラッグし、フィールドマッピングを一度設定すれば、重複削除と統合は自動</li><li><strong>メッセージは 1 本のライン: </strong>チャネルメッセージ・訪問記録・契約・ナレッジベースを同じタイムラインに</li><li><strong>データは使うほどきれいに: </strong>重複削除と統合は内蔵——手作業の整理は不要</li></ul>
           <p class="two-ways-close"><strong>どちらにするかは、あなた次第。</strong></p>
         </div>
       </div>

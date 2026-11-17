@@ -200,6 +200,12 @@
     .two-ways-cta a:hover { text-decoration: underline; }
     .two-ways-close { margin: 18px 0 0; text-align: center; font-size: 14.5px; color: var(--text-primary, #f3f4f6); }
     @media (max-width: 768px) { .two-ways-grid { grid-template-columns: 1fr; } .two-ways { padding: 20px 16px; } }
+  
+    .two-ways-points { list-style: none; margin: 16px 0 0; padding: 14px 18px; background: rgba(99,102,241,.05); border: 1px dashed var(--border, rgba(255,255,255,.08)); border-radius: 10px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px 24px; }
+    .two-ways-points li { font-size: 13px; line-height: 1.7; color: var(--text-secondary, #9ca3af); padding-left: 18px; position: relative; }
+    .two-ways-points li::before { content: "✓"; position: absolute; left: 0; color: var(--accent-light, #818cf8); font-weight: 700; }
+    .two-ways-points li strong { color: var(--text-primary, #f3f4f6); }
+    @media (max-width: 768px) { .two-ways-points { grid-template-columns: 1fr; } }
   </style>
   <link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/products">
   <link rel="alternate" hreflang="en" href="https://www.silimind.net/en/products">
@@ -320,7 +326,7 @@
           <div class="two-ways-grid">
             <div class="two-ways-card">
               <p class="two-ways-tag"><strong>Option 1: Run on SiliMind.</strong></p>
-              <p class="two-ways-body">No second system to install. SiliMind ships with an AI-native marketing &amp; sales CRM built in: messages from 10 channels land on one timeline, the 360° customer view puts sales, marketing and AI insights on a single page, the shared lead pool scores and routes automatically, SLA timers keep every follow-up on the clock, visit recordings turn into 13-field notes, AI drafts emails and weekly reports and pulls contract fields out of your conversations, and the RAG knowledge base answers with sources attached. Once it’s in, it goes to work.</p>
+              <p class="two-ways-body">No second system to install. SiliMind ships with an AI-native marketing &amp; sales CRM built in: messages from multiple channels land on one timeline, the 360° customer view puts sales, marketing and AI insights on a single page, the shared lead pool collects and scores automatically, visit recordings upload in one tap and become structured notes, AI drafts emails and weekly reports and pulls contract fields out of your conversations, and the RAG knowledge base answers with sources attached. Once it’s in, it goes to work.</p>
               <p class="two-ways-cta"><a href="https://agent.silimind.net/register">Start Personal Trial →</a></p>
             </div>
             <div class="two-ways-card">
@@ -329,6 +335,7 @@
               <p class="two-ways-cta"><a href="/en/contact">Talk to sales →</a></p>
             </div>
           </div>
+                    <ul class="two-ways-points"><li><strong>No need to switch: </strong>run on SiliMind or keep your current CRM — both paths work</li><li><strong>Hassle-free import: </strong>drag in the export file, map fields once, automatic dedupe and merge</li><li><strong>One timeline: </strong>channel messages, visit records, contracts and the knowledge base, all on the same timeline</li><li><strong>Data gets cleaner with use: </strong>dedupe and merge are built in — no manual clean-up</li></ul>
           <p class="two-ways-close"><strong>Your call.</strong></p>
         </div>
       </div>

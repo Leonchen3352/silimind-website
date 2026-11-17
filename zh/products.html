@@ -200,6 +200,12 @@
     .two-ways-cta a:hover { text-decoration: underline; }
     .two-ways-close { margin: 18px 0 0; text-align: center; font-size: 14.5px; color: var(--text-primary, #f3f4f6); }
     @media (max-width: 768px) { .two-ways-grid { grid-template-columns: 1fr; } .two-ways { padding: 20px 16px; } }
+  
+    .two-ways-points { list-style: none; margin: 16px 0 0; padding: 14px 18px; background: rgba(99,102,241,.05); border: 1px dashed var(--border, rgba(255,255,255,.08)); border-radius: 10px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px 24px; }
+    .two-ways-points li { font-size: 13px; line-height: 1.7; color: var(--text-secondary, #9ca3af); padding-left: 18px; position: relative; }
+    .two-ways-points li::before { content: "✓"; position: absolute; left: 0; color: var(--accent-light, #818cf8); font-weight: 700; }
+    .two-ways-points li strong { color: var(--text-primary, #f3f4f6); }
+    @media (max-width: 768px) { .two-ways-points { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
@@ -317,7 +323,7 @@
           <div class="two-ways-grid">
             <div class="two-ways-card">
               <p class="two-ways-tag"><strong>用法一：直接用 SiliMind。</strong></p>
-              <p class="two-ways-body">不需要另外装一套系统。SiliMind 自带 AI 原生的营销与销售 CRM：10 个渠道的消息汇进同一条时间线，客户 360° 视图把销售触点、营销触点和 AI 洞察放在一页，线索池自动评分分配，SLA 倒计时盯着每一次跟进，拜访录音转成 13 字段纪要，AI 写邮件、写周报、从沟通记录抽合同字段，RAG 知识库随时带着引用来源作答。装好就能干活。</p>
+              <p class="two-ways-body">不用另装一套系统。SiliMind 自带 AI 原生的营销与销售 CRM：多渠道消息汇进同一条时间线，客户 360° 视图把销售触点、营销触点和 AI 洞察放在一页；线索池统一收口、智能评分；拜访录音一键上传，AI 出结构化纪要；AI 写邮件、写周报、从沟通记录抽合同字段；RAG 知识库带着引用来源作答。装好就能干活。</p>
               <p class="two-ways-cta"><a href="https://agent.silimind.net/register">申请个人试用 →</a></p>
             </div>
             <div class="two-ways-card">
@@ -326,6 +332,7 @@
               <p class="two-ways-cta"><a href="/zh/contact">联系销售 →</a></p>
             </div>
           </div>
+                    <ul class="two-ways-points"><li><strong>不用换系统：</strong>直接用 SiliMind，或保留你现有的 CRM，两条路都走得通</li><li><strong>导入不折腾：</strong>导出表拖进来，字段映射配一次，自动去重合并</li><li><strong>消息一条线：</strong>渠道消息、拜访记录、合同、知识库，收在同一条时间线上</li><li><strong>数据越用越干净：</strong>查重与合并内置，不靠人手工整理</li></ul>
           <p class="two-ways-close"><strong>用哪个，你说了算。</strong></p>
         </div>
       </div>
