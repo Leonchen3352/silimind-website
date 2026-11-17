@@ -13,6 +13,26 @@
     gtag('js', new Date());
     gtag('config', 'G-RJ7HH4824R');
   </script>
+  <script>
+  (function () {
+    function ctaName(a) {
+      var href = (a.getAttribute('href') || '').trim();
+      if (href.indexOf('agent.silimind.net/register') !== -1) return 'trial';
+      var cls = a.className || '';
+      if (!/btn|cta|role-more/i.test(cls)) return null;
+      if (href.indexOf('mailto:') === 0 || href === '#contact' || href.indexOf('/contact') === 0) return 'contact';
+      return null;
+    }
+    document.addEventListener('click', function (e) {
+      var el = e.target;
+      while (el && el.tagName !== 'A') el = el.parentElement;
+      if (!el) return;
+      var name = ctaName(el);
+      if (!name) return;
+      if (typeof gtag === 'function') gtag('event', 'cta_click', { cta: name, page: location.pathname });
+    }, true);
+  })();
+  </script>
   <meta name="description" content="SiliMind는 무역·크로스보더 팀에게 해외 콘텐츠 리드 확보부터 멀티채널 메시지 관리, AI 지원 팔로우업까지 전 퍼널 솔루션을 제공하며, 내수 고객 관리도 함께 커버합니다." />
   <link rel="canonical" href="https://www.silimind.net/ko/solutions" />
   <meta property="og:title" content="솔루션: 무역·크로스보더 무역 — SiliMind" />

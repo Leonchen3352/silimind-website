@@ -13,6 +13,26 @@
     gtag('js', new Date());
     gtag('config', 'G-RJ7HH4824R');
   </script>
+  <script>
+  (function () {
+    function ctaName(a) {
+      var href = (a.getAttribute('href') || '').trim();
+      if (href.indexOf('agent.silimind.net/register') !== -1) return 'trial';
+      var cls = a.className || '';
+      if (!/btn|cta|role-more/i.test(cls)) return null;
+      if (href.indexOf('mailto:') === 0 || href === '#contact' || href.indexOf('/contact') === 0) return 'contact';
+      return null;
+    }
+    document.addEventListener('click', function (e) {
+      var el = e.target;
+      while (el && el.tagName !== 'A') el = el.parentElement;
+      if (!el) return;
+      var name = ctaName(el);
+      if (!name) return;
+      if (typeof gtag === 'function') gtag('event', 'cta_click', { cta: name, page: location.pathname });
+    }, true);
+  })();
+  </script>
   <meta name="description" content="SiliMind 三大核心模块：营销获客、销售管理、AI 智能决策。AI 贯穿获客到成交全链路的一站式 B2B 营销销售平台。" />
   <link rel="canonical" href="https://www.silimind.net/products" />
   <meta property="og:title" content="SiliMind 产品总览" />

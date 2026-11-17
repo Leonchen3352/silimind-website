@@ -13,6 +13,26 @@
     gtag('js', new Date());
     gtag('config', 'G-RJ7HH4824R');
   </script>
+  <script>
+  (function () {
+    function ctaName(a) {
+      var href = (a.getAttribute('href') || '').trim();
+      if (href.indexOf('agent.silimind.net/register') !== -1) return 'trial';
+      var cls = a.className || '';
+      if (!/btn|cta|role-more/i.test(cls)) return null;
+      if (href.indexOf('mailto:') === 0 || href === '#contact' || href.indexOf('/contact') === 0) return 'contact';
+      return null;
+    }
+    document.addEventListener('click', function (e) {
+      var el = e.target;
+      while (el && el.tagName !== 'A') el = el.parentElement;
+      if (!el) return;
+      var name = ctaName(el);
+      if (!name) return;
+      if (typeof gtag === 'function') gtag('event', 'cta_click', { cta: name, page: location.pathname });
+    }, true);
+  })();
+  </script>
   <meta name="description" content="SiliMind의 3대 핵심 모듈: 마케팅 리드 확보, 영업 관리, AI 스마트 의사결정. 획득부터 성과까지 전 퍼널에 AI가 작동하는 올인원 B2B 마케팅·영업 플랫폼." />
   <link rel="canonical" href="https://www.silimind.net/ko/products" />
   <meta property="og:title" content="SiliMind 제품 개요" />

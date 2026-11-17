@@ -13,6 +13,26 @@
     gtag('js', new Date());
     gtag('config', 'G-RJ7HH4824R');
   </script>
+  <script>
+  (function () {
+    function ctaName(a) {
+      var href = (a.getAttribute('href') || '').trim();
+      if (href.indexOf('agent.silimind.net/register') !== -1) return 'trial';
+      var cls = a.className || '';
+      if (!/btn|cta|role-more/i.test(cls)) return null;
+      if (href.indexOf('mailto:') === 0 || href === '#contact' || href.indexOf('/contact') === 0) return 'contact';
+      return null;
+    }
+    document.addEventListener('click', function (e) {
+      var el = e.target;
+      while (el && el.tagName !== 'A') el = el.parentElement;
+      if (!el) return;
+      var name = ctaName(el);
+      if (!name) return;
+      if (typeof gtag === 'function') gtag('event', 'cta_click', { cta: name, page: location.pathname });
+    }, true);
+  })();
+  </script>
   <meta name="description" content="SiliMind の 3 つのコアモジュール：マーケティング獲客、営業管理、AI スマート意思決定。獲客から成約まで AI がフルファネルを貫く B2B マーケティング・営業一站式プラットフォーム。" />
   <link rel="canonical" href="https://www.silimind.net/ja/products" />
   <meta property="og:title" content="SiliMind 製品概要" />
