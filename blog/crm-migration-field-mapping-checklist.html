@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <title>CRM Migration Field Mapping Checklist - SiliMind Blog</title>
+  <meta name="description" content="Field mapping is where CRM migrations fail: six object types, owner and notes pitfalls, and a 30-50 record pilot run that catches errors before the full import." />
+  <link rel="canonical" href="https://www.silimind.net/blog/crm-migration-field-mapping-checklist" />
+  <meta property="og:title" content="CRM Migration Field Mapping Checklist - SiliMind Blog" />
+  <meta property="og:description" content="Field mapping is where CRM migrations fail: six object types, owner and notes pitfalls, and a 30-50 record pilot run that catches errors before the full import." />
+  <meta property="og:url" content="https://www.silimind.net/blog/crm-migration-field-mapping-checklist" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="SiliMind" />
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJ7HH4824R"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RJ7HH4824R');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Where CRM Migrations Go Wrong: A Field Mapping Checklist",
+    "description": "Field mapping is where CRM migrations fail: six object types, owner and notes pitfalls, and a 30-50 record pilot run that catches errors before the full import.",
+    "datePublished": "2026-11-17",
+    "author": {
+      "@type": "Organization",
+      "name": "SiliMind"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SiliMind",
+      "url": "https://www.silimind.net"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.silimind.net/blog/crm-migration-field-mapping-checklist"
+    }
+  }
+  </script>
+  <style>
+    :root {
+      --bg-primary: #0a0a0f;
+      --bg-secondary: #12121a;
+      --bg-card: #16161f;
+      --accent: #6366f1;
+      --accent-light: #818cf8;
+      --text-primary: #f0f0f5;
+      --text-secondary: rgba(240,240,245,0.6);
+      --border: rgba(99,102,241,0.08);
+      --border-hover: rgba(99,102,241,0.25);
+      --font: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'PingFang SC', 'Noto Sans SC', sans-serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* Nav */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(10,10,15,0.9);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      height: 64px;
+    }
+    .nav-inner {
+      max-width: 1100px; margin: 0 auto; padding: 0 32px;
+      height: 100%; display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      font-size: 20px; font-weight: 700; color: var(--accent-light);
+      text-decoration: none; letter-spacing: 1px;
+    }
+    .nav-links { list-style: none; display: flex; gap: 32px; }
+    .nav-links a {
+      color: var(--text-secondary); text-decoration: none; font-size: 14px;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--text-primary); }
+
+    /* Article */
+    .article-container {
+      max-width: 760px; margin: 0 auto;
+      padding: 120px 32px 80px;
+    }
+    .article-header {
+      margin-bottom: 40px;
+    }
+    .article-header h1 {
+      font-size: 32px; font-weight: 700; line-height: 1.3;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #6366f1, #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .article-meta {
+      font-size: 14px; color: var(--text-secondary);
+    }
+    .article-meta time {
+      margin-right: 16px;
+    }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      color: var(--accent-light); text-decoration: none; font-size: 14px;
+      margin-bottom: 24px; transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--text-primary); }
+
+    /* Article body */
+    .article-body h2 {
+      font-size: 24px; font-weight: 600; margin: 40px 0 16px;
+      color: var(--text-primary);
+    }
+    .article-body h3 {
+      font-size: 20px; font-weight: 600; margin: 32px 0 12px;
+      color: var(--text-primary);
+    }
+    .article-body p {
+      font-size: 16px; line-height: 1.8; color: var(--text-secondary);
+      margin-bottom: 20px;
+    }
+    .article-body ul, .article-body ol {
+      margin-bottom: 20px; padding-left: 24px; color: var(--text-secondary);
+    }
+    .article-body li {
+      margin-bottom: 8px; font-size: 16px; line-height: 1.8;
+    }
+    .article-body blockquote {
+      border-left: 3px solid var(--accent);
+      padding: 16px 24px;
+      margin: 24px 0;
+      background: var(--bg-secondary);
+      border-radius: 0 8px 8px 0;
+      color: var(--text-secondary);
+      font-size: 15px;
+    }
+    .article-body code {
+      background: var(--bg-secondary);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 14px;
+      color: var(--accent-light);
+    }
+    .article-body pre {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px 24px;
+      overflow-x: auto;
+      margin-bottom: 20px;
+    }
+    .article-body pre code {
+      background: none; padding: 0; font-size: 14px;
+      color: var(--text-primary);
+    }
+    .article-body img {
+      max-width: 100%; border-radius: 8px; margin: 24px 0;
+    }
+    .article-body a {
+      color: var(--accent-light); text-decoration: underline;
+      text-decoration-color: rgba(129,140,248,0.3);
+      transition: text-decoration-color 0.2s;
+    }
+    .article-body a:hover {
+      text-decoration-color: var(--accent-light);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center; padding: 40px 32px;
+      border-top: 1px solid var(--border);
+      color: var(--text-secondary); font-size: 13px;
+    }
+
+    @media (max-width: 768px) {
+      .article-container { padding: 100px 16px 60px; }
+      .article-header h1 { font-size: 26px; }
+      .article-body h2 { font-size: 20px; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">SiliMind</a>
+      <ul class="nav-links">
+        <li><a href="/blog/" class="active">Blog</a></li>
+        <li><a href="/#features">核心能力</a></li>
+        <li><a href="#">解决方案</a></li>
+        <li><a href="#">关于我们</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <article class="article-container">
+    <a href="/blog/" class="back-link">← 返回博客</a>
+    <header class="article-header">
+      <h1>Where CRM Migrations Go Wrong: A Field Mapping Checklist</h1>
+      <div class="article-meta">
+        <time datetime="2026-11-17">November 17, 2026</time>
+        <span>SiliMind</span>
+      </div>
+    </header>
+    <div class="article-body">
+      <p>A 22-person export company decided to leave OKKI. They exported one sheet, roughly 3,400 rows, and mapped about seven of every ten columns to the new CRM by eye and by name matching. Two weeks later two reps called the same buyer about the same order. The owner column in that export had been empty for most of the year, so every record landed on whoever ran the import. Three records for one company collapsed into a single record, because one short name sat inside the other two. A stretch of follow-up history was simply gone, because in the old system three separate conversations had all been typed into one notes cell.</p>
+      <p>*(This is a composite scene, not a record of any single company. The row counts and names are illustrative.)*</p>
+      <p>I have watched this shape of failure more than once, and it never arrives as a volume problem. 3,400 rows is a small import. The damage sits in the field mapping, and almost all of it is visible before you upload anything.</p>
+      <p>You are probably reading this because you run a 5 to 50 person export business, your book of business sits in OKKI, the Alibaba backend, or a spreadsheet ledger, and somebody on your team has started asking what a new CRM would cost in migration effort. If that is you, here is what I would want a hand on. Which fields you map, which three fields fail quietly, and the order to do it in.</p>
+      <p>I work on the import path, so when I describe what our system does I mean the field mapping step in that import. When I describe the old system, that is what export teams tell me about theirs. I don't know how other tools handle an owner field when the source cell is empty, and I won't guess for them.</p>
+      <h2>Before you export, count what you are actually moving</h2>
+      <p>People plan a migration around companies and contacts, then get surprised by notes and tasks. Six kinds of object travel together when you export from a CRM, and each one carries a field you cannot skip.</p>
+      <table><thead><tr><th>Object</th><th>Field you cannot skip</th><th>What breaks without it</th></tr></thead><tbody><tr><td>Contact</td><td>Email, or phone when there is no email</td><td>Dedup, matching and later alignment all key on it</td></tr><tr><td>Company</td><td>Name, plus the old system's customer id if it has one</td><td>Short names collapse into each other, renames become new rows</td></tr><tr><td>Deal</td><td>Stage, amount, company link</td><td>Pipeline totals are wrong and stage names stop lining up</td></tr><tr><td>Follow-up record</td><td>One row per conversation</td><td>History disappears and you cannot tell whether you already called</td></tr><tr><td>Task</td><td>Due date plus the linked contact</td><td>Deadlines end up owned by nobody</td></tr><tr><td>Owner</td><td>A name that resolves to exactly one person, or the account id</td><td>Every customer becomes the importer's</td></tr></tbody></table>
+      <p>So before you export, pick your contact identifier and check that column for blanks and for two people sharing one mailbox. If a buyer is reachable only by phone, that phone has to be the identifier for that row. One row carrying two identifiers is how you create the same customer twice, and the day you find out is the day two of your people write to the same buyer with two different prices.</p>
+      <p>Count ownership the same way. If the old sheet has no owner column, add one before the export. An export without ownership hands your whole book of business to whoever pressed the button.</p>
+      <h2>Where mapping breaks: one to many, many to one, different domains</h2>
+      <p><strong>One to many.</strong> The classic case is a notes cell that grew a whole conversation history. One cell, three exchanges, the last reply ending mid sentence. A notes field takes one string, so something has to give. You can keep the last paragraph and lose the rest, split the cell into one row per exchange and let each row become a follow-up record, or paste the whole blob into one long note and hope the timeline sorts it out. Splitting costs the most work and is the only option that survives. Do it before the import. Afterwards you are reading it back out of a system that has already flattened it.</p>
+      <p><strong>Many to one.</strong> This is the owner column, and it is where I would focus. In the old sheet the owner is usually free text. "Lily", "Lily W", "Lily Wong" and "陈小雨" might be one person or four. The new system holds an account id. When the name in the sheet does not resolve to an account, the field comes in empty, and an empty owner field does not mean unassigned, it means assigned to whoever ran the import. That is how a team of twenty ends up with one person owning everything. In our import path the current owner can be carried across as an owner id at the mapping step, so you decide who owns a customer before the data lands rather than repairing it afterwards through several hundred individual reassignments.</p>
+      <p><strong>Different value domains.</strong> The stage column in the old sheet may have ten spellings of what your new system calls five stages: "Quotation", "Quoting", "Quote sent", "报价中", "quoted". Country is worse: "Vietnam", "Viet Nam", "Vietnam VN", "越南". Industry is the hardest, because a two-level classification in the new system has to receive something that was written as a free text label, and "auto parts" is not the same label as "Auto Parts" or "Automotive Components". These need a mapping table you write yourself. I would rather you looked at the distinct values first than let any tool guess a vocabulary it has never seen from your team.</p>
+      <p>So before you export, pull the distinct values of every controlled column into a separate sheet. Ten rows is a two-minute job. Ten values you have to reconcile is a day you should have planned for.</p>
+      <h2>The three fields that fail quietly</h2>
+      <p>Other mistakes announce themselves. A missing column shows up in the mapping screen. These three do not, and each one costs you months.</p>
+      <p><strong>Owner.</strong> The field that looks fine in the import log. You find out in about two weeks, when a customer who signed up with sales rep A is being chased by sales rep B, or when a rep asks why their book of business is empty.</p>
+      <p><strong>Source.</strong> Where the customer came from in the first place. An inquiry form, a trade show, an article someone wrote. If the source does not come across, nobody notices for about six months, and then attribution stops. You are trying to work out which article brought the buyer and the answer is that no record knows. <a href="https://www.silimind.net/blog/content-attribution-b2b">How content attribution works for B2B marketing teams</a> covers what a usable source trail looks like once the records are in place.</p>
+      <p><strong>Last interaction time.</strong> The date of the last real contact, not the last record that was touched. Three months later, nobody can remember why a customer was left alone, so the customer stays alone. The pipeline looks healthy and the archive is full of good customers nobody has spoken to since the spring.</p>
+      <p>If your export has one of these three columns and you skip it, that is the decision to revisit. If it has none of them, fix the export before you import, because the target system cannot invent a source or a last contact date.</p>
+      <h2>Some of your history never made it into the spreadsheet</h2>
+      <p>A lot of teams migrating off OKKI or off a spreadsheet have years of conversations that were never written into the CRM at all. They sit in the mailbox, and they cannot be mapped because they were never fields.</p>
+      <p>In SiliMind we run our own email import path: pull mail, extract the structure, show a preview, then import. On one internal test run we took a real mailbox, 198 emails, and the extraction produced 819 companies, 606 contacts, 4,090 deals and 4,196 tasks. The same run tagged 552 contacts (92%) and 791 companies (97%) with the email that brought them in.</p>
+      <p>Those are our numbers from one test batch on one mailbox, not a benchmark for your data and not a promise about your result. What they tell you is that a source label can survive an import, which is exactly the field the spreadsheet route often loses.</p>
+      <p>So before you export, decide whether the history you care about is in the table or in the inbox. If it is in the inbox, you need a second pass, and the source column you fought for in the spreadsheet pass may come from there instead.</p>
+      <h2>Move 30 to 50 records first, then the rest</h2>
+      <p>Here is the order I would use. Pick 30 to 50 customers you already know are awkward: a known duplicate pair, a company that changed its name, a customer that changed hands between two reps. Run the trial import on those. Then look at three things and nothing else. Do the owners land on the right people? Did the source come across? Did the last interaction date survive? If those three are right on the messy records, the clean ones will be fine.</p>
+      <p>Then when you re-import the same export later, the import path has an alignment mode that changes only what changed. Rows it matches get only the changed non-empty fields updated, so an empty cell in the new export does not wipe a value you already have. Rows it cannot match are added. And key field changes stop and wait for a person: a company rename, an id change, a contact whose name, email or phone changed, or a contact who moved to another company all go into a conflict list where you accept the new value or keep the old one, one row at a time.</p>
+      <p>This is not an automatic connection to your old CRM. You export the table yourself and upload the file yourself, and nothing is written back to the old system. You decide when the alignment runs, and a human decides every conflict.</p>
+      <p>Matching works in a fixed order. For a contact, email first, then phone, then company plus name. For a company, name first, then the old system's id. When two records look alike, the comparison gives extra weight to the case where one short name is contained in the longer one, so "ABC Trading" and "ABC Trading Co., Ltd" can line up instead of becoming two accounts. Records that are genuinely duplicated can be merged afterwards, in batches.</p>
+      <p>So before you go for the full load, write down the name of one customer you will check by hand after the trial import. One name you actually open is worth more than a spreadsheet of everything you meant to look at.</p>
+      <h2>Three things you can do today</h2>
+      <p>Add an owner column to the export and fill it with one unambiguous name per row. If you cannot fill it, you will be assigning ownership by hand later, and you will not do it well.</p>
+      <p>Split the notes cells that hold more than one conversation into one row per conversation. This is the boring work that decides whether you have history in the new system or a wall of text.</p>
+      <p>Pick 30 to 50 dirty customers, run the trial import, and open three records by hand. If you only do one of these three today, do the last one.</p>
+      <p>---</p>
+    </div>
+  </article>
+
+  <footer>
+    <p>© 2026 SiliMind. All rights reserved.</p>
+  </footer>
+</body>
+</html>
