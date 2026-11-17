@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <title>删客户也要先批一下：5 类敏感操作怎么设闸 - SiliMind Blog</title>
+  <meta name="description" content="删客户、批量改归属、导出全库这类敏感操作，一次误操作就是大事故。五类敏感操作的审批闸门怎么设：哪些动作必须进审批流、审批记录该留哪些字段、谁有权批准、怎么避免审批流形同虚设，一篇讲清设闸思路与落地做法，附今天就能做的三件事。" />
+  <link rel="canonical" href="https://www.silimind.net/blog/sensitive-action-approval-gates" />
+  <meta property="og:title" content="删客户也要先批一下：5 类敏感操作怎么设闸 - SiliMind Blog" />
+  <meta property="og:description" content="删客户、批量改归属、导出全库这类敏感操作，一次误操作就是大事故。五类敏感操作的审批闸门怎么设：哪些动作必须进审批流、审批记录该留哪些字段、谁有权批准、怎么避免审批流形同虚设，一篇讲清设闸思路与落地做法，附今天就能做的三件事。" />
+  <meta property="og:url" content="https://www.silimind.net/blog/sensitive-action-approval-gates" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:site_name" content="SiliMind" />
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJ7HH4824R"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RJ7HH4824R');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "删客户也要先批一下：5 类敏感操作怎么设闸",
+    "description": "删客户、批量改归属、导出全库这类敏感操作，一次误操作就是大事故。五类敏感操作的审批闸门怎么设：哪些动作必须进审批流、审批记录该留哪些字段、谁有权批准、怎么避免审批流形同虚设，一篇讲清设闸思路与落地做法，附今天就能做的三件事。",
+    "datePublished": "2026-11-17",
+    "author": {
+      "@type": "Organization",
+      "name": "SiliMind"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SiliMind",
+      "url": "https://www.silimind.net"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.silimind.net/blog/sensitive-action-approval-gates"
+    }
+  }
+  </script>
+  <style>
+    :root {
+      --bg-primary: #0a0a0f;
+      --bg-secondary: #12121a;
+      --bg-card: #16161f;
+      --accent: #6366f1;
+      --accent-light: #818cf8;
+      --text-primary: #f0f0f5;
+      --text-secondary: rgba(240,240,245,0.6);
+      --border: rgba(99,102,241,0.08);
+      --border-hover: rgba(99,102,241,0.25);
+      --font: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'PingFang SC', 'Noto Sans SC', sans-serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* Nav */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(10,10,15,0.9);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      height: 64px;
+    }
+    .nav-inner {
+      max-width: 1100px; margin: 0 auto; padding: 0 32px;
+      height: 100%; display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      font-size: 20px; font-weight: 700; color: var(--accent-light);
+      text-decoration: none; letter-spacing: 1px;
+    }
+    .nav-links { list-style: none; display: flex; gap: 32px; }
+    .nav-links a {
+      color: var(--text-secondary); text-decoration: none; font-size: 14px;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--text-primary); }
+
+    /* Article */
+    .article-container {
+      max-width: 760px; margin: 0 auto;
+      padding: 120px 32px 80px;
+    }
+    .article-header {
+      margin-bottom: 40px;
+    }
+    .article-header h1 {
+      font-size: 32px; font-weight: 700; line-height: 1.3;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #6366f1, #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .article-meta {
+      font-size: 14px; color: var(--text-secondary);
+    }
+    .article-meta time {
+      margin-right: 16px;
+    }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      color: var(--accent-light); text-decoration: none; font-size: 14px;
+      margin-bottom: 24px; transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--text-primary); }
+
+    /* Article body */
+    .article-body h2 {
+      font-size: 24px; font-weight: 600; margin: 40px 0 16px;
+      color: var(--text-primary);
+    }
+    .article-body h3 {
+      font-size: 20px; font-weight: 600; margin: 32px 0 12px;
+      color: var(--text-primary);
+    }
+    .article-body p {
+      font-size: 16px; line-height: 1.8; color: var(--text-secondary);
+      margin-bottom: 20px;
+    }
+    .article-body ul, .article-body ol {
+      margin-bottom: 20px; padding-left: 24px; color: var(--text-secondary);
+    }
+    .article-body li {
+      margin-bottom: 8px; font-size: 16px; line-height: 1.8;
+    }
+    .article-body blockquote {
+      border-left: 3px solid var(--accent);
+      padding: 16px 24px;
+      margin: 24px 0;
+      background: var(--bg-secondary);
+      border-radius: 0 8px 8px 0;
+      color: var(--text-secondary);
+      font-size: 15px;
+    }
+    .article-body code {
+      background: var(--bg-secondary);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 14px;
+      color: var(--accent-light);
+    }
+    .article-body pre {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px 24px;
+      overflow-x: auto;
+      margin-bottom: 20px;
+    }
+    .article-body pre code {
+      background: none; padding: 0; font-size: 14px;
+      color: var(--text-primary);
+    }
+    .article-body img {
+      max-width: 100%; border-radius: 8px; margin: 24px 0;
+    }
+    .article-body a {
+      color: var(--accent-light); text-decoration: underline;
+      text-decoration-color: rgba(129,140,248,0.3);
+      transition: text-decoration-color 0.2s;
+    }
+    .article-body a:hover {
+      text-decoration-color: var(--accent-light);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center; padding: 40px 32px;
+      border-top: 1px solid var(--border);
+      color: var(--text-secondary); font-size: 13px;
+    }
+
+    @media (max-width: 768px) {
+      .article-container { padding: 100px 16px 60px; }
+      .article-header h1 { font-size: 26px; }
+      .article-body h2 { font-size: 20px; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">SiliMind</a>
+      <ul class="nav-links">
+        <li><a href="/blog/" class="active">Blog</a></li>
+        <li><a href="/#features">核心能力</a></li>
+        <li><a href="#">解决方案</a></li>
+        <li><a href="#">关于我们</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <article class="article-container">
+    <a href="/blog/" class="back-link">← 返回博客</a>
+    <header class="article-header">
+      <h1>删客户也要先批一下：5 类敏感操作怎么设闸</h1>
+      <div class="article-meta">
+        <time datetime="2026-11-17">2026年11月17日</time>
+        <span>SiliMind</span>
+      </div>
+    </header>
+    <div class="article-body">
+      <h2>清理名单的那个下午</h2>
+      <p>（这一段是合成叙述，按同类场景拼成，不是某家客户的真实记录，人名、时间和数量都是示意。）</p>
+      <p>周一上午，销售小林在整理一份跑了半年的客户名单。三百多条，一部分是去年展会扫码带回来的，从没进过跟进记录。他觉得名单太难看，全选，删除。</p>
+      <p>删完他去接了个电话，等他想起来，三百多条已经没了。</p>
+      <p>更麻烦的是，那批名单里混着一家跟了半年的客户。跟进记录跟着客户记录一起走。删除之后的三天里，同事补上去的几条跟进也跟着没了。等到晚上老板问「这家怎么没了」，已经查不出答案。</p>
+      <p>后来是从备份里翻回来的，翻了大半天。翻回来的是删除那一刻的状态，那三天里新补的内容没回来。</p>
+      <p>小林后来说，那几天谁都不敢提。</p>
+      <p>我第一次听说这件事，第一反应是「备份不就行了」。后来才明白，备份解决的是找回来，解决不了「谁做的决定」和「怎么防止再来一次」。这篇讲出事前怎么拦，事后追溯和取证是另一套问题。</p>
+      <h2>先判断哪些动作值得设闸</h2>
+      <p>闸门是花钱的。多一个人，多一次等待。动作一多全开，系统就变成谁都不敢碰。</p>
+      <p>一条动作值不值得设闸，我一般看三条。</p>
+      <p>做错了能不能补回来。补得回来的事，代价是时间，补不回来的，代价是全没了。</p>
+      <p>会不会影响别人。删一条自己记的跟进，损失在自己身上。删一条同事也在用的客户记录，损失摊到了整个团队。</p>
+      <p>会不会被人顺手点掉。清理名单、清空测试数据这类操作，本来就是设计给人一键执行的，越顺手越危险。</p>
+      <p>拿这三条看五类动作，答案并不一样。</p>
+      <p><code>contact_delete</code> 删错了，重建一条记录不算难，可跟进记录不会跟着重建。<code>deal_delete</code> 删错了，一条商机的跟进历史整条跟着走。<code>data_export</code> 不动数据，危险在于把数据带出了门。<code>content_publish</code> 发出去收不回来。<code>contract_create</code> 签出去的合同也不是改个字段的事。</p>
+      <p><strong>我的判断：不可逆程度最高的那一类，值得最强的一档。可逆的、只影响自己的，最轻一档就够。</strong></p>
+      <h2>闸门开在哪一层</h2>
+      <p>先说一句诚实的话：五类动作的闸门默认都是关的，管理员按需要自己开，开了才走「先审批，后操作」。这里有两层含义。好消息是你不点错就什么都不会发生，坏消息是想要这道保护，得有人先去开它。</p>
+      <p>整条流程拆成三步。</p>
+      <p><strong>提审。</strong> 发起人提交一份申请，交给审批人。有一条规则容易被忽略，审批人自审豁免，自己提的申请自己审不过去。「我提我批」这种审批最没用，它拦的就是这个。</p>
+      <p><strong>会签。</strong> 审批人可以设成多人会签。全部通过，状态变成 <code>approved</code>，任一驳回，变成 <code>rejected</code>。会签配几个人，看动作。</p>
+      <p><strong>通行证。</strong> 申请通过后发一张通行证，有效期 120 分钟，同一张证这段时间里可以反复用。</p>
+      <p>这一步最容易被跳过。没有它，一批三百个客户就要三百次审批，等于把人挡在门外。<strong>通行证把「一次批准」变成「一段时间内的批量授权」，摩擦从次数挪到了时间上。</strong></p>
+      <p>通行证的另一层用法，是它顺手留下了一份审批记录。批准变得可以复用以后，谁批得快、谁从来不批、哪些动作没人关心，翻一遍就看得见。我自己看这类名单，半小时就能看出团队里哪些人其实不想管事。</p>
+      <h2>五类动作，五种开法</h2>
+      <p>下表是建议，不是按危险程度排的顺序。闸门强度你们自己定，行不通就调。</p>
+      <table><thead><tr><th>动作标识</th><th>建议闸门强度</th><th>开了会更麻烦的情况</th></tr></thead><tbody><tr><td><code>content_publish</code></td><td>强，多人会签</td><td>内容要当天上，会签人有一个在休假就发不出去</td></tr><tr><td><code>contract_create</code></td><td>强，多人会签</td><td>季末集中签合同，审批人出差就整批卡住</td></tr><tr><td><code>contact_delete</code></td><td>中，单人审批加通行证</td><td>销售每天清一批测试客户，一个人批不过来</td></tr><tr><td><code>deal_delete</code></td><td>中，单人审批</td><td>旧商机要批量清理，逐条提申请太慢</td></tr><tr><td><code>data_export</code></td><td>强，多人会签</td><td>运营每周导一次报表，反复审批会逼人绕闸门</td></tr></tbody></table>
+      <p><code>data_export</code> 那行我犹豫过。按不可逆程度讲，导出本身不算不可逆。危险在于把一整片数据交到一个人手里，出事之后无从补救，所以我把它放在强的一档。各家对导出的容忍度差很多，我不确定你们算不算危险动作，按你们法务口径定。</p>
+      <p><code>contract_create</code> 和 <code>content_publish</code> 的麻烦也不小。这两个动作带时间要求，闸门越强越容易赶不上。<strong>开之前先问一句，错过今天要付出多大代价。代价大就配通行证加会签，代价小就一个人批。</strong></p>
+      <h2>设闸最容易踩的四个坑</h2>
+      <p>这套流程我们调过几轮，有四个坑当时想得不够，写给同样在设闸的人参考。</p>
+      <p><strong>留后门。</strong> 我们一开始允许管理员绕过审批直接做，这一条后来去掉了。理由很简单，管理员一旦可以绕，这道闸在出事那天就被当成不存在，调查的起点变成「他为什么有权限」。<strong>闸门没有例外，例外只留给通行证本身。</strong></p>
+      <p><strong>让人提一个没人能审的申请。</strong> 提交时如果找不到审批人，请求会被挡住并返回 422，而不是先把申请挂在那儿等人。<strong>先确认审批人是谁，再把流程放出去。</strong></p>
+      <p><strong>顺序搞反。</strong> 先判断这个动作要不要审批，再去查业务对象。反过来的话，客户名还没输完就收到一句「这个客户不存在」。<strong>该拦的动作先给审批的提示，再谈别的。</strong></p>
+      <p><strong>删不掉的时候含糊说。</strong> 删商机遇到别的数据依赖它时，系统会明确返回 409，说明这条删不掉，而不是给个含糊的成功提示。删不干净有时候不是权限问题，是数据本身还挂着别的东西，这和<a href="https://www.silimind.net/blog/multi-tenant-rls-isolation-boundary">多租户隔离的边界</a>是两回事。<strong>明确的失败比模糊的失败好排查</strong>，也知道下一步该找谁。</p>
+      <p>这四条里我最在意第一条和第三条。第一条是这道闸到底挡不挡得住，第三条是开闸的人每天过得累不累，剩下两条更多是提醒。</p>
+      <h2>今天能做的三件事</h2>
+      <p><strong>先列清单。</strong> 把系统里跟「删」「清空」「导出」「发布」沾边的入口找出来，一个个标上不可逆程度和会不会影响别人。不用改配置，一下午能列完。</p>
+      <p><strong>找一个人当第一审。</strong> 审批人名单空着，闸门就是个摆设。先定一个人，哪怕是备用的。再把「什么动作要他批」写清楚，别让人猜。</p>
+      <p><strong>先只开一类。</strong> 五类一起开，流程卡住的时候你分不清是哪一类出的问题。挑历史上真出过事的那一类先开，跑两周看通过率和卡住的位置，再决定要不要往下加。</p>
+      <p>这套闸门管的是事前拦。事后追溯是另一套东西，删掉的数据能不能回来，也不在这道闸的保证范围里，要看有没有开审批、有没有备份。</p>
+      <p>明天上班第一件事，把销售平时清理名单用的那个入口找出来，看看它删的是哪张表、带着多少关联记录。不用写代码，也不用改配置，把那份清单发出来就行。</p>
+    </div>
+  </article>
+
+  <footer>
+    <p>© 2026 SiliMind. All rights reserved.</p>
+  </footer>
+</body>
+</html>
