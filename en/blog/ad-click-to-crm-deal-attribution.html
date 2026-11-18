@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <title>Ad Spend to Revenue: One Traceable Line - SiliMind Blog</title>
+  <meta name="description" content="Leads came in — but which deals came from ads? The four breakpoints between ad click and closed revenue, three tiers of computability, and three things to do today." />
+  <link rel="canonical" href="https://www.silimind.net/blog/ad-click-to-crm-deal-attribution" />
+  <meta property="og:title" content="Ad Spend to Revenue: One Traceable Line - SiliMind Blog" />
+  <meta property="og:description" content="Leads came in — but which deals came from ads? The four breakpoints between ad click and closed revenue, three tiers of computability, and three things to do today." />
+  <meta property="og:url" content="https://www.silimind.net/blog/ad-click-to-crm-deal-attribution" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="SiliMind" />
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJ7HH4824R"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RJ7HH4824R');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Where Did the Ad Money Land: One Line from Ad Click to Closed Revenue in the CRM",
+    "description": "Leads came in — but which deals came from ads? The four breakpoints between ad click and closed revenue, three tiers of computability, and three things to do today.",
+    "datePublished": "2026-11-18",
+    "author": {
+      "@type": "Organization",
+      "name": "SiliMind"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SiliMind",
+      "url": "https://www.silimind.net"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.silimind.net/blog/ad-click-to-crm-deal-attribution"
+    }
+  }
+  </script>
+  <style>
+    :root {
+      --bg-primary: #0a0a0f;
+      --bg-secondary: #12121a;
+      --bg-card: #16161f;
+      --accent: #6366f1;
+      --accent-light: #818cf8;
+      --text-primary: #f0f0f5;
+      --text-secondary: rgba(240,240,245,0.6);
+      --border: rgba(99,102,241,0.08);
+      --border-hover: rgba(99,102,241,0.25);
+      --font: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'PingFang SC', 'Noto Sans SC', sans-serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* Nav */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(10,10,15,0.9);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      height: 64px;
+    }
+    .nav-inner {
+      max-width: 1100px; margin: 0 auto; padding: 0 32px;
+      height: 100%; display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      font-size: 20px; font-weight: 700; color: var(--accent-light);
+      text-decoration: none; letter-spacing: 1px;
+    }
+    .nav-links { list-style: none; display: flex; gap: 32px; }
+    .nav-links a {
+      color: var(--text-secondary); text-decoration: none; font-size: 14px;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--text-primary); }
+
+    /* Article */
+    .article-container {
+      max-width: 760px; margin: 0 auto;
+      padding: 120px 32px 80px;
+    }
+    .article-header {
+      margin-bottom: 40px;
+    }
+    .article-header h1 {
+      font-size: 32px; font-weight: 700; line-height: 1.3;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #6366f1, #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .article-meta {
+      font-size: 14px; color: var(--text-secondary);
+    }
+    .article-meta time {
+      margin-right: 16px;
+    }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      color: var(--accent-light); text-decoration: none; font-size: 14px;
+      margin-bottom: 24px; transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--text-primary); }
+
+    /* Article body */
+    .article-body h2 {
+      font-size: 24px; font-weight: 600; margin: 40px 0 16px;
+      color: var(--text-primary);
+    }
+    .article-body h3 {
+      font-size: 20px; font-weight: 600; margin: 32px 0 12px;
+      color: var(--text-primary);
+    }
+    .article-body p {
+      font-size: 16px; line-height: 1.8; color: var(--text-secondary);
+      margin-bottom: 20px;
+    }
+    .article-body ul, .article-body ol {
+      margin-bottom: 20px; padding-left: 24px; color: var(--text-secondary);
+    }
+    .article-body li {
+      margin-bottom: 8px; font-size: 16px; line-height: 1.8;
+    }
+    .article-body blockquote {
+      border-left: 3px solid var(--accent);
+      padding: 16px 24px;
+      margin: 24px 0;
+      background: var(--bg-secondary);
+      border-radius: 0 8px 8px 0;
+      color: var(--text-secondary);
+      font-size: 15px;
+    }
+    .article-body code {
+      background: var(--bg-secondary);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 14px;
+      color: var(--accent-light);
+    }
+    .article-body pre {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px 24px;
+      overflow-x: auto;
+      margin-bottom: 20px;
+    }
+    .article-body pre code {
+      background: none; padding: 0; font-size: 14px;
+      color: var(--text-primary);
+    }
+    .article-body img {
+      max-width: 100%; border-radius: 8px; margin: 24px 0;
+    }
+    .article-body a {
+      color: var(--accent-light); text-decoration: underline;
+      text-decoration-color: rgba(129,140,248,0.3);
+      transition: text-decoration-color 0.2s;
+    }
+    .article-body a:hover {
+      text-decoration-color: var(--accent-light);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center; padding: 40px 32px;
+      border-top: 1px solid var(--border);
+      color: var(--text-secondary); font-size: 13px;
+    }
+
+    @media (max-width: 768px) {
+      .article-container { padding: 100px 16px 60px; }
+      .article-header h1 { font-size: 26px; }
+      .article-body h2 { font-size: 20px; }
+      .nav-links { display: none; }
+    }
+  </style>
+<link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/blog/ad-click-to-crm-deal-attribution" />
+<link rel="alternate" hreflang="en" href="https://www.silimind.net/en/blog/ad-click-to-crm-deal-attribution" />
+<link rel="alternate" hreflang="ja" href="https://www.silimind.net/ja/blog/ad-click-to-crm-deal-attribution" />
+<link rel="alternate" hreflang="ko" href="https://www.silimind.net/ko/blog/ad-click-to-crm-deal-attribution" />
+<link rel="alternate" hreflang="x-default" href="https://www.silimind.net/blog/ad-click-to-crm-deal-attribution" />
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">SiliMind</a>
+      <ul class="nav-links">
+        <li><a href="/blog/" class="active">Blog</a></li>
+        <li><a href="/#features">核心能力</a></li>
+        <li><a href="#">解决方案</a></li>
+        <li><a href="#">关于我们</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <article class="article-container">
+    <a href="/blog/" class="back-link">← 返回博客</a>
+    <header class="article-header">
+      <h1>Where Did the Ad Money Land: One Line from Ad Click to Closed Revenue in the CRM</h1>
+      <div class="article-meta">
+        <time datetime="2026-11-18">November 18, 2026</time>
+        <span>SiliMind</span>
+      </div>
+    </header>
+    <div class="article-body">
+      <h2>A weekly report, and one sentence: "I don't know"</h2>
+      <p>(The scene below is a composite, assembled from the reconciliation situations ad buyers run into all the time. It is not a record of any real company; names, amounts and counts are illustrative.)</p>
+      <p>Wednesday afternoon, the boss slapped the agency's weekly report on the desk. It read: 386 leads this month, 92 yuan cost per lead.</p>
+      <p>"So how many of these leads became deals?"</p>
+      <p>The sales director flipped two pages: "We signed 4 last week, but I can't tell you which ones came from the ads."</p>
+      <p>With that one sentence, nobody in the company could say on the spot how much revenue that month's 35,000 yuan of ad spend had produced. The agency held the lead counts; the boss held the revenue; in between sat two systems and a verbal report. I have run into this scene more than once, and every time I dug in, it was the same class of problem.</p>
+      <p>It looks like a reporting problem. It is really a data chain that has broken link by link. Where it breaks, and how to check it yourself — that is what this piece covers.</p>
+      <h2>The money and the deals are not severed in one place</h2>
+      <p>Articles on this topic usually say "data silos" and move on. A silo is a metaphor; you can't act on it. When you actually investigate, you find four breakpoints, each shaped differently, each fixed differently.</p>
+      <p><strong>Breakpoint one: the click reached the landing page, but the source was lost.</strong> Ad links carry a string of tags called UTM — in plain words, "these tags tell the system which ad this visit came from." If the landing page form doesn't store those tags together with the submission, there is no connection at all between the click and the lead that follows.</p>
+      <p><strong>Breakpoint two: the lead landed in a form backend or the agency's own sheet, never in the CRM.</strong> Plenty of companies collect inquiries in a free form tool or the agency's spreadsheet; sales learns about a new lead from a screenshot in a group chat. Someone then moves the data into the CRM by hand, and along the way the source field often goes unfilled. <a href="https://www.silimind.net/blog/content-attribution-b2b">How content attribution is done</a> covers how to keep that source field traceable.</p>
+      <p><strong>Breakpoint three: it reached the CRM, but nobody has defined what counts as a valid lead.</strong> Sales follows up for two weeks, discovers it was a competitor fishing for prices, and deletes it. That deletion changes the funnel's denominator. "386 leads" last week versus "340 leads" this week may differ only because 46 invalid records were removed in between.</p>
+      <p><strong>Breakpoint four: the deal signed, but the amount never connected back to the lead.</strong> The contract sits in the contract module, the opportunity in the CRM, the amount on the quote. Three records, each written separately, and a human has to judge "this deal came from that September feed ad."</p>
+      <p>Of the four, breakpoints one and two are technical problems — fix once, benefit long-term. Breakpoint three is a definition problem — it needs a rule someone can actually enforce. Breakpoint four is a habit — fix once, and it saves a little effort every day after.</p>
+      <h2>What the chain looks like</h2>
+      <p>The chain has five segments, and each connects to the next through one specific field.</p>
+      <table><thead><tr><th>Segment</th><th>What it records</th><th>What connects it to the next</th><th>What its absence looks like</th></tr></thead><tbody><tr><td>Ad click</td><td>Platform, plan, date, spend, clicks</td><td>UTM tags on the ad link</td><td>Landing page has visits; sources all blank</td></tr><tr><td>Landing page</td><td>Visit records, visitor identifier</td><td>Visitor identifier</td><td>A pile of anonymous visits; no way to tell which plan</td></tr><tr><td>Inquiry</td><td>Name, company, phone, source from the form</td><td>UTM fields on the form record</td><td>A lead count with no source; ad report and sales disagree</td></tr><tr><td>CRM opportunity</td><td>Lead object, opportunity stage, owner</td><td>The lead-to-opportunity link</td><td>Only sales verbally knows which ad it came from</td></tr><tr><td>Closed revenue</td><td>Amount on the won opportunity</td><td>Deal and opportunity on the same record</td><td>You see total revenue but cannot split it by plan</td></tr></tbody></table>
+      <p>Start with column one: do you hold the detail of "which plan, which day, how much spend, how many clicks"? If yes, keep going. Column two decides whether that detail can be connected at all.</p>
+      <p>Ocean Engine, Meta, and TikTok each name their report fields differently. Without normalizing, even "how much did this plan spend" won't line up. The approach: pull all three platforms' numbers into one day-level record table under the same field set — same connection, same plan, same day counts as one record, and repeated pulls don't change the total. Only then does "how much did this plan spend" have a single answer.</p>
+      <p>This part we have built; deployment and credential onboarding are pending. The three platforms' field names and conversion-type lists still need to be calibrated against real keys. What runs end-to-end today is the structure built from public documentation.</p>
+      <h2>Which numbers you cannot compute</h2>
+      <p>This is the section most worth reading. Three tiers.</p>
+      <p><strong>Computable</strong>: how much a plan spent on a given day, how many clicks it brought, how many leads — provided the UTM tags and the form records both exist.</p>
+      <p><strong>Needs one human pass</strong>: how many opportunities a plan produced. It requires sales to match opportunities to leads inside the CRM; where matching fails, the chain breaks there. The system can list which opportunities are missing a source field; the missing portion still needs a person to check.</p>
+      <p><strong>Not computable</strong>: whether the ad spend was worth it.</p>
+      <p>Honestly, this tier deserves the emphasis. "We spent 30,000 this month and closed 200,000" is not causation; it is co-occurrence. Without a control group there is no incremental attribution. A control group, plainly: one set of customers saw the ads, another set didn't, and the difference in closed revenue between the two groups is what shows the ads worked. Without a control group, any tool's "revenue driven by ads" is a definition, not a conclusion.</p>
+      <p>What figures other tools put out at this tier, I don't know, and I won't guess on their behalf. So at our place this tier is empty, and I think that is more honest than inventing a number.</p>
+      <p>One common mismatch on the way: the ad platform reports clicks, the website reports leads, and the two figures disagree — most of the time nobody is wrong; they are counting different things. Landing-page conversion depends on tracking events. The three conversion events on our site — registration, trial application, landing-page lead form — are coded and take effect once deployed. Until then, mismatch is normal.</p>
+      <p>Also, many ad tools stop at the lead count; their databases hold no closed revenue at all. Closed revenue lives only in the CRM.</p>
+      <h2>What a tool should do, and what it should not touch</h2>
+      <p>My position first: I don't believe a tool should touch your money.</p>
+      <p>Three things are worth doing. Pull the three platforms' numbers back under one set of definitions. Connect clicks to closed deals in the CRM. Surface what clearly looks wrong — for example, ROI below a threshold you set while spend is substantial, or a creative's click rate sliding for days on end. These suggestions are rule-based: the trigger fits in one sentence. They are not machine-learning predictions. Every suggestion needs a human to confirm; without confirmation, nothing moves.</p>
+      <p>What it should not do: adjust bids, change budgets, build campaigns, open accounts for you, top up balances, or decide which plan you invest in. The money goes through the agency; the account is yours.</p>
+      <p>What we do: pull the numbers back, offer suggestions, attribute to closed deals. Execution stays with people.</p>
+      <h2>Three things you can do today</h2>
+      <p><strong>Make the agency attach UTM tags to every plan.</strong> The campaign name should tell you which plan it is at a glance — no random strings. This belongs in the agency's placement spec, not in whoever happens to remember it that day.</p>
+      <p><strong>Make "lead source" a required field in the CRM.</strong> A rep cannot save a new lead without filling it. The source field is the cheapest link in the chain and the easiest one to lose.</p>
+      <p><strong>Take last month's three biggest-spending plans and manually match their leads to deals once.</strong> Count how many line up. Wherever the mismatches sit, that is where your breakpoints are.</p>
+      <p>If you do only one, do the third. The first two repair breakpoints; the third finds them.</p>
+    </div>
+  </article>
+
+  <footer>
+    <p>© 2026 SiliMind. All rights reserved.</p>
+  </footer>
+</body>
+</html>

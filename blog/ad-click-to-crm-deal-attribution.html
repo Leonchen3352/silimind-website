@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <title>广告花了钱，成交在哪：从广告点击到 CRM 成交额的一条线 - SiliMind Blog</title>
+  <meta name="description" content="线索来了 386 条，成交 4 单，哪单是广告来的没人当场答得上来。广告点击与 CRM 成交额之间隔着四个断点：来路丢失、留资没进 CRM、有效线索没人定、成交额没挂到线索。本文拆解三档数字——算得出的、要人配一眼的、算不出来的，以及今天就能做的三件事。" />
+  <link rel="canonical" href="https://www.silimind.net/blog/ad-click-to-crm-deal-attribution" />
+  <meta property="og:title" content="广告花了钱，成交在哪：从广告点击到 CRM 成交额的一条线 - SiliMind Blog" />
+  <meta property="og:description" content="线索来了 386 条，成交 4 单，哪单是广告来的没人当场答得上来。广告点击与 CRM 成交额之间隔着四个断点：来路丢失、留资没进 CRM、有效线索没人定、成交额没挂到线索。本文拆解三档数字——算得出的、要人配一眼的、算不出来的，以及今天就能做的三件事。" />
+  <meta property="og:url" content="https://www.silimind.net/blog/ad-click-to-crm-deal-attribution" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:site_name" content="SiliMind" />
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJ7HH4824R"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RJ7HH4824R');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "广告花了钱，成交在哪：从广告点击到 CRM 成交额的一条线",
+    "description": "线索来了 386 条，成交 4 单，哪单是广告来的没人当场答得上来。广告点击与 CRM 成交额之间隔着四个断点：来路丢失、留资没进 CRM、有效线索没人定、成交额没挂到线索。本文拆解三档数字——算得出的、要人配一眼的、算不出来的，以及今天就能做的三件事。",
+    "datePublished": "2026-11-18",
+    "author": {
+      "@type": "Organization",
+      "name": "SiliMind"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SiliMind",
+      "url": "https://www.silimind.net"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.silimind.net/blog/ad-click-to-crm-deal-attribution"
+    }
+  }
+  </script>
+  <style>
+    :root {
+      --bg-primary: #0a0a0f;
+      --bg-secondary: #12121a;
+      --bg-card: #16161f;
+      --accent: #6366f1;
+      --accent-light: #818cf8;
+      --text-primary: #f0f0f5;
+      --text-secondary: rgba(240,240,245,0.6);
+      --border: rgba(99,102,241,0.08);
+      --border-hover: rgba(99,102,241,0.25);
+      --font: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'PingFang SC', 'Noto Sans SC', sans-serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* Nav */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(10,10,15,0.9);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      height: 64px;
+    }
+    .nav-inner {
+      max-width: 1100px; margin: 0 auto; padding: 0 32px;
+      height: 100%; display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      font-size: 20px; font-weight: 700; color: var(--accent-light);
+      text-decoration: none; letter-spacing: 1px;
+    }
+    .nav-links { list-style: none; display: flex; gap: 32px; }
+    .nav-links a {
+      color: var(--text-secondary); text-decoration: none; font-size: 14px;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--text-primary); }
+
+    /* Article */
+    .article-container {
+      max-width: 760px; margin: 0 auto;
+      padding: 120px 32px 80px;
+    }
+    .article-header {
+      margin-bottom: 40px;
+    }
+    .article-header h1 {
+      font-size: 32px; font-weight: 700; line-height: 1.3;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #6366f1, #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .article-meta {
+      font-size: 14px; color: var(--text-secondary);
+    }
+    .article-meta time {
+      margin-right: 16px;
+    }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      color: var(--accent-light); text-decoration: none; font-size: 14px;
+      margin-bottom: 24px; transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--text-primary); }
+
+    /* Article body */
+    .article-body h2 {
+      font-size: 24px; font-weight: 600; margin: 40px 0 16px;
+      color: var(--text-primary);
+    }
+    .article-body h3 {
+      font-size: 20px; font-weight: 600; margin: 32px 0 12px;
+      color: var(--text-primary);
+    }
+    .article-body p {
+      font-size: 16px; line-height: 1.8; color: var(--text-secondary);
+      margin-bottom: 20px;
+    }
+    .article-body ul, .article-body ol {
+      margin-bottom: 20px; padding-left: 24px; color: var(--text-secondary);
+    }
+    .article-body li {
+      margin-bottom: 8px; font-size: 16px; line-height: 1.8;
+    }
+    .article-body blockquote {
+      border-left: 3px solid var(--accent);
+      padding: 16px 24px;
+      margin: 24px 0;
+      background: var(--bg-secondary);
+      border-radius: 0 8px 8px 0;
+      color: var(--text-secondary);
+      font-size: 15px;
+    }
+    .article-body code {
+      background: var(--bg-secondary);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 14px;
+      color: var(--accent-light);
+    }
+    .article-body pre {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px 24px;
+      overflow-x: auto;
+      margin-bottom: 20px;
+    }
+    .article-body pre code {
+      background: none; padding: 0; font-size: 14px;
+      color: var(--text-primary);
+    }
+    .article-body img {
+      max-width: 100%; border-radius: 8px; margin: 24px 0;
+    }
+    .article-body a {
+      color: var(--accent-light); text-decoration: underline;
+      text-decoration-color: rgba(129,140,248,0.3);
+      transition: text-decoration-color 0.2s;
+    }
+    .article-body a:hover {
+      text-decoration-color: var(--accent-light);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center; padding: 40px 32px;
+      border-top: 1px solid var(--border);
+      color: var(--text-secondary); font-size: 13px;
+    }
+
+    @media (max-width: 768px) {
+      .article-container { padding: 100px 16px 60px; }
+      .article-header h1 { font-size: 26px; }
+      .article-body h2 { font-size: 20px; }
+      .nav-links { display: none; }
+    }
+  </style>
+<link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/blog/ad-click-to-crm-deal-attribution" />
+<link rel="alternate" hreflang="en" href="https://www.silimind.net/en/blog/ad-click-to-crm-deal-attribution" />
+<link rel="alternate" hreflang="ja" href="https://www.silimind.net/ja/blog/ad-click-to-crm-deal-attribution" />
+<link rel="alternate" hreflang="ko" href="https://www.silimind.net/ko/blog/ad-click-to-crm-deal-attribution" />
+<link rel="alternate" hreflang="x-default" href="https://www.silimind.net/blog/ad-click-to-crm-deal-attribution" />
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">SiliMind</a>
+      <ul class="nav-links">
+        <li><a href="/blog/" class="active">Blog</a></li>
+        <li><a href="/#features">核心能力</a></li>
+        <li><a href="#">解决方案</a></li>
+        <li><a href="#">关于我们</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <article class="article-container">
+    <a href="/blog/" class="back-link">← 返回博客</a>
+    <header class="article-header">
+      <h1>广告花了钱，成交在哪：从广告点击到 CRM 成交额的一条线</h1>
+      <div class="article-meta">
+        <time datetime="2026-11-18">2026年11月18日</time>
+        <span>SiliMind</span>
+      </div>
+    </header>
+    <div class="article-body">
+      <h2>一份周报，和一句“不知道”</h2>
+      <p>（下面这段是合成场景，按投放方常见的对账场面拼成，不是任何一家公司的真实记录，人名、金额、数量都是示意。）</p>
+      <p>周三下午，老板把代理商的周报拍在桌上。表上写着本月线索 386 条，获客成本 92 元。</p>
+      <p>“这些线索成了几单？”</p>
+      <p>销售总监翻了两页表：“上周签了 4 单，但我不知道哪单是广告来的。”</p>
+      <p>就这一句话，那个月 3.5 万的广告费对应多少成交额，公司里没有一个人能当场答上来。代理商手里有线索数，老板手里有成交额，中间隔着两个系统和一句口头汇报。我见过几次这样的场面，每一次查下去，都是同一类问题。</p>
+      <p>它看着像报表没做好，其实是数据链上一环一环地断了。断在哪，怎么自己查，这篇说清楚。</p>
+      <h2>钱和成交之间，断的不是一处</h2>
+      <p>讲这个问题，行业文章多半说一句“数据孤岛”就过去了。孤岛是个比喻，没法动手。真去查会发现断点有四个，每个断点长得不一样，解法也不一样。</p>
+      <p><strong>断点一：点击进了落地页，来路丢了。</strong> 广告链接后面挂着一串标签，叫 UTM，白话说就是“这串标签告诉系统这次访问是从哪条广告来的”。落地页表单提交时如果没把这串标签一起存下来，这次点击和后面的留资之间就没有任何连接点。</p>
+      <p><strong>断点二：留资进了表单后台或代理商自己的表，没进 CRM。</strong> 不少公司的询盘先进一个免费表单工具或者代运营的表格，销售是在群里看到截图才知道有新线索。这条数据要人工搬进 CRM，搬的过程中来源字段经常没人填。<a href="https://www.silimind.net/blog/content-attribution-b2b">内容归因是怎么做的</a> 那篇讲的就是来源字段要怎么留才追得动。</p>
+      <p><strong>断点三：进了 CRM，算不算有效线索没人定。</strong> 销售跟了两周才发现是同行问价，删了。这一删，漏斗的分母跟着变。上周报的“线索 386 条”和这周报的“线索 340 条”，可能只是中间删了 46 条无效记录。</p>
+      <p><strong>断点四：签了，成交金额和那条线索没连上。</strong> 合同在合同模块里，商机在 CRM 里，金额写在报价单上。三份记录各写各的，要靠人判断“这一单是 9 月那条信息流带来的”。</p>
+      <p>四个断点里，断点一和断点二是技术问题，改一次长期受益。断点三是口径问题，要一条能被执行的判定规则。断点四是记录习惯，改一次以后每天省一点事。</p>
+      <h2>一条链长什么样</h2>
+      <p>这条链一共五段，每一段连到下一段，靠的是一个具体的字段。</p>
+      <table><thead><tr><th>环节</th><th>记了什么</th><th>靠什么连到下一段</th><th>这一段缺了会显示成什么</th></tr></thead><tbody><tr><td>广告点击</td><td>平台、计划、日期、消耗、点击</td><td>广告链接上的 UTM 标签</td><td>落地页有访问量，来路全空</td></tr><tr><td>落地页</td><td>访问记录、访客标识</td><td>访客标识</td><td>只有一堆匿名访问，不知道哪条计划</td></tr><tr><td>询盘</td><td>表单里的姓名、公司、电话、来源</td><td>表单记录上的 UTM 字段</td><td>有线索数没有来源，投放报表和销售对不上</td></tr><tr><td>CRM 商机</td><td>线索对象、商机阶段、负责人</td><td>线索与商机的关联</td><td>只有销售口头知道是哪条广告来的</td></tr><tr><td>成交金额</td><td>赢单商机上的金额</td><td>商机与成交挂在同一条记录上</td><td>只能看到成交总额，拆不到计划</td></tr></tbody></table>
+      <p>先看第一列。你现在手上有没有“某条计划某天花了多少钱、带来多少次点击”这份明细？有的话往下走。第二列决定这份明细能不能接上。</p>
+      <p>巨量引擎、Meta、TikTok 三家的后台报表字段各叫各的，不先归一，连“哪条计划花了多少钱”都对不齐。做法是把三家的数按同一套字段收进同一张日维度记录表，同一条连接、同一条计划、同一天算同一条记录，重复拉取不改变数。这样“这条计划花了多少”才有唯一答案。</p>
+      <p>这一步我们已经实现，待部署与凭证接入。三家平台的字段名和转化类型清单还要拿真实 Key 校准，目前跑通的是按公开文档搭的结构。</p>
+      <h2>哪些数字算不出来</h2>
+      <p>这是全文最该看的一节。分三档。</p>
+      <p><strong>算得出来的</strong>：某条计划某天花了多少、带来多少次点击、带来几次留资，前提是 UTM 和表单记录都在。</p>
+      <p><strong>要人配一眼的</strong>：这条计划带来几个商机。需要销售在 CRM 里把商机和线索对上，对不上就断在这里。系统能列出哪些商机缺来源字段，缺的那部分还得人去核。</p>
+      <p><strong>算不出来的</strong>：这笔广告费花得值不值。</p>
+      <p>老实说，这一档要说重一点。“这个月投了 3 万，成交 20 万”不构成因果，只构成同时发生。你没有对照组，就没有增量归因。什么是对照组，简单说，一组客户看过广告，另一组没看过，两组成交额的差才说明广告起了作用。没有对照组，任何工具给出的“广告带来的成交额”都只是一个口径，不是一个结论。</p>
+      <p>别的工具在这一档会给什么数字，我不知道，也不替它们猜。所以这一档在我们这里是空的，我觉得这比编一个数诚实。</p>
+      <p>顺带说一个常见的对不上：广告平台报一次点击，官网报一次留资，两边数字不一样，多数时候不是谁错了，是两边数的不是一回事。落地页这边的转化要靠埋点收上来，官网的注册、试用申请、落地页留资三处转化事件埋点已经完成，待部署后生效。在那之前对不齐是正常的。</p>
+      <p>另外，很多投放工具停在线索数就结束了，它们的库里根本没有成交金额。成交金额只在 CRM 里。</p>
+      <h2>工具该做哪一步，不该碰哪一步</h2>
+      <p>先说我的立场：我不认为工具应该碰你的钱。</p>
+      <p>该做的是三件事。把三家平台的数拉回来放进同一套口径。把点击和 CRM 里的成交串起来。把明显不对的地方提醒出来，比如 ROI 低于你设的阈值并且花钱不少，或者某条素材的点击率连续往下走。这些建议是规则型的，触发条件一句话能说清，不是机器学习预测。每条建议都要人确认，不确认就不动。</p>
+      <p>不该做的是调价、改预算、建计划、代开户、代充钱，也不替你决定投哪条计划。钱走代理商，账户是你自己的。</p>
+      <p>我们做的是把数拉回来，给建议，归因到成交，执行由人做。</p>
+      <h2>今天能做的三件事</h2>
+      <p><strong>让代理商的每条计划都带 UTM</strong>，campaign 名一眼能看出是哪条计划，别用随机串。这一条要写进代理商的投放规范，不是靠每次投放的人记得。</p>
+      <p><strong>把“线索来源”设成 CRM 里的必填项</strong>，销售新建线索时不填不能存。来源字段是这条链上最便宜的一环，也是最容易丢的一环。</p>
+      <p><strong>挑上个月花钱最多的三条计划，手动把它们的线索和成交对一遍</strong>，看能对上几条。对不上的那部分在哪里，你的断点就在哪里。</p>
+      <p>如果只做一件，做第三件。前两件是修断点，第三件是找出断点。</p>
+      <p>---</p>
+    </div>
+  </article>
+
+  <footer>
+    <p>© 2026 SiliMind. All rights reserved.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <title>광고비의 행방: 클릭부터 CRM 성사까지의 추적 라인 - SiliMind Blog</title>
+  <meta name="description" content="리드는 들어왔는데 어느 딜이 광고에서 왔는지 모른다면——광고 클릭과 CRM 성사 사이의 4단 절단점, 오늘 바로 할 수 있는 3가지 대응까지 정리했습니다." />
+  <link rel="canonical" href="https://www.silimind.net/blog/ad-click-to-crm-deal-attribution" />
+  <meta property="og:title" content="광고비의 행방: 클릭부터 CRM 성사까지의 추적 라인 - SiliMind Blog" />
+  <meta property="og:description" content="리드는 들어왔는데 어느 딜이 광고에서 왔는지 모른다면——광고 클릭과 CRM 성사 사이의 4단 절단점, 오늘 바로 할 수 있는 3가지 대응까지 정리했습니다." />
+  <meta property="og:url" content="https://www.silimind.net/blog/ad-click-to-crm-deal-attribution" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="ko_KR" />
+  <meta property="og:site_name" content="SiliMind" />
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJ7HH4824R"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RJ7HH4824R');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "광고비는 어디서 매출이 됐나: 클릭부터 CRM 성사까지의 한 줄",
+    "description": "리드는 들어왔는데 어느 딜이 광고에서 왔는지 모른다면——광고 클릭과 CRM 성사 사이의 4단 절단점, 오늘 바로 할 수 있는 3가지 대응까지 정리했습니다.",
+    "datePublished": "2026-11-18",
+    "author": {
+      "@type": "Organization",
+      "name": "SiliMind"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SiliMind",
+      "url": "https://www.silimind.net"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.silimind.net/blog/ad-click-to-crm-deal-attribution"
+    }
+  }
+  </script>
+  <style>
+    :root {
+      --bg-primary: #0a0a0f;
+      --bg-secondary: #12121a;
+      --bg-card: #16161f;
+      --accent: #6366f1;
+      --accent-light: #818cf8;
+      --text-primary: #f0f0f5;
+      --text-secondary: rgba(240,240,245,0.6);
+      --border: rgba(99,102,241,0.08);
+      --border-hover: rgba(99,102,241,0.25);
+      --font: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'PingFang SC', 'Noto Sans SC', sans-serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* Nav */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(10,10,15,0.9);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      height: 64px;
+    }
+    .nav-inner {
+      max-width: 1100px; margin: 0 auto; padding: 0 32px;
+      height: 100%; display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      font-size: 20px; font-weight: 700; color: var(--accent-light);
+      text-decoration: none; letter-spacing: 1px;
+    }
+    .nav-links { list-style: none; display: flex; gap: 32px; }
+    .nav-links a {
+      color: var(--text-secondary); text-decoration: none; font-size: 14px;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--text-primary); }
+
+    /* Article */
+    .article-container {
+      max-width: 760px; margin: 0 auto;
+      padding: 120px 32px 80px;
+    }
+    .article-header {
+      margin-bottom: 40px;
+    }
+    .article-header h1 {
+      font-size: 32px; font-weight: 700; line-height: 1.3;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #6366f1, #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .article-meta {
+      font-size: 14px; color: var(--text-secondary);
+    }
+    .article-meta time {
+      margin-right: 16px;
+    }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      color: var(--accent-light); text-decoration: none; font-size: 14px;
+      margin-bottom: 24px; transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--text-primary); }
+
+    /* Article body */
+    .article-body h2 {
+      font-size: 24px; font-weight: 600; margin: 40px 0 16px;
+      color: var(--text-primary);
+    }
+    .article-body h3 {
+      font-size: 20px; font-weight: 600; margin: 32px 0 12px;
+      color: var(--text-primary);
+    }
+    .article-body p {
+      font-size: 16px; line-height: 1.8; color: var(--text-secondary);
+      margin-bottom: 20px;
+    }
+    .article-body ul, .article-body ol {
+      margin-bottom: 20px; padding-left: 24px; color: var(--text-secondary);
+    }
+    .article-body li {
+      margin-bottom: 8px; font-size: 16px; line-height: 1.8;
+    }
+    .article-body blockquote {
+      border-left: 3px solid var(--accent);
+      padding: 16px 24px;
+      margin: 24px 0;
+      background: var(--bg-secondary);
+      border-radius: 0 8px 8px 0;
+      color: var(--text-secondary);
+      font-size: 15px;
+    }
+    .article-body code {
+      background: var(--bg-secondary);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 14px;
+      color: var(--accent-light);
+    }
+    .article-body pre {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px 24px;
+      overflow-x: auto;
+      margin-bottom: 20px;
+    }
+    .article-body pre code {
+      background: none; padding: 0; font-size: 14px;
+      color: var(--text-primary);
+    }
+    .article-body img {
+      max-width: 100%; border-radius: 8px; margin: 24px 0;
+    }
+    .article-body a {
+      color: var(--accent-light); text-decoration: underline;
+      text-decoration-color: rgba(129,140,248,0.3);
+      transition: text-decoration-color 0.2s;
+    }
+    .article-body a:hover {
+      text-decoration-color: var(--accent-light);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center; padding: 40px 32px;
+      border-top: 1px solid var(--border);
+      color: var(--text-secondary); font-size: 13px;
+    }
+
+    @media (max-width: 768px) {
+      .article-container { padding: 100px 16px 60px; }
+      .article-header h1 { font-size: 26px; }
+      .article-body h2 { font-size: 20px; }
+      .nav-links { display: none; }
+    }
+  </style>
+<link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/blog/ad-click-to-crm-deal-attribution" />
+<link rel="alternate" hreflang="en" href="https://www.silimind.net/en/blog/ad-click-to-crm-deal-attribution" />
+<link rel="alternate" hreflang="ja" href="https://www.silimind.net/ja/blog/ad-click-to-crm-deal-attribution" />
+<link rel="alternate" hreflang="ko" href="https://www.silimind.net/ko/blog/ad-click-to-crm-deal-attribution" />
+<link rel="alternate" hreflang="x-default" href="https://www.silimind.net/blog/ad-click-to-crm-deal-attribution" />
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">SiliMind</a>
+      <ul class="nav-links">
+        <li><a href="/blog/" class="active">Blog</a></li>
+        <li><a href="/#features">核心能力</a></li>
+        <li><a href="#">解决方案</a></li>
+        <li><a href="#">关于我们</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <article class="article-container">
+    <a href="/blog/" class="back-link">← 返回博客</a>
+    <header class="article-header">
+      <h1>광고비는 어디서 매출이 됐나: 클릭부터 CRM 성사까지의 한 줄</h1>
+      <div class="article-meta">
+        <time datetime="2026-11-18">2026.11.18.</time>
+        <span>SiliMind</span>
+      </div>
+    </header>
+    <div class="article-body">
+      <h2>주간 보고서 한 장과, "모르겠습니다"라는 한마디</h2>
+      <p>(아래 장면은 합성 시나리오입니다. 광고주들이 흔히 겪는 정산 상황을 엮어 만든 것으로, 특정 회사의 실제 기록이 아닙니다. 인명·금액·수치는 모두 예시입니다.)</p>
+      <p>수요일 오후, 사장이 대행사의 주간 보고서를 탁자에 내려놓았다. 표에는 이번 달 리드 386건, 리드당 단가 92원이 적혀 있었다.</p>
+      <p>"이 리드 중 몇 건이 딜로 이어졌지?"</p>
+      <p>영업 디렉터가 두 페이지를 넘기며 말했다. "지난주에 4건 계약했는데, 어느 건이 광고에서 온 건지는 모르겠습니다."</p>
+      <p>이 한마디로, 그 달 광고비 3.5만 위안이 얼마의 매출에 해당하는지 회사 안에서 즉시 답할 수 있는 사람은 아무도 없었다. 대행사 손에는 리드 수가, 사장 손에는 매출액이 있었고, 그 사이에는 시스템 두 개와 구두 보고만 있었다. 나는 이 장면을 여러 번 봤고, 파고들 때마다 같은 종류의 문제였다.</p>
+      <p>보고서를 잘 못 만든 것처럼 보이지만, 실제로는 데이터 체인이 하나하나 끊어진 것이다. 어디서 끊기는지, 스스로 어떻게 점검하는지를 이 글에서 정리한다.</p>
+      <h2>돈과 성사 사이에는 끊긴 곳이 한 곳이 아니다</h2>
+      <p>이 주제를 다룬 글들은 대개 "데이터 사일로" 한마디로 넘어간다. 사일로는 은유일 뿐 손을 쓸 수 없다. 실제로 파보면 절단점은 네 개이고, 각각 모양도 풀이도 다르다.</p>
+      <p><strong>절단점 1: 클릭은 랜딩 페이지에 닿았지만, 유입 출처가 사라졌다.</strong> 광고 링크에는 UTM이라는 태그 열이 붙는다. 쉽게 말해 "이 태그 열이 이 방문이 어떤 광고에서 왔는지를 시스템에 알려준다"는 것. 랜딩 페이지 폼이 제출과 함께 이 태그를 저장하지 않으면, 클릭과 그 뒤의 리드 사이에 연결점이 하나도 없다.</p>
+      <p><strong>절단점 2: 리드가 폼 백엔드나 대행사의 시트에만 들어가고 CRM에는 들어가지 않았다.</strong> 많은 회사가 문의를 무료 폼 도구나 대행사 표에 먼저 모으고, 영업은 그룹 채팅의 스크린샷으로 신규 리드를 알게 된다. 누군가 이 데이터를 손으로 CRM에 옮기는 동안 출처 필드는 비어 있는 경우가 많다. <a href="https://www.silimind.net/blog/content-attribution-b2b">콘텐츠 어트리뷰션 방법</a>이 이 출처 필드를 추적 가능하게 유지하는 방법을 다룬 글이다.</p>
+      <p><strong>절단점 3: CRM에는 들어갔는데, 무엇이 유효 리드인지 아무도 정하지 않았다.</strong> 영업이 2주 팔로업한 뒤 경쟁사 견적 탐색임을 알고 삭제한다. 이 삭제가 퍼널 분모를 바꾼다. 지난주 "리드 386건", 이번 주 "340건"의 차이는 그 사이 무효 레코드 46건을 지운 것일 수 있다.</p>
+      <p><strong>절단점 4: 계약이 성사됐는데, 금액이 그 리드와 연결되지 않았다.</strong> 계약서는 계약 모듈에, 기회는 CRM에, 금액은 견적서에 있다. 세 개의 기록이 각자 작성되고, "이 딜은 9월 그 피드 광고에서 왔다"고 사람이 판단해야 한다.</p>
+      <p>넷 중 절단점 1과 2는 기술 문제다. 한 번 고치면 오래 듣는다. 절단점 3은 정의 문제로, 실제 집행 가능한 판정 규칙이 필요하다. 절단점 4는 습관 문제로, 한 번 고치면 이후 매일 조금씩 수고를 덜어준다.</p>
+      <h2>체인은 어떤 모습인가</h2>
+      <p>체인은 5개 구간으로 이어지며, 각 구간은 하나의 구체적 필드로 다음 구간과 연결된다.</p>
+      <table><thead><tr><th>구간</th><th>기록하는 것</th><th>다음 구간과 잇는 것</th><th>빠졌을 때 보이는 것</th></tr></thead><tbody><tr><td>광고 클릭</td><td>플랫폼, 계획, 날짜, 소비, 클릭</td><td>광고 링크의 UTM 태그</td><td>랜딩 페이지에 방문은 있지만 유입 출처가 전부 공란</td></tr><tr><td>랜딩 페이지</td><td>방문 기록, 방문자 식별</td><td>방문자 식별</td><td>익명 방문 무리만 있고 어느 계획인지 알 수 없음</td></tr><tr><td>문의</td><td>폼의 이름·회사·전화·출처</td><td>폼 레코드의 UTM 필드</td><td>리드 수는 있지만 출처가 없어 광고 보고서와 영업이 맞지 않음</td></tr><tr><td>CRM 기회</td><td>리드 객체, 기회 단계, 담당자</td><td>리드-기회 연결</td><td>어느 광고에서 왔는지 영업의 구두 전달만 존재</td></tr><tr><td>성사 금액</td><td>수주 기회의 금액</td><td>성사와 기회가 같은 레코드에 기재</td><td>총매출만 보이고 계획별로 분해되지 않음</td></tr></tbody></table>
+      <p>먼저 첫째 열을 보라. "어느 계획이, 어느 날, 얼마를 소비하고, 몇 클릭을 냈는지" 명세를 지금 갖고 있는가. 있다면 다음으로 진행한다. 둘째 열이 이 명세를 연결할 수 있는지를 결정한다.</p>
+      <p>옥션 엔진(巨量引擎), Meta, TikTok 세 곳의 보고서 필드 명칭은 제각각이다. 정규화하지 않으면 "어느 계획이 얼마를 소비했는지"조차 맞춰지지 않는다. 방법은 세 플랫폼의 수치를 같은 필드 세트로 하나의 일 단위 레코드 테이블에 모으는 것이다. 같은 연결·같은 계획·같은 날은 하나의 레코드로 계산하고, 재추출해도 수치가 변하지 않는다. 그래야만 "이 계획의 소비액"에 유일한 답이 생긴다.</p>
+      <p>이 부분은 이미 구현했고, 배포와 크리덴셜 연결을 기다리는 상태다. 세 플랫폼의 필드명과 전환 유형 목록은 실제 키로 보정이 필요하며, 현재 end-to-end로 도는 것은 공개 문서로 만든 구조까지다.</p>
+      <h2>계산할 수 없는 숫자</h2>
+      <p>이것이 글 전체에서 가장 읽을 가치가 있는 절이다. 세 단계로 나뉜다.</p>
+      <p><strong>계산할 수 있는 것</strong>: 어느 계획이 어느 날 얼마를 소비했고, 몇 클릭, 몇 리드를 냈는지. UTM 태그와 폼 레코드가 모두 존재한다는 전제가 붙는다.</p>
+      <p><strong>사람이 한 번 짚어야 하는 것</strong>: 그 계획이 몇 개의 기회를 냈는지. 영업이 CRM 안에서 기회와 리드를 맞춰야 하며, 맞춰지지 않으면 여기서 체인이 끊긴다. 시스템은 출처 필드가 빠진 기회를 목록으로 보여줄 수 있지만, 빠진 부분은 결국 사람이 확인해야 한다.</p>
+      <p><strong>계산할 수 없는 것</strong>: 이 광고비가 값어치가 있었는지.</p>
+      <p>솔직히 말하겠다. 이 단계는 무겁게 말할 가치가 있다. "이달 3만을 집행하고 20만을 성사했다"는 것은 인과가 아니라 동시 발생일 뿐이다. 대조군이 없으면 증분 어트리뷰션은 존재하지 않는다. 대조군이란 간단히 말해, 광고를 본 고객군과 보지 않은 군, 두 그룹의 성사액 차이가 광고의 효과를 말해준다는 뜻이다. 대조군이 없다면, 어떤 도구가 내놓는 "광고가 만든 성사액"도 결론이 아니라 하나의 정의일 뿐이다.</p>
+      <p>다른 도구들이 이 단계에서 어떤 숫자를 내놓는지 나는 모르고, 대신 추측하지도 않겠다. 그래서 우리의 이 단계는 비어 있다. 숫자를 지어내는 것보다 정직하다고 생각한다.</p>
+      <p>덧붙여 자주 생기는 불일치를 하나 말하자. 광고 플랫폼은 클릭을 보고하고, 웹사이트는 리드를 보고한다. 두 수치가 맞지 않을 때 대부분은 누군가 틀린 게 아니라, 세는 대상이 다른 것이다. 랜딩 페이지 쪽 전환은 트래킹 이벤트에 의존한다. 우리 사이트의 세 가지 전환 이벤트——가입, 체험 신청, 랜딩 페이지 리드 폼——은 이미 구현되었고 배포 후 활성화된다. 그때까지는 어긋나는 것이 정상이다.</p>
+      <p>또한 많은 광고 도구는 리드 수에서 끝난다. 그 데이터베이스에는 성사 금액이 애초에 없다. 성사 금액은 CRM에만 있다.</p>
+      <h2>도구가 해야 할 일과 손대서는 안 되는 것</h2>
+      <p>먼저 내 입장부터. 도구가 당신의 돈을 만져서는 안 된다고 본다.</p>
+      <p>해야 할 일은 세 가지다. 세 플랫폼의 수치를 같은 정의 아래로 가져온다. 클릭과 CRM 안의 성사를 연결한다. 명백히 이상한 곳을 경고한다. 예컨대 ROI가 설정한 임계값 아래인데 소비가 크다거나, 특정 소재의 클릭률이 며칠째 떨어지는 경우다. 이 제안들은 규칙 기반이고, 발동 조건을 한 문장으로 말할 수 있다. 머신러닝 예측이 아니다. 모든 제안은 사람이 확인해야 하며, 확인 없으면 아무것도 움직이지 않는다.</p>
+      <p>해서는 안 되는 것: 입찰 조정, 예산 변경, 계획 생성, 대리 개설, 대리 충전, 그리고 어느 계획에 집행할지 대신 결정하는 일. 돈은 대행사를 통해 흐르고, 계정은 당신 것이다.</p>
+      <p>우리가 하는 것은 수치를 가져오고, 제안하고, 성사에 귀속시키는 것까지다. 실행은 사람이 한다.</p>
+      <h2>오늘 할 수 있는 세 가지</h2>
+      <p><strong>대행사가 모든 계획에 UTM을 붙이게 하라.</strong> 캠페인 이름만 보고 어느 계획인지 알 수 있어야 하고, 무작위 문자열은 금지한다. 이것은 집행 규범에 써넣어야 할 항목이지, 그날 담당자가 기억하는 것에 맡길 일이 아니다.</p>
+      <p><strong>CRM에서 "리드 출처"를 필수 항목으로 설정하라.</strong> 영업이 신규 리드를 저장할 때 비워 두면 저장되지 않게 한다. 출처 필드는 이 체인에서 가장 값싼 고리이자 가장 쉽게 잃어버리는 고리다.</p>
+      <p><strong>지난달 소비액 상위 3개 계획을 골라 리드와 성사를 수작업으로 한 번 대조하라.</strong> 몇 건이 맞아떨어지는지 보라. 맞지 않는 부분이 있는 곳이 바로 당신의 절단점이 있는 곳이다.</p>
+      <p>하나만 할 거라면 셋째를 해라. 첫째와 둘째는 절단점을 고치는 것이고, 셋째는 절단점을 찾는 것이므로.</p>
+    </div>
+  </article>
+
+  <footer>
+    <p>© 2026 SiliMind. All rights reserved.</p>
+  </footer>
+</body>
+</html>

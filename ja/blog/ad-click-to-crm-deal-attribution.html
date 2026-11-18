@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <title>広告費の行方：クリックからCRM成約までの追跡ライン - SiliMind Blog</title>
+  <meta name="description" content="リードは入ったのに、どの成約が広告から来たか分からない——広告クリックとCRM成約の間にある4つの断点、今日できる3つの対処、そして「算出できない」と正直に書く理由まで。" />
+  <link rel="canonical" href="https://www.silimind.net/blog/ad-click-to-crm-deal-attribution" />
+  <meta property="og:title" content="広告費の行方：クリックからCRM成約までの追跡ライン - SiliMind Blog" />
+  <meta property="og:description" content="リードは入ったのに、どの成約が広告から来たか分からない——広告クリックとCRM成約の間にある4つの断点、今日できる3つの対処、そして「算出できない」と正直に書く理由まで。" />
+  <meta property="og:url" content="https://www.silimind.net/blog/ad-click-to-crm-deal-attribution" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="ja_JP" />
+  <meta property="og:site_name" content="SiliMind" />
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJ7HH4824R"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RJ7HH4824R');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "広告費はどこで実になったか：クリックからCRM成約までの一本の線",
+    "description": "リードは入ったのに、どの成約が広告から来たか分からない——広告クリックとCRM成約の間にある4つの断点、今日できる3つの対処、そして「算出できない」と正直に書く理由まで。",
+    "datePublished": "2026-11-18",
+    "author": {
+      "@type": "Organization",
+      "name": "SiliMind"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SiliMind",
+      "url": "https://www.silimind.net"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.silimind.net/blog/ad-click-to-crm-deal-attribution"
+    }
+  }
+  </script>
+  <style>
+    :root {
+      --bg-primary: #0a0a0f;
+      --bg-secondary: #12121a;
+      --bg-card: #16161f;
+      --accent: #6366f1;
+      --accent-light: #818cf8;
+      --text-primary: #f0f0f5;
+      --text-secondary: rgba(240,240,245,0.6);
+      --border: rgba(99,102,241,0.08);
+      --border-hover: rgba(99,102,241,0.25);
+      --font: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'PingFang SC', 'Noto Sans SC', sans-serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* Nav */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(10,10,15,0.9);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      height: 64px;
+    }
+    .nav-inner {
+      max-width: 1100px; margin: 0 auto; padding: 0 32px;
+      height: 100%; display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      font-size: 20px; font-weight: 700; color: var(--accent-light);
+      text-decoration: none; letter-spacing: 1px;
+    }
+    .nav-links { list-style: none; display: flex; gap: 32px; }
+    .nav-links a {
+      color: var(--text-secondary); text-decoration: none; font-size: 14px;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--text-primary); }
+
+    /* Article */
+    .article-container {
+      max-width: 760px; margin: 0 auto;
+      padding: 120px 32px 80px;
+    }
+    .article-header {
+      margin-bottom: 40px;
+    }
+    .article-header h1 {
+      font-size: 32px; font-weight: 700; line-height: 1.3;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #6366f1, #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .article-meta {
+      font-size: 14px; color: var(--text-secondary);
+    }
+    .article-meta time {
+      margin-right: 16px;
+    }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      color: var(--accent-light); text-decoration: none; font-size: 14px;
+      margin-bottom: 24px; transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--text-primary); }
+
+    /* Article body */
+    .article-body h2 {
+      font-size: 24px; font-weight: 600; margin: 40px 0 16px;
+      color: var(--text-primary);
+    }
+    .article-body h3 {
+      font-size: 20px; font-weight: 600; margin: 32px 0 12px;
+      color: var(--text-primary);
+    }
+    .article-body p {
+      font-size: 16px; line-height: 1.8; color: var(--text-secondary);
+      margin-bottom: 20px;
+    }
+    .article-body ul, .article-body ol {
+      margin-bottom: 20px; padding-left: 24px; color: var(--text-secondary);
+    }
+    .article-body li {
+      margin-bottom: 8px; font-size: 16px; line-height: 1.8;
+    }
+    .article-body blockquote {
+      border-left: 3px solid var(--accent);
+      padding: 16px 24px;
+      margin: 24px 0;
+      background: var(--bg-secondary);
+      border-radius: 0 8px 8px 0;
+      color: var(--text-secondary);
+      font-size: 15px;
+    }
+    .article-body code {
+      background: var(--bg-secondary);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 14px;
+      color: var(--accent-light);
+    }
+    .article-body pre {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px 24px;
+      overflow-x: auto;
+      margin-bottom: 20px;
+    }
+    .article-body pre code {
+      background: none; padding: 0; font-size: 14px;
+      color: var(--text-primary);
+    }
+    .article-body img {
+      max-width: 100%; border-radius: 8px; margin: 24px 0;
+    }
+    .article-body a {
+      color: var(--accent-light); text-decoration: underline;
+      text-decoration-color: rgba(129,140,248,0.3);
+      transition: text-decoration-color 0.2s;
+    }
+    .article-body a:hover {
+      text-decoration-color: var(--accent-light);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center; padding: 40px 32px;
+      border-top: 1px solid var(--border);
+      color: var(--text-secondary); font-size: 13px;
+    }
+
+    @media (max-width: 768px) {
+      .article-container { padding: 100px 16px 60px; }
+      .article-header h1 { font-size: 26px; }
+      .article-body h2 { font-size: 20px; }
+      .nav-links { display: none; }
+    }
+  </style>
+<link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/blog/ad-click-to-crm-deal-attribution" />
+<link rel="alternate" hreflang="en" href="https://www.silimind.net/en/blog/ad-click-to-crm-deal-attribution" />
+<link rel="alternate" hreflang="ja" href="https://www.silimind.net/ja/blog/ad-click-to-crm-deal-attribution" />
+<link rel="alternate" hreflang="ko" href="https://www.silimind.net/ko/blog/ad-click-to-crm-deal-attribution" />
+<link rel="alternate" hreflang="x-default" href="https://www.silimind.net/blog/ad-click-to-crm-deal-attribution" />
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">SiliMind</a>
+      <ul class="nav-links">
+        <li><a href="/blog/" class="active">Blog</a></li>
+        <li><a href="/#features">核心能力</a></li>
+        <li><a href="#">解决方案</a></li>
+        <li><a href="#">关于我们</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <article class="article-container">
+    <a href="/blog/" class="back-link">← 返回博客</a>
+    <header class="article-header">
+      <h1>広告費はどこで実になったか：クリックからCRM成約までの一本の線</h1>
+      <div class="article-meta">
+        <time datetime="2026-11-18">2026年11月18日</time>
+        <span>SiliMind</span>
+      </div>
+    </header>
+    <div class="article-body">
+      <h2>週報一枚と、「分かりません」の一言</h2>
+      <p>（以下は合成シーンです。広告主の間でよく起きる照合作業を組み合わせたもので、特定の企業の実録ではありません。人名・金額・数値はすべて仮です。）</p>
+      <p>水曜の午後、社長が代理店の週報をテーブルに置いた。そこには「今月のリード386件、獲得単価92元」と書いてあった。</p>
+      <p>「このリードのうち、何件が成約になった？」</p>
+      <p>営業ディレクターは2ページめくり、「先週4件契約しましたが、どれが広告経由かは分かりません」と答えた。</p>
+      <p>この一言で、その月の広告費3.5万元がどれだけの成約額に対応するのか、社内で即座に答えられた人は一人もいなかった。代理店の手にはリード数、社長の手には成約額、その間には2つのシステムと口頭の報告しかなかった。この場面には何度も遭遇した。調べてみると、いつも同じ種類の問題だった。</p>
+      <p>報表の作り方の問題に見えて、実態はデータチェーンが一節ずつ切れているのだ。どこで切れ、どう自分で点検するか。それをこの記事で明らかにする。</p>
+      <h2>お金と成約の間で切れているのは一箇所ではない</h2>
+      <p>この問題を扱う記事の多くは「データのサイロ」で済ませる。サイロは比喩で、手の動かしようがない。実際に調べると、切れ目は4つあり、それぞれ形も解法も違う。</p>
+      <p><strong>断点1：クリックはランディングページに届いたが、流入元が失われた。</strong> 広告リンクにはUTMというタグ列が付いている。平たく言えば「このタグ列が、今回の訪問がどの広告から来たかをシステムに伝える」。ランディングページのフォーム送信時にこのタグ列を一緒に保存しなければ、クリックとその後のリードの間には接続点が一切ない。</p>
+      <p><strong>断点2：リードはフォームバックエンドや代理店のシートに入り、CRMには入らなかった。</strong> 多くの会社では問い合わせがまず無料フォームツールや代理店の表に集まり、営業はグループチャットのスクリーンショットで新規リードを知る。このデータを誰かが手作業でCRMに移し、その途中でソース欄は埋められないままになりがいだ。<a href="https://www.silimind.net/blog/content-attribution-b2b">コンテンツアトリビューションのやり方</a>は、このソース欄を追跡可能に保つ方法についての記事だ。</p>
+      <p><strong>断点3：CRMには入ったが、何が有効リードかを誰も定めていなかった。</strong> 営業が2週間フォローして競合の価格探りだと分かり、削除する。この削除でファネルの分母が変わる。「先週リード386件」「今週340件」の違いは、間に無効レコード46件を消しただけかもしれない。</p>
+      <p><strong>断点4：成約したのに、金額がそのリードにつながっていなかった。</strong> 契約は契約モジュールに、商談はCRMに、金額は見積書に。3つの記録がばらばらに書かれ、「この成約は9月のあのフィード広告だ」と人間が判断するしかない。</p>
+      <p>4つのうち、断点1と2は技術的な問題で、一度直せば長く効く。断点3は定義の問題で、実際に運用できる判定ルールが要る。断点4は習慣の問題で、一度直せば毎日少し手間が減る。</p>
+      <h2>チェーンはどう見えるか</h2>
+      <p>チェーンは5つの区間からなり、各区間は特定のフィールドで次につながる。</p>
+      <table><thead><tr><th>区間</th><th>記録するもの</th><th>次につなぐもの</th><th>欠けたときの見た目</th></tr></thead><tbody><tr><td>広告クリック</td><td>プラットフォーム、プラン、日付、消化、クリック</td><td>広告リンクのUTMタグ</td><td>ランディングページに訪問はあるが流入元が空</td></tr><tr><td>ランディングページ</td><td>訪問記録、訪問者識別</td><td>訪問者識別</td><td>匿名訪問の束だけで、どのプランか分からない</td></tr><tr><td>問い合わせ</td><td>フォームの氏名・会社・電話・ソース</td><td>フォームレコードのUTM欄</td><td>リード数はあるがソースがなく、広告報告と営業が合わない</td></tr><tr><td>CRM商談</td><td>リードオブジェクト、商談ステージ、担当</td><td>リードと商談の紐付け</td><td>どの広告から来たかは営業の口伝だけ</td></tr><tr><td>成約額</td><td>受注商談の金額</td><td>成約と商談が同じレコードに載る</td><td>成約総額は見えてもプラン別に分解できない</td></tr></tbody></table>
+      <p>まず第一列を見てほしい。「どのプランが・どの日に・いくら消化して・何クリックか」という明細を今持っているか。持っていれば先へ進める。第二列が、その明細をつなげられるかどうかを決める。</p>
+      <p>オーシャンエンジン（巨量引擎）、Meta、TikTokの3社は報告フィールドの名前がばらばらだ。正規化しなければ「どのプランがいくら消化したか」すら揃わない。解法は、3社の数値を同じフィールドセットで1つの日次レコード表に集めること。同じ接続・同じプラン・同じ日は1レコードとし、再取得しても数は変わらない。そうして初めて「このプランの消化額」に唯一の答えが生まれる。</p>
+      <p>この部分はすでに実装済みで、デプロイと認証情報の接続を待っている状態だ。3プラットフォームのフィールド名とコンバージョンタイプのリストは、実キーでの校正が必要で、今動いているのは公開ドキュメントに基づいて組んだ構造までである。</p>
+      <h2>算出できない数字</h2>
+      <p>これは全文で一番読む価値のある節だ。3段階に分ける。</p>
+      <p><strong>算出できる</strong>：あるプランがある日にいくら消化し、何クリック、何リードを生んだか。UTMとフォームレコードが両方あることが前提。</p>
+      <p><strong>人間が一目合わせる必要がある</strong>：そのプランがいくつの商談を生んだか。営業がCRM内で商談とリードを紐付ける必要があり、紐付かなければここで切れる。システムはソース欄の欠けた商談を一覧できるが、欠けた分は人が確認するしかない。</p>
+      <p><strong>算出できない</strong>：この広告費の価値が見合ったか。</p>
+      <p>正直に言う。この段階は重めに言わせてほしい。「今月3万投じて20万成約」は因果ではなく、同時発生を示すだけだ。対照群がなければ増分アトリビューションは存在しない。対照群とは、広告を見た顧客群と見ていない群の成約額の差のことだ。対照群がなければ、どんなツールが出す「広告が生んだ成約額」も、それは口径であって結論ではない。</p>
+      <p>他のツールがこの段階でどんな数字を出すかは分からないし、代わりに推測もしない。だから我々のここは空欄だ。数字をでっち上げるより誠実だと思う。</p>
+      <p>ついでに、よくある食い違いを一つ。広告プラットフォームはクリックを報告し、サイトはリードを報告する。2つの数字が合わないとき、大半はどちらかが間違っているのではなく、数えているものが違う。ランディングページ側のコンバージョンはトラッキングイベントに依存する。当サイトの3つのコンバージョンイベント——登録・トライアル申込・ランディングページのリードフォーム——は実装済みで、デプロイ後に有効になる。それまでは合わないのが正常だ。</p>
+      <p>さらに、多くの広告ツールはリード数で止まっている。そのデータベースには成約額がそもそもない。成約額はCRMにしかない。</p>
+      <h2>ツールがすべきこと、触れてはいけないこと</h2>
+      <p>まず立場を言う。ツールがあなたのお金に触れるべきではないと思う。</p>
+      <p>やるべきことは3つ。3プラットフォームの数値を同じ口径で取り込む。クリックとCRM内の成約をつなぐ。明らかに変な箇所を警告する——例えばROIが設定した閾値を下回りながら消化が大きい、あるいはあるクリエイティブのCTRが連日下がっている、など。これらの提案はルールベースで、発火条件は一言で言える。機械学習の予測ではない。提案はすべて人が確認し、確認しなければ何も動かない。</p>
+      <p>すべきでないのは、入札調整、予算変更、プラン作成、代理開設、代理チャージ、そしてどのプランに投じるかの決定だ。お金は代理店を通り、アカウントはあなたのものだ。</p>
+      <p>我々がするのは、数値を取り込み、提案し、成約に帰属させること。実行は人がする。</p>
+      <h2>今日できる3つのこと</h2>
+      <p><strong>代理店に全プランへUTMを付けさせる。</strong> キャンペーン名を見てどのプランか一目で分かるように。ランダム文字列は使わせない。これは投下規範に書き込むべきもので、その日に担当者が覚えているかに頼るものではない。</p>
+      <p><strong>CRMで「リードソース」を必須項目にする。</strong> 営業が新規リードを保存時に埋めないと保存できないようにする。ソース欄はチェーンの中で最も安価な環であり、最も失われやすい環でもある。</p>
+      <p><strong>先月消化額の上位3プランを取り上げ、リードと成約を手作業で一度照合する。</strong> 何件合うかを見る。合わない部分がある場所が、あなたの断点のある場所だ。</p>
+      <p>一つだけやるなら3つ目だ。1つ目と2つ目は断点を直す作業で、3つ目は断点を見つける作業だからだ。</p>
+    </div>
+  </article>
+
+  <footer>
+    <p>© 2026 SiliMind. All rights reserved.</p>
+  </footer>
+</body>
+</html>
