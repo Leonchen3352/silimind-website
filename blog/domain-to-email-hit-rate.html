@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <title>公司名能搜到，联系人搜不到：域名找邮箱的真实命中率 - SiliMind Blog</title>
+  <meta name="description" content="按公司名搜联系人邮箱，十个搜不出七个？不是工具坏了，是还没定域名。域名找邮箱的真实命中率、职位/置信度/类型三个字段怎么用、五类空结果的含义、先小批量验证再放大的做法，一篇讲清。" />
+  <link rel="canonical" href="https://www.silimind.net/blog/domain-to-email-hit-rate" />
+  <meta property="og:title" content="公司名能搜到，联系人搜不到：域名找邮箱的真实命中率 - SiliMind Blog" />
+  <meta property="og:description" content="按公司名搜联系人邮箱，十个搜不出七个？不是工具坏了，是还没定域名。域名找邮箱的真实命中率、职位/置信度/类型三个字段怎么用、五类空结果的含义、先小批量验证再放大的做法，一篇讲清。" />
+  <meta property="og:url" content="https://www.silimind.net/blog/domain-to-email-hit-rate" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:site_name" content="SiliMind" />
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJ7HH4824R"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RJ7HH4824R');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "公司名能搜到，联系人搜不到：域名找邮箱的真实命中率",
+    "description": "按公司名搜联系人邮箱，十个搜不出七个？不是工具坏了，是还没定域名。域名找邮箱的真实命中率、职位/置信度/类型三个字段怎么用、五类空结果的含义、先小批量验证再放大的做法，一篇讲清。",
+    "datePublished": "2026-11-19",
+    "author": {
+      "@type": "Organization",
+      "name": "SiliMind"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SiliMind",
+      "url": "https://www.silimind.net"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.silimind.net/blog/domain-to-email-hit-rate"
+    }
+  }
+  </script>
+  <style>
+    :root {
+      --bg-primary: #0a0a0f;
+      --bg-secondary: #12121a;
+      --bg-card: #16161f;
+      --accent: #6366f1;
+      --accent-light: #818cf8;
+      --text-primary: #f0f0f5;
+      --text-secondary: rgba(240,240,245,0.6);
+      --border: rgba(99,102,241,0.08);
+      --border-hover: rgba(99,102,241,0.25);
+      --font: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'PingFang SC', 'Noto Sans SC', sans-serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* Nav */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(10,10,15,0.9);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      height: 64px;
+    }
+    .nav-inner {
+      max-width: 1100px; margin: 0 auto; padding: 0 32px;
+      height: 100%; display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      font-size: 20px; font-weight: 700; color: var(--accent-light);
+      text-decoration: none; letter-spacing: 1px;
+    }
+    .nav-links { list-style: none; display: flex; gap: 32px; }
+    .nav-links a {
+      color: var(--text-secondary); text-decoration: none; font-size: 14px;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--text-primary); }
+
+    /* Article */
+    .article-container {
+      max-width: 760px; margin: 0 auto;
+      padding: 120px 32px 80px;
+    }
+    .article-header {
+      margin-bottom: 40px;
+    }
+    .article-header h1 {
+      font-size: 32px; font-weight: 700; line-height: 1.3;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #6366f1, #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .article-meta {
+      font-size: 14px; color: var(--text-secondary);
+    }
+    .article-meta time {
+      margin-right: 16px;
+    }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      color: var(--accent-light); text-decoration: none; font-size: 14px;
+      margin-bottom: 24px; transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--text-primary); }
+
+    /* Article body */
+    .article-body h2 {
+      font-size: 24px; font-weight: 600; margin: 40px 0 16px;
+      color: var(--text-primary);
+    }
+    .article-body h3 {
+      font-size: 20px; font-weight: 600; margin: 32px 0 12px;
+      color: var(--text-primary);
+    }
+    .article-body p {
+      font-size: 16px; line-height: 1.8; color: var(--text-secondary);
+      margin-bottom: 20px;
+    }
+    .article-body ul, .article-body ol {
+      margin-bottom: 20px; padding-left: 24px; color: var(--text-secondary);
+    }
+    .article-body li {
+      margin-bottom: 8px; font-size: 16px; line-height: 1.8;
+    }
+    .article-body blockquote {
+      border-left: 3px solid var(--accent);
+      padding: 16px 24px;
+      margin: 24px 0;
+      background: var(--bg-secondary);
+      border-radius: 0 8px 8px 0;
+      color: var(--text-secondary);
+      font-size: 15px;
+    }
+    .article-body code {
+      background: var(--bg-secondary);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 14px;
+      color: var(--accent-light);
+    }
+    .article-body pre {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px 24px;
+      overflow-x: auto;
+      margin-bottom: 20px;
+    }
+    .article-body pre code {
+      background: none; padding: 0; font-size: 14px;
+      color: var(--text-primary);
+    }
+    .article-body img {
+      max-width: 100%; border-radius: 8px; margin: 24px 0;
+    }
+    .article-body a {
+      color: var(--accent-light); text-decoration: underline;
+      text-decoration-color: rgba(129,140,248,0.3);
+      transition: text-decoration-color 0.2s;
+    }
+    .article-body a:hover {
+      text-decoration-color: var(--accent-light);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center; padding: 40px 32px;
+      border-top: 1px solid var(--border);
+      color: var(--text-secondary); font-size: 13px;
+    }
+
+    @media (max-width: 768px) {
+      .article-container { padding: 100px 16px 60px; }
+      .article-header h1 { font-size: 26px; }
+      .article-body h2 { font-size: 20px; }
+      .nav-links { display: none; }
+    }
+  </style>
+<link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/blog/domain-to-email-hit-rate" />
+<link rel="alternate" hreflang="en" href="https://www.silimind.net/en/blog/domain-to-email-hit-rate" />
+<link rel="alternate" hreflang="ja" href="https://www.silimind.net/ja/blog/domain-to-email-hit-rate" />
+<link rel="alternate" hreflang="ko" href="https://www.silimind.net/ko/blog/domain-to-email-hit-rate" />
+<link rel="alternate" hreflang="x-default" href="https://www.silimind.net/blog/domain-to-email-hit-rate" />
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">SiliMind</a>
+      <ul class="nav-links">
+        <li><a href="/blog/" class="active">Blog</a></li>
+        <li><a href="/#features">核心能力</a></li>
+        <li><a href="#">解决方案</a></li>
+        <li><a href="#">关于我们</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <article class="article-container">
+    <a href="/blog/" class="back-link">← 返回博客</a>
+    <header class="article-header">
+      <h1>公司名能搜到，联系人搜不到：域名找邮箱的真实命中率</h1>
+      <div class="article-meta">
+        <time datetime="2026-11-19">2026年11月19日</time>
+        <span>SiliMind</span>
+      </div>
+    </header>
+    <div class="article-body">
+      <h2>一张客户表，四十家公司名</h2>
+      <p>（下面这段是合成场景，按外贸团队常见的找联系人场面拼成，不是任何一家公司的真实记录，人名和数量都是示意。）</p>
+      <p>周一上午，业务员小周把一张客户表发到群里。四十家公司，每行一个公司名加一个官网地址，他要在三天里给每家找到对接人的邮箱。</p>
+      <p>他打开一个邮箱查找工具，按公司名一个一个搜。搜了十个，七个提示没有结果。剩下三个搜出来了，邮箱长得几乎一样，都是 info@ 开头。他把截图丢到群里问了一句，这工具是不是不准。</p>
+      <p>群里有人回他，换个行业试试就好了。也有人回，这工具就是不准。</p>
+      <p>两种回答都不对。我前几天还见过一次同样的场面，问法就歪在这里。工具没坏，是喂给它的东西不对。</p>
+      <h2>按公司名搜不到人，这事本身正常</h2>
+      <p>像 Hunter.io 这类按域名找联系人邮箱的工具，基本都以域名为锚点。域名唯一，一家公司一个主域名。公司名不唯一：同名公司不少，中文名和英文名对不上，登记表里的后缀写法还有差异。</p>
+      <p>所以第一步不是搜，是把域名定下来。最快的一步是打开官网看地址栏，一般就是这个域名。找不到的话，翻一封对方发过来的旧邮件，看发件人后缀。再不行就查对方的工商登记信息，登记网址那一栏通常写着域名。</p>
+      <p>反直觉的地方就在这。中文公司名搜不到人，多半不是你翻译错了，是你手里还没有那个域名。</p>
+      <p>我把这件事翻过来讲一次会更清楚。找邮箱这件事的顺序，是先确定域名，再找人。工具帮你做的是第二步，它做不了第一步，因为第一步的答案不在工具的数据里，在对方官网和你的旧邮件里。</p>
+      <p>还有一个坑。有些公司在多个地方有域名，主品牌一个，集团一个，中国区站点又一个。搜品牌域名搜不到人，就换一个再搜。同一家公司换域名能搜出两条不同的邮箱，这两条未必矛盾。</p>
+      <h2>搜出来之后，三个字段决定你敢不敢发</h2>
+      <p>按域名查一次，每条结果通常带三个字段，职位、置信度、类型。</p>
+      <table><thead><tr><th>字段</th><th>它告诉你什么</th><th>怎么用</th><th>别怎么用</th></tr></thead><tbody><tr><td>职位</td><td>这个人在公司里负责什么</td><td>跟你要谈的角色对上了，进候选名单</td><td>对不上就当线索留着，别按对方职位称呼</td></tr><tr><td>置信度</td><td>工具对自己这条邮箱有多有把握</td><td>拿它决定发信方式，一封一封手工发</td><td>别把它当成准确率承诺</td></tr><tr><td>类型</td><td>个人邮箱还是角色邮箱</td><td>角色邮箱先问一句要找谁</td><td>别把角色邮箱当个人邮箱直接称呼</td></tr></tbody></table>
+      <p>三个字段里最容易被人误用的是置信度。白话说，它是工具对这条邮箱的把握程度，不是一张准保证票。我们不清楚低置信度具体意味着什么，能确定的是它不是准确率承诺。这种结果手工发一封、盯着回执，比塞进批量名单有用得多。</p>
+      <p>类型字段也有个常见误解。info@ 或者 sales@ 这类角色邮箱不指向具体的人，这一点跟职位字段能互相对上，收信的人未必是你想找的那位，更未必会由本人回复。这不代表这些邮箱没用，它代表用它的方式是先在正文里问一句要对接谁，等对方把你转给对的人。别在第一封信里就写某某经理您好。</p>
+      <h2>为什么这次只搜到一个</h2>
+      <p>小周后来拿剩下的公司接着试，攒下来的结果大致有五类原因。</p>
+      <table><thead><tr><th>现象</th><th>背后是什么</th><th>接下来做什么</th></tr></thead><tbody><tr><td>只搜到总机邮箱</td><td>公司小，只留了公共邮箱</td><td>当线索留着，人工问一句要谁对接</td></tr><tr><td>域名搜到了，人没搜到</td><td>目标人在母公司或子公司的另一个域名下</td><td>顺着公司名再找别的域名</td></tr><tr><td>域名本身不对</td><td>品牌域名、集团域名、中国区站点域名不是一回事</td><td>回官网核对，把旧域名换掉</td></tr><tr><td>域名对，人也没有</td><td>这个人确实没公开过邮箱</td><td>转别的路找这个人</td></tr><tr><td>域名对，结果还是空</td><td>属于工具的数据覆盖范围问题</td><td>换渠道，或过一阵再查</td></tr></tbody></table>
+      <p>第三行和第五行容易混在一起。域名填错，工具照样给你返回结果，只是返回的是另一家公司的邮箱，这种错比搜不到更麻烦，因为它看起来像成功。所以域名人工核一遍这步别省。</p>
+      <p>最后一行我想多说一句。域名是对的，结果还是空，这跟这家公司有没有邮箱没关系，是这类工具能查到的公开信息里没有它。搜不到邮箱，说明不了这个人不存在。这单也照样做得成。</p>
+      <p>后面还有三条路。领英上的人事页面、展会名录、老客户转介绍，都能绕开邮箱这一环。本篇不展开。</p>
+      <p>如果这些公司本来就是你的老客户，邮箱多半早就躺在你自己的收件箱里了，<a href="https://www.silimind.net/blog/email-customer-mining">从邮箱里挖存量客户</a> 那篇讲的就是自己这一半。</p>
+      <h2>先小批量验证，再放大</h2>
+      <p>小周最后换了个做法。从四十家里挑十家，域名先人工核过，只给职位对得上的那几条手工发信。三天以后看回执。</p>
+      <p>动手之前先看一眼账户套餐和剩余搜索额度，这一步不消耗搜索次数。免费层一般给几十次搜索，够你在一个行业里挑十个域名试一遍。按次计费，空结果不收费，所以试错成本主要在时间上，不在钱上。</p>
+      <p>我更建议先花半天做一件不花钱的事。把你手上这批公司按行业分三堆，一堆是做过展会的，一堆是官网写得很像大公司的，一堆是连官网都打不开的。第三堆先剔出去，它需要的不是找邮箱，是找到能联系上这家的入口。剩下两堆再跑工具，你的额度花在有产出的地方。</p>
+      <p>结果的分歧比大多数人预想的大。大公司公开渠道多，小公司基本只有总机。行业不同、公司规模不同，搜出来的东西完全不是一回事。不要拿一个行业的经验去套另一个行业。</p>
+      <p>这里有一句我必须说在前面。我们手上没有任何真实跑过的命中率数据可以给你。谁要是拿着一句行业平均命中率来卖你工具，先问他这个数是从多少家公司算出来的。</p>
+      <h2>今天能做的三件事</h2>
+      <p><strong>给客户表加一列域名。</strong> 四十家里先把域名明显不对的挑出来，这一步不用工具，翻官网就行。</p>
+      <p><strong>搜到的结果分三堆。</strong> 职位对得上、只搜到总机、搜不到。第三堆先别花时间，等第二条路。</p>
+      <p><strong>第一批只发十封。</strong> 三天后看回执，再决定要不要放大。</p>
+      <p>最后提一句我们这边做法上的选择。按域名查联系人的查询能力已实现，待部署与凭证接入。这类查询放在对话里问，好处是不用来回切窗口。该不该发、发几封，还是人在做。</p>
+      <p>---</p>
+    </div>
+  </article>
+
+  <footer>
+    <p>© 2026 SiliMind. All rights reserved.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <title>ドメイン検索の本当の命中率：会社名では担当者は見つからない - SiliMind Blog</title>
+  <meta name="description" content="会社名で検索して10件中7件見つからない——ツールの不具合ではなく、ドメインが未確定だから。3つのフィールドの読み方、5類の空結果の意味、小バッチ検証から拡大までの進め方を解説します。" />
+  <link rel="canonical" href="https://www.silimind.net/blog/domain-to-email-hit-rate" />
+  <meta property="og:title" content="ドメイン検索の本当の命中率：会社名では担当者は見つからない - SiliMind Blog" />
+  <meta property="og:description" content="会社名で検索して10件中7件見つからない——ツールの不具合ではなく、ドメインが未確定だから。3つのフィールドの読み方、5類の空結果の意味、小バッチ検証から拡大までの進め方を解説します。" />
+  <meta property="og:url" content="https://www.silimind.net/blog/domain-to-email-hit-rate" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="ja_JP" />
+  <meta property="og:site_name" content="SiliMind" />
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJ7HH4824R"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RJ7HH4824R');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "会社名は見つかるのに、担当者は見つからない：ドメインからメールを探す本当の命中率",
+    "description": "会社名で検索して10件中7件見つからない——ツールの不具合ではなく、ドメインが未確定だから。3つのフィールドの読み方、5類の空結果の意味、小バッチ検証から拡大までの進め方を解説します。",
+    "datePublished": "2026-11-19",
+    "author": {
+      "@type": "Organization",
+      "name": "SiliMind"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SiliMind",
+      "url": "https://www.silimind.net"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.silimind.net/blog/domain-to-email-hit-rate"
+    }
+  }
+  </script>
+  <style>
+    :root {
+      --bg-primary: #0a0a0f;
+      --bg-secondary: #12121a;
+      --bg-card: #16161f;
+      --accent: #6366f1;
+      --accent-light: #818cf8;
+      --text-primary: #f0f0f5;
+      --text-secondary: rgba(240,240,245,0.6);
+      --border: rgba(99,102,241,0.08);
+      --border-hover: rgba(99,102,241,0.25);
+      --font: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'PingFang SC', 'Noto Sans SC', sans-serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* Nav */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(10,10,15,0.9);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      height: 64px;
+    }
+    .nav-inner {
+      max-width: 1100px; margin: 0 auto; padding: 0 32px;
+      height: 100%; display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      font-size: 20px; font-weight: 700; color: var(--accent-light);
+      text-decoration: none; letter-spacing: 1px;
+    }
+    .nav-links { list-style: none; display: flex; gap: 32px; }
+    .nav-links a {
+      color: var(--text-secondary); text-decoration: none; font-size: 14px;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--text-primary); }
+
+    /* Article */
+    .article-container {
+      max-width: 760px; margin: 0 auto;
+      padding: 120px 32px 80px;
+    }
+    .article-header {
+      margin-bottom: 40px;
+    }
+    .article-header h1 {
+      font-size: 32px; font-weight: 700; line-height: 1.3;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #6366f1, #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .article-meta {
+      font-size: 14px; color: var(--text-secondary);
+    }
+    .article-meta time {
+      margin-right: 16px;
+    }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      color: var(--accent-light); text-decoration: none; font-size: 14px;
+      margin-bottom: 24px; transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--text-primary); }
+
+    /* Article body */
+    .article-body h2 {
+      font-size: 24px; font-weight: 600; margin: 40px 0 16px;
+      color: var(--text-primary);
+    }
+    .article-body h3 {
+      font-size: 20px; font-weight: 600; margin: 32px 0 12px;
+      color: var(--text-primary);
+    }
+    .article-body p {
+      font-size: 16px; line-height: 1.8; color: var(--text-secondary);
+      margin-bottom: 20px;
+    }
+    .article-body ul, .article-body ol {
+      margin-bottom: 20px; padding-left: 24px; color: var(--text-secondary);
+    }
+    .article-body li {
+      margin-bottom: 8px; font-size: 16px; line-height: 1.8;
+    }
+    .article-body blockquote {
+      border-left: 3px solid var(--accent);
+      padding: 16px 24px;
+      margin: 24px 0;
+      background: var(--bg-secondary);
+      border-radius: 0 8px 8px 0;
+      color: var(--text-secondary);
+      font-size: 15px;
+    }
+    .article-body code {
+      background: var(--bg-secondary);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 14px;
+      color: var(--accent-light);
+    }
+    .article-body pre {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px 24px;
+      overflow-x: auto;
+      margin-bottom: 20px;
+    }
+    .article-body pre code {
+      background: none; padding: 0; font-size: 14px;
+      color: var(--text-primary);
+    }
+    .article-body img {
+      max-width: 100%; border-radius: 8px; margin: 24px 0;
+    }
+    .article-body a {
+      color: var(--accent-light); text-decoration: underline;
+      text-decoration-color: rgba(129,140,248,0.3);
+      transition: text-decoration-color 0.2s;
+    }
+    .article-body a:hover {
+      text-decoration-color: var(--accent-light);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center; padding: 40px 32px;
+      border-top: 1px solid var(--border);
+      color: var(--text-secondary); font-size: 13px;
+    }
+
+    @media (max-width: 768px) {
+      .article-container { padding: 100px 16px 60px; }
+      .article-header h1 { font-size: 26px; }
+      .article-body h2 { font-size: 20px; }
+      .nav-links { display: none; }
+    }
+  </style>
+<link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/blog/domain-to-email-hit-rate" />
+<link rel="alternate" hreflang="en" href="https://www.silimind.net/en/blog/domain-to-email-hit-rate" />
+<link rel="alternate" hreflang="ja" href="https://www.silimind.net/ja/blog/domain-to-email-hit-rate" />
+<link rel="alternate" hreflang="ko" href="https://www.silimind.net/ko/blog/domain-to-email-hit-rate" />
+<link rel="alternate" hreflang="x-default" href="https://www.silimind.net/blog/domain-to-email-hit-rate" />
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">SiliMind</a>
+      <ul class="nav-links">
+        <li><a href="/blog/" class="active">Blog</a></li>
+        <li><a href="/#features">核心能力</a></li>
+        <li><a href="#">解决方案</a></li>
+        <li><a href="#">关于我们</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <article class="article-container">
+    <a href="/blog/" class="back-link">← 返回博客</a>
+    <header class="article-header">
+      <h1>会社名は見つかるのに、担当者は見つからない：ドメインからメールを探す本当の命中率</h1>
+      <div class="article-meta">
+        <time datetime="2026-11-19">2026年11月19日</time>
+        <span>SiliMind</span>
+      </div>
+    </header>
+    <div class="article-body">
+      <h2>顧客リスト一枚と、四十社の会社名</h2>
+      <p>（以下は合成シーンです。貿易チームが日常的に直面する担当者探しの場面を組み合わせたもので、特定の企業の実録ではありません。人名と数値はすべて仮です。）</p>
+      <p>月曜の朝、営業の周さんが顧客リストをグループチャットに投げた。四十社、1行に会社名と公式サイトのアドレス。3日で各社の窓口担当者のメールアドレスを見つけるという任務だ。</p>
+      <p>彼はメール検索ツールを開き、会社名で一件ずつ検索した。10社検索して、7社は「結果なし」。残り3社は見つかったが、アドレスはどれもほぼ同じ形——すべて info@ 始まり。スクリーンショットをグループに投げて一言。「このツール、正確じゃないのでは」</p>
+      <p>誰かが「業種を変えてみればいい」と返し、別の誰かが「このツールは不正確だ」と返した。</p>
+      <p>どちらの答えも違う。数日前、私はまったく同じ場面に遭遇した。問い方そのものが曲がっていたのだ。ツールは壊れていない。与えたものが間違っていた。</p>
+      <h2>会社名で人は見つからない。それはそれで正常</h2>
+      <p>Hunter.io のようなドメイン起点のコンタクト検索ツールは、基本的にドメインをアンカーにする。ドメインは一意で、1社に1つの主要ドメイン。会社名は一意ではない。同名会社は珍しくなく、中国語名と英語名は対応せず、登記上の表記ゆれもある。</p>
+      <p>だから最初のステップは検索ではなく、ドメインを確定させること。最速は公式サイトを開いてアドレスバーを見る。大抵それがドメインだ。見つからなければ、相手から届いた古いメールの差出人_suffix を見る。それでもだめなら工商登記を調べる。登記サイトの欄に大抵書いてある。</p>
+      <p>直感に反するのはここだ。中国語の会社名で人が見つからないのは、翻訳ミスではなく、ドメインをまだ手にしていないからであることが多い。</p>
+      <p>逆順に言い直すと分かりやすい。メール探しの順序は、先にドメインを確定させてから人を探す。ツールが担うのは第2ステップで、第1ステップは担えない。第1ステップの答えはツールのデータの中にはなく、相手のサイトとあなたの古いメールの中にある。</p>
+      <p>もう一つの落とし穴。複数のドメインを持つ会社がある。主ブランド用、グループ用、中国サイト用。ブランドドメインで人が見つからなければ、別のドメインで再検索する。同じ会社でもドメインが変われば別のアドレスが出てくることがあり、その2つは必ずしも矛盾しない。</p>
+      <h2>検索のあと、3つのフィールドが「送っていいか」を決める</h2>
+      <p>ドメイン検索1回につき、結果には通常3つのフィールドが付く。役職、信頼度、タイプ。</p>
+      <table><thead><tr><th>フィールド</th><th>教えてくれること</th><th>使い方</th><th>誤用</th></tr></thead><tbody><tr><td>役職</td><td>この人が会社で何を担っているか</td><td>話したい役割と一致すれば候補リストへ</td><td>一致しなければリードとして保留。役職で呼びかけない</td></tr><tr><td>信頼度</td><td>ツール自身のこのアドレスへの確信度</td><td>送り方の判断に使う。1通ずつ手作業で送る</td><td>正確性の保証と読まない</td></tr><tr><td>タイプ</td><td>個人メールか役割メールか</td><td>役割メールなら、まず窓口を尋ねる</td><td>個人扱いで呼びかけない</td></tr></tbody></table>
+      <p>3つの中で最も誤用されやすいのは信頼度だ。平たく言えば、ツールのこのアドレスへの自信の度合いであって、保証書ではない。低信頼度が何を意味するかは分からないが、正確性の保証ではないことだけは確かだ。この種の結果は、一括リストに流し込むより、1通手作業で送って返信を watch する方がはるかに有用だ。</p>
+      <p>タイプ欄にも誤解がある。info@ や sales@ のような役割メールは特定個人を指さない。これは役職欄と整合する。受信者はあなたが望む人物とは限らず、本人が返信するとも限らない。役立たないという意味ではなく、使い方は「最初のメール本文で窓口を尋ね、適切な人に転送してもらう」方式だということ。1通目から「○○部長ご担当様」と書かないこと。</p>
+      <h2>今回1社しか見つからなかった理由</h2>
+      <p>周さんは残りの会社で試し続け、集まった結果はだいたい5類に分かれた。</p>
+      <table><thead><tr><th>現象</th><th>背後にあるもの</th><th>次にすること</th></tr></thead><tbody><tr><td>代表メールしか見つからない</td><td>会社が小さく、共有メールしか残していない</td><td>リードとして保留。窓口を人工的に尋ねる</td></tr><tr><td>ドメインは見つかったが人がいない</td><td>対象は親会社か子会社の別ドメイン下にいる</td><td>会社名から別ドメインを探す</td></tr><tr><td>ドメイン自体が違う</td><td>ブランド・グループ・中国サイトのドメインは別物</td><td>公式サイトで再確認し、旧ドメインを交換</td></tr><tr><td>ドメインは合っているが人もいない</td><td>この人は本当にメールを公開していない</td><td>別の経路でこの人に届く</td></tr><tr><td>ドメインは合っているが結果が空</td><td>ツールのデータカバレッジの問題</td><td>チャネルを変えるか、時間をおいて再検索</td></tr></tbody></table>
+      <p>3行目と5行目は混同しやすい。ドメインを打ち間違えてもツールは結果を返す。ただし返ってくるのは別の会社のメールアドレスで、この誤りは「見つからない」より厄介だ。成功に見えるからだ。だからドメインの手動確認は省略できない。</p>
+      <p>最終行にもう一言。ドメインが正しくて結果が空なのは、この会社にメールがないこととは関係ない。この種のツールが見られる公開情報の中に彼らがいないだけだ。メールが見つからないことは、この人が存在しないことを意味しない。この案件はそれでも成立する。</p>
+      <p>先にはまだ3つの道がある。LinkedIn の人事ページ、展示会の名簿、既存顧客の紹介。いずれもメールという環を迂回できる。本稿では展開しない。</p>
+      <p>そして、これらの会社がすでに自社の既存顧客なら、アドレスはとっくにあなたの受信箱の中にある。<a href="https://www.silimind.net/blog/email-customer-mining">メールから既存顧客を発掘する</a>は、その「自分の半分」についての記事だ。</p>
+      <h2>小さく試してから拡大する</h2>
+      <p>周さんは最後にやり方を変えた。四十社から10社を選び、ドメインを手作業で確認し、役職の合う数件にだけ手作業でメールを送った。3日後に返信を確認。</p>
+      <p>始める前に、アカウントプランと残り検索回数を一度見る。このステップは検索回数を消費しない。無料枠は大抵数十回で、1業種から10ドメイン試すには十分。従量課金で、空結果は課金されない。試行錯誤のコストはお金ではなく時間にのぼる。</p>
+      <p>むしろ先に半日かけてやってほしい無料のことがある。この会社群を業種で3山に分ける。展示会経験あり、サイトの作りが大企業風、そしてサイトすら開けない組。3山目は先に除外する。必要なのはメール検索ではなく、この会社に接触できる入口を探すことだ。残り2山でツールを回せば、クレジットは生産性のある場所に使われる。</p>
+      <p>結果のばらつきは、たいていの人が予想するより大きい。大企業は公開経路が多く、小企業は代表電話だけのこともある。業種が違い、規模が違えば、検索で出てくるものはまったく別物だ。1業種の経験を別の業種に当てはめないこと。</p>
+      <p>ここで一言、先に言わせてほしい。私たちは実際に走らせた命中率データを1つも持っていない。もし誰かが「業種平均命中率」を武器にツールを売ろうとしたら、まず聞いてほしい。その数字は何社から計算したものなのか、と。</p>
+      <h2>今日できる3つのこと</h2>
+      <p><strong>顧客リストにドメイン列を追加する。</strong> 四十社から明らかにドメインが違うものを先に抜き出す。ツールは不要。公式サイトを開けばいい。</p>
+      <p><strong>検索結果を3山に分ける。</strong> 役職が一致したもの、代表メールのみ、見つからないもの。3山目にはまだ時間をかけない。2つ目の道を待つ。</p>
+      <p><strong>最初のバッチは10通だけ送る。</strong> 3日後に返信を見て、拡大するか決める。</p>
+      <p>最後にこちらの選択について一言。ドメインからコンタクトを探すクエリ能力は実装済みで、デプロイと認証情報の接続を待っている。こうしたクエリは会話の中で尋ねられるのが良い。ウィンドウを行き来する必要がない。送るべきか、何通送るかは、やはり人が判断する。</p>
+    </div>
+  </article>
+
+  <footer>
+    <p>© 2026 SiliMind. All rights reserved.</p>
+  </footer>
+</body>
+</html>

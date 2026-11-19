@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <title>Domain-to-Email Hit Rates, Honestly - SiliMind Blog</title>
+  <meta name="description" content="Why company-name search fails seven times out of ten, the domain-first order, how to read position, confidence and type fields, and why a ten-email pilot beats bulk blasting." />
+  <link rel="canonical" href="https://www.silimind.net/blog/domain-to-email-hit-rate" />
+  <meta property="og:title" content="Domain-to-Email Hit Rates, Honestly - SiliMind Blog" />
+  <meta property="og:description" content="Why company-name search fails seven times out of ten, the domain-first order, how to read position, confidence and type fields, and why a ten-email pilot beats bulk blasting." />
+  <meta property="og:url" content="https://www.silimind.net/blog/domain-to-email-hit-rate" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="SiliMind" />
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJ7HH4824R"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RJ7HH4824R');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Company Names Don't Find Contacts: The Real Hit Rates of Domain-to-Email Search",
+    "description": "Why company-name search fails seven times out of ten, the domain-first order, how to read position, confidence and type fields, and why a ten-email pilot beats bulk blasting.",
+    "datePublished": "2026-11-19",
+    "author": {
+      "@type": "Organization",
+      "name": "SiliMind"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SiliMind",
+      "url": "https://www.silimind.net"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.silimind.net/blog/domain-to-email-hit-rate"
+    }
+  }
+  </script>
+  <style>
+    :root {
+      --bg-primary: #0a0a0f;
+      --bg-secondary: #12121a;
+      --bg-card: #16161f;
+      --accent: #6366f1;
+      --accent-light: #818cf8;
+      --text-primary: #f0f0f5;
+      --text-secondary: rgba(240,240,245,0.6);
+      --border: rgba(99,102,241,0.08);
+      --border-hover: rgba(99,102,241,0.25);
+      --font: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'PingFang SC', 'Noto Sans SC', sans-serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* Nav */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(10,10,15,0.9);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      height: 64px;
+    }
+    .nav-inner {
+      max-width: 1100px; margin: 0 auto; padding: 0 32px;
+      height: 100%; display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      font-size: 20px; font-weight: 700; color: var(--accent-light);
+      text-decoration: none; letter-spacing: 1px;
+    }
+    .nav-links { list-style: none; display: flex; gap: 32px; }
+    .nav-links a {
+      color: var(--text-secondary); text-decoration: none; font-size: 14px;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--text-primary); }
+
+    /* Article */
+    .article-container {
+      max-width: 760px; margin: 0 auto;
+      padding: 120px 32px 80px;
+    }
+    .article-header {
+      margin-bottom: 40px;
+    }
+    .article-header h1 {
+      font-size: 32px; font-weight: 700; line-height: 1.3;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #6366f1, #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .article-meta {
+      font-size: 14px; color: var(--text-secondary);
+    }
+    .article-meta time {
+      margin-right: 16px;
+    }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      color: var(--accent-light); text-decoration: none; font-size: 14px;
+      margin-bottom: 24px; transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--text-primary); }
+
+    /* Article body */
+    .article-body h2 {
+      font-size: 24px; font-weight: 600; margin: 40px 0 16px;
+      color: var(--text-primary);
+    }
+    .article-body h3 {
+      font-size: 20px; font-weight: 600; margin: 32px 0 12px;
+      color: var(--text-primary);
+    }
+    .article-body p {
+      font-size: 16px; line-height: 1.8; color: var(--text-secondary);
+      margin-bottom: 20px;
+    }
+    .article-body ul, .article-body ol {
+      margin-bottom: 20px; padding-left: 24px; color: var(--text-secondary);
+    }
+    .article-body li {
+      margin-bottom: 8px; font-size: 16px; line-height: 1.8;
+    }
+    .article-body blockquote {
+      border-left: 3px solid var(--accent);
+      padding: 16px 24px;
+      margin: 24px 0;
+      background: var(--bg-secondary);
+      border-radius: 0 8px 8px 0;
+      color: var(--text-secondary);
+      font-size: 15px;
+    }
+    .article-body code {
+      background: var(--bg-secondary);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 14px;
+      color: var(--accent-light);
+    }
+    .article-body pre {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px 24px;
+      overflow-x: auto;
+      margin-bottom: 20px;
+    }
+    .article-body pre code {
+      background: none; padding: 0; font-size: 14px;
+      color: var(--text-primary);
+    }
+    .article-body img {
+      max-width: 100%; border-radius: 8px; margin: 24px 0;
+    }
+    .article-body a {
+      color: var(--accent-light); text-decoration: underline;
+      text-decoration-color: rgba(129,140,248,0.3);
+      transition: text-decoration-color 0.2s;
+    }
+    .article-body a:hover {
+      text-decoration-color: var(--accent-light);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center; padding: 40px 32px;
+      border-top: 1px solid var(--border);
+      color: var(--text-secondary); font-size: 13px;
+    }
+
+    @media (max-width: 768px) {
+      .article-container { padding: 100px 16px 60px; }
+      .article-header h1 { font-size: 26px; }
+      .article-body h2 { font-size: 20px; }
+      .nav-links { display: none; }
+    }
+  </style>
+<link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/blog/domain-to-email-hit-rate" />
+<link rel="alternate" hreflang="en" href="https://www.silimind.net/en/blog/domain-to-email-hit-rate" />
+<link rel="alternate" hreflang="ja" href="https://www.silimind.net/ja/blog/domain-to-email-hit-rate" />
+<link rel="alternate" hreflang="ko" href="https://www.silimind.net/ko/blog/domain-to-email-hit-rate" />
+<link rel="alternate" hreflang="x-default" href="https://www.silimind.net/blog/domain-to-email-hit-rate" />
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">SiliMind</a>
+      <ul class="nav-links">
+        <li><a href="/blog/" class="active">Blog</a></li>
+        <li><a href="/#features">核心能力</a></li>
+        <li><a href="#">解决方案</a></li>
+        <li><a href="#">关于我们</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <article class="article-container">
+    <a href="/blog/" class="back-link">← 返回博客</a>
+    <header class="article-header">
+      <h1>Company Names Don't Find Contacts: The Real Hit Rates of Domain-to-Email Search</h1>
+      <div class="article-meta">
+        <time datetime="2026-11-19">November 19, 2026</time>
+        <span>SiliMind</span>
+      </div>
+    </header>
+    <div class="article-body">
+      <h2>One customer sheet, forty company names</h2>
+      <p>(The scene below is a composite, assembled from the contact-hunting situations export teams run into all the time. It is not a record of any real company; names and counts are illustrative.)</p>
+      <p>Monday morning, a rep named Zhou posted a customer sheet to the group chat. Forty companies, one company name plus a website address per row. He had three days to find an email address for a contact at each one.</p>
+      <p>He opened an email-finding tool and searched by company name, one by one. Ten searches in, seven returned no results. The remaining three came back with addresses that looked almost identical — all starting with info@. He dropped the screenshots into the group and asked whether the tool was broken.</p>
+      <p>Someone replied: try a different industry. Someone else replied: the tool is just inaccurate.</p>
+      <p>Both answers were wrong. I ran into the same scene a few days ago, and this is where the question itself was crooked. The tool wasn't broken; what was fed to it was wrong.</p>
+      <h2>Searching people by company name fails — and that is normal</h2>
+      <p>Domain-based contact tools like Hunter.io anchor on the domain. Domains are unique; a company has one primary domain. Company names are not unique: same-name companies exist, Chinese and English names don't map cleanly, and registered suffixes vary.</p>
+      <p>So the first step is not searching. It is pinning down the domain. The fastest way: open the company's website and read the address bar — usually that is the domain. Can't find it? Dig up an old email they sent and look at the sender's suffix. Still nothing? Check their business registration; the registered-website column usually names the domain.</p>
+      <p>The counter-intuitive part is here. When a Chinese company name finds no person, it usually isn't a translation error — it is that you don't hold the domain yet.</p>
+      <p>Saying it in reverse makes it clearer. The order of email-finding is: secure the domain first, then find the person. The tool does the second step. It cannot do the first, because the first step's answer isn't in the tool's data — it is on the company's website and in your own inbox.</p>
+      <p>One more trap. Some companies hold domains in several places: one for the main brand, one for the group, another for the China site. If the brand domain finds no person, try another. The same company under a different domain can surface two different addresses — and those two don't necessarily contradict each other.</p>
+      <h2>After the search: three fields decide whether you dare hit send</h2>
+      <p>One domain query usually returns three fields per result: position, confidence, type.</p>
+      <table><thead><tr><th>Field</th><th>What it tells you</th><th>How to use it</th><th>How not to</th></tr></thead><tbody><tr><td>Position</td><td>What this person handles in the company</td><td>If it matches the role you're pitching, into the shortlist</td><td>If not, keep as a lead — don't address them by the wrong title</td></tr><tr><td>Confidence</td><td>How sure the tool is about this address</td><td>Use it to pick the sending style: hand-written, one at a time</td><td>Don't read it as an accuracy guarantee</td></tr><tr><td>Type</td><td>Personal mailbox or role mailbox</td><td>For role mailboxes, first ask who the right contact is</td><td>Don't treat a role mailbox as a person and address them directly</td></tr></tbody></table>
+      <p>The most misused of the three is confidence. Plainly: it is the tool's own level of certainty about the address, not a guarantee ticket. We don't know exactly what low confidence implies; what we can say is that it is not an accuracy promise. A result like that is far better hand-sent, one email, watching for the reply — than thrown into a bulk list.</p>
+      <p>The type field carries a common misunderstanding too. Role mailboxes like info@ or sales@ don't point to a specific person; this squares with the position field. The recipient may not be the person you want, and may not reply personally. That doesn't make these mailboxes useless — it means the way to use them is to ask, in the body of your first email, who the right contact is, and wait to be forwarded. Don't open with "Dear Manager So-and-so."</p>
+      <h2>Why only one was found this time</h2>
+      <p>Zhou kept trying the remaining companies, and his collected results fell into roughly five causes.</p>
+      <table><thead><tr><th>Symptom</th><th>What is behind it</th><th>What to do next</th></tr></thead><tbody><tr><td>Only a switchboard mailbox found</td><td>The company is small; only a public mailbox exists</td><td>Keep as a lead; ask by hand who to contact</td></tr><tr><td>Domain found, person not</td><td>The target sits under the parent or subsidiary's other domain</td><td>Follow the company name to other domains</td></tr><tr><td>The domain itself is wrong</td><td>Brand domain, group domain, and China-site domain are not the same thing</td><td>Re-check the official site; swap the old domain</td></tr><tr><td>Domain right, person still missing</td><td>This person genuinely never published an email</td><td>Take another route to reach them</td></tr><tr><td>Domain right, result still empty</td><td>A data-coverage limitation of the tool</td><td>Switch channels, or check again later</td></tr></tbody></table>
+      <p>Rows three and five are easy to confuse. A mistyped domain still returns results — just somebody else's mailboxes — and that error is worse than finding nothing, because it looks like success. That is why the manual domain check is the one step you never skip.</p>
+      <p>The last row deserves a word more. Domain right, result still empty has nothing to do with whether the company has email; it means the public information this class of tool can see doesn't include them. Finding no mailbox does not mean the person doesn't exist. The deal can still close.</p>
+      <p>Three more routes lie ahead: the people page on LinkedIn, trade-fair directories, and referrals from existing customers — all of which bypass the email step. This piece won't expand on them.</p>
+      <p>And if these companies are already your customers, the addresses have probably been sitting in your own inbox for years. <a href="https://www.silimind.net/blog/email-customer-mining">Mining existing customers from your email</a> covers that half of the story.</p>
+      <h2>Pilot small, then scale</h2>
+      <p>Zhou ended up switching approach. He picked ten of the forty, verified domains by hand first, and hand-sent only to the entries whose positions matched. Three days later he checked replies.</p>
+      <p>Before starting, glance at your account plan and remaining search credits — that step costs no searches. Free tiers usually give a few dozen searches, enough to test ten domains in one industry. Pay-per-search, and empty results cost nothing — so the cost of trial sits in time, not money.</p>
+      <p>I would rather you first spend half a day on something free. Sort the companies into three piles by industry: exhibition attenders, ones whose websites look like big companies, and ones whose websites won't even open. Set pile three aside — what it needs is not an email finder but an entry point to reach the company at all. Run the tool on the other two, and your credits go where they produce something.</p>
+      <p>The variance in results is larger than most people expect. Big companies leave more public traces; small companies often have only a switchboard. Different industries, different company sizes — the searches return completely different things. Don't take one industry's experience and apply it to another.</p>
+      <p>One sentence has to come first. We hold no real-world hit-rate data of our own to give you. If anyone tries to sell you a tool with an "industry average hit rate," ask them first: calculated from how many companies?</p>
+      <h2>Three things you can do today</h2>
+      <p><strong>Add a domain column to the customer sheet.</strong> From the forty, first pull out the ones whose domains are obviously wrong — no tool needed, just check their websites.</p>
+      <p><strong>Sort search results into three piles.</strong> Position matches; only a switchboard found; nothing found. Don't spend time on pile three yet — wait for the second route.</p>
+      <p><strong>Send the first batch of ten.</strong> Check replies after three days, then decide whether to scale.</p>
+      <p>A last note on our own choice here. The query capability — find contacts by domain — is built, pending deployment and credential onboarding. Queries like this belong in conversation, so you don't switch windows back and forth. Whether to send, and how many — that stays with people.</p>
+    </div>
+  </article>
+
+  <footer>
+    <p>© 2026 SiliMind. All rights reserved.</p>
+  </footer>
+</body>
+</html>
