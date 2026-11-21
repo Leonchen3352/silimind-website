@@ -1066,26 +1066,24 @@
     .ai-team-band .at-wrap { max-width: 1120px; margin: 0 auto; padding: 0 32px; }
     .ai-team-band .section-label { color: #C9A227; }
     .ai-team-band h2 { font-size: 32px; margin-bottom: 10px; }
-    .ai-team-band .section-subtitle { color: #9ca3af; margin-bottom: 36px; }
-    .at-leader-mini { display: grid; grid-template-columns: 220px 1fr; gap: 28px; align-items: center; background: linear-gradient(160deg,#141B2B,#0C111C); border: 1px solid rgba(201,162,39,.42); border-radius: 18px; padding: 22px 26px; margin-bottom: 26px; }
-    .at-leader-pic { position: relative; border-radius: 14px; overflow: hidden; }
-    .at-leader-pic img { width: 100%; display: block; }
-    .at-badge { position: absolute; top: 10px; left: 50%; transform: translateX(-50%); font-size: 8.5px; letter-spacing: 3px; color: #0B0F1A; font-weight: 700; background: linear-gradient(100deg,#E8C55A,#C9A227); padding: 2px 10px; border-radius: 999px; white-space: nowrap; }
-    .at-leader-mini-body h3 { font-size: 26px; color: #E8C55A; letter-spacing: 3px; margin-bottom: 8px; }
-    .at-leader-mini-body p { font-size: 14.5px; color: #C9C2B2; line-height: 1.9; }
-    .at-stars { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
-    .at-star { display: flex; flex-direction: column; background: linear-gradient(165deg,#121826,#0C111C); border: 1px solid rgba(201,162,39,.3); border-radius: 14px; overflow: hidden; text-decoration: none; transition: transform .2s, border-color .2s; }
-    .at-star:hover { transform: translateY(-3px); border-color: rgba(232,197,90,.55); }
-    .at-star img { width: 100%; height: 210px; object-fit: cover; object-position: center top; display: block; }
-    .at-star-body { padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 6px; }
-    .at-alias { font-size: 21px; font-weight: 700; color: #E8C55A; letter-spacing: 2px; }
-    .at-role { font-size: 11px; color: #C9A227; letter-spacing: 1px; }
-    .at-star-body p { font-size: 12.5px; color: #C9C2B2; line-height: 1.75; margin: 0; }
-    .at-more { text-align: center; margin-top: 30px; }
-    .at-more a { display: inline-block; padding: 11px 26px; border-radius: 10px; border: 1px solid rgba(201,162,39,.45); color: #E8C55A; text-decoration: none; font-size: 14.5px; font-weight: 600; }
-    .at-more a:hover { background: rgba(201,162,39,.1); }
-    @media (max-width: 960px) { .at-stars { grid-template-columns: 1fr 1fr; } }
-    @media (max-width: 640px) { .at-leader-mini { grid-template-columns: 1fr; } .at-stars { grid-template-columns: 1fr; } .ai-team-band { padding: 64px 0 60px; } .ai-team-band .at-wrap { padding: 0 16px; } .ai-team-band h2 { font-size: 26px; }
+    .ai-team-band .section-subtitle { color: #9ca3af; margin-bottom: 6px; }
+    .at-lead { color: #C9C2B2; font-size: 15.5px; margin-bottom: 40px; }
+    .at-cards5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+    .at-card { display: flex; flex-direction: column; background: linear-gradient(165deg,#121826,#0C111C); border: 1px solid rgba(201,162,39,.3); border-radius: 14px; overflow: hidden; text-decoration: none; transition: transform .2s, border-color .2s; }
+    .at-card:hover { transform: translateY(-3px); border-color: rgba(232,197,90,.55); }
+    .at-card img { width: 100%; height: 190px; object-fit: cover; object-position: center top; display: block; }
+    .at-card-body { padding: 13px 15px 15px; display: flex; flex-direction: column; gap: 4px; }
+    .at-alias { font-size: 18px; font-weight: 700; color: #E8C55A; letter-spacing: 1.5px; }
+    .at-role { font-size: 10.5px; color: #C9A227; letter-spacing: 1px; }
+    .at-card-body p { font-size: 12px; color: #C9C2B2; line-height: 1.7; margin: 4px 0 0; }
+    .at-motto { text-align: center; margin: 26px 0 0; font-size: 15px; color: #E8C55A; letter-spacing: 2px; }
+    .at-cta-row { text-align: center; margin-top: 22px; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .at-cta-main { display: inline-block; padding: 11px 26px; border-radius: 10px; background: linear-gradient(100deg,#E8C55A,#C9A227); color: #0B0F1A; text-decoration: none; font-size: 14.5px; font-weight: 700; }
+    .at-cta-main:hover { filter: brightness(1.08); }
+    .at-cta-sub { display: inline-block; padding: 11px 26px; border-radius: 10px; border: 1px solid rgba(201,162,39,.45); color: #E8C55A; text-decoration: none; font-size: 14.5px; font-weight: 600; }
+    .at-cta-sub:hover { background: rgba(201,162,39,.1); }
+    @media (max-width: 1080px) { .at-cards5 { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 640px) { .at-cards5 { grid-template-columns: 1fr 1fr; } .ai-team-band { padding: 64px 0 60px; } .ai-team-band .at-wrap { padding: 0 16px; } .ai-team-band h2 { font-size: 26px; }
   </style>
   <div class="cp-strip" data-campaign-entry>
     <div class="cp-strip-inner">
@@ -1195,53 +1193,56 @@
   <section class="ai-team-band">
     <div class="at-wrap">
       <p class="section-label">AI 伙伴</p>
-      <h2>思理掌门，率四大高手</h2>
-      <p class="section-subtitle">统领 36 名数字员工——不是功能模块，是一支有名字的团队。</p>
-      <div class="at-leader-mini">
-        <div class="at-leader-pic">
-          <img src="/images/ai-team/sili.jpg" alt="思理掌门" />
-          <span class="at-badge">掌门 · 公司大脑</span>
-        </div>
-        <div class="at-leader-mini-body">
-          <h3>思理</h3>
-          <p>掌门不问细务，只问全局。三十六名数字员工各守一摊，她看的是整盘棋——哪一路先动，哪一处该守，哪件事今天必须定。</p>
-        </div>
-      </div>
-      <div class="at-stars">
-        <a href="/ai-team" class="at-star">
-          <img src="/images/ai-team/shenxing.jpg" alt="神行" />
-          <div class="at-star-body">
+      <h2>认识你的 AI 团队</h2>
+      <p class="section-subtitle">思理掌门率四大高手，统领 36 名数字员工。</p>
+      <p class="at-lead">他们把你不想干的杂活干完，把最后的决定留给你。</p>
+      <div class="at-cards5">
+        <a href="/ai-team" class="at-card">
+          <img src="/images/ai-team/sili.jpg" alt="思理 · 掌门" />
+          <div class="at-card-body">
+            <span class="at-alias">思理</span>
+            <span class="at-role">掌门</span>
+            <p>记得你生意里的每件事。你问一句，她把全局摆到你面前。</p>
+          </div>
+        </a>
+        <a href="/ai-team" class="at-card">
+          <img src="/images/ai-team/shenxing.jpg" alt="神行 · 销售随行" />
+          <div class="at-card-body">
             <span class="at-alias">神行</span>
-            <span class="at-role">小销 · 销售随行者</span>
-            <p>拜访说完纪要自动进时间线，跟进邮件替你拟好，巡检诊断全链包圆。</p>
+            <span class="at-role">销售随行</span>
+            <p>拜访说完，纪要有、跟进有、诊断有。</p>
           </div>
         </a>
-        <a href="/ai-team" class="at-star">
-          <img src="/images/ai-team/baixiaosheng.jpg" alt="百晓生" />
-          <div class="at-star-body">
+        <a href="/ai-team" class="at-card">
+          <img src="/images/ai-team/baixiaosheng.jpg" alt="百晓生 · 调研官" />
+          <div class="at-card-body">
             <span class="at-alias">百晓生</span>
-            <span class="at-role">小研 · 调研官</span>
-            <p>获客邮件按画像起草，线索打分一眼分明，域名找邮箱带可信度。</p>
+            <span class="at-role">调研官</span>
+            <p>天下情报一本册：线索打分、域名找邮箱。</p>
           </div>
         </a>
-        <a href="/ai-team" class="at-star">
-          <img src="/images/ai-team/pingyizhi.jpg" alt="平一指" />
-          <div class="at-star-body">
+        <a href="/ai-team" class="at-card">
+          <img src="/images/ai-team/pingyizhi.jpg" alt="平一指 · 商机医生" />
+          <div class="at-card-body">
             <span class="at-alias">平一指</span>
-            <span class="at-role">诊断官 · 商机医生</span>
-            <p>5 维诊断卡在哪，每小时巡检当场报，内容→成交归因一条线。</p>
+            <span class="at-role">商机医生</span>
+            <p>一指诊脉：哪篇内容带来哪笔成交，一条线看到底。</p>
           </div>
         </a>
-        <a href="/ai-team" class="at-star">
-          <img src="/images/ai-team/huangyaoshi.jpg" alt="黄药师" />
-          <div class="at-star-body">
+        <a href="/ai-team" class="at-card">
+          <img src="/images/ai-team/huangyaoshi.jpg" alt="黄药师 · 总教头" />
+          <div class="at-card-body">
             <span class="at-alias">黄药师</span>
-            <span class="at-role">教练 · 系统架构师</span>
-            <p>对话式配置教练，说需求就帮你搭专属数字员工，双层配置分层管。</p>
+            <span class="at-role">总教头</span>
+            <p>一句话，给你布一座自己的阵。</p>
           </div>
         </a>
       </div>
-      <div class="at-more"><a href="/ai-team">查看全部 36 名数字员工 →</a></div>
+      <p class="at-motto">活儿他们干，决定你做。</p>
+      <div class="at-cta-row">
+        <a href="/ai-team" class="at-cta-main">认识整个团队</a>
+        <a href="https://agent.silimind.net/register" class="at-cta-sub">申请个人试用</a>
+      </div>
     </div>
   </section>
 

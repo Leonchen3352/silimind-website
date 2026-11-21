@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-  <title>AI 伙伴 · 思理掌门与四大高手 - SiliMind</title>
-  <meta name="description" content="思理掌门率四大高手，统领 36 名数字员工：神行随行、百晓生调研、平一指诊断、黄药师布阵——AI 提议，决策始终在人。" />
+  <title>AI 伙伴 · 你的 AI 团队 - SiliMind</title>
+  <meta name="description" content="思理掌门率四大高手，统领 36 名数字员工。他们各有名号、各有看家本事：AI 提议，决策始终在人。" />
   <link rel="canonical" href="https://www.silimind.net/ai-team" />
-  <meta property="og:title" content="AI 伙伴 · 思理掌门与四大高手 - SiliMind" />
+  <meta property="og:title" content="AI 伙伴 · 你的 AI 团队 - SiliMind" />
   <meta property="og:description" content="思理掌门率四大高手，统领 36 名数字员工——AI 提议，决策始终在人。" />
   <meta property="og:url" content="https://www.silimind.net/ai-team" />
   <meta property="og:type" content="website" />
@@ -26,8 +26,7 @@
       --accent: #6366f1; --accent-hover: #4f46e5; --accent-light: #818cf8;
       --border: rgba(255,255,255,.08); --border-hover: rgba(129,140,248,.4);
       --gold: #C9A227; --gold-l: #E8C55A;
-      --wuxia-text: #EDE6D6; --wuxia-body: #C9C2B2; --wuxia-sub: #8B8578;
-      --line-gold: rgba(201,162,39,.35);
+      --wuxia-text: #EDE6D6; --wuxia-body: #C9C2B2;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; background: var(--bg); color: var(--text-primary); line-height: 1.7; }
@@ -55,19 +54,20 @@
     /* ===== hero ===== */
     .at-hero { padding: 84px 0 56px; text-align: center; background: radial-gradient(ellipse 80% 50% at 50% -10%, rgba(201,162,39,.14), transparent); }
     .at-label { display: inline-block; font-size: 13px; letter-spacing: 3px; font-weight: 700; color: var(--gold); text-transform: uppercase; margin-bottom: 18px; }
-    .at-hero h1 { font-size: 44px; line-height: 1.25; margin-bottom: 16px; }
-    .at-hero p { max-width: 720px; margin: 0 auto; color: var(--text-secondary); font-size: 17px; }
-    .at-hero .at-leader-line { margin-top: 14px; font-size: 15px; color: var(--gold-l); letter-spacing: 1px; }
-    /* ===== 掌门大卡 ===== */
-    .leader-card {
-      max-width: 1080px; margin: 26px auto 0;
-      display: grid; grid-template-columns: 400px 1fr;
-      border-radius: 20px; overflow: hidden;
-      background: linear-gradient(160deg,#141B2B 0%,#0C111C 62%,#0A0E18 100%);
-      border: 1px solid rgba(201,162,39,.42);
-      box-shadow: 0 30px 76px rgba(0,0,0,.6), inset 0 1px 0 rgba(232,197,90,.12);
-      position: relative;
-    }
+    .at-hero h1 { font-size: 46px; line-height: 1.25; margin-bottom: 16px; }
+    .at-hero .sub { font-size: 17px; color: var(--gold-l); letter-spacing: 1px; margin-bottom: 18px; }
+    .at-hero .lead { max-width: 760px; margin: 0 auto; color: var(--text-secondary); font-size: 16.5px; line-height: 1.9; }
+    /* ===== why ===== */
+    .why-sec { padding: 56px 0 20px; }
+    .why-sec h2 { font-size: 26px; text-align: center; margin-bottom: 34px; }
+    .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .why-card { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 16px; padding: 26px 28px; }
+    .why-card .n { font-size: 12px; color: var(--gold); letter-spacing: 2px; font-weight: 700; display: block; margin-bottom: 10px; }
+    .why-card h3 { font-size: 17px; margin-bottom: 8px; }
+    .why-card p { color: var(--text-secondary); font-size: 14px; line-height: 1.85; }
+    /* ===== 掌门 ===== */
+    .leader-sec { padding: 56px 0 30px; }
+    .leader-card { max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: 400px 1fr; border-radius: 20px; overflow: hidden; background: linear-gradient(160deg,#141B2B 0%,#0C111C 62%,#0A0E18 100%); border: 1px solid rgba(201,162,39,.42); box-shadow: 0 30px 76px rgba(0,0,0,.6), inset 0 1px 0 rgba(232,197,90,.12); position: relative; }
     .leader-card::before { content:""; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,transparent,var(--gold),transparent); }
     .leader-portrait { position: relative; min-height: 533px; border-right: 1px solid rgba(139,133,120,.22); }
     .leader-portrait img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center top; display:block; }
@@ -75,17 +75,16 @@
     .leader-badge { position:absolute; top:18px; left:50%; transform:translateX(-50%); font-size:9px; letter-spacing:4px; color:#0B0F1A; font-weight:700; background:linear-gradient(100deg,#E8C55A,#C9A227); padding:3px 14px; border-radius:999px; z-index:2; }
     .en-tag { position:absolute; top:17px; right:20px; font-size:10px; letter-spacing:2.5px; color:rgba(139,133,120,.7); text-transform:uppercase; z-index:2; }
     .leader-body { padding: 40px 44px 36px; display:flex; flex-direction:column; }
-    .leader-body .alias { font-size: 40px; font-weight: 700; color: var(--gold-l); letter-spacing: 4px; line-height: 1.15; }
+    .leader-body .alias { font-size: 38px; font-weight: 700; color: var(--gold-l); letter-spacing: 4px; line-height: 1.15; }
     .leader-body .role { font-size: 13px; color: var(--gold); letter-spacing: 2px; margin: 6px 0 18px; font-weight: 600; }
-    .leader-quote { font-size: 16.5px; color: var(--wuxia-text); line-height: 1.95; margin-bottom: 22px; }
-    .leader-points { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-    .leader-points li { font-size: 14px; color: var(--wuxia-body); padding-left: 20px; position: relative; }
-    .leader-points li::before { content: "✦"; position: absolute; left: 0; color: var(--gold); }
-    .leader-points li b { color: var(--wuxia-text); font-weight: 600; }
+    .leader-oneline { font-size: 16.5px; color: var(--wuxia-text); line-height: 1.95; margin-bottom: 20px; }
+    .leader-quote { font-size: 14.5px; color: var(--wuxia-body); line-height: 1.95; margin-bottom: 22px; }
+    .leader-tags { display: flex; gap: 10px; flex-wrap: wrap; }
+    .leader-tags span { font-size: 12px; color: var(--gold-l); border: 1px solid rgba(201,162,39,.4); border-radius: 999px; padding: 3px 14px; letter-spacing: 1px; }
     /* ===== 四大高手 ===== */
-    .stars-sec { padding: 64px 0 30px; }
+    .stars-sec { padding: 56px 0 30px; }
     .stars-sec .sec-label { font-size: 11.5px; letter-spacing: 3px; color: var(--gold); font-weight: 700; margin-bottom: 14px; display: flex; align-items: center; gap: 12px; }
-    .stars-sec .sec-label::after { content:""; flex:1; height:1px; background:linear-gradient(90deg,var(--line-gold),transparent); }
+    .stars-sec .sec-label::after { content:""; flex:1; height:1px; background:linear-gradient(90deg,var(--line-gold,rgba(201,162,39,.35)),transparent); }
     .stars-sec h2 { font-size: 28px; margin-bottom: 10px; }
     .stars-sec .sec-sub { color: var(--text-secondary); margin-bottom: 30px; }
     .stars-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
@@ -98,39 +97,33 @@
     .star-body { padding: 24px 28px 26px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
     .star-body .role-line { font-size: 12px; color: var(--gold); letter-spacing: 1.5px; font-weight: 600; }
     .star-body .tale { font-size: 14px; color: var(--wuxia-text); line-height: 1.85; }
-    .star-body .skills { font-size: 13.5px; color: var(--wuxia-body); line-height: 1.85; }
-    .star-body .skills b { color: var(--gold-l); font-weight: 600; }
+    .star-body .does { font-size: 13.5px; color: var(--wuxia-body); line-height: 1.85; }
+    .star-body .does b { color: var(--gold-l); font-weight: 600; }
     .star-body .closing { font-size: 13px; color: var(--gold); font-weight: 600; letter-spacing: 1.2px; display: flex; align-items: center; gap: 10px; margin-top: auto; padding-top: 12px; }
     .star-body .closing::before { content:""; width: 18px; height: 1.5px; background: var(--gold); opacity:.7; }
-    /* ===== 组织图 ===== */
-    .org-sec { padding: 64px 0 30px; }
-    .org-sec h2 { font-size: 28px; margin-bottom: 10px; }
-    .org-sec .sec-sub { color: var(--text-secondary); margin-bottom: 30px; }
-    .org-panel { background: linear-gradient(168deg,#101725,#0A0E18); border: 1px solid rgba(201,162,39,.22); border-radius: 18px; padding: 36px 40px; }
-    .dept-title { font-size: 12px; color: var(--gold); letter-spacing: 2px; margin: 22px 0 12px; font-weight: 600; }
-    .dept-title:first-of-type { margin-top: 0; }
-    .staff-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
-    .staff { display: flex; flex-direction: column; align-items: center; gap: 7px; padding: 12px 6px; border-radius: 12px; background: rgba(17,24,39,.55); border: 1px solid rgba(139,133,120,.16); transition: border-color .15s; }
-    .staff:hover { border-color: rgba(201,162,39,.4); }
-    .chip { width: 44px; height: 44px; border-radius: 11px; display: flex; align-items: center; justify-content: center; font-size: 19px; background: rgba(139,133,120,.10); border: 1px solid rgba(139,133,120,.22); }
-    .chip.call { border-color: rgba(62,142,126,.45); background: rgba(62,142,126,.08); }
-    .chip.auto { border-style: dashed; border-color: rgba(139,133,120,.35); }
-    .chip.listen { border-color: rgba(232,197,90,.4); background: rgba(232,197,90,.06); }
-    .s-name { font-size: 10.5px; color: #B8B0A0; text-align: center; line-height: 1.3; }
-    .legend { display: flex; gap: 24px; margin-top: 22px; flex-wrap: wrap; font-size: 11.5px; color: var(--text-secondary); }
-    .legend span { display: flex; align-items: center; gap: 7px; }
-    .dot { width: 10px; height: 10px; border-radius: 3px; }
-    .dot.call { background: rgba(62,142,126,.5); border: 1px solid rgba(62,142,126,.8); }
-    .dot.auto { border: 1.5px dashed rgba(139,133,120,.6); }
-    .dot.listen { background: rgba(232,197,90,.3); border: 1px solid rgba(232,197,90,.7); }
-    /* ===== human-in-the-loop ===== */
-    .hitl-sec { padding: 64px 0 30px; }
-    .hitl-box { background: linear-gradient(165deg,#121826,#0C111C); border: 1px solid rgba(201,162,39,.3); border-radius: 18px; padding: 34px 38px; }
-    .hitl-box h2 { font-size: 24px; margin-bottom: 12px; }
-    .hitl-box p { color: var(--text-secondary); font-size: 15px; line-height: 1.9; }
-    .hitl-box .hitl-steps { display: flex; gap: 14px; margin-top: 22px; flex-wrap: wrap; }
-    .hitl-step { flex: 1; min-width: 180px; background: rgba(17,24,39,.6); border: 1px solid var(--border); border-radius: 12px; padding: 16px 18px; font-size: 13.5px; color: var(--text-secondary); }
-    .hitl-step b { display: block; color: var(--gold-l); margin-bottom: 5px; font-size: 14px; }
+    /* ===== 身后 36 ===== */
+    .behind-sec { padding: 56px 0 30px; }
+    .behind-box { background: linear-gradient(168deg,#101725,#0A0E18); border: 1px solid rgba(201,162,39,.22); border-radius: 18px; padding: 36px 40px; }
+    .behind-box h2 { font-size: 24px; margin-bottom: 14px; }
+    .behind-box .quote { font-size: 16px; color: var(--wuxia-text); line-height: 1.9; margin-bottom: 10px; }
+    .behind-box .sub { color: var(--text-secondary); font-size: 14px; }
+    /* ===== 三入口 ===== */
+    .entries-sec { padding: 56px 0 30px; }
+    .entries-sec h2 { font-size: 26px; text-align: center; margin-bottom: 34px; }
+    .entries-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .entry-card { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 16px; padding: 26px 28px; }
+    .entry-card .n { font-size: 12px; color: var(--gold); letter-spacing: 2px; font-weight: 700; display: block; margin-bottom: 10px; }
+    .entry-card h3 { font-size: 17px; margin-bottom: 8px; }
+    .entry-card p { color: var(--text-secondary); font-size: 14px; line-height: 1.85; }
+    /* ===== FAQ ===== */
+    .faq-sec { padding: 56px 0 30px; }
+    .faq-item { border: 1px solid var(--border); border-radius: 14px; margin-bottom: 14px; overflow: hidden; background: var(--bg-secondary); }
+    .faq-q { padding: 18px 24px; font-size: 15.5px; font-weight: 600; color: var(--text-primary); cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+    .faq-q::after { content: "+"; color: var(--gold); font-size: 20px; }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height .3s ease; }
+    .faq-a p { padding: 0 24px 20px; color: var(--text-secondary); font-size: 14px; line-height: 1.9; }
+    .faq-item.open .faq-a { max-height: 400px; }
+    .faq-item.open .faq-q::after { content: "−"; }
     /* ===== CTA ===== */
     .at-cta { text-align: center; padding: 72px 0 88px; border-top: 1px solid var(--border); background: radial-gradient(ellipse 60% 80% at 50% 110%, rgba(99,102,241,.14), transparent); }
     .at-cta h2 { font-size: 28px; margin-bottom: 12px; }
@@ -138,8 +131,6 @@
     .at-btn { display: inline-block; padding: 12px 26px; border-radius: 10px; text-decoration: none; font-size: 15px; font-weight: 600; }
     .at-btn-primary { background: var(--accent); color: #fff; }
     .at-btn-primary:hover { background: var(--accent-hover); }
-    .at-btn-ghost { border: 1px solid var(--border-hover); color: var(--text-primary); margin-left: 12px; }
-    .at-btn-ghost:hover { background: rgba(129,140,248,.1); }
     /* ===== footer ===== */
     .site-footer { border-top: 1px solid var(--border); padding: 26px 0; text-align: center; color: var(--text-secondary); font-size: 13.5px; }
     .site-footer a { color: var(--text-secondary); }
@@ -148,9 +139,10 @@
       .leader-portrait { min-height: 420px; border-right: 0; border-bottom: 1px solid rgba(139,133,120,.22); }
       .leader-body { padding: 28px 24px; }
       .stars-grid { grid-template-columns: 1fr; }
+      .why-grid, .entries-grid { grid-template-columns: 1fr; }
       .staff-grid { grid-template-columns: repeat(3, 1fr); gap: 10px; }
       .hitl-steps { flex-direction: column; }
-      .wrap, .at-hero .wrap { padding: 0 16px; }
+      .wrap { padding: 0 16px; }
       .at-hero { padding: 56px 0 40px; } .at-hero h1 { font-size: 32px; }
     }
   </style>
@@ -181,56 +173,81 @@
   </nav>
 
   <main>
-    <!-- hero -->
+    <!-- 2.1 Hero -->
     <section class="at-hero">
       <div class="wrap">
         <span class="at-label">AI TEAM</span>
-        <h1>AI 伙伴</h1>
-        <p>不是功能模块，是一支有名字、有相貌、各守一摊的数字员工团队。</p>
-        <div class="at-leader-line">思理掌门率四大高手，统领 36 名数字员工</div>
+        <h1>你的 AI 团队</h1>
+        <p class="sub">思理掌门率四大高手，统领 36 名数字员工。</p>
+        <p class="lead">他们各有各的名号、各有各的看家本事：有人管调研，有人管诊断，有人跟着你跑客户，有人替你布阵。你把活儿说出口，他们各自开工；最后一锤，永远是你来敲。</p>
       </div>
     </section>
 
-    <!-- 掌门大卡 -->
-    <section class="wrap">
-      <div class="leader-card">
-        <div class="leader-portrait">
-          <span class="leader-badge">掌 门</span>
-          <span class="en-tag">SILI</span>
-          <img src="/images/ai-team/sili.jpg" alt="思理掌门" />
-          <div class="portrait-fade"></div>
-        </div>
-        <div class="leader-body">
-          <div class="alias">思理</div>
-          <div class="role">掌 门 · 公 司 大 脑</div>
-          <p class="leader-quote">掌门不问细务，只问全局。三十六名数字员工各守一摊，她看的是整盘棋——哪一路先动，哪一处该守，哪件事今天必须定。</p>
-          <ul class="leader-points">
-            <li><b>跨会话记忆：</b>跟了你很多年，什么都记得，不用从头介绍</li>
-            <li><b>经营分析：</b>漏斗、驾驶舱、整盘棋的走向，随时看她拆给你看</li>
-            <li><b>待办建议：</b>该跟进的、该定的、该防的，按你的节奏提醒</li>
-          </ul>
+    <!-- 2.2 为什么 -->
+    <section class="why-sec">
+      <div class="wrap">
+        <h2>为什么是「一支有名有姓的团队」</h2>
+        <div class="why-grid">
+          <div class="why-card">
+            <span class="n">①</span>
+            <h3>有名字，才记得住</h3>
+            <p>一个数字没有温度，一个名字才有。你把活儿交给「百晓生」，就记得住他的本事，也记得住他能帮到哪儿。</p>
+          </div>
+          <div class="why-card">
+            <span class="n">②</span>
+            <h3>分工明确，各守一摊</h3>
+            <p>调研归百晓生，诊断归平一指，随行归神行，布阵归黄药师；掌门思理替你记全局。不用你操心谁该干什么，说清要办什么事就行。</p>
+          </div>
+          <div class="why-card">
+            <span class="n">③</span>
+            <h3>决定权始终在你手里</h3>
+            <p>他们出手稿、出建议、出诊断，从不越位。草稿你改，方子你开，单子你签。</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- 四大高手 -->
+    <!-- 2.3 掌门 -->
+    <section class="leader-sec">
+      <div class="wrap">
+        <div class="leader-card">
+          <div class="leader-portrait">
+            <span class="leader-badge">掌 门</span>
+            <span class="en-tag">SILI</span>
+            <img src="/images/ai-team/sili.jpg" alt="思理掌门" />
+            <div class="portrait-fade"></div>
+          </div>
+          <div class="leader-body">
+            <div class="alias">思理</div>
+            <div class="role">掌 门 · 决 策 中 枢</div>
+            <p class="leader-oneline">她记得你生意里的每一件事，把全局理成你能一眼看懂的一张图。</p>
+            <p class="leader-quote">客户的偏好、上次的报价、卡了三天的那笔单，她都替你记着。每天开工前问她一句「这个月怎么样」，她会把经营漏斗、团队表现和风险商机整理成一份 30 秒能看完的清单；哪些客户该回访、哪些单该催，她的建议清单每小时都在刷新。<br/>她只做两件事：把事实理清楚，把建议摆上来。拍板的，是你。</p>
+            <div class="leader-tags">
+              <span>全局记忆</span><span>经营分析</span><span>待办建议</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2.4 四大高手 -->
     <section class="stars-sec">
       <div class="wrap">
         <p class="sec-label">四大高手</p>
-        <h2>四位具名数字员工，各守一摊</h2>
-        <p class="sec-sub">正名在产品里，别号在江湖上——技能栏全部来自代码可验证的真实能力。</p>
+        <h2>台前四位，各有一手绝活</h2>
+        <p class="sec-sub">正名在产品里（小销/小研/诊断官/教练），别号在江湖上。</p>
         <div class="stars-grid">
           <div class="star-card">
             <div class="star-portrait">
-              <img src="/images/ai-team/shenxing.jpg" alt="神行 · 销售随行者" />
+              <img src="/images/ai-team/shenxing.jpg" alt="神行 · 销售随行" />
               <div class="portrait-fade"></div>
               <div class="alias">神行</div>
               <div class="en-name">MERCURY</div>
             </div>
             <div class="star-body">
-              <div class="role-line">小销 · 销售随行者</div>
-              <p class="tale">神行太保，日行八百里，江湖书信从不误事。他不做主将，他做随行：主将打到哪，他跟到哪，粮草书信一步不落。</p>
-              <p class="skills">拜访说完，<b>结构化纪要</b>自动进客户时间线；<b>跟进邮件</b>替你拟好；见客户前，<b>会前准备</b>连对方上句话都替你翻出来；顺手把线索评分、商机 5 维诊断、每日健康分、每小时巡检全链包圆。</p>
+              <div class="role-line">神行 · 销售随行</div>
+              <p class="tale">日行八百里，书信从不误事。</p>
+              <p class="does">拜访录音一键上传，自动转成结构化纪要，直接进客户时间线；跟进邮件替你拟好草稿；第二天见谁，会前准备连对方上句话都替你翻出来。线索评分、商机五维诊断、每日健康分、异常巡检，他一路随行。</p>
               <div class="closing">随行不做主：草稿你改，报价你定，单子你签。</div>
             </div>
           </div>
@@ -242,9 +259,9 @@
               <div class="en-name">SCOUT</div>
             </div>
             <div class="star-body">
-              <div class="role-line">小研 · 调研官</div>
-              <p class="tale">百晓生，兵器谱主人，天下行业情报无所不知。江湖人说：他的册子上，没有「不知道」三个字。</p>
-              <p class="skills"><b>获客邮件</b>按画像起草，合规检查他先过一遍；<b>线索打分</b>，值不值得跟一眼分明；<b>域名找邮箱</b>：输入公司域名，联系人邮箱到手，带职位带可信度（免费额度每月 25 次，用多少剩多少，账目透明）。</p>
+              <div class="role-line">百晓生 · 调研官</div>
+              <p class="tale">天下行业情报，一本册子记全。</p>
+              <p class="does">按画像起草获客邮件并先过一遍合规检查；给每条新线索打分，值不值得跟一眼分明；输入公司域名就能找到联系人邮箱，带职位、带可信度。用多少、花多少，账目清清楚楚。</p>
               <div class="closing">情报他包了；出手不出手，你说了算。</div>
             </div>
           </div>
@@ -256,36 +273,44 @@
               <div class="en-name">MEDIC</div>
             </div>
             <div class="star-body">
-              <div class="role-line">诊断官 · 商机医生</div>
-              <p class="tale">平一指，神医。一指搭脉，商机是活是死、病根在价格、在人、还是在流程，他指给你看。他有个规矩：只诊，不擅动。</p>
-              <p class="skills"><b>5 维诊断</b>告诉你这单卡在哪；<b>每小时巡检</b>全量商机，异常当场报；<b>每日健康分</b>早上九点准时到；最绝的一手：<b>内容→成交归因一条线</b>，哪篇内容带来了哪笔成交，从第一次阅读捋到签单。</p>
+              <div class="role-line">平一指 · 商机医生</div>
+              <p class="tale">一指搭脉，生死一目了然。</p>
+              <p class="does">五维诊断告诉你这单卡在哪；每小时巡检全量商机，异常当场报；每天早上的健康分准时到。最见功力的一手：哪篇内容带来了哪笔成交，从第一次阅读捋到签单，一条线到底。</p>
               <div class="closing">诊归他，方子你开。</div>
             </div>
           </div>
           <div class="star-card">
             <div class="star-portrait">
-              <img src="/images/ai-team/huangyaoshi.jpg" alt="黄药师 · 系统架构师" />
+              <img src="/images/ai-team/huangyaoshi.jpg" alt="黄药师 · 总教头" />
               <div class="portrait-fade"></div>
               <div class="alias">黄药师</div>
               <div class="en-name">DAEDALUS</div>
             </div>
             <div class="star-body">
-              <div class="role-line">教练 · 系统架构师</div>
-              <p class="tale">黄药师，桃花岛主。整座桃花岛就是他的一件作品：奇门遁甲、五行机关，一草一木皆按阵法而设。外人进去出不来，他自己闭着眼也走得通。</p>
-              <p class="skills">对话式<b>配置教练</b>：说需求，他帮你搭专属数字员工（双层配置：架构层与使用层分开管）；<b>待办建议</b>按你的节奏刷新；每个 agent 都带<b>完整功能卡</b>，能干什么、怎么计费、边界在哪，问他就有一整页答案。</p>
-              <div class="closing">阵法他布，闯阵的路，你自己走熟。</div>
+              <div class="role-line">黄药师 · 总教头</div>
+              <p class="tale">整座桃花岛，都是他布的阵。</p>
+              <p class="does">说一句需求，他帮你搭出专属数字员工：人设、能看的数据（只看不改）、挂什么技能，按你的决策逻辑布阵；每项能力配一张完整功能卡，能干什么、怎么计费、边界在哪，问他就有一整页答案。</p>
+              <div class="closing">阵法他布，闯阵的路你自己走熟。</div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 36 名组织图 -->
+    <!-- 2.5 身后 36 -->
+    <section class="behind-sec">
+      <div class="wrap">
+        <div class="behind-box">
+          <h2>他们身后：36 名数字员工</h2>
+          <p class="quote">四大高手是台前的四位，身后还有一支 36 人的团队：写内容的、跑数据的、盯消息的、守渠道的，各司其职。</p>
+          <p class="sub">你不用记住每一个人，只要说清要办什么事。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 组织图 -->
     <section class="org-sec">
       <div class="wrap">
-        <p class="sec-label"> Organization</p>
-        <h2>36 名数字员工 · 六大部门</h2>
-        <p class="sec-sub">可指挥、自动跑、值守中——三类岗位，全天候协同；决策始终在人。</p>
         <div class="org-panel">
           <div class="dept-title">💼 销售部</div>
           <div class="staff-grid">
@@ -348,28 +373,54 @@
       </div>
     </section>
 
-    <!-- Human-in-the-loop -->
-    <section class="hitl-sec">
+    <!-- 2.6 三入口 -->
+    <section class="entries-sec">
       <div class="wrap">
-        <div class="hitl-box">
-          <h2>AI 提议，决策始终在人</h2>
-          <p>所有对外动作——邮件、跟进、报价——先由 AI 起草，你审阅修改后再发。敏感操作（删客户、批量改归属、导出全库）全部进审批闸门：该快的快，该拦的拦。</p>
-          <div class="hitl-steps">
-            <div class="hitl-step"><b>AI 起草</b>纪要、邮件、诊断、归因，全部自动就位</div>
-            <div class="hitl-step"><b>你审阅</b>草稿你改，报价你定，方子你开</div>
-            <div class="hitl-step"><b>闸门把关</b>5 类敏感操作先批后动，审计日志全留</div>
+        <h2>怎么让他们开工</h2>
+        <div class="entries-grid">
+          <div class="entry-card">
+            <span class="n">入口一</span>
+            <h3>对话召唤</h3>
+            <p>在对话框里说人话：「给小张写封跟进邮件」「看看这单卡在哪」「查查这个行业的机会词」，活儿自然派到对的人手上。</p>
+          </div>
+          <div class="entry-card">
+            <span class="n">入口二</span>
+            <h3>接上你的渠道</h3>
+            <p>微信、企业微信、WhatsApp、LinkedIn、邮箱，接进集成中心；客户从哪个渠道来，时间线上都接得上。</p>
+          </div>
+          <div class="entry-card">
+            <span class="n">入口三</span>
+            <h3>从一张算起的用量</h3>
+            <p>AI 花了多少，按模块看得到：哪次查询、哪封邮件、哪份纪要，一笔一笔可查。</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CTA -->
+    <!-- 2.7 FAQ -->
+    <section class="faq-sec">
+      <div class="wrap">
+        <div class="faq-item open">
+          <div class="faq-q">他们会替我做决定吗？</div>
+          <div class="faq-a"><p>不会。他们出手稿、出建议、出诊断，决定权始终在你手里：草稿你改，方子你开，单子你签。</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">他们干砸了怎么办？</div>
+          <div class="faq-a"><p>每个动作都留痕：敏感操作先审批后执行，变更记录一路可查。</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">我的数据安全吗？</div>
+          <div class="faq-a"><p>一套系统服务多家公司，数据行级隔离、互不可见；企业方案支持按需私有化部署，数据留在你自己手里。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2.8 CTA -->
     <section class="at-cta">
       <div class="wrap">
-        <h2>让这支团队，明天就开始跟你干活</h2>
-        <p>个人免费额度即可开始；企业按团队规模与部署方式评估。</p>
+        <h2>申请个人试用</h2>
+        <p>审核通过，即赠 1,000 万 token 免费额度。<br/>一句话起头，让团队开工。</p>
         <a href="https://agent.silimind.net/register" class="at-btn at-btn-primary">申请个人试用</a>
-        <a href="mailto:micheal@silimind.net" class="at-btn at-btn-ghost">联系销售</a>
       </div>
     </section>
   </main>
@@ -386,6 +437,8 @@
       document.addEventListener('click',function(e){if(nav.classList.contains('sm-open')&&!nav.contains(e.target)){nav.classList.remove('sm-open');t.setAttribute('aria-expanded','false');}});
       var m=nav.querySelector('.sm-menu');
       if(m){m.addEventListener('click',function(e){if(e.target.closest('a')){nav.classList.remove('sm-open');t.setAttribute('aria-expanded','false');}});}
+      var f=document.querySelectorAll('.faq-q');
+      f.forEach(function(q){q.addEventListener('click',function(){var it=q.parentElement;var was=it.classList.contains('open');document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');});if(!was)it.classList.add('open');});});
     })();
   </script>
   </body>
