@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <title>AI 伙伴 · 思理掌门与四大高手 - SiliMind</title>
+  <meta name="description" content="思理掌门率四大高手，统领 36 名数字员工：神行随行、百晓生调研、平一指诊断、黄药师布阵——AI 提议，决策始终在人。" />
+  <link rel="canonical" href="https://www.silimind.net/ai-team" />
+  <meta property="og:title" content="AI 伙伴 · 思理掌门与四大高手 - SiliMind" />
+  <meta property="og:description" content="思理掌门率四大高手，统领 36 名数字员工——AI 提议，决策始终在人。" />
+  <meta property="og:url" content="https://www.silimind.net/ai-team" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="SiliMind" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJ7HH4824R"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RJ7HH4824R');
+  </script>
+  <style>
+    :root {
+      --bg: #0b0c10; --bg-secondary: #14151b;
+      --text-primary: #f3f4f6; --text-secondary: #9ca3af;
+      --accent: #6366f1; --accent-hover: #4f46e5; --accent-light: #818cf8;
+      --border: rgba(255,255,255,.08); --border-hover: rgba(129,140,248,.4);
+      --gold: #C9A227; --gold-l: #E8C55A;
+      --wuxia-text: #EDE6D6; --wuxia-body: #C9C2B2; --wuxia-sub: #8B8578;
+      --line-gold: rgba(201,162,39,.35);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; background: var(--bg); color: var(--text-primary); line-height: 1.7; }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 32px; }
+    /* ===== sm-nav ===== */
+    .sm-nav { position: sticky; top: 0; z-index: 999; background: rgba(11,12,16,.88); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+    .sm-nav-inner { max-width: 1120px; margin: 0 auto; padding: 14px 32px; display: flex; align-items: center; justify-content: space-between; }
+    .sm-logo { font-size: 20px; font-weight: 700; color: var(--text-primary); text-decoration: none; letter-spacing: .5px; }
+    .sm-toggle { background: none; border: 0; cursor: pointer; padding: 10px; display: flex; flex-direction: column; gap: 5px; }
+    .sm-bar { display: block; width: 22px; height: 2px; background: var(--text-primary); border-radius: 2px; transition: transform .25s ease, opacity .2s ease; }
+    .sm-open .sm-bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .sm-open .sm-bar:nth-child(2) { opacity: 0; }
+    .sm-open .sm-bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .sm-menu { display: none; position: absolute; top: 100%; right: 16px; width: 300px; max-width: calc(100vw - 24px); background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 14px; padding: 10px; box-shadow: 0 16px 48px rgba(0,0,0,.5); }
+    .sm-open .sm-menu { display: block; }
+    .sm-menu a { display: block; padding: 10px 14px; border-radius: 8px; color: var(--text-primary); text-decoration: none; font-size: 15px; }
+    .sm-menu a:hover { background: rgba(129,140,248,.12); }
+    .sm-top { font-weight: 600; }
+    .sm-sub { margin: 2px 10px 8px 18px; padding-left: 12px; border-left: 2px solid var(--border); }
+    .sm-sub a { font-size: 13.5px; color: var(--text-secondary); padding: 7px 12px; }
+    .sm-cta { margin-top: 8px; text-align: center; background: var(--accent); color: #fff !important; font-weight: 600; border-radius: 10px; }
+    .sm-lang { margin-top: 8px; padding: 10px 14px 4px; font-size: 12.5px; color: var(--text-secondary); border-top: 1px solid var(--border); }
+    .sm-lang a { display: inline; padding: 0 2px; font-size: 12.5px; color: var(--text-secondary); }
+    @media (max-width: 640px) { .sm-nav-inner { padding: 12px 16px; } .sm-menu { left: 12px; right: 12px; width: auto; } }
+    /* ===== hero ===== */
+    .at-hero { padding: 84px 0 56px; text-align: center; background: radial-gradient(ellipse 80% 50% at 50% -10%, rgba(201,162,39,.14), transparent); }
+    .at-label { display: inline-block; font-size: 13px; letter-spacing: 3px; font-weight: 700; color: var(--gold); text-transform: uppercase; margin-bottom: 18px; }
+    .at-hero h1 { font-size: 44px; line-height: 1.25; margin-bottom: 16px; }
+    .at-hero p { max-width: 720px; margin: 0 auto; color: var(--text-secondary); font-size: 17px; }
+    .at-hero .at-leader-line { margin-top: 14px; font-size: 15px; color: var(--gold-l); letter-spacing: 1px; }
+    /* ===== 掌门大卡 ===== */
+    .leader-card {
+      max-width: 1080px; margin: 26px auto 0;
+      display: grid; grid-template-columns: 400px 1fr;
+      border-radius: 20px; overflow: hidden;
+      background: linear-gradient(160deg,#141B2B 0%,#0C111C 62%,#0A0E18 100%);
+      border: 1px solid rgba(201,162,39,.42);
+      box-shadow: 0 30px 76px rgba(0,0,0,.6), inset 0 1px 0 rgba(232,197,90,.12);
+      position: relative;
+    }
+    .leader-card::before { content:""; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,transparent,var(--gold),transparent); }
+    .leader-portrait { position: relative; min-height: 533px; border-right: 1px solid rgba(139,133,120,.22); }
+    .leader-portrait img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center top; display:block; }
+    .leader-portrait .portrait-fade { position:absolute; inset:0; pointer-events:none; background:linear-gradient(180deg,transparent 55%,rgba(10,14,24,.45) 82%,rgba(10,14,24,.92) 100%); }
+    .leader-badge { position:absolute; top:18px; left:50%; transform:translateX(-50%); font-size:9px; letter-spacing:4px; color:#0B0F1A; font-weight:700; background:linear-gradient(100deg,#E8C55A,#C9A227); padding:3px 14px; border-radius:999px; z-index:2; }
+    .en-tag { position:absolute; top:17px; right:20px; font-size:10px; letter-spacing:2.5px; color:rgba(139,133,120,.7); text-transform:uppercase; z-index:2; }
+    .leader-body { padding: 40px 44px 36px; display:flex; flex-direction:column; }
+    .leader-body .alias { font-size: 40px; font-weight: 700; color: var(--gold-l); letter-spacing: 4px; line-height: 1.15; }
+    .leader-body .role { font-size: 13px; color: var(--gold); letter-spacing: 2px; margin: 6px 0 18px; font-weight: 600; }
+    .leader-quote { font-size: 16.5px; color: var(--wuxia-text); line-height: 1.95; margin-bottom: 22px; }
+    .leader-points { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .leader-points li { font-size: 14px; color: var(--wuxia-body); padding-left: 20px; position: relative; }
+    .leader-points li::before { content: "✦"; position: absolute; left: 0; color: var(--gold); }
+    .leader-points li b { color: var(--wuxia-text); font-weight: 600; }
+    /* ===== 四大高手 ===== */
+    .stars-sec { padding: 64px 0 30px; }
+    .stars-sec .sec-label { font-size: 11.5px; letter-spacing: 3px; color: var(--gold); font-weight: 700; margin-bottom: 14px; display: flex; align-items: center; gap: 12px; }
+    .stars-sec .sec-label::after { content:""; flex:1; height:1px; background:linear-gradient(90deg,var(--line-gold),transparent); }
+    .stars-sec h2 { font-size: 28px; margin-bottom: 10px; }
+    .stars-sec .sec-sub { color: var(--text-secondary); margin-bottom: 30px; }
+    .stars-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .star-card { background: linear-gradient(165deg,#121826,#0C111C); border: 1px solid rgba(201,162,39,.3); border-radius: 18px; overflow: hidden; display: flex; flex-direction: column; }
+    .star-card .star-portrait { position: relative; height: 300px; overflow: hidden; }
+    .star-card .star-portrait img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+    .star-card .star-portrait .portrait-fade { position:absolute; inset:0; background:linear-gradient(180deg,transparent 55%,rgba(12,17,28,.55) 85%,rgba(12,17,28,.95) 100%); }
+    .star-card .alias { position:absolute; left: 24px; bottom: 12px; font-size: 30px; font-weight: 700; color: var(--gold-l); letter-spacing: 3px; text-shadow: 0 4px 18px rgba(0,0,0,.7); }
+    .star-card .en-name { position:absolute; right: 20px; bottom: 18px; font-size: 10px; letter-spacing: 2.5px; color: rgba(232,197,90,.6); text-transform: uppercase; }
+    .star-body { padding: 24px 28px 26px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+    .star-body .role-line { font-size: 12px; color: var(--gold); letter-spacing: 1.5px; font-weight: 600; }
+    .star-body .tale { font-size: 14px; color: var(--wuxia-text); line-height: 1.85; }
+    .star-body .skills { font-size: 13.5px; color: var(--wuxia-body); line-height: 1.85; }
+    .star-body .skills b { color: var(--gold-l); font-weight: 600; }
+    .star-body .closing { font-size: 13px; color: var(--gold); font-weight: 600; letter-spacing: 1.2px; display: flex; align-items: center; gap: 10px; margin-top: auto; padding-top: 12px; }
+    .star-body .closing::before { content:""; width: 18px; height: 1.5px; background: var(--gold); opacity:.7; }
+    /* ===== 组织图 ===== */
+    .org-sec { padding: 64px 0 30px; }
+    .org-sec h2 { font-size: 28px; margin-bottom: 10px; }
+    .org-sec .sec-sub { color: var(--text-secondary); margin-bottom: 30px; }
+    .org-panel { background: linear-gradient(168deg,#101725,#0A0E18); border: 1px solid rgba(201,162,39,.22); border-radius: 18px; padding: 36px 40px; }
+    .dept-title { font-size: 12px; color: var(--gold); letter-spacing: 2px; margin: 22px 0 12px; font-weight: 600; }
+    .dept-title:first-of-type { margin-top: 0; }
+    .staff-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
+    .staff { display: flex; flex-direction: column; align-items: center; gap: 7px; padding: 12px 6px; border-radius: 12px; background: rgba(17,24,39,.55); border: 1px solid rgba(139,133,120,.16); transition: border-color .15s; }
+    .staff:hover { border-color: rgba(201,162,39,.4); }
+    .chip { width: 44px; height: 44px; border-radius: 11px; display: flex; align-items: center; justify-content: center; font-size: 19px; background: rgba(139,133,120,.10); border: 1px solid rgba(139,133,120,.22); }
+    .chip.call { border-color: rgba(62,142,126,.45); background: rgba(62,142,126,.08); }
+    .chip.auto { border-style: dashed; border-color: rgba(139,133,120,.35); }
+    .chip.listen { border-color: rgba(232,197,90,.4); background: rgba(232,197,90,.06); }
+    .s-name { font-size: 10.5px; color: #B8B0A0; text-align: center; line-height: 1.3; }
+    .legend { display: flex; gap: 24px; margin-top: 22px; flex-wrap: wrap; font-size: 11.5px; color: var(--text-secondary); }
+    .legend span { display: flex; align-items: center; gap: 7px; }
+    .dot { width: 10px; height: 10px; border-radius: 3px; }
+    .dot.call { background: rgba(62,142,126,.5); border: 1px solid rgba(62,142,126,.8); }
+    .dot.auto { border: 1.5px dashed rgba(139,133,120,.6); }
+    .dot.listen { background: rgba(232,197,90,.3); border: 1px solid rgba(232,197,90,.7); }
+    /* ===== human-in-the-loop ===== */
+    .hitl-sec { padding: 64px 0 30px; }
+    .hitl-box { background: linear-gradient(165deg,#121826,#0C111C); border: 1px solid rgba(201,162,39,.3); border-radius: 18px; padding: 34px 38px; }
+    .hitl-box h2 { font-size: 24px; margin-bottom: 12px; }
+    .hitl-box p { color: var(--text-secondary); font-size: 15px; line-height: 1.9; }
+    .hitl-box .hitl-steps { display: flex; gap: 14px; margin-top: 22px; flex-wrap: wrap; }
+    .hitl-step { flex: 1; min-width: 180px; background: rgba(17,24,39,.6); border: 1px solid var(--border); border-radius: 12px; padding: 16px 18px; font-size: 13.5px; color: var(--text-secondary); }
+    .hitl-step b { display: block; color: var(--gold-l); margin-bottom: 5px; font-size: 14px; }
+    /* ===== CTA ===== */
+    .at-cta { text-align: center; padding: 72px 0 88px; border-top: 1px solid var(--border); background: radial-gradient(ellipse 60% 80% at 50% 110%, rgba(99,102,241,.14), transparent); }
+    .at-cta h2 { font-size: 28px; margin-bottom: 12px; }
+    .at-cta p { color: var(--text-secondary); margin-bottom: 26px; }
+    .at-btn { display: inline-block; padding: 12px 26px; border-radius: 10px; text-decoration: none; font-size: 15px; font-weight: 600; }
+    .at-btn-primary { background: var(--accent); color: #fff; }
+    .at-btn-primary:hover { background: var(--accent-hover); }
+    .at-btn-ghost { border: 1px solid var(--border-hover); color: var(--text-primary); margin-left: 12px; }
+    .at-btn-ghost:hover { background: rgba(129,140,248,.1); }
+    /* ===== footer ===== */
+    .site-footer { border-top: 1px solid var(--border); padding: 26px 0; text-align: center; color: var(--text-secondary); font-size: 13.5px; }
+    .site-footer a { color: var(--text-secondary); }
+    @media (max-width: 900px) {
+      .leader-card { grid-template-columns: 1fr; }
+      .leader-portrait { min-height: 420px; border-right: 0; border-bottom: 1px solid rgba(139,133,120,.22); }
+      .leader-body { padding: 28px 24px; }
+      .stars-grid { grid-template-columns: 1fr; }
+      .staff-grid { grid-template-columns: repeat(3, 1fr); gap: 10px; }
+      .hitl-steps { flex-direction: column; }
+      .wrap, .at-hero .wrap { padding: 0 16px; }
+      .at-hero { padding: 56px 0 40px; } .at-hero h1 { font-size: 32px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="sm-nav">
+    <div class="sm-nav-inner">
+      <a href="/" class="sm-logo">SiliMind</a>
+      <button class="sm-toggle" aria-label="菜单" aria-expanded="false" aria-controls="sm-menu"><span class="sm-bar"></span><span class="sm-bar"></span><span class="sm-bar"></span></button>
+    </div>
+    <div class="sm-menu" id="sm-menu">
+      <a href="/products" class="sm-link sm-top">产品</a>
+      <div class="sm-sub">
+        <a href="/products#role-sales">for Sales · 销售/FAE</a>
+        <a href="/products#role-marketing">for Marketing · 市场运营</a>
+        <a href="/products#role-ceo">for CEO · 老板/CEO</a>
+      </div>
+      <a href="/ai-team" class="sm-link">AI 伙伴</a>
+      <a href="/solutions" class="sm-link">平台</a>
+      <a href="/#metrics" class="sm-link">性能</a>
+      <a href="/#pricing" class="sm-link">价格</a>
+      <a href="/about" class="sm-link">关于</a>
+      <a href="/cases" class="sm-link">案例</a>
+      <a href="/blog/" class="sm-link">博客</a>
+      <a href="https://agent.silimind.net/register" class="sm-link sm-cta">申请个人试用</a>
+      <div class="sm-lang">中文 · <a href="/en/">EN</a> · <a href="/ja/">日本語</a> · <a href="/ko/">한국어</a></div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- hero -->
+    <section class="at-hero">
+      <div class="wrap">
+        <span class="at-label">AI TEAM</span>
+        <h1>AI 伙伴</h1>
+        <p>不是功能模块，是一支有名字、有相貌、各守一摊的数字员工团队。</p>
+        <div class="at-leader-line">思理掌门率四大高手，统领 36 名数字员工</div>
+      </div>
+    </section>
+
+    <!-- 掌门大卡 -->
+    <section class="wrap">
+      <div class="leader-card">
+        <div class="leader-portrait">
+          <span class="leader-badge">掌 门</span>
+          <span class="en-tag">SILI</span>
+          <img src="/images/ai-team/sili.jpg" alt="思理掌门" />
+          <div class="portrait-fade"></div>
+        </div>
+        <div class="leader-body">
+          <div class="alias">思理</div>
+          <div class="role">掌 门 · 公 司 大 脑</div>
+          <p class="leader-quote">掌门不问细务，只问全局。三十六名数字员工各守一摊，她看的是整盘棋——哪一路先动，哪一处该守，哪件事今天必须定。</p>
+          <ul class="leader-points">
+            <li><b>跨会话记忆：</b>跟了你很多年，什么都记得，不用从头介绍</li>
+            <li><b>经营分析：</b>漏斗、驾驶舱、整盘棋的走向，随时看她拆给你看</li>
+            <li><b>待办建议：</b>该跟进的、该定的、该防的，按你的节奏提醒</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 四大高手 -->
+    <section class="stars-sec">
+      <div class="wrap">
+        <p class="sec-label">四大高手</p>
+        <h2>四位具名数字员工，各守一摊</h2>
+        <p class="sec-sub">正名在产品里，别号在江湖上——技能栏全部来自代码可验证的真实能力。</p>
+        <div class="stars-grid">
+          <div class="star-card">
+            <div class="star-portrait">
+              <img src="/images/ai-team/shenxing.jpg" alt="神行 · 销售随行者" />
+              <div class="portrait-fade"></div>
+              <div class="alias">神行</div>
+              <div class="en-name">MERCURY</div>
+            </div>
+            <div class="star-body">
+              <div class="role-line">小销 · 销售随行者</div>
+              <p class="tale">神行太保，日行八百里，江湖书信从不误事。他不做主将，他做随行：主将打到哪，他跟到哪，粮草书信一步不落。</p>
+              <p class="skills">拜访说完，<b>结构化纪要</b>自动进客户时间线；<b>跟进邮件</b>替你拟好；见客户前，<b>会前准备</b>连对方上句话都替你翻出来；顺手把线索评分、商机 5 维诊断、每日健康分、每小时巡检全链包圆。</p>
+              <div class="closing">随行不做主：草稿你改，报价你定，单子你签。</div>
+            </div>
+          </div>
+          <div class="star-card">
+            <div class="star-portrait">
+              <img src="/images/ai-team/baixiaosheng.jpg" alt="百晓生 · 调研官" />
+              <div class="portrait-fade"></div>
+              <div class="alias">百晓生</div>
+              <div class="en-name">SCOUT</div>
+            </div>
+            <div class="star-body">
+              <div class="role-line">小研 · 调研官</div>
+              <p class="tale">百晓生，兵器谱主人，天下行业情报无所不知。江湖人说：他的册子上，没有「不知道」三个字。</p>
+              <p class="skills"><b>获客邮件</b>按画像起草，合规检查他先过一遍；<b>线索打分</b>，值不值得跟一眼分明；<b>域名找邮箱</b>：输入公司域名，联系人邮箱到手，带职位带可信度（免费额度每月 25 次，用多少剩多少，账目透明）。</p>
+              <div class="closing">情报他包了；出手不出手，你说了算。</div>
+            </div>
+          </div>
+          <div class="star-card">
+            <div class="star-portrait">
+              <img src="/images/ai-team/pingyizhi.jpg" alt="平一指 · 商机医生" />
+              <div class="portrait-fade"></div>
+              <div class="alias">平一指</div>
+              <div class="en-name">MEDIC</div>
+            </div>
+            <div class="star-body">
+              <div class="role-line">诊断官 · 商机医生</div>
+              <p class="tale">平一指，神医。一指搭脉，商机是活是死、病根在价格、在人、还是在流程，他指给你看。他有个规矩：只诊，不擅动。</p>
+              <p class="skills"><b>5 维诊断</b>告诉你这单卡在哪；<b>每小时巡检</b>全量商机，异常当场报；<b>每日健康分</b>早上九点准时到；最绝的一手：<b>内容→成交归因一条线</b>，哪篇内容带来了哪笔成交，从第一次阅读捋到签单。</p>
+              <div class="closing">诊归他，方子你开。</div>
+            </div>
+          </div>
+          <div class="star-card">
+            <div class="star-portrait">
+              <img src="/images/ai-team/huangyaoshi.jpg" alt="黄药师 · 系统架构师" />
+              <div class="portrait-fade"></div>
+              <div class="alias">黄药师</div>
+              <div class="en-name">DAEDALUS</div>
+            </div>
+            <div class="star-body">
+              <div class="role-line">教练 · 系统架构师</div>
+              <p class="tale">黄药师，桃花岛主。整座桃花岛就是他的一件作品：奇门遁甲、五行机关，一草一木皆按阵法而设。外人进去出不来，他自己闭着眼也走得通。</p>
+              <p class="skills">对话式<b>配置教练</b>：说需求，他帮你搭专属数字员工（双层配置：架构层与使用层分开管）；<b>待办建议</b>按你的节奏刷新；每个 agent 都带<b>完整功能卡</b>，能干什么、怎么计费、边界在哪，问他就有一整页答案。</p>
+              <div class="closing">阵法他布，闯阵的路，你自己走熟。</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 36 名组织图 -->
+    <section class="org-sec">
+      <div class="wrap">
+        <p class="sec-label"> Organization</p>
+        <h2>36 名数字员工 · 六大部门</h2>
+        <p class="sec-sub">可指挥、自动跑、值守中——三类岗位，全天候协同；决策始终在人。</p>
+        <div class="org-panel">
+          <div class="dept-title">💼 销售部</div>
+          <div class="staff-grid">
+            <div class="staff"><div class="chip call">💬</div><div class="s-name">回复建议官</div></div>
+            <div class="staff"><div class="chip call">🎯</div><div class="s-name">线索评分员</div></div>
+            <div class="staff"><div class="chip call">🚀</div><div class="s-name">主动获客师</div></div>
+            <div class="staff"><div class="chip auto">❤️</div><div class="s-name">健康评分员</div></div>
+            <div class="staff"><div class="chip auto">🔁</div><div class="s-name">序列跟进员</div></div>
+            <div class="staff"><div class="chip auto">🔍</div><div class="s-name">巡检员</div></div>
+            <div class="staff"><div class="chip auto">🎙️</div><div class="s-name">录音转写员</div></div>
+            <div class="staff"><div class="chip auto">📝</div><div class="s-name">拜访记录员</div></div>
+            <div class="staff"><div class="chip auto">🕵️</div><div class="s-name">身份鉴定员</div></div>
+          </div>
+          <div class="dept-title">📣 内容营销部</div>
+          <div class="staff-grid">
+            <div class="staff"><div class="chip call">🗂</div><div class="s-name">拜访选题员</div></div>
+            <div class="staff"><div class="chip call">🔤</div><div class="s-name">关键词侦察员</div></div>
+            <div class="staff"><div class="chip call">💡</div><div class="s-name">选题官</div></div>
+            <div class="staff"><div class="chip call">📈</div><div class="s-name">SEO师</div></div>
+            <div class="staff"><div class="chip auto">📦</div><div class="s-name">分发快递员</div></div>
+            <div class="staff"><div class="chip call">📊</div><div class="s-name">归因分析师</div></div>
+            <div class="staff"><div class="chip call">🧪</div><div class="s-name">AB实验员</div></div>
+          </div>
+          <div class="dept-title">🎧 客服渠道区</div>
+          <div class="staff-grid">
+            <div class="staff"><div class="chip listen">👁</div><div class="s-name">WhatsApp接线</div></div>
+            <div class="staff"><div class="chip listen">👁</div><div class="s-name">社媒接线员</div></div>
+            <div class="staff"><div class="chip listen">👁</div><div class="s-name">邮件客服</div></div>
+            <div class="staff"><div class="chip listen">👁</div><div class="s-name">收发室大爷</div></div>
+            <div class="staff"><div class="chip auto">😊</div><div class="s-name">情绪分析员</div></div>
+            <div class="staff"><div class="chip call">🔎</div><div class="s-name">消息分析师</div></div>
+            <div class="staff"><div class="chip call">📩</div><div class="s-name">合同抽取员</div></div>
+          </div>
+          <div class="dept-title">📊 数据分析部</div>
+          <div class="staff-grid">
+            <div class="staff"><div class="chip auto">📄</div><div class="s-name">周报撰写员</div></div>
+            <div class="staff"><div class="chip call">📉</div><div class="s-name">经营分析师</div></div>
+            <div class="staff"><div class="chip call">🚨</div><div class="s-name">异常预警员</div></div>
+            <div class="staff"><div class="chip call">🧹</div><div class="s-name">资料保洁员</div></div>
+            <div class="staff"><div class="chip auto">🚚</div><div class="s-name">数据搬运工</div></div>
+            <div class="staff"><div class="chip auto">✅</div><div class="s-name">AI质检员</div></div>
+          </div>
+          <div class="dept-title">🧠 记忆与知识组</div>
+          <div class="staff-grid">
+            <div class="staff"><div class="chip call">📚</div><div class="s-name">知识库管理员</div></div>
+            <div class="staff"><div class="chip call">🧠</div><div class="s-name">记忆管理员</div></div>
+            <div class="staff"><div class="chip auto">📌</div><div class="s-name">待办建议主管</div></div>
+            <div class="staff"><div class="chip call">🎓</div><div class="s-name">Agent 教练</div></div>
+          </div>
+          <div class="dept-title">🔌 外勤组</div>
+          <div class="staff-grid">
+            <div class="staff"><div class="chip auto">🔗</div><div class="s-name">外勤对接员</div></div>
+          </div>
+          <div class="legend">
+            <span><i class="dot call"></i>可指挥（实线 · 有对话入口）</span>
+            <span><i class="dot auto"></i>自动岗（虚线 · 按节奏自动跑）</span>
+            <span><i class="dot listen"></i>监听岗（金边 · 值守中）</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Human-in-the-loop -->
+    <section class="hitl-sec">
+      <div class="wrap">
+        <div class="hitl-box">
+          <h2>AI 提议，决策始终在人</h2>
+          <p>所有对外动作——邮件、跟进、报价——先由 AI 起草，你审阅修改后再发。敏感操作（删客户、批量改归属、导出全库）全部进审批闸门：该快的快，该拦的拦。</p>
+          <div class="hitl-steps">
+            <div class="hitl-step"><b>AI 起草</b>纪要、邮件、诊断、归因，全部自动就位</div>
+            <div class="hitl-step"><b>你审阅</b>草稿你改，报价你定，方子你开</div>
+            <div class="hitl-step"><b>闸门把关</b>5 类敏感操作先批后动，审计日志全留</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="at-cta">
+      <div class="wrap">
+        <h2>让这支团队，明天就开始跟你干活</h2>
+        <p>个人免费额度即可开始；企业按团队规模与部署方式评估。</p>
+        <a href="https://agent.silimind.net/register" class="at-btn at-btn-primary">申请个人试用</a>
+        <a href="mailto:micheal@silimind.net" class="at-btn at-btn-ghost">联系销售</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">© 2026 SiliMind 思理智能. All rights reserved. &nbsp;·&nbsp; 微信：18612418612 &nbsp;·&nbsp; <a href="mailto:micheal@silimind.net">micheal@silimind.net</a> &nbsp;·&nbsp; <a href="/developers">开发者</a></div>
+  </footer>
+
+  <script>
+    (function(){
+      var nav=document.querySelector('.sm-nav');var t=document.querySelector('.sm-toggle');
+      if(!nav||!t)return;
+      t.addEventListener('click',function(e){e.stopPropagation();var o=nav.classList.toggle('sm-open');t.setAttribute('aria-expanded',o?'true':'false');});
+      document.addEventListener('click',function(e){if(nav.classList.contains('sm-open')&&!nav.contains(e.target)){nav.classList.remove('sm-open');t.setAttribute('aria-expanded','false');}});
+      var m=nav.querySelector('.sm-menu');
+      if(m){m.addEventListener('click',function(e){if(e.target.closest('a')){nav.classList.remove('sm-open');t.setAttribute('aria-expanded','false');}});}
+    })();
+  </script>
+  </body>
+</html>
