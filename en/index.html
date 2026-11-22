@@ -1301,6 +1301,111 @@
     .ai-partners .stat{padding:11px 12px;gap:11px}
   }
 
+  
+
+  /* ===== 首屏对称双栏（designer homepage-hero-twocol · Leon 2026-11-22 16:46 拍板）===== */
+  .hero-screen{min-height:100vh;width:100%;position:relative;overflow:hidden;display:flex;align-items:center;padding:56px 0 48px;background:radial-gradient(1200px 700px at 38% -12%,rgba(99,102,241,.10),transparent 60%),radial-gradient(900px 620px at 92% 58%,rgba(99,102,241,.06),transparent 64%),radial-gradient(700px 500px at 6% 92%,rgba(124,92,255,.05),transparent 66%),linear-gradient(180deg,#0B0B1A 0%,#08080F 46%,#06060C 100%)}
+  .hero-screen::before,.hero-screen::after{content:"";position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(99,102,241,.32),transparent)}
+  .hero-screen::before{top:0}
+  .hero-screen::after{bottom:0}
+  .hero-screen .hero-grid{width:100%;max-width:1640px;margin:0 auto;padding:0 48px;display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,1fr);gap:56px;align-items:stretch}
+  .hero-screen .hero-left{display:flex;flex-direction:column;min-width:0}
+  .hero-screen .sec-head{margin-bottom:24px}
+  .hero-screen .sec-kicker{font-size:10px;letter-spacing:4.5px;color:rgba(129,140,248,.9);font-weight:600;margin-bottom:11px;display:flex;align-items:center;gap:10px}
+  .hero-screen .sec-kicker::before{content:"";width:22px;height:1.5px;background:linear-gradient(90deg,#6366f1,transparent)}
+  .hero-screen .sec-title,h1.hero-screen-title{font-size:32px;font-weight:700;letter-spacing:1.4px;line-height:1.28;margin-bottom:10px;color:#f0f0f5}
+  .hero-screen .sec-title em{font-style:normal;background:linear-gradient(100deg,#c7d2fe,#818cf8 58%,#6366f1);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+  .hero-screen .sec-sub{font-size:12.5px;color:#A5A8C9;letter-spacing:.4px;line-height:1.8}
+  .hero-screen .leader-card{width:100%;max-width:none;height:auto;display:grid;grid-template-columns:118px 1fr;gap:0;border-radius:13px;overflow:hidden;position:relative;margin-bottom:14px;background:linear-gradient(160deg,#14142B 0%,#0D0D1E 62%,#0A0A15 100%);border:1px solid rgba(99,102,241,.44);box-shadow:0 14px 38px rgba(0,0,0,.45),0 0 0 1px rgba(99,102,241,.14);flex-shrink:0}
+  .hero-screen .leader-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2.5px;background:linear-gradient(90deg,transparent,#6366f1,transparent);z-index:5}
+  .hero-screen .portrait-slot{position:relative;overflow:hidden;aspect-ratio:3/4;border-right:1px solid rgba(148,163,184,.18);max-height:176px}
+  .hero-screen .portrait-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;z-index:0}
+  .hero-screen .portrait-slot::after,.hero-screen .m-portrait::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:1;background:linear-gradient(165deg,rgba(99,102,241,.10) 0%,rgba(99,102,241,.03) 32%,transparent 58%);mix-blend-mode:multiply}
+  .hero-screen .portrait-fade{position:absolute;inset:0;pointer-events:none;z-index:2;background:linear-gradient(90deg,transparent 52%,rgba(10,10,20,.5) 86%,rgba(10,10,20,.82) 100%)}
+  .hero-screen .leader-badge{position:absolute;top:8px;left:50%;transform:translateX(-50%);z-index:3;font-size:7.5px;letter-spacing:2.6px;color:#0B0B1A;font-weight:700;background:linear-gradient(100deg,#c7d2fe,#818cf8);padding:2px 9px;border-radius:999px;white-space:nowrap}
+  .hero-screen .leader-card .en-tag{display:none}
+  .hero-screen .leader-info{padding:16px 18px;display:flex;flex-direction:column;justify-content:center}
+  .hero-screen .alias-row{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap}
+  .hero-screen .alias{font-size:24px;font-weight:700;letter-spacing:2.2px;line-height:1.15;background:linear-gradient(100deg,#e0e7ff,#a5b4fc 58%,#818cf8);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+  .hero-screen .alias-title{font-size:10.5px;color:#818cf8;letter-spacing:1.8px;font-weight:600}
+  .hero-screen .realname{margin-top:4px;font-size:10px;color:#A5A8C9;letter-spacing:.7px}
+  .hero-screen .leader-card .hr{height:1px;background:linear-gradient(90deg,rgba(99,102,241,.38),transparent);margin:9px 0}
+  .hero-screen .leader-card .opening{font-size:10.5px;line-height:1.75;color:#B8BFD8;padding-left:9px;border-left:2px solid rgba(99,102,241,.36);margin-bottom:9px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .hero-screen .skill-label{font-size:8.5px;letter-spacing:2.6px;color:rgba(129,140,248,.72);font-weight:600;margin-bottom:6px}
+  .hero-screen .skills{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:9px}
+  .hero-screen .sk{font-size:8.5px;color:#B8BFD8;border:1px solid rgba(148,163,184,.18);border-radius:999px;padding:2px 8px;background:rgba(99,102,241,.06)}
+  .hero-screen .leader-card .closing{font-size:9.5px;color:#a5b4fc;font-weight:600;letter-spacing:.7px;display:flex;align-items:center;gap:6px;padding-top:8px;border-top:1px solid rgba(148,163,184,.18)}
+  .hero-screen .leader-card .closing::before{content:"";width:11px;height:1.5px;background:#6366f1;flex-shrink:0}
+  .hero-screen .masters-row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:11px;flex-shrink:0}
+  .hero-screen .m-item{border-radius:11px;overflow:hidden;position:relative;background:linear-gradient(168deg,#13132A 0%,#0C0C1A 60%,#090914 100%);border:1px solid rgba(99,102,241,.24)}
+  .hero-screen .m-item::before{content:"";position:absolute;top:0;left:0;right:0;height:1.8px;z-index:5;background:linear-gradient(90deg,transparent,rgba(99,102,241,.8),transparent)}
+  .hero-screen .m-portrait{position:relative;overflow:hidden;height:auto;aspect-ratio:1/1;border-bottom:1px solid rgba(148,163,184,.18)}
+  .hero-screen .m-portrait .portrait-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .hero-screen .m-num{position:absolute;top:7px;left:8px;z-index:3;font-size:7.5px;letter-spacing:1.6px;color:rgba(129,140,248,.7);font-weight:700}
+  .hero-screen .m-en{position:absolute;top:6px;right:8px;z-index:3;font-size:7px;letter-spacing:1.4px;color:rgba(165,168,201,.55);text-transform:uppercase}
+  .hero-screen .m-body{padding:9px 10px 10px}
+  .hero-screen .m-alias{font-size:15px;font-weight:700;letter-spacing:1.4px;line-height:1.15;background:linear-gradient(100deg,#e0e7ff,#a5b4fc 62%,#818cf8);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+  .hero-screen .m-title{font-size:8.5px;color:#818cf8;letter-spacing:1.1px;font-weight:600;margin-top:2px}
+  .hero-screen .m-desc{font-size:8px;color:#6B7089;line-height:1.5;margin-top:5px;letter-spacing:.1px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .hero-screen .counter{margin-top:14px;padding-top:11px;border-top:1px solid rgba(148,163,184,.13);font-size:10px;color:#A5A8C9;letter-spacing:.7px;line-height:1.65}
+  .hero-screen .counter b{color:#a5b4fc;font-weight:700;font-size:11.5px;padding:0 2px}
+  .hero-screen .counter .counter-line{font-size:inherit;color:inherit;letter-spacing:inherit;line-height:inherit}
+  .hero-screen .hero-right{min-width:0;display:flex}
+  .hero-screen .pos-panel{width:100%;border-radius:16px;overflow:hidden;position:relative;display:flex;flex-direction:column;background:linear-gradient(168deg,#15152E 0%,#101026 55%,#0C0C1C 100%);border:1px solid rgba(99,102,241,.32);box-shadow:0 24px 64px rgba(0,0,0,.5),inset 0 1px 0 rgba(165,180,252,.10)}
+  .hero-screen .pos-panel::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,#6366f1,#a5b4fc,transparent)}
+  .hero-screen .pos-inner{padding:34px 30px 28px;flex:1;display:flex;flex-direction:column}
+  .hero-screen .pos-kicker{font-size:9.5px;letter-spacing:3.5px;color:rgba(129,140,248,.82);font-weight:600;margin-bottom:16px}
+  .hero-screen .pos-title{font-size:26px;font-weight:700;line-height:1.42;letter-spacing:.6px;color:#f0f0f5;margin-bottom:14px}
+  .hero-screen .pos-title em{font-style:normal;background:linear-gradient(100deg,#c7d2fe,#818cf8 60%,#6366f1);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+  .hero-screen .pos-desc{font-size:11.5px;line-height:1.8;color:#A5A8C9;letter-spacing:.25px;margin-bottom:22px}
+  .hero-screen .pos-div{height:1px;background:linear-gradient(90deg,rgba(99,102,241,.4),transparent);margin-bottom:20px}
+  .hero-screen .stats{display:flex;flex-direction:column;gap:10px;margin-bottom:22px;flex:1;justify-content:center}
+  .hero-screen .stat{display:flex;align-items:center;gap:13px;padding:12px 14px;border-radius:10px;background:rgba(99,102,241,.07);border:1px solid rgba(99,102,241,.19)}
+  .hero-screen .stat-num{font-size:24px;font-weight:800;letter-spacing:-.5px;line-height:1;background:linear-gradient(100deg,#e0e7ff,#a5b4fc 55%,#818cf8);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;font-variant-numeric:tabular-nums;white-space:nowrap;flex-shrink:0;min-width:80px}
+  .hero-screen .stat-num small{font-size:13px;font-weight:600;letter-spacing:0}
+  .hero-screen .stat-txt{min-width:0}
+  .hero-screen .stat-k{font-size:11px;color:#D8DEF0;font-weight:600;letter-spacing:.15px;margin-bottom:2px}
+  .hero-screen .stat-v{font-size:9px;color:#6B7089;line-height:1.5;letter-spacing:.15px}
+  .hero-screen .stat.stat-text{padding:13px 14px}
+  .hero-screen .stat.stat-text .stat-k{font-size:11.5px;margin-bottom:3px}
+  .hero-screen .stat.stat-text .stat-v{font-size:9.5px}
+  .hero-screen .cta{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:13px 18px;border-radius:10px;background:linear-gradient(135deg,#6366f1,#4f46e5);color:#fff;font-size:13px;font-weight:600;letter-spacing:.7px;box-shadow:0 8px 22px rgba(99,102,241,.34);transition:transform .15s,box-shadow .15s,filter .15s;text-decoration:none}
+  .hero-screen .cta:hover{transform:translateY(-1px);box-shadow:0 12px 28px rgba(99,102,241,.44);filter:brightness(1.06)}
+  .hero-screen .cta svg{width:14px;height:14px}
+  .hero-screen .cta-note{margin-top:10px;text-align:center;font-size:9px;color:#6B7089;letter-spacing:.35px;line-height:1.6}
+  @media (max-width:1440px){
+    .hero-screen .hero-grid{gap:44px;padding:0 40px}
+    .hero-screen .pos-title{font-size:24px}
+    .hero-screen .sec-title{font-size:29px}
+  }
+  @media (max-width:1180px){
+    .hero-screen .hero-grid{grid-template-columns:1fr;gap:36px;max-width:820px}
+    .hero-screen{min-height:auto;padding:44px 0 52px}
+    .hero-screen .masters-row{grid-template-columns:repeat(4,minmax(0,1fr))}
+    .hero-screen .pos-title{font-size:25px}
+  }
+  @media (max-width:860px){
+    .hero-screen .hero-grid{padding:0 24px}
+    .hero-screen .sec-title{font-size:26px}
+    .hero-screen .masters-row{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+    .hero-screen .m-alias{font-size:17px}
+    .hero-screen .m-desc{-webkit-line-clamp:3}
+  }
+  @media (max-width:520px){
+    .hero-screen{padding:32px 0 40px}
+    .hero-screen .hero-grid{padding:0 16px;gap:28px}
+    .hero-screen .sec-title{font-size:22px;letter-spacing:.8px}
+    .hero-screen .sec-sub{font-size:11.5px}
+    .hero-screen .leader-card{grid-template-columns:100px 1fr}
+    .hero-screen .alias{font-size:20px}
+    .hero-screen .masters-row{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+    .hero-screen .m-alias{font-size:15px}
+    .hero-screen .pos-inner{padding:24px 18px 20px}
+    .hero-screen .pos-title{font-size:20px}
+    .hero-screen .stat-num{font-size:21px;min-width:70px}
+    .hero-screen .stat{padding:10px 11px;gap:10px}
+  }
+
   </style>
   <link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/">
   <link rel="alternate" hreflang="en" href="https://www.silimind.net/en/">
@@ -1335,22 +1440,161 @@
 </nav>
 
   <!-- ===== 2. Hero ===== -->
-  <section class="hero" id="hero" data-hero>
-    <div class="hero-inner">
-      <div class="hero-text">
-        <span class="hero-pill hero-enter">Organizational Intelligence</span>
-        <div class="hero-eyebrow hero-enter"><span class="hero-eyebrow-dot" aria-hidden="true"></span><span class="hero-eyebrow-name">SiliMind</span><span class="hero-eyebrow-rule" aria-hidden="true"></span></div>
-        <h1 class="hero-enter"><span class="hero-line">One digital platform</span><br><span class="hero-line hero-em">for sales and marketing</span></h1>
-        <p class="hero-subtitle hero-enter">A digital employee assistant for sales, a digital employee team for marketing, a digital employee advisor for leadership.</p>
-        <div class="hero-badge hero-badge--free hero-enter"><span class="hero-badge-dot"></span>36 digital employees &#8203;collaboratively covering acquisition, closing, &#8203;and repeat business.</div>
-        <div class="hero-cta hero-enter">
-          <a href="https://agent.silimind.net/register" class="btn-primary">Start Personal Trial</a>
-          <a href="/en/#contact" class="btn-secondary">Enterprise Plans →</a>
+  <section class="hero-screen" id="ai-partners">
+    <div class="hero-grid">
+
+      <!-- 左栏：AI 团队（五人全在首屏） -->
+      <div class="hero-left">
+    <div class="sec-head">
+      <div class="sec-kicker">A I   P A R T N E R S</div>
+      <h1 class="sec-title">Sili <em>the Leader</em>, with the Four Masters</h1>
+      <div class="sec-sub">Commanding 36 digital employees · a digital employee assistant for sales, a digital employee team for marketing, a digital employee brain trust for leadership</div>
+          </div>
+
+      <!-- 掌门卡 -->
+      <div class="leader-card">
+        <div class="portrait-slot">
+          <span class="leader-badge">THE LEADER</span>
+          <span class="en-tag">SILI</span>
+          <img class="portrait-img" src="/images/ai-team/sili.jpg" alt="Sili · The Leader">
+          <div class="portrait-fade"></div>
+        </div>
+        <div class="leader-info">
+          <div class="alias-row">
+            <span class="alias">Sili · The Leader</span>
+            <span class="alias-title">The Leader · Company Brain</span>
+          </div>
+          <div class="realname">Flagship AI partner · the brain trust of the digital employee team</div>
+          <div class="hr"></div>
+          <div class="opening">Sili is SiliMind’s flagship AI partner and the brain trust of the whole digital employee team. She remembers everything about your business: client preferences, last quarter’s quote, the deal stuck for three days. Ask her “how is this month” and she lays the funnel, the risks and the decisions waiting for you in front of you, all at once.</div>
+          <div class="skill-label">SCOPE OF COMMAND</div>
+          <div class="skills">
+<span class="sk">Coordination</span><span class="sk">Business insight</span><span class="sk">Decision support</span><span class="sk">Intellectual summary</span>
+          </div>
+          <div class="closing">She sorts out the work; the final call stays with you</div>
         </div>
       </div>
-      <div class="hero-visual">
-        <img src="/images/hero-dashboard.png" alt="SiliMind ROI attribution dashboard — full-funnel effect tracking from content marketing to sales deals" style="width: 100%; border-radius: 8px; z-index: 1; position: relative;" />
+
+      <!-- 四高手：头像+名字 紧凑横排 -->
+      <div class="masters-row">
+
+        <div class="m-item">
+          <div class="m-portrait">
+            <span class="m-num"></span><span class="m-en"></span>
+            <img class="portrait-img" src="/images/ai-team/shenxing.jpg" alt="Mercury">
+            <div class="portrait-fade"></div>
+          </div>
+          <div class="m-body">
+            <div class="m-alias">Mercury</div>
+            <div class="m-title">Sales Companion</div>
+            <div class="m-desc">The 800-li courier: he drafts notes and follow-ups</div>
+          </div>
+        </div>
+
+        <div class="m-item">
+          <div class="m-portrait">
+            <span class="m-num"></span><span class="m-en"></span>
+            <img class="portrait-img" src="/images/ai-team/baixiaosheng.jpg" alt="Scout">
+            <div class="portrait-fade"></div>
+          </div>
+          <div class="m-body">
+            <div class="m-alias">Scout</div>
+            <div class="m-title">Research &amp; Intelligence</div>
+            <div class="m-desc">All the intel in one ledger: domain-to-email</div>
+          </div>
+        </div>
+
+        <div class="m-item">
+          <div class="m-portrait">
+            <span class="m-num"></span><span class="m-en"></span>
+            <img class="portrait-img" src="/images/ai-team/pingyizhi.jpg" alt="Medic">
+            <div class="portrait-fade"></div>
+          </div>
+          <div class="m-body">
+            <div class="m-alias">Medic</div>
+            <div class="m-title">Deal Doctor</div>
+            <div class="m-desc">One pulse knows life or death: you prescribe</div>
+          </div>
+        </div>
+
+        <div class="m-item">
+          <div class="m-portrait">
+            <span class="m-num"></span><span class="m-en"></span>
+            <img class="portrait-img" src="/images/ai-team/huangyaoshi.jpg" alt="Daedalus">
+            <div class="portrait-fade"></div>
+          </div>
+          <div class="m-body">
+            <div class="m-alias">Daedalus</div>
+            <div class="m-title">Systems Architect</div>
+            <div class="m-desc">One sentence, one formation: he lays it, you walk it</div>
+          </div>
+        </div>
+
       </div>
+
+      <div class="counter">
+        Plus <b>36</b> digital employees across six departments — Sales 11 · Content 8 · Support 7 · Analytics 6 · Memory &amp; Knowledge 4
+      </div>
+
+      </div>
+
+      <!-- 右栏：定位面板 -->
+      <div class="hero-right">
+        <div class="pos-panel">
+          <div class="pos-inner">
+
+            <div class="pos-kicker">W H Y&nbsp;&nbsp;S I L I M I N D</div>
+
+            <div class="pos-title">
+              Bring sales and marketing<br><em>into one digital platform</em>
+            </div>
+
+            <div class="pos-desc">
+              Stop switching between marketing tools and CRM — your data finally connects. 36 digital employees working together, with content and customer data in one library.
+            </div>
+
+            <div class="pos-div"></div>
+
+            <div class="stats">
+            <div class="stat">
+                <div class="stat-num">819</div>
+                <div class="stat-txt">
+                  <div class="stat-k">Companies</div>
+                  <div class="stat-v">Mined from 198 real emails (internal test, 2026-10)</div>
+                </div>
+              </div>
+            <div class="stat">
+                <div class="stat-num">92<small>–</small>97<small>%</small></div>
+                <div class="stat-txt">
+                  <div class="stat-k">Verified attribution</div>
+                  <div class="stat-v">552 contacts + 791 companies tagged with source email</div>
+                </div>
+              </div>
+            <div class="stat">
+                <div class="stat-num">16</div>
+                <div class="stat-txt">
+                  <div class="stat-k">AI creation skills</div>
+                  <div class="stat-v">Content workbench · from topic to distribution</div>
+                </div>
+              </div>
+            <div class="stat stat-text">
+                <div class="stat-txt">
+                  <div class="stat-k">All channels, one timeline</div>
+                  <div class="stat-v">WhatsApp · Email · WeChat and more</div>
+                </div>
+              </div>
+            </div>
+
+            <a class="cta" href="https://agent.silimind.net/register">
+              Explore the full solution
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;margin-left:6px"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <div class="cta-note">No CRM swap · Private deployment · Data stays in-house</div>
+
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -1450,185 +1694,7 @@
   </section>
 
   <!-- ===== 6. Metrics ===== -->
-  <section class="section ai-partners">
-  <div class="two-col">
-
-    <div class="col-left">
-    <div class="sec-head">
-      <div class="sec-kicker">A I   P A R T N E R S</div>
-      <div class="sec-title">Sili <em>the Leader</em>, with the Four Masters</div>
-      <div class="sec-sub">Commanding 36 digital employees · a digital employee assistant for sales, a digital employee team for marketing, a digital employee brain trust for leadership</div>
-          </div>
-
-    <!-- 掌门横排卡 -->
-    <div class="leader-card">
-        <div class="portrait-slot">
-          <span class="leader-badge">THE LEADER</span>
-          <span class="en-tag">SILI</span>
-          <img class="portrait-img" src="/images/ai-team/sili.jpg" alt="Sili · The Leader">
-          <div class="portrait-fade"></div>
-        </div>
-        <div class="leader-info">
-          <div class="alias-row">
-            <span class="alias">Sili · The Leader</span>
-            <span class="alias-title">The Leader · Company Brain</span>
-          </div>
-          <div class="realname">Flagship AI partner · the brain trust of the digital employee team</div>
-          <div class="hr"></div>
-          <div class="opening">Sili is SiliMind’s flagship AI partner and the brain trust of the whole digital employee team. She remembers everything about your business: client preferences, last quarter’s quote, the deal stuck for three days. Ask her “how is this month” and she lays the funnel, the risks and the decisions waiting for you in front of you, all at once.</div>
-          <div class="skill-label">SCOPE OF COMMAND</div>
-          <div class="skills">
-<span class="sk">Coordination</span><span class="sk">Business insight</span><span class="sk">Decision support</span><span class="sk">Intellectual summary</span>
-          </div>
-          <div class="closing">She sorts out the work; the final call stays with you</div>
-        </div>
-      </div>
-
-    <!-- 四高手 -->
-    <div class="masters">
-
-      <div class="m-card">
-        <div class="m-portrait">
-          <span class="m-num">0 1</span><span class="m-en">Mercury</span>
-          <img class="portrait-img" src="/images/ai-team/shenxing.jpg" alt="Mercury" />
-          <div class="portrait-fade"></div>
-        </div>
-        <div class="m-info">
-          <div class="m-alias">Mercury</div>
-          <div class="m-title">Sales Companion</div>
-          <div class="m-real">The 800-li courier</div>
-          <div class="m-hr"></div>
-          <div class="m-open">A swift courier of the jianghu — eight hundred li a day, never a letter late. He is no general; he rides alongside: where the general goes, he follows, provisions and letters never falling behind.</div>
-          <div class="m-skills">
-<span class="m-sk">Structured notes</span><span class="m-sk">Follow-up emails</span><span class="m-sk">Meeting prep</span><span class="m-sk">Lead scoring</span><span class="m-sk">5-dim diagnosis</span><span class="m-sk">Health score</span><span class="m-sk">Patrols</span>
-          </div>
-          <div class="m-close">He rides along but never leads: you edit the drafts, you sign the deals</div>
-        </div>
-      </div>
-
-      <div class="m-card">
-        <div class="m-portrait">
-          <span class="m-num">0 2</span><span class="m-en">Scout</span>
-          <img class="portrait-img" src="/images/ai-team/baixiaosheng.jpg" alt="Scout" />
-          <div class="portrait-fade"></div>
-        </div>
-        <div class="m-info">
-          <div class="m-alias">Scout</div>
-          <div class="m-title">Research &amp; Intelligence</div>
-          <div class="m-real">The all-knowing ledger</div>
-          <div class="m-hr"></div>
-          <div class="m-open">Master of the weapons ledger — every piece of industry intelligence at his fingertips. People say his book has no word for “I don’t know.”</div>
-          <div class="m-skills">
-<span class="m-sk">Outreach + compliance</span><span class="m-sk">Lead scoring</span><span class="m-sk">Domain-to-email</span><span class="m-sk">Transparent usage</span>
-          </div>
-          <div class="m-close">He packs the intelligence; whether to strike is your call</div>
-        </div>
-      </div>
-
-      <div class="m-card">
-        <div class="m-portrait">
-          <span class="m-num">0 3</span><span class="m-en">Medic</span>
-          <img class="portrait-img" src="/images/ai-team/pingyizhi.jpg" alt="Medic" />
-          <div class="portrait-fade"></div>
-        </div>
-        <div class="m-info">
-          <div class="m-alias">Medic</div>
-          <div class="m-title">Deal Doctor</div>
-          <div class="m-real">One finger knows life and death</div>
-          <div class="m-hr"></div>
-          <div class="m-open">The healer — one finger on the pulse, and he shows you whether a deal lives or dies, whether the block is price, people, or process. His rule: diagnose only, never act on his own.</div>
-          <div class="m-skills">
-<span class="m-sk">5-dim diagnosis</span><span class="m-sk">Hourly patrol</span><span class="m-sk">Daily health score</span><span class="m-sk">Content→deal attribution</span>
-          </div>
-          <div class="m-close">He diagnoses; you write the prescription</div>
-        </div>
-      </div>
-
-      <div class="m-card">
-        <div class="m-portrait">
-          <span class="m-num">0 4</span><span class="m-en">Daedalus</span>
-          <img class="portrait-img" src="/images/ai-team/huangyaoshi.jpg" alt="Daedalus" />
-          <div class="portrait-fade"></div>
-        </div>
-        <div class="m-info">
-          <div class="m-alias">Daedalus</div>
-          <div class="m-title">Systems Architect</div>
-          <div class="m-real">One sentence, one formation</div>
-          <div class="m-hr"></div>
-          <div class="m-open">Lord of the Peach Blossom Isle. The whole island is his work: formations and mechanisms, every blade of grass placed by design. Outsiders can’t find their way out; he walks it blindfold.</div>
-          <div class="m-skills">
-<span class="m-sk">Config coaching</span><span class="m-sk">Dual-layer config</span><span class="m-sk">Task suggestions</span><span class="m-sk">Full function cards</span><span class="m-sk">Query toolset</span>
-          </div>
-          <div class="m-close">He lays the formation; you walk the path until it’s familiar</div>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="counter">
-      <div class="counter-line">Plus <b>36</b> digital employees across six departments — Sales 11 · Content 8 · Support 7 · Analytics 6 · Memory &amp; Knowledge 4</div>
-    </div>
-
-    </div>
-
-    <div class="col-right">
-      <div class="pos-panel">
-          <div class="pos-inner">
-
-            <div class="pos-kicker">W H Y&nbsp;&nbsp;S I L I M I N D</div>
-
-            <div class="pos-title">
-              Bring sales and marketing<br><em>into one digital platform</em>
-            </div>
-
-            <div class="pos-desc">
-              Stop switching between marketing tools and CRM — your data finally connects. 36 digital employees working together, with content and customer data in one library.
-            </div>
-
-            <div class="pos-div"></div>
-
-            <div class="stats">
-            <div class="stat">
-                <div class="stat-num">819</div>
-                <div class="stat-txt">
-                  <div class="stat-k">Companies</div>
-                  <div class="stat-v">Mined from 198 real emails (internal test, 2026-10)</div>
-                </div>
-              </div>
-            <div class="stat">
-                <div class="stat-num">92<small>–</small>97<small>%</small></div>
-                <div class="stat-txt">
-                  <div class="stat-k">Verified attribution</div>
-                  <div class="stat-v">552 contacts + 791 companies tagged with source email</div>
-                </div>
-              </div>
-            <div class="stat">
-                <div class="stat-num">16</div>
-                <div class="stat-txt">
-                  <div class="stat-k">AI creation skills</div>
-                  <div class="stat-v">Content workbench · from topic to distribution</div>
-                </div>
-              </div>
-            <div class="stat stat-text">
-                <div class="stat-txt">
-                  <div class="stat-k">All channels, one timeline</div>
-                  <div class="stat-v">WhatsApp · Email · WeChat and more</div>
-                </div>
-              </div>
-            </div>
-
-            <a class="cta" href="https://agent.silimind.net/register">
-              Explore the full solution
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;margin-left:6px"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-            </a>
-            <div class="cta-note">No CRM swap · Private deployment · Data stays in-house</div>
-
-          </div>
-        </div>
-    </div>
-
-  </div>
-</section><section class="metrics" id="metrics">
+  <section class="metrics" id="metrics">
     <div class="container">
       <div class="section-header">
         <p class="section-label">Data Speaks</p>

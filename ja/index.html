@@ -1300,6 +1300,111 @@
     .ai-partners .stat{padding:11px 12px;gap:11px}
   }
 
+  
+
+  /* ===== 首屏对称双栏（designer homepage-hero-twocol · Leon 2026-11-22 16:46 拍板）===== */
+  .hero-screen{min-height:100vh;width:100%;position:relative;overflow:hidden;display:flex;align-items:center;padding:56px 0 48px;background:radial-gradient(1200px 700px at 38% -12%,rgba(99,102,241,.10),transparent 60%),radial-gradient(900px 620px at 92% 58%,rgba(99,102,241,.06),transparent 64%),radial-gradient(700px 500px at 6% 92%,rgba(124,92,255,.05),transparent 66%),linear-gradient(180deg,#0B0B1A 0%,#08080F 46%,#06060C 100%)}
+  .hero-screen::before,.hero-screen::after{content:"";position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(99,102,241,.32),transparent)}
+  .hero-screen::before{top:0}
+  .hero-screen::after{bottom:0}
+  .hero-screen .hero-grid{width:100%;max-width:1640px;margin:0 auto;padding:0 48px;display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,1fr);gap:56px;align-items:stretch}
+  .hero-screen .hero-left{display:flex;flex-direction:column;min-width:0}
+  .hero-screen .sec-head{margin-bottom:24px}
+  .hero-screen .sec-kicker{font-size:10px;letter-spacing:4.5px;color:rgba(129,140,248,.9);font-weight:600;margin-bottom:11px;display:flex;align-items:center;gap:10px}
+  .hero-screen .sec-kicker::before{content:"";width:22px;height:1.5px;background:linear-gradient(90deg,#6366f1,transparent)}
+  .hero-screen .sec-title,h1.hero-screen-title{font-size:32px;font-weight:700;letter-spacing:1.4px;line-height:1.28;margin-bottom:10px;color:#f0f0f5}
+  .hero-screen .sec-title em{font-style:normal;background:linear-gradient(100deg,#c7d2fe,#818cf8 58%,#6366f1);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+  .hero-screen .sec-sub{font-size:12.5px;color:#A5A8C9;letter-spacing:.4px;line-height:1.8}
+  .hero-screen .leader-card{width:100%;max-width:none;height:auto;display:grid;grid-template-columns:118px 1fr;gap:0;border-radius:13px;overflow:hidden;position:relative;margin-bottom:14px;background:linear-gradient(160deg,#14142B 0%,#0D0D1E 62%,#0A0A15 100%);border:1px solid rgba(99,102,241,.44);box-shadow:0 14px 38px rgba(0,0,0,.45),0 0 0 1px rgba(99,102,241,.14);flex-shrink:0}
+  .hero-screen .leader-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2.5px;background:linear-gradient(90deg,transparent,#6366f1,transparent);z-index:5}
+  .hero-screen .portrait-slot{position:relative;overflow:hidden;aspect-ratio:3/4;border-right:1px solid rgba(148,163,184,.18);max-height:176px}
+  .hero-screen .portrait-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;z-index:0}
+  .hero-screen .portrait-slot::after,.hero-screen .m-portrait::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:1;background:linear-gradient(165deg,rgba(99,102,241,.10) 0%,rgba(99,102,241,.03) 32%,transparent 58%);mix-blend-mode:multiply}
+  .hero-screen .portrait-fade{position:absolute;inset:0;pointer-events:none;z-index:2;background:linear-gradient(90deg,transparent 52%,rgba(10,10,20,.5) 86%,rgba(10,10,20,.82) 100%)}
+  .hero-screen .leader-badge{position:absolute;top:8px;left:50%;transform:translateX(-50%);z-index:3;font-size:7.5px;letter-spacing:2.6px;color:#0B0B1A;font-weight:700;background:linear-gradient(100deg,#c7d2fe,#818cf8);padding:2px 9px;border-radius:999px;white-space:nowrap}
+  .hero-screen .leader-card .en-tag{display:none}
+  .hero-screen .leader-info{padding:16px 18px;display:flex;flex-direction:column;justify-content:center}
+  .hero-screen .alias-row{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap}
+  .hero-screen .alias{font-size:24px;font-weight:700;letter-spacing:2.2px;line-height:1.15;background:linear-gradient(100deg,#e0e7ff,#a5b4fc 58%,#818cf8);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+  .hero-screen .alias-title{font-size:10.5px;color:#818cf8;letter-spacing:1.8px;font-weight:600}
+  .hero-screen .realname{margin-top:4px;font-size:10px;color:#A5A8C9;letter-spacing:.7px}
+  .hero-screen .leader-card .hr{height:1px;background:linear-gradient(90deg,rgba(99,102,241,.38),transparent);margin:9px 0}
+  .hero-screen .leader-card .opening{font-size:10.5px;line-height:1.75;color:#B8BFD8;padding-left:9px;border-left:2px solid rgba(99,102,241,.36);margin-bottom:9px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .hero-screen .skill-label{font-size:8.5px;letter-spacing:2.6px;color:rgba(129,140,248,.72);font-weight:600;margin-bottom:6px}
+  .hero-screen .skills{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:9px}
+  .hero-screen .sk{font-size:8.5px;color:#B8BFD8;border:1px solid rgba(148,163,184,.18);border-radius:999px;padding:2px 8px;background:rgba(99,102,241,.06)}
+  .hero-screen .leader-card .closing{font-size:9.5px;color:#a5b4fc;font-weight:600;letter-spacing:.7px;display:flex;align-items:center;gap:6px;padding-top:8px;border-top:1px solid rgba(148,163,184,.18)}
+  .hero-screen .leader-card .closing::before{content:"";width:11px;height:1.5px;background:#6366f1;flex-shrink:0}
+  .hero-screen .masters-row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:11px;flex-shrink:0}
+  .hero-screen .m-item{border-radius:11px;overflow:hidden;position:relative;background:linear-gradient(168deg,#13132A 0%,#0C0C1A 60%,#090914 100%);border:1px solid rgba(99,102,241,.24)}
+  .hero-screen .m-item::before{content:"";position:absolute;top:0;left:0;right:0;height:1.8px;z-index:5;background:linear-gradient(90deg,transparent,rgba(99,102,241,.8),transparent)}
+  .hero-screen .m-portrait{position:relative;overflow:hidden;height:auto;aspect-ratio:1/1;border-bottom:1px solid rgba(148,163,184,.18)}
+  .hero-screen .m-portrait .portrait-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .hero-screen .m-num{position:absolute;top:7px;left:8px;z-index:3;font-size:7.5px;letter-spacing:1.6px;color:rgba(129,140,248,.7);font-weight:700}
+  .hero-screen .m-en{position:absolute;top:6px;right:8px;z-index:3;font-size:7px;letter-spacing:1.4px;color:rgba(165,168,201,.55);text-transform:uppercase}
+  .hero-screen .m-body{padding:9px 10px 10px}
+  .hero-screen .m-alias{font-size:15px;font-weight:700;letter-spacing:1.4px;line-height:1.15;background:linear-gradient(100deg,#e0e7ff,#a5b4fc 62%,#818cf8);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+  .hero-screen .m-title{font-size:8.5px;color:#818cf8;letter-spacing:1.1px;font-weight:600;margin-top:2px}
+  .hero-screen .m-desc{font-size:8px;color:#6B7089;line-height:1.5;margin-top:5px;letter-spacing:.1px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .hero-screen .counter{margin-top:14px;padding-top:11px;border-top:1px solid rgba(148,163,184,.13);font-size:10px;color:#A5A8C9;letter-spacing:.7px;line-height:1.65}
+  .hero-screen .counter b{color:#a5b4fc;font-weight:700;font-size:11.5px;padding:0 2px}
+  .hero-screen .counter .counter-line{font-size:inherit;color:inherit;letter-spacing:inherit;line-height:inherit}
+  .hero-screen .hero-right{min-width:0;display:flex}
+  .hero-screen .pos-panel{width:100%;border-radius:16px;overflow:hidden;position:relative;display:flex;flex-direction:column;background:linear-gradient(168deg,#15152E 0%,#101026 55%,#0C0C1C 100%);border:1px solid rgba(99,102,241,.32);box-shadow:0 24px 64px rgba(0,0,0,.5),inset 0 1px 0 rgba(165,180,252,.10)}
+  .hero-screen .pos-panel::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,#6366f1,#a5b4fc,transparent)}
+  .hero-screen .pos-inner{padding:34px 30px 28px;flex:1;display:flex;flex-direction:column}
+  .hero-screen .pos-kicker{font-size:9.5px;letter-spacing:3.5px;color:rgba(129,140,248,.82);font-weight:600;margin-bottom:16px}
+  .hero-screen .pos-title{font-size:26px;font-weight:700;line-height:1.42;letter-spacing:.6px;color:#f0f0f5;margin-bottom:14px}
+  .hero-screen .pos-title em{font-style:normal;background:linear-gradient(100deg,#c7d2fe,#818cf8 60%,#6366f1);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+  .hero-screen .pos-desc{font-size:11.5px;line-height:1.8;color:#A5A8C9;letter-spacing:.25px;margin-bottom:22px}
+  .hero-screen .pos-div{height:1px;background:linear-gradient(90deg,rgba(99,102,241,.4),transparent);margin-bottom:20px}
+  .hero-screen .stats{display:flex;flex-direction:column;gap:10px;margin-bottom:22px;flex:1;justify-content:center}
+  .hero-screen .stat{display:flex;align-items:center;gap:13px;padding:12px 14px;border-radius:10px;background:rgba(99,102,241,.07);border:1px solid rgba(99,102,241,.19)}
+  .hero-screen .stat-num{font-size:24px;font-weight:800;letter-spacing:-.5px;line-height:1;background:linear-gradient(100deg,#e0e7ff,#a5b4fc 55%,#818cf8);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;font-variant-numeric:tabular-nums;white-space:nowrap;flex-shrink:0;min-width:80px}
+  .hero-screen .stat-num small{font-size:13px;font-weight:600;letter-spacing:0}
+  .hero-screen .stat-txt{min-width:0}
+  .hero-screen .stat-k{font-size:11px;color:#D8DEF0;font-weight:600;letter-spacing:.15px;margin-bottom:2px}
+  .hero-screen .stat-v{font-size:9px;color:#6B7089;line-height:1.5;letter-spacing:.15px}
+  .hero-screen .stat.stat-text{padding:13px 14px}
+  .hero-screen .stat.stat-text .stat-k{font-size:11.5px;margin-bottom:3px}
+  .hero-screen .stat.stat-text .stat-v{font-size:9.5px}
+  .hero-screen .cta{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:13px 18px;border-radius:10px;background:linear-gradient(135deg,#6366f1,#4f46e5);color:#fff;font-size:13px;font-weight:600;letter-spacing:.7px;box-shadow:0 8px 22px rgba(99,102,241,.34);transition:transform .15s,box-shadow .15s,filter .15s;text-decoration:none}
+  .hero-screen .cta:hover{transform:translateY(-1px);box-shadow:0 12px 28px rgba(99,102,241,.44);filter:brightness(1.06)}
+  .hero-screen .cta svg{width:14px;height:14px}
+  .hero-screen .cta-note{margin-top:10px;text-align:center;font-size:9px;color:#6B7089;letter-spacing:.35px;line-height:1.6}
+  @media (max-width:1440px){
+    .hero-screen .hero-grid{gap:44px;padding:0 40px}
+    .hero-screen .pos-title{font-size:24px}
+    .hero-screen .sec-title{font-size:29px}
+  }
+  @media (max-width:1180px){
+    .hero-screen .hero-grid{grid-template-columns:1fr;gap:36px;max-width:820px}
+    .hero-screen{min-height:auto;padding:44px 0 52px}
+    .hero-screen .masters-row{grid-template-columns:repeat(4,minmax(0,1fr))}
+    .hero-screen .pos-title{font-size:25px}
+  }
+  @media (max-width:860px){
+    .hero-screen .hero-grid{padding:0 24px}
+    .hero-screen .sec-title{font-size:26px}
+    .hero-screen .masters-row{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+    .hero-screen .m-alias{font-size:17px}
+    .hero-screen .m-desc{-webkit-line-clamp:3}
+  }
+  @media (max-width:520px){
+    .hero-screen{padding:32px 0 40px}
+    .hero-screen .hero-grid{padding:0 16px;gap:28px}
+    .hero-screen .sec-title{font-size:22px;letter-spacing:.8px}
+    .hero-screen .sec-sub{font-size:11.5px}
+    .hero-screen .leader-card{grid-template-columns:100px 1fr}
+    .hero-screen .alias{font-size:20px}
+    .hero-screen .masters-row{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+    .hero-screen .m-alias{font-size:15px}
+    .hero-screen .pos-inner{padding:24px 18px 20px}
+    .hero-screen .pos-title{font-size:20px}
+    .hero-screen .stat-num{font-size:21px;min-width:70px}
+    .hero-screen .stat{padding:10px 11px;gap:10px}
+  }
+
   </style>
   <link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/">
   <link rel="alternate" hreflang="en" href="https://www.silimind.net/en/">
@@ -1334,22 +1439,161 @@
 </nav>
 
   <!-- ===== 2. Hero ===== -->
-  <section class="hero" id="hero" data-hero>
-    <div class="hero-inner">
-      <div class="hero-text">
-        <span class="hero-pill hero-enter">組織インテリジェンス · Organizational Intelligence</span>
-        <div class="hero-eyebrow hero-enter"><span class="hero-eyebrow-dot" aria-hidden="true"></span><span class="hero-eyebrow-name">SiliMind</span><span class="hero-eyebrow-rule" aria-hidden="true"></span></div>
-        <h1 class="hero-enter"><span class="hero-line">営業部とマーケ部を</span><br><span class="hero-line hero-em">ひとつのデジタルプラットフォームに</span></h1>
-        <p class="hero-subtitle hero-enter">営業にはデジタル社員アシスタントを、マーケにはデジタル社員チームを、経営にはデジタル社員アドバイザーを。</p>
-        <div class="hero-badge hero-enter"><span class="hero-badge-dot"></span>36 名のデジタル従業員が獲得·成約·リピートを協働カバー。</div>
-        <div class="hero-cta hero-enter">
-          <a href="https://agent.silimind.net/register" class="btn-primary">個人トライアルを申込</a>
-          <a href="/ja/#contact" class="btn-secondary">エンタープライズプラン →</a>
+  <section class="hero-screen" id="ai-partners">
+    <div class="hero-grid">
+
+      <!-- 左栏：AI 团队（五人全在首屏） -->
+      <div class="hero-left">
+    <div class="sec-head">
+      <div class="sec-kicker">A I   P A R T N E R S</div>
+      <h1 class="sec-title">思理<em>掌門</em>が四天王を率い</h1>
+      <div class="sec-sub">36 名のデジタル社員を統括 · 営業にはデジタル社員アシスタントを、マーケにはデジタル社員チームを、経営にはデジタル社員ブレインを</div>
+          </div>
+
+      <!-- 掌门卡 -->
+      <div class="leader-card">
+        <div class="portrait-slot">
+          <span class="leader-badge">掌門</span>
+          <span class="en-tag">SILI</span>
+          <img class="portrait-img" src="/images/ai-team/sili.jpg" alt="思理 · 掌門">
+          <div class="portrait-fade"></div>
+        </div>
+        <div class="leader-info">
+          <div class="alias-row">
+            <span class="alias">思理 · 掌門</span>
+            <span class="alias-title">掌門 · 決策中枢</span>
+          </div>
+          <div class="realname">フラッグシップ AI パートナー · デジタル社員チームの参謀</div>
+          <div class="hr"></div>
+          <div class="opening">思理は思理智能のフラッグシップ AI パートナーであり、デジタル社員チーム全体の参謀です。彼女はあなたのビジネスのすべてを覚えています：顧客の好み、前回の見積り、三日間足止めされている案件。「今月はどう？」と一言聞けば、ファネル・リスク・判断すべき事項を一度に目の前に並べてくれます。</div>
+          <div class="skill-label">統 括 範 囲</div>
+          <div class="skills">
+<span class="sk">統括調度</span><span class="sk">経営洞察</span><span class="sk">意思決定支援</span><span class="sk">情報集約</span>
+          </div>
+          <div class="closing">彼女が仕事を整理し、最終決定は常にあなたが</div>
         </div>
       </div>
-      <div class="hero-visual">
-        <img src="/images/hero-dashboard.png" alt="SiliMind ROI アトリビューションダッシュボード — コンテンツマーケティングから成約までの全ファネル効果追跡" style="width: 100%; border-radius: 8px; z-index: 1; position: relative;" />
+
+      <!-- 四高手：头像+名字 紧凑横排 -->
+      <div class="masters-row">
+
+        <div class="m-item">
+          <div class="m-portrait">
+            <span class="m-num"></span><span class="m-en"></span>
+            <img class="portrait-img" src="/images/ai-team/shenxing.jpg" alt="神行">
+            <div class="portrait-fade"></div>
+          </div>
+          <div class="m-body">
+            <div class="m-alias">神行</div>
+            <div class="m-title">営業随行</div>
+            <div class="m-desc">日行八百の伝令：紀要もフォローも彼が書く</div>
+          </div>
+        </div>
+
+        <div class="m-item">
+          <div class="m-portrait">
+            <span class="m-num"></span><span class="m-en"></span>
+            <img class="portrait-img" src="/images/ai-team/baixiaosheng.jpg" alt="百暁生">
+            <div class="portrait-fade"></div>
+          </div>
+          <div class="m-body">
+            <div class="m-alias">百暁生</div>
+            <div class="m-title">調査情報</div>
+            <div class="m-desc">天下の情報一冊に：ドメインからメールを</div>
+          </div>
+        </div>
+
+        <div class="m-item">
+          <div class="m-portrait">
+            <span class="m-num"></span><span class="m-en"></span>
+            <img class="portrait-img" src="/images/ai-team/pingyizhi.jpg" alt="平一指">
+            <div class="portrait-fade"></div>
+          </div>
+          <div class="m-body">
+            <div class="m-alias">平一指</div>
+            <div class="m-title">商機医者</div>
+            <div class="m-desc">一指で生死を知る：処方を書くのはあなた</div>
+          </div>
+        </div>
+
+        <div class="m-item">
+          <div class="m-portrait">
+            <span class="m-num"></span><span class="m-en"></span>
+            <img class="portrait-img" src="/images/ai-team/huangyaoshi.jpg" alt="黄薬師">
+            <div class="portrait-fade"></div>
+          </div>
+          <div class="m-body">
+            <div class="m-alias">黄薬師</div>
+            <div class="m-title">システムアーキテクト</div>
+            <div class="m-desc">一言で陣を敷く：陣は彼が敷き、道はあなたが</div>
+          </div>
+        </div>
+
       </div>
+
+      <div class="counter">
+        さらに <b>36</b> 名のデジタル社員が各司其職 —— 営業 11 · コンテンツ 8 · カスタマー 7 · データ分析 6 · 記憶知識 4
+      </div>
+
+      </div>
+
+      <!-- 右栏：定位面板 -->
+      <div class="hero-right">
+        <div class="pos-panel">
+          <div class="pos-inner">
+
+            <div class="pos-kicker">W H Y&nbsp;&nbsp;S I L I M I N D</div>
+
+            <div class="pos-title">
+              営業とマーケティングを<br><em>ひとつのデジタルプラットフォームに</em>
+            </div>
+
+            <div class="pos-desc">
+              マーケティングツールと CRM の往復をやめれば、データは本当に繋がる。36 名のデジタル社員が連携し、コンテンツと顧客データを同じライブラリで管理。
+            </div>
+
+            <div class="pos-div"></div>
+
+            <div class="stats">
+            <div class="stat">
+                <div class="stat-num">819</div>
+                <div class="stat-txt">
+                  <div class="stat-k">社</div>
+                  <div class="stat-v">実メール 198 通から抽出（内部テスト 2026-10）</div>
+                </div>
+              </div>
+            <div class="stat">
+                <div class="stat-num">92<small>–</small>97<small>%</small></div>
+                <div class="stat-txt">
+                  <div class="stat-k">照合率の実証</div>
+                  <div class="stat-v">連絡先 552 件 + 791 社にソースメールを記録</div>
+                </div>
+              </div>
+            <div class="stat">
+                <div class="stat-num">16</div>
+                <div class="stat-txt">
+                  <div class="stat-k">種の AI クリエイションスキル</div>
+                  <div class="stat-v">コンテンツワークベンチ · 選題から配信まで</div>
+                </div>
+              </div>
+            <div class="stat stat-text">
+                <div class="stat-txt">
+                  <div class="stat-k">全チャネルを 1 つのタイムラインに</div>
+                  <div class="stat-v">WhatsApp · Email · WeChat など</div>
+                </div>
+              </div>
+            </div>
+
+            <a class="cta" href="https://agent.silimind.net/register">
+              完全なソリューションを見る
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;margin-left:6px"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <div class="cta-note">CRM はそのまま · プライベート導入 · データは社内に</div>
+
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -1449,185 +1693,7 @@
   </section>
 
   <!-- ===== 6. Metrics ===== -->
-  <section class="section ai-partners">
-  <div class="two-col">
-
-    <div class="col-left">
-    <div class="sec-head">
-      <div class="sec-kicker">A I   P A R T N E R S</div>
-      <div class="sec-title">思理<em>掌門</em>が四天王を率い</div>
-      <div class="sec-sub">36 名のデジタル社員を統括 · 営業にはデジタル社員アシスタントを、マーケにはデジタル社員チームを、経営にはデジタル社員ブレインを</div>
-          </div>
-
-    <!-- 掌门横排卡 -->
-    <div class="leader-card">
-        <div class="portrait-slot">
-          <span class="leader-badge">掌門</span>
-          <span class="en-tag">SILI</span>
-          <img class="portrait-img" src="/images/ai-team/sili.jpg" alt="思理 · 掌門">
-          <div class="portrait-fade"></div>
-        </div>
-        <div class="leader-info">
-          <div class="alias-row">
-            <span class="alias">思理 · 掌門</span>
-            <span class="alias-title">掌門 · 決策中枢</span>
-          </div>
-          <div class="realname">フラッグシップ AI パートナー · デジタル社員チームの参謀</div>
-          <div class="hr"></div>
-          <div class="opening">思理は思理智能のフラッグシップ AI パートナーであり、デジタル社員チーム全体の参謀です。彼女はあなたのビジネスのすべてを覚えています：顧客の好み、前回の見積り、三日間足止めされている案件。「今月はどう？」と一言聞けば、ファネル・リスク・判断すべき事項を一度に目の前に並べてくれます。</div>
-          <div class="skill-label">統 括 範 囲</div>
-          <div class="skills">
-<span class="sk">統括調度</span><span class="sk">経営洞察</span><span class="sk">意思決定支援</span><span class="sk">情報集約</span>
-          </div>
-          <div class="closing">彼女が仕事を整理し、最終決定は常にあなたが</div>
-        </div>
-      </div>
-
-    <!-- 四高手 -->
-    <div class="masters">
-
-      <div class="m-card">
-        <div class="m-portrait">
-          <span class="m-num">0 1</span><span class="m-en">Mercury</span>
-          <img class="portrait-img" src="/images/ai-team/shenxing.jpg" alt="神行" />
-          <div class="portrait-fade"></div>
-        </div>
-        <div class="m-info">
-          <div class="m-alias">神行</div>
-          <div class="m-title">営業随行</div>
-          <div class="m-real">小銷 · 日行八百の伝令</div>
-          <div class="m-hr"></div>
-          <div class="m-open">神行太保、日を行くこと八百里、江湖の書状が一通も遅れたことはない。主役ではなく随行——主将が進む先に彼が付き、糧草と書状は一歩も落ちない。</div>
-          <div class="m-skills">
-<span class="m-sk">構造化議事録</span><span class="m-sk">フォローアップメール</span><span class="m-sk">打ち合わせ準備</span><span class="m-sk">リードスコアリング</span><span class="m-sk">五维診断</span><span class="m-sk">ヘルススコア</span><span class="m-sk">パトロール</span>
-          </div>
-          <div class="m-close">随行は主役ではない：草稿はあなたが直し、契約はあなたが署名する</div>
-        </div>
-      </div>
-
-      <div class="m-card">
-        <div class="m-portrait">
-          <span class="m-num">0 2</span><span class="m-en">Scout</span>
-          <img class="portrait-img" src="/images/ai-team/baixiaosheng.jpg" alt="百暁生" />
-          <div class="portrait-fade"></div>
-        </div>
-        <div class="m-info">
-          <div class="m-alias">百暁生</div>
-          <div class="m-title">調査情報</div>
-          <div class="m-real">小研 · 天下情報の一冊</div>
-          <div class="m-hr"></div>
-          <div class="m-open">百暁生、兵器譜の主。天下の業界情報をすべて知る。江湖ではこう言われる：彼の帳に「わからない」の三文字はない、と。</div>
-          <div class="m-skills">
-<span class="m-sk">アウトリーチ＋コンプライアンス</span><span class="m-sk">リードスコアリング</span><span class="m-sk">ドメインからメール</span><span class="m-sk">利用量は透明</span>
-          </div>
-          <div class="m-close">情報は彼が仕入れる。打って出るかは、あなたが決める</div>
-        </div>
-      </div>
-
-      <div class="m-card">
-        <div class="m-portrait">
-          <span class="m-num">0 3</span><span class="m-en">Medic</span>
-          <img class="portrait-img" src="/images/ai-team/pingyizhi.jpg" alt="平一指" />
-          <div class="portrait-fade"></div>
-        </div>
-        <div class="m-info">
-          <div class="m-alias">平一指</div>
-          <div class="m-title">商機医者</div>
-          <div class="m-real">診断官 · 一指生死を知る</div>
-          <div class="m-hr"></div>
-          <div class="m-open">平一指、神医。一本の指で脈を取り、この商談が生きているか死んでいるか、隘路が価格か人かプロセスか、彼が指し示す。彼の掟：診るのみ、勝手には動かない。</div>
-          <div class="m-skills">
-<span class="m-sk">五维診断</span><span class="m-sk">毎時パトロール</span><span class="m-sk">日次ヘルススコア</span><span class="m-sk">コンテンツ→成約アトリビューション</span>
-          </div>
-          <div class="m-close">診るは彼が、処方箋を書くのはあなた</div>
-        </div>
-      </div>
-
-      <div class="m-card">
-        <div class="m-portrait">
-          <span class="m-num">0 4</span><span class="m-en">Daedalus</span>
-          <img class="portrait-img" src="/images/ai-team/huangyaoshi.jpg" alt="黄薬師" />
-          <div class="portrait-fade"></div>
-        </div>
-        <div class="m-info">
-          <div class="m-alias">黄薬師</div>
-          <div class="m-title">システムアーキテクト</div>
-          <div class="m-real">教練 · 一言で陣を敷く</div>
-          <div class="m-hr"></div>
-          <div class="m-open">黄薬師、桃花島の主。桃花島全体が彼の作品：奇門遁甲、五行の仕掛け、一草一木まで陣法に基づいて配置されている。部外者は出られず、彼は目を閉じたまま歩き慣れている。</div>
-          <div class="m-skills">
-<span class="m-sk">構成コーチ</span><span class="m-sk">二層構成</span><span class="m-sk">タスク提案</span><span class="m-sk">完全機能カード</span><span class="m-sk">クエリツールセット</span>
-          </div>
-          <div class="m-close">陣は彼が敷く。陣をくぐり抜ける道は、あなたが慣れていく</div>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="counter">
-      <div class="counter-line">さらに <b>36</b> 名のデジタル社員が各司其職 —— 営業 11 · コンテンツ 8 · カスタマー 7 · データ分析 6 · 記憶知識 4</div>
-    </div>
-
-    </div>
-
-    <div class="col-right">
-      <div class="pos-panel">
-          <div class="pos-inner">
-
-            <div class="pos-kicker">W H Y&nbsp;&nbsp;S I L I M I N D</div>
-
-            <div class="pos-title">
-              営業とマーケティングを<br><em>ひとつのデジタルプラットフォームに</em>
-            </div>
-
-            <div class="pos-desc">
-              マーケティングツールと CRM の往復をやめれば、データは本当に繋がる。36 名のデジタル社員が連携し、コンテンツと顧客データを同じライブラリで管理。
-            </div>
-
-            <div class="pos-div"></div>
-
-            <div class="stats">
-            <div class="stat">
-                <div class="stat-num">819</div>
-                <div class="stat-txt">
-                  <div class="stat-k">社</div>
-                  <div class="stat-v">実メール 198 通から抽出（内部テスト 2026-10）</div>
-                </div>
-              </div>
-            <div class="stat">
-                <div class="stat-num">92<small>–</small>97<small>%</small></div>
-                <div class="stat-txt">
-                  <div class="stat-k">照合率の実証</div>
-                  <div class="stat-v">連絡先 552 件 + 791 社にソースメールを記録</div>
-                </div>
-              </div>
-            <div class="stat">
-                <div class="stat-num">16</div>
-                <div class="stat-txt">
-                  <div class="stat-k">種の AI クリエイションスキル</div>
-                  <div class="stat-v">コンテンツワークベンチ · 選題から配信まで</div>
-                </div>
-              </div>
-            <div class="stat stat-text">
-                <div class="stat-txt">
-                  <div class="stat-k">全チャネルを 1 つのタイムラインに</div>
-                  <div class="stat-v">WhatsApp · Email · WeChat など</div>
-                </div>
-              </div>
-            </div>
-
-            <a class="cta" href="https://agent.silimind.net/register">
-              完全なソリューションを見る
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;margin-left:6px"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-            </a>
-            <div class="cta-note">CRM はそのまま · プライベート導入 · データは社内に</div>
-
-          </div>
-        </div>
-    </div>
-
-  </div>
-</section><section class="metrics" id="metrics">
+  <section class="metrics" id="metrics">
     <div class="container">
       <div class="section-header">
         <p class="section-label">データが語る</p>
