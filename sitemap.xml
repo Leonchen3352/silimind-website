@@ -726,4 +726,28 @@
     <xhtml:link rel="alternate" hreflang="ko-KR" href="https://www.silimind.net/ko/contact"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.silimind.net/contact"/>
   </url>
+  <url>
+    <loc>https://www.silimind.net/ai-team</loc>
+    <lastmod>2026-11-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.silimind.net/en/ai-team</loc>
+    <lastmod>2026-11-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.silimind.net/ja/ai-team</loc>
+    <lastmod>2026-11-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.silimind.net/ko/ai-team</loc>
+    <lastmod>2026-11-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
