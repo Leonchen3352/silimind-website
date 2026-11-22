@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <title>AI チームメイト 4 人 vs 採用 4 人：座席と給与の算数 - SiliMind ブログ</title>
+  <meta name="description" content="実際に計算できる「座席 vs 給与」の算数：米中二市場のグレード付き給与ベンチマーク、記入式 CSV テンプレート、そして私たちが水増しを拒む 3 つの数字。" />
+  <link rel="canonical" href="https://www.silimind.net/ja/blog/four-teammates-vs-four-hires" />
+  <link rel="alternate" hreflang="en" href="https://www.silimind.net/blog/four-teammates-vs-four-hires" />
+  <link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/zh/blog/four-teammates-vs-four-hires" />
+  <link rel="alternate" hreflang="ja" href="https://www.silimind.net/ja/blog/four-teammates-vs-four-hires" />
+  <link rel="alternate" hreflang="ko" href="https://www.silimind.net/ko/blog/four-teammates-vs-four-hires" />
+  <link rel="alternate" hreflang="x-default" href="https://www.silimind.net/blog/four-teammates-vs-four-hires" />
+  <meta property="og:title" content="AI チームメイト 4 人 vs 採用 4 人：座席と給与の算数 - SiliMind ブログ" />
+  <meta property="og:description" content="実際に計算できる「座席 vs 給与」の算数：米中二市場のグレード付き給与ベンチマーク、記入式 CSV テンプレート、そして私たちが水増しを拒む 3 つの数字。" />
+  <meta property="og:url" content="https://www.silimind.net/ja/blog/four-teammates-vs-four-hires" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="SiliMind" />
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJ7HH4824R"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RJ7HH4824R');
+  </script>
+  <style>
+    :root {
+      --bg-primary: #0a0a0f;
+      --bg-secondary: #12121a;
+      --bg-card: #16161f;
+      --accent: #6366f1;
+      --accent-light: #818cf8;
+      --text-primary: #f0f0f5;
+      --text-secondary: rgba(240,240,245,0.6);
+      --border: rgba(99,102,241,0.08);
+      --border-hover: rgba(99,102,241,0.25);
+      --font: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'PingFang SC', 'Noto Sans SC', sans-serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* Nav */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(10,10,15,0.9);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      height: 64px;
+    }
+    .nav-inner {
+      max-width: 1100px; margin: 0 auto; padding: 0 32px;
+      height: 100%; display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      font-size: 20px; font-weight: 700; color: var(--accent-light);
+      text-decoration: none; letter-spacing: 1px;
+    }
+    .nav-links { list-style: none; display: flex; gap: 32px; }
+    .nav-links a {
+      color: var(--text-secondary); text-decoration: none; font-size: 14px;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--text-primary); }
+
+    /* Article */
+    .article-container {
+      max-width: 760px; margin: 0 auto;
+      padding: 120px 32px 80px;
+    }
+    .article-header {
+      margin-bottom: 40px;
+    }
+    .article-header h1 {
+      font-size: 32px; font-weight: 700; line-height: 1.3;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #6366f1, #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .article-meta {
+      font-size: 14px; color: var(--text-secondary);
+    }
+    .article-meta time {
+      margin-right: 16px;
+    }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      color: var(--accent-light); text-decoration: none; font-size: 14px;
+      margin-bottom: 24px; transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--text-primary); }
+
+    /* Article body */
+    .article-body h2 {
+      font-size: 24px; font-weight: 600; margin: 40px 0 16px;
+      color: var(--text-primary);
+    }
+    .article-body h3 {
+      font-size: 20px; font-weight: 600; margin: 32px 0 12px;
+      color: var(--text-primary);
+    }
+    .article-body p {
+      font-size: 16px; line-height: 1.8; color: var(--text-secondary);
+      margin-bottom: 20px;
+    }
+    .article-body ul, .article-body ol {
+      margin-bottom: 20px; padding-left: 24px; color: var(--text-secondary);
+    }
+    .article-body li {
+      margin-bottom: 8px; font-size: 16px; line-height: 1.8;
+    }
+    .article-body blockquote {
+      border-left: 3px solid var(--accent);
+      padding: 16px 24px;
+      margin: 24px 0;
+      background: var(--bg-secondary);
+      border-radius: 0 8px 8px 0;
+      color: var(--text-secondary);
+      font-size: 15px;
+    }
+    .article-body code {
+      background: var(--bg-secondary);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 14px;
+      color: var(--accent-light);
+    }
+    .article-body pre {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px 24px;
+      overflow-x: auto;
+      margin-bottom: 20px;
+    }
+    .article-body pre code {
+      background: none; padding: 0; font-size: 14px;
+      color: var(--text-primary);
+    }
+    .article-body img {
+      max-width: 100%; border-radius: 8px; margin: 24px 0;
+    }
+    .article-body a {
+      color: var(--accent-light); text-decoration: underline;
+      text-decoration-color: rgba(129,140,248,0.3);
+      transition: text-decoration-color 0.2s;
+    }
+    .article-body a:hover {
+      text-decoration-color: var(--accent-light);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center; padding: 40px 32px;
+      border-top: 1px solid var(--border);
+      color: var(--text-secondary); font-size: 13px;
+    }
+
+    @media (max-width: 768px) {
+      .article-container { padding: 100px 16px 60px; }
+      .article-header h1 { font-size: 26px; }
+      .article-body h2 { font-size: 20px; }
+      .nav-links { display: none; }
+    }
+  
+    /* ===== sm-nav ===== */
+    .sm-nav { position: sticky; top: 0; z-index: 999; background: rgba(11,12,16,.88); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border, rgba(255,255,255,.08)); }
+    .sm-nav-inner { max-width: 1120px; margin: 0 auto; padding: 14px 32px; display: flex; align-items: center; justify-content: space-between; }
+    .sm-logo { font-size: 20px; font-weight: 700; color: var(--text-primary, #f3f4f6); text-decoration: none; letter-spacing: .5px; }
+    .sm-toggle { background: none; border: 0; cursor: pointer; padding: 10px; display: flex; flex-direction: column; gap: 5px; }
+    .sm-bar { display: block; width: 22px; height: 2px; background: var(--text-primary, #f3f4f6); border-radius: 2px; transition: transform .25s ease, opacity .2s ease; }
+    .sm-open .sm-bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .sm-open .sm-bar:nth-child(2) { opacity: 0; }
+    .sm-open .sm-bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .sm-menu { display: none; position: absolute; top: 100%; right: 16px; width: 300px; max-width: calc(100vw - 24px); background: var(--bg-secondary, #14151b); border: 1px solid var(--border, rgba(255,255,255,.08)); border-radius: 14px; padding: 10px; box-shadow: 0 16px 48px rgba(0,0,0,.5); }
+    .sm-open .sm-menu { display: block; }
+    .sm-menu a { display: block; padding: 10px 14px; border-radius: 8px; color: var(--text-primary, #f3f4f6); text-decoration: none; font-size: 15px; }
+    .sm-menu a:hover { background: rgba(129,140,248,.12); }
+    .sm-top { font-weight: 600; }
+    .sm-sub { margin: 2px 10px 8px 18px; padding-left: 12px; border-left: 2px solid var(--border, rgba(255,255,255,.08)); }
+    .sm-sub a { font-size: 13.5px; color: var(--text-secondary, #9ca3af); padding: 7px 12px; }
+    .sm-cta { margin-top: 8px; text-align: center; background: var(--accent, #6366f1); color: #fff !important; font-weight: 600; border-radius: 10px; }
+    .sm-lang { margin-top: 8px; padding: 10px 14px 4px; font-size: 12.5px; color: var(--text-secondary, #9ca3af); border-top: 1px solid var(--border, rgba(255,255,255,.08)); }
+    .sm-lang a { display: inline; padding: 0 2px; font-size: 12.5px; color: var(--text-secondary, #9ca3af); }
+    @media (max-width: 640px) { .sm-nav-inner { padding: 12px 16px; } .sm-menu { left: 12px; right: 12px; width: auto; } }
+  
+    .cmp-table { width: 100%; border-collapse: collapse; margin: 26px 0; font-size: 14px; }
+    .cmp-table th { text-align: left; padding: 12px 14px; background: rgba(99,102,241,.1); border: 1px solid rgba(99,102,241,.25); color: #818cf8; font-size: 13px; letter-spacing: .5px; }
+    .cmp-table td { padding: 14px; border: 1px solid rgba(99,102,241,.12); vertical-align: top; line-height: 1.8; }
+    .cmp-table td:first-child { font-weight: 600; color: var(--text-primary); width: 180px; }
+    .bench-table { width: 100%; border-collapse: collapse; margin: 22px 0; font-size: 13.5px; }
+    .bench-table th { text-align: left; padding: 10px 12px; background: rgba(99,102,241,.1); border: 1px solid rgba(99,102,241,.25); color: #818cf8; font-size: 12.5px; }
+    .bench-table td { padding: 10px 12px; border: 1px solid rgba(99,102,241,.12); vertical-align: top; line-height: 1.7; }
+    .formula-block { background: var(--bg-card, #16161f); border: 1px solid rgba(99,102,241,.25); border-radius: 12px; padding: 22px 24px; font-family: ui-monospace, Menlo, monospace; font-size: 13.5px; line-height: 1.9; white-space: pre-wrap; overflow-x: auto; color: var(--text-primary); margin: 22px 0; }
+    .csv-cta { text-align: center; margin: 30px 0; }
+    .csv-cta a { display: inline-block; padding: 12px 28px; border-radius: 10px; border: 1px solid rgba(99,102,241,.3); color: #818cf8; text-decoration: none; font-size: 14.5px; font-weight: 600; }
+    .csv-cta a:hover { background: rgba(99,102,241,.1); }
+    .src-list { list-style: none; padding: 0; }
+    .src-list li { font-size: 13px; color: var(--text-secondary); line-height: 1.8; padding: 8px 0; border-bottom: 1px solid rgba(99,102,241,.08); }
+    .src-list a { color: #818cf8; }
+    .src-grade { font-size: 12px; letter-spacing: 1px; color: #818cf8; font-weight: 700; margin: 26px 0 10px; }
+    @media (max-width: 768px) { .cmp-table, .bench-table { font-size: 12.5px; display: block; overflow-x: auto; } .cmp-table td:first-child { width: auto; } }
+  </style>
+</head>
+<body>
+<nav class="sm-nav">
+  <div class="sm-nav-inner">
+    <a href="/ja/" class="sm-logo">SiliMind</a>
+    <div class="sm-langbar"><a href="/">中文</a> · <a href="/en/">EN</a> · 日本語 · <a href="/ko/">한국어</a></div>
+    <button class="sm-toggle" aria-label="メニュー" aria-expanded="false" aria-controls="sm-menu"><span class="sm-bar"></span><span class="sm-bar"></span><span class="sm-bar"></span></button>
+  </div>
+  <div class="sm-menu" id="sm-menu">
+    <a href="/ja/products" class="sm-link sm-top">製品</a>
+    <div class="sm-sub">
+      <a href="/ja/products#role-sales">for Sales · 営業/FAE</a>
+      <a href="/ja/products#role-marketing">for Marketing · マーケ運営</a>
+      <a href="/ja/products#role-ceo">for CEO · 経営者</a>
+    </div>
+    <a href="/ja/solutions" class="sm-link">プラットフォーム</a>
+    <a href="/ja/#metrics" class="sm-link">実績</a>
+    <a href="/ja/#pricing" class="sm-link">料金</a>
+          <a href="/ja/ai-team" class="sm-link">AIパートナー</a>
+          <a href="/ja/contact" class="sm-link">お問い合わせ</a>
+    <a href="/ja/blog/" class="sm-link">ブログ</a>
+    <a href="https://agent.silimind.net/register" class="sm-link sm-cta">個人トライアルを申込</a>
+      </div>
+</nav>
+  <article class="article-container">
+    <a class="back-link" href="/ja/blog/">← ← ブログに戻る</a>
+    <header class="article-header">
+      <h1>AI チームメイト 4 人 vs 採用 4 人：座席と給与の算数</h1>
+      <div class="article-meta">
+        <time datetime="2026-11-22">2026-11-22</time>
+        <span>SiliMind</span>
+      </div>
+    </header>
+    <div class="article-body">
+<p>ほとんどの B2B チームは、4 人目の採用のあたりで同じ壁にぶつかります。1 人目は電話と受信箱を担当。2 人目は見積りとフォローアップ。3 人目はコンテンツを作り始める——誰かが書かなければならないので。そして業務がまた 3 人のキャパシティを超え、あなたはスプレッドシートを前にして、きれいな答えのない問いに向き合います：もう 1 人採用するか、ツールを買うか？</p><p>この記事はスローガンでその問いに答えません。実際にできる算数を示し、欠けている数字をあなたが持つ箇所を明示し、算数が誠実でなくなる場所をはっきり言います。</p>
+      <h2>これは何ではないか</h2>
+      <p>先に 3 つの免責を。以下のすべてを形づくるからです。</p>
+      <p><strong>誰かを置き換える主張ではありません。</strong> 私たちが作るワークフローは正反対を前提にしています：AI は雑務を担い、決定は人間が下す。以下の表のすべての行は、人間の判断で締めくくられます。</p><p><strong>価格表ではありません。</strong> 当社自身の価格をこの記事には載せません。数字が必要な箇所は、あなたが記入します。当社側の価格を知りたいなら、それはブログではなく対話です。</p><p><strong>コスト削減のパーセントでもありません。</strong> 「コストを 40% 削減」という結論はここにはありません。その理由は Part 3 で説明します。</p>
+      <p>これは：記入式のテンプレートと、誠実に記入するためのベンチマークです。</p>
+      <h2>Part 1 · 今日計算できること</h2>
+      <h3>1. 給与ベンチマーク（2 市場、ソースのグレード付き）</h3>
+      <table class="bench-table"><thead><tr><th>市場</th><th>職種</th><th>ベンチマーク</th><th>ソースグレード</th></tr></thead><tbody><tr><td>米国</td><td>卸売・製造業の営業代表（技術/科学製品）</td><td>年収中央値 <strong>$104,920</strong></td><td>A · 米国労働統計局（BLS）、2025 年 5 月</td></tr><tr><td>米国</td><td>同じ職種（技術/科学製品を除く）</td><td>年収中央値 <strong>$72,080</strong></td><td>A · BLS OEWS、2025 年 5 月</td></tr><tr><td>米国</td><td>営業マネージャー</td><td>年収中央値 <strong>$148,270</strong></td><td>A · BLS、2025 年 5 月</td></tr><tr><td>米国</td><td>営業職全般</td><td>年収中央値 <strong>$38,530</strong></td><td>A · BLS、2025 年 5 月</td></tr><tr><td>中国</td><td>貿易営業（外貿業務員）</td><td>求人の 67.3% が月 <strong>6,000〜10,000 元</strong>；新卒初任給中央値 <strong>9,400 元</strong>/月</td><td>B · 求人プラットフォーム集計、2026 年 9 月</td></tr><tr><td>中国</td><td>貿易営業（全求人）</td><td>レンジ ≈ <strong>5,051〜14,644 元</strong>/月</td><td>B · 求人サイト給与ページ、2026 年 11 月</td></tr><tr><td>中国</td><td>貿易営業（基本給のみ）</td><td>一线城市 <strong>4,000〜8,000 元</strong>/月；二・三線 <strong>3,000〜6,000 元</strong>/月</td><td>B · 業界メディア、2026 年 6 月</td></tr></tbody></table>
+      <p>この表についての 2 つのルール：グレード A は公式統計、グレード B はプラットフォーム集計データで、<strong>レンジ参考のみ</strong>に使い、結論としては使いません。さらに 2 つの市場は換算なしで並べています：給与構造が市場ごとに異なるため、為替レートも市場横断の結論も出しません。</p>
+      <h3>2. あなたの座席コスト</h3>
+      <p>現在使っている CRM の 1 座席あたり月額料金 × 座席数を書き出してください。これは今日すでに持っている数字で、採用するしないに関わらず表に入るべきものです。</p>
+      <h3>3. 追加コストは、レンジで</h3>
+      <p>雇用者負担、機器とデスク環境は都市と政策によって異なります。レンジを記入し、前提を書き添えて先に進みましょう。ここで精度の高そうな数字を出すと、それは偽りの精度になります。</p>
+      <h2>Part 2 · あなたが数字を 1 つだけ補う部分</h2>
+      <p>ほとんどのコスト記事はここで曖昧にします。私たちは逆にやります：式を示し、入力値はあなたのものです。</p>
+      <h3>リード 100 件あたりの月額コスト</h3>
+      <div class="formula-block">リード 100 件あたりの月額コスト =
+      （座席数 × 1 座席の価格）+ 人件費 + ツールコスト
+      ──────────────────────────────────────  × 100
+                    月間処理リード数</div>
+      <p>3 つの枠を埋めれば 4 つ目は出てきます。ただし、どの枠があなたのものか確認してください：</p>
+      <p><strong><strong>人件費</strong></strong> 市場、経験年数、追加コストを含めるかどうかで変わります。</p>
+      <p><strong><strong>月間処理リード数</strong></strong> チャネルミックスと、あなたの「処理」の定義によって変わります。</p>
+      <p><strong><strong>ツールコスト</strong></strong> すでに契約しているものによって変わります。</p>
+      <p>私たちはこれを代わりに記入しません。私たちが選ぶどの初期値も、ベンチマークの皮を被った推測になってしまうからです。</p>
+      <div class="csv-cta"><a href="/downloads/silimind-p38-cost-comparison-template.csv" download>座席と給与の比較テンプレート（CSV）をダウンロード →</a></div>
+      <p>ひとつだけ強調します：<strong>これは式のテンプレートであり、成果の約束ではありません。</strong>あなたの入力が何を意味するかは示します。何が起こるかは示しません。</p>
+      <h2>Part 3 · 計算できると偽らないこと</h2>
+      <p>3 つの項目と、それらが表の外に留まる理由。</p>
+      <p><strong><strong>「AI は採用より X% 安い」</strong></strong> いいえ。両者は同じ仕事をしていません。採用された人は交渉し、空気を読み、引く時を判断します。AI チームメイトは起草し、要約し、チェックし、リマインドします。単位コストを比較するには、互换可能だと偽る必要があります——できません。</p><p><strong><strong>回収期間。</strong></strong> 「N か月で元が取れる」というのは、カレンダー付きの ROI 倍数です。私たちはそうした数字を出しませんし、出すベンダーはあなたの成約率、期間の長さ、新規リードの命中率を推測しているだけです。</p><p><strong><strong>あなたの実際の削減額。</strong></strong> 同じ人数の 2 つのチームが、同じ自動化から正反対の結果を得ることがあります。変数は、1 日のうちどれだけが雑務に使われていたかです。それは自分のビジネスの中で測るものではあり、渡せるものではありません。</p>
+      <h2>比較表</h2>
+      <p>以下が誠実なバージョンです：右に能力、左にコストベンチマーク、そして両方が終わる最後の行。</p>
+      <table class="cmp-table"><thead><tr><th>比較項目</th><th>採用 4 人</th><th>AI チームメイト 4 体</th></tr></thead><tbody><tr><td>固定月額コスト</td><td>上の表の給与ベンチマーク＋追加コスト。あなたの市場の行を使ってください。</td><td>ここでは価格設定しません。プラットフォーム利用量に応じた課金。あなたの数字を CSV に記入してください。</td></tr><tr><td>採用と育成</td><td>求人広告、面接、人が成果を出すまでの立ち上げ期間。</td><td>構築時間は週ではなく時間で測られます。</td></tr><tr><td>カバー時間帯</td><td>1 日 8 時間、週 5 日。</td><td>スケジュールに沿って 24 時間稼働：パイプラインチェックは毎時、ヘルススコアは毎日、週報は月曜の朝に。</td></tr><tr><td>同時対応チャネル</td><td>実務では通常 1〜2。</td><td>WeChat、WeCom、メール、通話記録、展示会メモが 1 本の顧客タイムラインに流れ込みます。</td></tr><tr><td>記憶と引き継ぎ</td><td>顧客コンテキストは一人の頭の中にあります。退職の日、全部誰も読まないフォルダに移されます。</td><td>顧客タイムラインはシステムに残ります。引き継ぎコストはゼロに近づく。</td></tr><tr><td>失敗モード</td><td>退職、病欠、調子の悪い月。</td><td>人間のレビューと承認が必要。無人ではなく、顧客向け送信も自律的ではありません。</td></tr><tr><td>誰が決めるか</td><td>その人、権限の範囲内で。</td><td><strong>あなた。</strong>AI の出力はすべて草稿・提案・フラグとして届きます。決定は人間の手に留まります。</td></tr></tbody></table>
+      <div class="csv-cta"><a href="/downloads/silimind-p38-cost-comparison-template.csv" download>座席と給与の比較テンプレート（CSV）をダウンロード →</a></div>
+      <h2>AI チームメイト 4 体、具体名で</h2>
+      <p>4 つの役割は、営業時間を圧迫する雑務に対応します。Part 2 の 3 つ目の枠のためのチェックリストとして使ってください。セールスではありません。</p>
+      <p><strong><strong>Mercury</strong>（神行、営業随行）</strong> 会議の録音が構造化議事録になり、フォローアップメールは草案のまま届き、前日には打ち合わせ準備が整い、リードスコアリングと五维診断が同じパスで走ります。</p><p><strong><strong>Scout</strong>（百暁生、調査官）</strong> アカウント情報からアウトリーチを起草してコンプライアンスチェックを通し、新規リードに到着時にスコアをつけ、会社ドメインから氏名つきの連絡先を特定します。</p><p><strong><strong>Medic</strong>（平一指、商機医者）</strong> 停滞商談の五维診断、パイプライン全体の毎時異常スキャン、日次ヘルススコア、そして公開記事から成約までを一本の線で追る仕組み。</p><p><strong><strong>Daedalus</strong>（黄薬師、ビルダー）</strong> 対話式セットアップ：欲しい役割を説明し、読み取りを許可するデータ（読み取り専用）にチェックを入れ、スキルを紐付けると、ワークフローを構成します。</p>
+      <p>その上に立つのがリードチームメイトの <strong>SILI</strong>——記憶を担い、パイプライン・リスク・あなたの決定待ちの事項を、1 画面の朝のブリーフィングとして届けます。</p>
+      <h2>今週できる 3 つのこと</h2>
+      <p><strong><strong>座席を数える。</strong></strong> CRM の請求ページを開き、1 座席の価格 × 座席数を書き出す。それが表の最初の行で、採用しても変わりません。</p><p><strong><strong>ベンチマーク行を 2 つ引く。</strong></strong> 米国の列から 1 つ、中国の列から 1 つ、出典と日付を横に書く。日付のないベンチマークはただの逸話です。</p><p><strong><strong>外注したい雑務を 3 つ挙げる。</strong></strong> 明日にでも渡せたらいいタスクを 3 つ書きます：週報、フォローの草稿、展示会後の片付け。そのあと、本当に人間が必要か確認してください。</p>
+      <p>このリストこそ、より多くの情報がより多くの分析に勝る、唯一の部分です。3 つの雑務のうち 2 つが起草と要約なら、算数は一方に傾きます。3 つすべてが交渉と関係業務なら、逆に傾きます——どのテンプレートもあなたの代わりには決められません。</p>
+      <h2>まとめ</h2>
+      <p>人とソフトウェアのコスト比較は、2 つの方向で誤ります：ソフトウェアが人を置き換えると偽るか、人のコストを給与だけだと偽るか。どちらも実際の損益計算書との接触に耐えません。ベンチマークを持ち出し、自分の数字を記入し、表の最後の行はそのままにしておく——AI は雑務を担い、決定はあなたがする。</p>
+      <p><strong>記入する準備はできましたか？</strong></p>
+      <div class="csv-cta"><a href="/downloads/silimind-p38-cost-comparison-template.csv" download>座席と給与の比較テンプレート（CSV）をダウンロード →</a></div>
+      <h2>出典</h2>
+      <div class="src-grade">グレード A（公式統計、リンク付き）</div>
+      <ul class="src-list"><li>U.S. Bureau of Labor Statistics, <em>Occupational Outlook Handbook</em>：卸売・製造業の営業代表（技術/科学製品；技術/科学製品を除く）、年収中央値、2025 年 5 月。<a href="https://www.bls.gov/ooh/sales/wholesale-and-manufacturing-sales-representatives.htm" rel="noopener" target="_blank">bls.gov/ooh/sales/wholesale-and-manufacturing-sales-representatives.htm</a></li><li>U.S. Bureau of Labor Statistics, <em>Occupational Outlook Handbook</em>：営業マネージャー、年収中央値、2025 年 5 月。<a href="https://www.bls.gov/ooh/management/sales-managers.htm" rel="noopener" target="_blank">bls.gov/ooh/management/sales-managers.htm</a></li><li>U.S. Bureau of Labor Statistics, <em>Occupational Outlook Handbook</em>：営業職（全営業職合計）、年収中央値、2025 年 5 月。<a href="https://www.bls.gov/ooh/sales/" rel="noopener" target="_blank">bls.gov/ooh/sales/</a></li></ul>
+      <div class="src-grade">グレード B（プラットフォーム集計、レンジ参考のみ、リンクなし）</div>
+      <ul class="src-list"><li>貿易営業職の給与分布と新卒初任給中央値、求人プラットフォーム集計、2026 年 9 月。数字はプラットフォーム集計で、レンジとして引用され、結論ではありません。</li><li>貿易営業職の月額レンジ、求人サイト給与ページ、2026 年 11 月。</li><li>貿易営業職の都市別基本給、業界メディア、2026 年 6 月。</li></ul>
+      <p><em>グレード B の数字はプラットフォーム集計です。議論の枠組みとしてレンジで含めており、検証済みベンチマークではありません。グレード A の数字は公開前に一次ソースで再確認してください。</em></p>
+    </div>
+  </article>
+  <footer class="site-footer">
+    <div class="wrap">© 2026 SiliMind 思理智能. All rights reserved. &nbsp;·&nbsp; WeChat：18612418612 &nbsp;·&nbsp; <a href="mailto:micheal@silimind.net">micheal@silimind.net</a></div>
+  </footer>
+  <script>
+    (function(){
+      var nav=document.querySelector('.sm-nav');var t=document.querySelector('.sm-toggle');
+      if(!nav||!t)return;
+      t.addEventListener('click',function(e){e.stopPropagation();var o=nav.classList.toggle('sm-open');t.setAttribute('aria-expanded',o?'true':'false');});
+      document.addEventListener('click',function(e){if(nav.classList.contains('sm-open')&&!nav.contains(e.target)){nav.classList.remove('sm-open');t.setAttribute('aria-expanded','false');}});
+      var m=nav.querySelector('.sm-menu');
+      if(m){m.addEventListener('click',function(e){if(e.target.closest('a')){nav.classList.remove('sm-open');t.setAttribute('aria-expanded','false');}});}
+    })();
+  </script>
+  </body>
+</html>

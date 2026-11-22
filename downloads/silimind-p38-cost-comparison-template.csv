@@ -1,0 +1,26 @@
+block,item,four_hires_value,benchmark_source,four_ai_teammates_value,notes
+NOTE,"This is a formula template, not a promise of results.",,,,Re-check every benchmark against its primary source before publication.
+BENCHMARK,"US sales rep (wholesale/manufacturing, technical products) median annual wage",104920,"BLS Occupational Outlook Handbook, May 2025 (grade A)",,Official statistic.
+BENCHMARK,US sales rep (except technical/scientific) median annual wage,72080,"BLS OEWS, May 2025 (grade A)",,Official statistic.
+BENCHMARK,US sales manager median annual wage,148270,"BLS Occupational Outlook Handbook, May 2025 (grade A)",,Official statistic.
+BENCHMARK,US all sales occupations median annual wage,38530,"BLS Occupational Outlook Handbook, May 2025 (grade A)",,Official statistic.
+BENCHMARK,China foreign-trade sales rep: share of postings in RMB 6k-10k band,67.3% of postings,"Recruitment-platform aggregate, Sep 2026 (grade B)",,"Range reference only, not a conclusion."
+BENCHMARK,China foreign-trade sales rep: fresh graduate starting median monthly,9400 RMB/month,"Recruitment-platform aggregate, Sep 2026 (grade B)",,Range reference only.
+BENCHMARK,China foreign-trade sales rep: all-postings monthly range,5051-14644 RMB/month,"Job-platform salary page, Nov 2026 (grade B)",,Range reference only.
+BENCHMARK,"China foreign-trade sales rep: base salary, tier-1 cities",4000-8000 RMB/month,"Trade media, Jun 2026 (grade B)",,Range reference only.
+BENCHMARK,"China foreign-trade sales rep: base salary, tier-2/3 cities",3000-6000 RMB/month,"Trade media, Jun 2026 (grade B)",,Range reference only.
+YOUR INPUT,Monthly cost per seat (your current CRM),,,,Enter YOUR number. Not supplied by us.
+YOUR INPUT,Number of seats,,,,Include seats you would add if you hired.
+YOUR INPUT,Number of channels to cover,,,,WeChat / WeCom / email / phone / trade-show follow-up.
+YOUR INPUT,Daily inbound leads,,,,Use your own definition of handled.
+YOUR INPUT,Working days per month,,,,
+YOUR INPUT,People cost per person per month (optional),,,,Salary plus employer contributions. Put a range if unsure.
+YOUR INPUT,Tooling cost per month (optional),,,,Subscriptions you already pay for.
+CALCULATED,Monthly cost per 100 leads = ((seats x seat price) + people cost + tooling cost) / leads per month x 100,,,,"Formula only. Fill the inputs; the output is yours, not ours."
+COMPARISON,Fixed monthly cost,Benchmark salary + on-costs,See benchmark rows above,Not priced in the article. Billed on your platform usage.,Put your own figure here.
+COMPARISON,Hiring and training,Job postings + interviews + ramp-up time,,"Configuration measured in hours, not weeks.",
+COMPARISON,Hours covered,8 hours x 5 days,,"Scheduled runs: pipeline checks hourly, health scores daily, weekly report Monday morning.",
+COMPARISON,Channels at once,1-2 in practice,,"WeChat, WeCom, email, phone records, trade-show notes into one customer timeline.",
+COMPARISON,Memory and handover,Customer context sits with one person,,Timeline stays in the system; handover cost trends to zero.,
+COMPARISON,Failure mode,Resignation / sick leave / bad month,,"Needs human review and sign-off. Not unattended, not autonomous on customer-facing sends.",
+COMPARISON,Who decides,The person within their authority,,"You. Every AI output is a draft, a recommendation or a flag.",
