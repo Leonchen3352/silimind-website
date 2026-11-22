@@ -1003,6 +1003,196 @@
     .pricing-btn { text-align: center; padding: 11px 18px; border-radius: 10px; background: var(--accent, #6366f1); color: #fff; text-decoration: none; font-size: 14.5px; font-weight: 600; }
     .pricing-btn-ghost { background: transparent; border: 1px solid var(--border-hover, rgba(129,140,248,.4)); color: var(--text-primary, #f3f4f6); }
     @media (max-width: 768px) { .pricing-grid { grid-template-columns: 1fr; } .pricing-mini { padding: 64px 16px 48px; } }
+  <style>
+  :root{
+    --bg:#070A12;
+    --gold:#6366f1;
+    --gold-l:#a5b4fc;
+    --text:#EDE6D6;
+    --sub:#8B8578;
+    --line:rgba(148,163,184,.18);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    background:var(--bg);color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    padding:0;
+  }
+
+  /* ===== 版块容器：全宽深色分段（视觉缓冲）===== */
+  .ai-partners{
+    width:100%;
+    padding:84px 0 96px;
+    background:
+      radial-gradient(1100px 620px at 50% -8%,rgba(99,102,241,.07),transparent 62%),
+      linear-gradient(180deg,#0A0E18 0%,#070A12 42%,#060810 100%);
+    position:relative;overflow:hidden;
+  }
+  /* 顶部/底部渐变边框，与相邻版块视觉隔离 */
+  .ai-partners::before,.ai-partners::after{
+    content:"";position:absolute;left:0;right:0;height:1px;
+    background:linear-gradient(90deg,transparent,rgba(99,102,241,.22),transparent);
+  }
+  .ai-partners::before{top:0}
+  .ai-partners::after{bottom:0}
+
+  .inner{max-width:1400px;margin:0 auto;padding:0 40px}
+
+  /* ===== 版块标题区 ===== */
+  .sec-head{text-align:center;margin-bottom:56px;position:relative}
+  .sec-kicker{
+    font-size:11px;letter-spacing:5px;color:rgba(129,140,248,.85);
+    font-weight:600;margin-bottom:16px;
+  }
+  .sec-title{
+    font-size:38px;font-weight:700;letter-spacing:2px;line-height:1.3;margin-bottom:16px;
+  }
+  .sec-title em{
+    font-style:normal;
+    background:linear-gradient(100deg,#e0e7ff,#a5b4fc 62%,#818cf8);
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;
+  }
+  .sec-sub{font-size:14.5px;color:var(--sub);letter-spacing:.6px;line-height:1.9}
+  .sec-ornament{
+    width:64px;height:1.5px;margin:24px auto 0;
+    background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  }
+
+  /* ===== 掌门大卡容器 ===== */
+  .leader-wrap{display:flex;justify-content:center;margin-bottom:64px}
+  .leader-card{
+    width:1080px;height:520px;
+    display:grid;grid-template-columns:400px 1fr;
+    border-radius:20px;overflow:hidden;position:relative;
+    background:linear-gradient(160deg,#141B2B 0%,#0C111C 62%,#0A0E18 100%);
+    border:1px solid rgba(99,102,241,.45);
+    box-shadow:0 30px 76px rgba(0,0,0,.6), inset 0 1px 0 rgba(232,197,90,.12);
+  }
+  .leader-card::before{
+    content:"";position:absolute;top:0;left:0;right:0;height:3px;
+    background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  }
+  .portrait-slot{position:relative;overflow:hidden;border-right:1px solid var(--line)}
+  .portrait-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top}
+  .portrait-fade{
+    position:absolute;inset:0;pointer-events:none;
+    background:linear-gradient(180deg,transparent 55%,rgba(10,14,24,.45) 82%,rgba(10,14,24,.92) 100%);
+  }
+  .leader-badge{
+    position:absolute;top:18px;left:50%;transform:translateX(-50%);z-index:2;
+    font-size:9px;letter-spacing:4px;color:#0B0F1A;font-weight:700;
+    background:linear-gradient(100deg,#c7d2fe,#818cf8);
+    padding:3px 14px;border-radius:999px;
+  }
+  .en-tag{
+    position:absolute;top:17px;right:20px;z-index:2;font-size:10px;letter-spacing:2.5px;
+    color:rgba(139,133,120,.7);text-transform:uppercase;
+  }
+  .leader-info{padding:44px 46px 40px;display:flex;flex-direction:column;justify-content:center}
+  .alias-row{display:flex;align-items:baseline;gap:15px;flex-wrap:wrap}
+  .alias{
+    font-size:42px;font-weight:700;letter-spacing:4px;
+    background:linear-gradient(100deg,#e0e7ff,#a5b4fc 62%,#818cf8);
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;
+  }
+  .alias-title{font-size:14.5px;color:var(--gold);letter-spacing:2.5px;font-weight:600;opacity:.92}
+  .realname{margin-top:8px;font-size:12px;color:var(--sub);letter-spacing:1.2px}
+  .hr{height:1px;background:linear-gradient(90deg,rgba(99,102,241,.35),transparent);margin:22px 0}
+  .opening{
+    font-size:13.5px;line-height:1.95;color:#C9C2B2;letter-spacing:.25px;
+    padding-left:15px;border-left:2px solid rgba(99,102,241,.35);margin-bottom:24px;
+  }
+  .skill-label{font-size:10px;letter-spacing:2.5px;color:#6B665C;font-weight:600;margin-bottom:10px}
+  .skills{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:24px}
+  .sk{
+    font-size:11.5px;color:#B8B0A0;border:1px solid var(--line);
+    border-radius:999px;padding:5px 13px;background:rgba(139,133,120,.06);
+  }
+  .closing{
+    font-size:13.5px;color:var(--gold-l);font-weight:600;letter-spacing:1.3px;
+    display:flex;align-items:center;gap:11px;padding-top:18px;border-top:1px solid var(--line);
+  }
+  .closing::before{content:"";width:20px;height:1.5px;background:var(--gold);opacity:.75}
+
+  /* ===== 四高手横排 ===== */
+  .masters{display:grid;grid-template-columns:repeat(4,340px);gap:20px;justify-content:center}
+  .m-card{
+    height:780px;border-radius:16px;overflow:hidden;display:flex;flex-direction:column;position:relative;
+    background:linear-gradient(168deg,#121927 0%,#0B1019 60%,#090D16 100%);
+    border:1px solid rgba(99,102,241,.26);
+    box-shadow:0 20px 50px rgba(0,0,0,.5);
+  }
+  .m-card::before{
+    content:"";position:absolute;top:0;left:0;right:0;height:2px;
+    background:linear-gradient(90deg,transparent,rgba(99,102,241,.75),transparent);
+  }
+  .m-portrait{position:relative;height:453px;overflow:hidden;border-bottom:1px solid var(--line)}
+  .m-num{position:absolute;top:14px;left:16px;z-index:2;font-size:9.5px;letter-spacing:2.5px;color:rgba(129,140,248,.6);font-weight:600}
+  .m-en{position:absolute;top:13px;right:16px;z-index:2;font-size:9.5px;letter-spacing:2px;color:rgba(139,133,120,.6);text-transform:uppercase}
+  .m-info{padding:20px 22px 22px;display:flex;flex-direction:column;flex:1}
+  .m-alias{
+    font-size:26px;font-weight:700;letter-spacing:3px;line-height:1.2;
+    background:linear-gradient(100deg,#e0e7ff,#a5b4fc 62%,#818cf8);
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;
+  }
+  .m-title{font-size:11.5px;color:var(--gold);letter-spacing:1.8px;font-weight:600;margin-top:5px;opacity:.92}
+  .m-real{font-size:10px;color:var(--sub);letter-spacing:.8px;margin:6px 0 14px}
+  .m-hr{height:1px;background:var(--line);margin-bottom:13px}
+  .m-open{
+    font-size:11.5px;line-height:1.85;color:#B8B0A0;
+    padding-left:10px;border-left:1.5px solid rgba(99,102,241,.32);margin-bottom:14px;flex:1;
+  }
+  .m-skills{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:14px}
+  .m-sk{
+    font-size:9.5px;color:#A8A296;border:1px solid rgba(139,133,120,.25);
+    border-radius:999px;padding:3px 9px;background:rgba(139,133,120,.05);
+  }
+  .m-close{
+    font-size:10.5px;color:var(--gold-l);font-weight:600;letter-spacing:.9px;
+    padding-top:12px;border-top:1px solid var(--line);display:flex;align-items:center;gap:8px;
+  }
+  .m-close::before{content:"";width:14px;height:1.5px;background:var(--gold);opacity:.7}
+
+  /* ===== 计数区（36 名背景资产）===== */
+  .counter{
+    margin-top:60px;text-align:center;
+    padding-top:40px;border-top:1px solid rgba(139,133,120,.14);
+  }
+  .counter-line{
+    font-size:13px;color:var(--sub);letter-spacing:1.4px;
+  }
+  .counter-line b{
+    color:var(--gold-l);font-weight:700;font-size:15px;
+    padding:0 4px;
+  }
+
+  /* ===== 响应式 ===== */
+  @media (max-width:1420px){
+    .masters{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+    .m-card{height:auto;min-height:720px}
+    .m-portrait{height:auto;aspect-ratio:3/4}
+  }
+  @media (max-width:1024px){
+    .inner{padding:0 28px}
+    .sec-title{font-size:30px}
+    .leader-wrap{margin-bottom:48px}
+    .leader-card{width:100%;max-width:640px;height:auto;grid-template-columns:1fr}
+    .portrait-slot{aspect-ratio:3/4;border-right:none;border-bottom:1px solid var(--line)}
+    .leader-info{padding:32px 30px 34px}
+    .alias{font-size:34px}
+    .masters{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+  }
+  @media (max-width:640px){
+    .ai-partners{padding:56px 0 64px}
+    .inner{padding:0 18px}
+    .sec-title{font-size:24px;letter-spacing:1px}
+    .sec-sub{font-size:13px}
+    .masters{grid-template-columns:1fr;gap:20px}
+    .alias{font-size:28px;letter-spacing:2px}
+    .opening{font-size:12.5px;line-height:1.85}
+    .m-alias{font-size:22px}
+  }
+</style>
   </style>
   <link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/">
   <link rel="alternate" hreflang="en" href="https://www.silimind.net/en/">
@@ -1152,63 +1342,129 @@
   </section>
 
   <!-- ===== 6. Metrics ===== -->
-    <!-- ===== AI TEAM ===== -->
-  <section class="ai-team-band">
-    <div class="at-wrap">
-      <p class="section-label">AI TEAM</p>
-      <h2>Meet Your AI Team</h2>
-      <p class="section-subtitle">Sili, the leader, commands the Four Masters — 36 digital employees in total.</p>
-      <p class="at-lead">They finish the chores you don’t want to do — and leave the final call to you.</p>
-      <div class="at-cards5">
-        <a href="/ai-team" class="at-card">
-          <img src="/images/ai-team/sili.jpg" alt="Sili" />
-          <div class="at-card-body">
-            <span class="at-alias">Sili</span>
-            <span class="at-role">The Leader</span>
-            <p>She remembers everything about your business. Ask one question, and she lays the whole picture in front of you.</p>
+  <section class="section ai-partners">
+  <div class="inner">
+
+    <div class="sec-head">
+      <div class="sec-kicker">A I   P A R T N E R S</div>
+      <div class="sec-title">Sili <em>the Leader</em>, with the Four Masters</div>
+      <div class="sec-sub">Commanding 36 digital employees · a digital employee assistant for sales, a digital employee team for marketing, a digital employee brain trust for leadership</div>
+      <div class="sec-ornament"></div>
+    </div>
+
+    <!-- 掌门大卡 -->
+    <div class="leader-wrap">
+      <div class="leader-card">
+        <div class="portrait-slot">
+          <span class="leader-badge">THE LEADER</span>
+          <span class="en-tag">SILI</span>
+          <img class="portrait-img" src="/images/ai-team/sili.jpg" alt="Sili · The Leader">
+          <div class="portrait-fade"></div>
+        </div>
+        <div class="leader-info">
+          <div class="alias-row">
+            <span class="alias">Sili · The Leader</span>
+            <span class="alias-title">The Leader · Company Brain</span>
           </div>
-        </a>
-        <a href="/ai-team" class="at-card">
-          <img src="/images/ai-team/shenxing.jpg" alt="Mercury" />
-          <div class="at-card-body">
-            <span class="at-alias">Mercury</span>
-            <span class="at-role">Sales Companion</span>
-            <p>One visit conversation in — notes, follow-ups, and diagnosis, all done.</p>
+          <div class="realname">Flagship AI partner · the brain trust of the digital employee team</div>
+          <div class="hr"></div>
+          <div class="opening">Sili is SiliMind’s flagship AI partner and the brain trust of the whole digital employee team. She remembers everything about your business: client preferences, last quarter’s quote, the deal stuck for three days. Ask her “how is this month” and she lays the funnel, the risks and the decisions waiting for you in front of you, all at once.</div>
+          <div class="skill-label">SCOPE OF COMMAND</div>
+          <div class="skills">
+<span class="sk">Coordination</span><span class="sk">Business insight</span><span class="sk">Decision support</span><span class="sk">Intellectual summary</span>
           </div>
-        </a>
-        <a href="/ai-team" class="at-card">
-          <img src="/images/ai-team/baixiaosheng.jpg" alt="Scout" />
-          <div class="at-card-body">
-            <span class="at-alias">Scout</span>
-            <span class="at-role">Research Analyst</span>
-            <p>The whole market’s intelligence in one book: lead scoring, domain-to-email.</p>
-          </div>
-        </a>
-        <a href="/ai-team" class="at-card">
-          <img src="/images/ai-team/pingyizhi.jpg" alt="Medic" />
-          <div class="at-card-body">
-            <span class="at-alias">Medic</span>
-            <span class="at-role">Deal Doctor</span>
-            <p>One-finger diagnosis: which content brought which deal, traced end to end.</p>
-          </div>
-        </a>
-        <a href="/ai-team" class="at-card">
-          <img src="/images/ai-team/huangyaoshi.jpg" alt="Daedalus" />
-          <div class="at-card-body">
-            <span class="at-alias">Daedalus</span>
-            <span class="at-role">Master Builder</span>
-            <p>One sentence, and he builds an array of your own.</p>
-          </div>
-        </a>
-      </div>
-      <p class="at-motto">They do the chores. You make the calls.</p>
-      <div class="at-cta-row">
-        <a href="/ai-team" class="at-cta-main">Meet the Whole Team</a>
-        <a href="https://agent.silimind.net/register" class="at-cta-sub">Start Personal Trial</a>
+          <div class="closing">She sorts out the work; the final call stays with you</div>
+        </div>
       </div>
     </div>
-  </section>
-<section class="metrics" id="metrics">
+
+    <!-- 四高手 -->
+    <div class="masters">
+
+      <div class="m-card">
+        <div class="m-portrait">
+          <span class="m-num">0 1</span><span class="m-en">Mercury</span>
+          <img class="portrait-img" src="/images/ai-team/shenxing.jpg" alt="Mercury" />
+          <div class="portrait-fade"></div>
+        </div>
+        <div class="m-info">
+          <div class="m-alias">Mercury</div>
+          <div class="m-title">Sales Companion</div>
+          <div class="m-real">The 800-li courier</div>
+          <div class="m-hr"></div>
+          <div class="m-open">A swift courier of the jianghu — eight hundred li a day, never a letter late. He is no general; he rides alongside: where the general goes, he follows, provisions and letters never falling behind.</div>
+          <div class="m-skills">
+<span class="m-sk">Structured notes</span><span class="m-sk">Follow-up emails</span><span class="m-sk">Meeting prep</span><span class="m-sk">Lead scoring</span><span class="m-sk">5-dim diagnosis</span><span class="m-sk">Health score</span><span class="m-sk">Patrols</span>
+          </div>
+          <div class="m-close">He rides along but never leads: you edit the drafts, you sign the deals</div>
+        </div>
+      </div>
+
+      <div class="m-card">
+        <div class="m-portrait">
+          <span class="m-num">0 2</span><span class="m-en">Scout</span>
+          <img class="portrait-img" src="/images/ai-team/baixiaosheng.jpg" alt="Scout" />
+          <div class="portrait-fade"></div>
+        </div>
+        <div class="m-info">
+          <div class="m-alias">Scout</div>
+          <div class="m-title">Research &amp; Intelligence</div>
+          <div class="m-real">The all-knowing ledger</div>
+          <div class="m-hr"></div>
+          <div class="m-open">Master of the weapons ledger — every piece of industry intelligence at his fingertips. People say his book has no word for “I don’t know.”</div>
+          <div class="m-skills">
+<span class="m-sk">Outreach + compliance</span><span class="m-sk">Lead scoring</span><span class="m-sk">Domain-to-email</span><span class="m-sk">Transparent usage</span>
+          </div>
+          <div class="m-close">He packs the intelligence; whether to strike is your call</div>
+        </div>
+      </div>
+
+      <div class="m-card">
+        <div class="m-portrait">
+          <span class="m-num">0 3</span><span class="m-en">Medic</span>
+          <img class="portrait-img" src="/images/ai-team/pingyizhi.jpg" alt="Medic" />
+          <div class="portrait-fade"></div>
+        </div>
+        <div class="m-info">
+          <div class="m-alias">Medic</div>
+          <div class="m-title">Deal Doctor</div>
+          <div class="m-real">One finger knows life and death</div>
+          <div class="m-hr"></div>
+          <div class="m-open">The healer — one finger on the pulse, and he shows you whether a deal lives or dies, whether the block is price, people, or process. His rule: diagnose only, never act on his own.</div>
+          <div class="m-skills">
+<span class="m-sk">5-dim diagnosis</span><span class="m-sk">Hourly patrol</span><span class="m-sk">Daily health score</span><span class="m-sk">Content→deal attribution</span>
+          </div>
+          <div class="m-close">He diagnoses; you write the prescription</div>
+        </div>
+      </div>
+
+      <div class="m-card">
+        <div class="m-portrait">
+          <span class="m-num">0 4</span><span class="m-en">Daedalus</span>
+          <img class="portrait-img" src="/images/ai-team/huangyaoshi.jpg" alt="Daedalus" />
+          <div class="portrait-fade"></div>
+        </div>
+        <div class="m-info">
+          <div class="m-alias">Daedalus</div>
+          <div class="m-title">Systems Architect</div>
+          <div class="m-real">One sentence, one formation</div>
+          <div class="m-hr"></div>
+          <div class="m-open">Lord of the Peach Blossom Isle. The whole island is his work: formations and mechanisms, every blade of grass placed by design. Outsiders can’t find their way out; he walks it blindfold.</div>
+          <div class="m-skills">
+<span class="m-sk">Config coaching</span><span class="m-sk">Dual-layer config</span><span class="m-sk">Task suggestions</span><span class="m-sk">Full function cards</span><span class="m-sk">Query toolset</span>
+          </div>
+          <div class="m-close">He lays the formation; you walk the path until it’s familiar</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="counter">
+      <div class="counter-line">Plus <b>36</b> digital employees across six departments — Sales 11 · Content 8 · Support 7 · Analytics 6 · Memory &amp; Knowledge 4</div>
+    </div>
+
+  </div>
+</section><section class="metrics" id="metrics">
     <div class="container">
       <div class="section-header">
         <p class="section-label">Data Speaks</p>

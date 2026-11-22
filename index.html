@@ -1060,30 +1060,6 @@
     .cp-strip-link:hover { background: rgba(129,140,248,.12); border-color: rgba(129,140,248,.55); color: var(--text-primary, #f0f0f5); }
     @media (max-width: 640px) { .cp-strip-inner { padding: 12px 16px; gap: 10px; } .cp-strip-text { font-size: 13px; flex-basis: 100%; } }
   
-    /* ===== ai-team band ===== */
-    .ai-team-band { position: relative; background: radial-gradient(1100px 620px at 50% -8%, rgba(99,102,241,.07), transparent 62%), linear-gradient(180deg, #0B0B1A 0%, #08080F 42%, #06060C 100%); border-top: 1px solid rgba(99,102,241,.22); border-bottom: 1px solid rgba(99,102,241,.22); padding: 88px 0 80px; }
-    .ai-team-band::before { content:""; position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg,transparent,rgba(99,102,241,.35),transparent); }
-    .ai-team-band .at-wrap { max-width: 1120px; margin: 0 auto; padding: 0 32px; }
-    .ai-team-band .section-label { color: rgba(129,140,248,.85); }
-    .ai-team-band h2 { font-size: 32px; margin-bottom: 10px; }
-    .ai-team-band .section-subtitle { color: #9ca3af; margin-bottom: 6px; }
-    .at-lead { color: #C9C2B2; font-size: 15.5px; margin-bottom: 40px; }
-    .at-cards5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
-    .at-card { display: flex; flex-direction: column; background: linear-gradient(168deg,#13132A 0%,#0C0C1A 60%,#090914 100%); border: 1px solid rgba(99,102,241,.26); border-radius: 14px; overflow: hidden; text-decoration: none; transition: transform .2s, border-color .2s; }
-    .at-card:hover { transform: translateY(-3px); border-color: rgba(129,140,248,.55); }
-    .at-card img { width: 100%; aspect-ratio: 3 / 4; height: auto; object-fit: cover; object-position: center top; display: block; }
-    .at-card-body { padding: 13px 15px 15px; display: flex; flex-direction: column; gap: 4px; }
-    .at-alias { font-size: 18px; font-weight: 700; letter-spacing: 1.5px; background: linear-gradient(100deg,#e0e7ff,#a5b4fc 62%,#818cf8); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; }
-    .at-role { font-size: 10.5px; color: #818cf8; letter-spacing: 1px; }
-    .at-card-body p { font-size: 12px; color: #C9C2B2; line-height: 1.7; margin: 4px 0 0; }
-    .at-motto { text-align: center; margin: 26px 0 0; font-size: 15px; color: #a5b4fc; letter-spacing: 2px; }
-    .at-cta-row { text-align: center; margin-top: 22px; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
-    .at-cta-main { display: inline-block; padding: 11px 26px; border-radius: 10px; background: linear-gradient(100deg,#c7d2fe,#818cf8 58%,#6366f1); color: #0B0F1A; text-decoration: none; font-size: 14.5px; font-weight: 700; }
-    .at-cta-main:hover { filter: brightness(1.08); }
-    .at-cta-sub { display: inline-block; padding: 11px 26px; border-radius: 10px; border: 1px solid rgba(99,102,241,.45); color: #a5b4fc; text-decoration: none; font-size: 14.5px; font-weight: 600; }
-    .at-cta-sub:hover { background: rgba(99,102,241,.1); }
-    @media (max-width: 1080px) { .at-cards5 { grid-template-columns: repeat(3, 1fr); } }
-    @media (max-width: 640px) { .at-cards5 { grid-template-columns: 1fr 1fr; } .ai-team-band { padding: 64px 0 60px; } .ai-team-band .at-wrap { padding: 0 16px; } .ai-team-band h2 { font-size: 26px; }
   
     /* ===== Plan A 肖像紫调蒙版（方式 B 对角双色渐变，z-index 三层：img 0 / mask 1 / fade 2）===== */
     .leader-portrait::after, .star-card .star-portrait::after {
@@ -1095,6 +1071,196 @@
     }
     .leader-portrait img, .star-card .star-portrait img { z-index: 0; }
     .leader-portrait .portrait-fade, .star-card .star-portrait .portrait-fade { position: absolute; inset: 0; z-index: 2; }
+  <style>
+  :root{
+    --bg:#070A12;
+    --gold:#6366f1;
+    --gold-l:#a5b4fc;
+    --text:#EDE6D6;
+    --sub:#8B8578;
+    --line:rgba(148,163,184,.18);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    background:var(--bg);color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    padding:0;
+  }
+
+  /* ===== 版块容器：全宽深色分段（视觉缓冲）===== */
+  .ai-partners{
+    width:100%;
+    padding:84px 0 96px;
+    background:
+      radial-gradient(1100px 620px at 50% -8%,rgba(99,102,241,.07),transparent 62%),
+      linear-gradient(180deg,#0A0E18 0%,#070A12 42%,#060810 100%);
+    position:relative;overflow:hidden;
+  }
+  /* 顶部/底部渐变边框，与相邻版块视觉隔离 */
+  .ai-partners::before,.ai-partners::after{
+    content:"";position:absolute;left:0;right:0;height:1px;
+    background:linear-gradient(90deg,transparent,rgba(99,102,241,.22),transparent);
+  }
+  .ai-partners::before{top:0}
+  .ai-partners::after{bottom:0}
+
+  .inner{max-width:1400px;margin:0 auto;padding:0 40px}
+
+  /* ===== 版块标题区 ===== */
+  .sec-head{text-align:center;margin-bottom:56px;position:relative}
+  .sec-kicker{
+    font-size:11px;letter-spacing:5px;color:rgba(129,140,248,.85);
+    font-weight:600;margin-bottom:16px;
+  }
+  .sec-title{
+    font-size:38px;font-weight:700;letter-spacing:2px;line-height:1.3;margin-bottom:16px;
+  }
+  .sec-title em{
+    font-style:normal;
+    background:linear-gradient(100deg,#e0e7ff,#a5b4fc 62%,#818cf8);
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;
+  }
+  .sec-sub{font-size:14.5px;color:var(--sub);letter-spacing:.6px;line-height:1.9}
+  .sec-ornament{
+    width:64px;height:1.5px;margin:24px auto 0;
+    background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  }
+
+  /* ===== 掌门大卡容器 ===== */
+  .leader-wrap{display:flex;justify-content:center;margin-bottom:64px}
+  .leader-card{
+    width:1080px;height:520px;
+    display:grid;grid-template-columns:400px 1fr;
+    border-radius:20px;overflow:hidden;position:relative;
+    background:linear-gradient(160deg,#141B2B 0%,#0C111C 62%,#0A0E18 100%);
+    border:1px solid rgba(99,102,241,.45);
+    box-shadow:0 30px 76px rgba(0,0,0,.6), inset 0 1px 0 rgba(232,197,90,.12);
+  }
+  .leader-card::before{
+    content:"";position:absolute;top:0;left:0;right:0;height:3px;
+    background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  }
+  .portrait-slot{position:relative;overflow:hidden;border-right:1px solid var(--line)}
+  .portrait-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top}
+  .portrait-fade{
+    position:absolute;inset:0;pointer-events:none;
+    background:linear-gradient(180deg,transparent 55%,rgba(10,14,24,.45) 82%,rgba(10,14,24,.92) 100%);
+  }
+  .leader-badge{
+    position:absolute;top:18px;left:50%;transform:translateX(-50%);z-index:2;
+    font-size:9px;letter-spacing:4px;color:#0B0F1A;font-weight:700;
+    background:linear-gradient(100deg,#c7d2fe,#818cf8);
+    padding:3px 14px;border-radius:999px;
+  }
+  .en-tag{
+    position:absolute;top:17px;right:20px;z-index:2;font-size:10px;letter-spacing:2.5px;
+    color:rgba(139,133,120,.7);text-transform:uppercase;
+  }
+  .leader-info{padding:44px 46px 40px;display:flex;flex-direction:column;justify-content:center}
+  .alias-row{display:flex;align-items:baseline;gap:15px;flex-wrap:wrap}
+  .alias{
+    font-size:42px;font-weight:700;letter-spacing:4px;
+    background:linear-gradient(100deg,#e0e7ff,#a5b4fc 62%,#818cf8);
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;
+  }
+  .alias-title{font-size:14.5px;color:var(--gold);letter-spacing:2.5px;font-weight:600;opacity:.92}
+  .realname{margin-top:8px;font-size:12px;color:var(--sub);letter-spacing:1.2px}
+  .hr{height:1px;background:linear-gradient(90deg,rgba(99,102,241,.35),transparent);margin:22px 0}
+  .opening{
+    font-size:13.5px;line-height:1.95;color:#C9C2B2;letter-spacing:.25px;
+    padding-left:15px;border-left:2px solid rgba(99,102,241,.35);margin-bottom:24px;
+  }
+  .skill-label{font-size:10px;letter-spacing:2.5px;color:#6B665C;font-weight:600;margin-bottom:10px}
+  .skills{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:24px}
+  .sk{
+    font-size:11.5px;color:#B8B0A0;border:1px solid var(--line);
+    border-radius:999px;padding:5px 13px;background:rgba(139,133,120,.06);
+  }
+  .closing{
+    font-size:13.5px;color:var(--gold-l);font-weight:600;letter-spacing:1.3px;
+    display:flex;align-items:center;gap:11px;padding-top:18px;border-top:1px solid var(--line);
+  }
+  .closing::before{content:"";width:20px;height:1.5px;background:var(--gold);opacity:.75}
+
+  /* ===== 四高手横排 ===== */
+  .masters{display:grid;grid-template-columns:repeat(4,340px);gap:20px;justify-content:center}
+  .m-card{
+    height:780px;border-radius:16px;overflow:hidden;display:flex;flex-direction:column;position:relative;
+    background:linear-gradient(168deg,#121927 0%,#0B1019 60%,#090D16 100%);
+    border:1px solid rgba(99,102,241,.26);
+    box-shadow:0 20px 50px rgba(0,0,0,.5);
+  }
+  .m-card::before{
+    content:"";position:absolute;top:0;left:0;right:0;height:2px;
+    background:linear-gradient(90deg,transparent,rgba(99,102,241,.75),transparent);
+  }
+  .m-portrait{position:relative;height:453px;overflow:hidden;border-bottom:1px solid var(--line)}
+  .m-num{position:absolute;top:14px;left:16px;z-index:2;font-size:9.5px;letter-spacing:2.5px;color:rgba(129,140,248,.6);font-weight:600}
+  .m-en{position:absolute;top:13px;right:16px;z-index:2;font-size:9.5px;letter-spacing:2px;color:rgba(139,133,120,.6);text-transform:uppercase}
+  .m-info{padding:20px 22px 22px;display:flex;flex-direction:column;flex:1}
+  .m-alias{
+    font-size:26px;font-weight:700;letter-spacing:3px;line-height:1.2;
+    background:linear-gradient(100deg,#e0e7ff,#a5b4fc 62%,#818cf8);
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;
+  }
+  .m-title{font-size:11.5px;color:var(--gold);letter-spacing:1.8px;font-weight:600;margin-top:5px;opacity:.92}
+  .m-real{font-size:10px;color:var(--sub);letter-spacing:.8px;margin:6px 0 14px}
+  .m-hr{height:1px;background:var(--line);margin-bottom:13px}
+  .m-open{
+    font-size:11.5px;line-height:1.85;color:#B8B0A0;
+    padding-left:10px;border-left:1.5px solid rgba(99,102,241,.32);margin-bottom:14px;flex:1;
+  }
+  .m-skills{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:14px}
+  .m-sk{
+    font-size:9.5px;color:#A8A296;border:1px solid rgba(139,133,120,.25);
+    border-radius:999px;padding:3px 9px;background:rgba(139,133,120,.05);
+  }
+  .m-close{
+    font-size:10.5px;color:var(--gold-l);font-weight:600;letter-spacing:.9px;
+    padding-top:12px;border-top:1px solid var(--line);display:flex;align-items:center;gap:8px;
+  }
+  .m-close::before{content:"";width:14px;height:1.5px;background:var(--gold);opacity:.7}
+
+  /* ===== 计数区（36 名背景资产）===== */
+  .counter{
+    margin-top:60px;text-align:center;
+    padding-top:40px;border-top:1px solid rgba(139,133,120,.14);
+  }
+  .counter-line{
+    font-size:13px;color:var(--sub);letter-spacing:1.4px;
+  }
+  .counter-line b{
+    color:var(--gold-l);font-weight:700;font-size:15px;
+    padding:0 4px;
+  }
+
+  /* ===== 响应式 ===== */
+  @media (max-width:1420px){
+    .masters{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+    .m-card{height:auto;min-height:720px}
+    .m-portrait{height:auto;aspect-ratio:3/4}
+  }
+  @media (max-width:1024px){
+    .inner{padding:0 28px}
+    .sec-title{font-size:30px}
+    .leader-wrap{margin-bottom:48px}
+    .leader-card{width:100%;max-width:640px;height:auto;grid-template-columns:1fr}
+    .portrait-slot{aspect-ratio:3/4;border-right:none;border-bottom:1px solid var(--line)}
+    .leader-info{padding:32px 30px 34px}
+    .alias{font-size:34px}
+    .masters{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+  }
+  @media (max-width:640px){
+    .ai-partners{padding:56px 0 64px}
+    .inner{padding:0 18px}
+    .sec-title{font-size:24px;letter-spacing:1px}
+    .sec-sub{font-size:13px}
+    .masters{grid-template-columns:1fr;gap:20px}
+    .alias{font-size:28px;letter-spacing:2px}
+    .opening{font-size:12.5px;line-height:1.85}
+    .m-alias{font-size:22px}
+  }
+</style>
   </style>
   <div class="cp-strip" data-campaign-entry>
     <div class="cp-strip-inner">
@@ -1200,63 +1366,135 @@
   </section>
 
   <!-- ===== 6. Metrics ===== -->
-    <!-- ===== AI 伙伴 ===== -->
-  <section class="ai-team-band">
-    <div class="at-wrap">
-      <p class="section-label">AI 伙伴</p>
-      <h2>认识你的 AI 团队</h2>
-      <p class="section-subtitle">思理掌门率四大高手，统领 36 名数字员工。</p>
-      <p class="at-lead">他们把你不想干的杂活干完，把最后的决定留给你。</p>
-      <div class="at-cards5">
-        <a href="/ai-team" class="at-card">
-          <img src="/images/ai-team/sili.jpg" alt="思理 · 掌门" />
-          <div class="at-card-body">
-            <span class="at-alias">思理</span>
-            <span class="at-role">掌门</span>
-            <p>记得你生意里的每件事。你问一句，她把全局摆到你面前。</p>
+  <section class="section ai-partners">
+  <div class="inner">
+
+    <div class="sec-head">
+      <div class="sec-kicker">A I   P A R T N E R S</div>
+      <div class="sec-title">思理<em>掌门</em>率四大高手</div>
+      <div class="sec-sub">统领 36 名数字员工 · 销售有数字员工助手，市场有数字员工团队，老板决策有数字员工智囊</div>
+      <div class="sec-ornament"></div>
+    </div>
+
+    <!-- 掌门大卡 -->
+    <div class="leader-wrap">
+      <div class="leader-card">
+        <div class="portrait-slot">
+          <span class="leader-badge">掌 门</span>
+          <span class="en-tag">SILI</span>
+          <img class="portrait-img" src="/images/ai-team/sili.jpg" alt="思理 · 掌门">
+          <div class="portrait-fade"></div>
+        </div>
+        <div class="leader-info">
+          <div class="alias-row">
+            <span class="alias">思理</span>
+            <span class="alias-title">掌门</span>
           </div>
-        </a>
-        <a href="/ai-team" class="at-card">
-          <img src="/images/ai-team/shenxing.jpg" alt="神行 · 销售随行" />
-          <div class="at-card-body">
-            <span class="at-alias">神行</span>
-            <span class="at-role">销售随行</span>
-            <p>拜访说完，纪要有、跟进有、诊断有。</p>
+          <div class="realname">旗舰 AI 伙伴 · 数字员工团队的智囊</div>
+          <div class="hr"></div>
+          <div class="opening">
+            思理，思理智能的旗舰 AI 伙伴，也是整个数字员工团队的智囊。她记得你生意里的每一件事：客户的偏好、上次的报价、卡了三天的那笔单。你问一句「这个月怎么样」，她把漏斗、风险和该拍板的事，一次摆到你面前。
           </div>
-        </a>
-        <a href="/ai-team" class="at-card">
-          <img src="/images/ai-team/baixiaosheng.jpg" alt="百晓生 · 调研官" />
-          <div class="at-card-body">
-            <span class="at-alias">百晓生</span>
-            <span class="at-role">调研官</span>
-            <p>天下情报一本册：线索打分、域名找邮箱。</p>
+          <div class="skill-label">统 筹 范 围</div>
+          <div class="skills">
+            <span class="sk">统筹调度</span><span class="sk">经营洞察</span><span class="sk">决策支持</span><span class="sk">情报汇总</span>
           </div>
-        </a>
-        <a href="/ai-team" class="at-card">
-          <img src="/images/ai-team/pingyizhi.jpg" alt="平一指 · 商机医生" />
-          <div class="at-card-body">
-            <span class="at-alias">平一指</span>
-            <span class="at-role">商机医生</span>
-            <p>一指诊脉：哪篇内容带来哪笔成交，一条线看到底。</p>
-          </div>
-        </a>
-        <a href="/ai-team" class="at-card">
-          <img src="/images/ai-team/huangyaoshi.jpg" alt="黄药师 · 总教头" />
-          <div class="at-card-body">
-            <span class="at-alias">黄药师</span>
-            <span class="at-role">总教头</span>
-            <p>一句话，给你布一座自己的阵。</p>
-          </div>
-        </a>
-      </div>
-      <p class="at-motto">活儿他们干，决定你做。</p>
-      <div class="at-cta-row">
-        <a href="/ai-team" class="at-cta-main">认识整个团队</a>
-        <a href="https://agent.silimind.net/register" class="at-cta-sub">申请个人试用</a>
+          <div class="closing">她把活儿理清楚，决定权始终在你</div>
+        </div>
       </div>
     </div>
-  </section>
 
+    <!-- 四高手 -->
+    <div class="masters">
+
+      <div class="m-card">
+        <div class="m-portrait">
+          <span class="m-num">0 1</span><span class="m-en">Mercury</span>
+          <img class="portrait-img" src="/images/ai-team/shenxing.jpg" alt="神行">
+          <div class="portrait-fade"></div>
+        </div>
+        <div class="m-info">
+          <div class="m-alias">神行</div>
+          <div class="m-title">销售随行</div>
+          <div class="m-real">小销 · 日行八百的信使</div>
+          <div class="m-hr"></div>
+          <div class="m-open">神行太保，日行八百里，江湖书信从不误事。他不做主将，他做随行：主将打到哪，他跟到哪，粮草书信一步不落。</div>
+          <div class="m-skills">
+            <span class="m-sk">14 项结构化纪要</span><span class="m-sk">跟进邮件</span><span class="m-sk">会前准备</span>
+            <span class="m-sk">线索评分</span><span class="m-sk">5 维诊断</span><span class="m-sk">健康分</span><span class="m-sk">巡检</span>
+          </div>
+          <div class="m-close">随行不做主：草稿你改，单子你签</div>
+        </div>
+      </div>
+
+      <div class="m-card">
+        <div class="m-portrait">
+          <span class="m-num">0 2</span><span class="m-en">Scout</span>
+          <img class="portrait-img" src="/images/ai-team/baixiaosheng.jpg" alt="百晓生">
+          <div class="portrait-fade"></div>
+        </div>
+        <div class="m-info">
+          <div class="m-alias">百晓生</div>
+          <div class="m-title">调研情报</div>
+          <div class="m-real">小研 · 天下情报一本册</div>
+          <div class="m-hr"></div>
+          <div class="m-open">百晓生，兵器谱主人，天下行业情报无所不知。江湖人说：他的册子上，没有「不知道」三个字。</div>
+          <div class="m-skills">
+            <span class="m-sk">获客邮件 + 合规检查</span><span class="m-sk">线索打分</span>
+            <span class="m-sk">域名找邮箱</span><span class="m-sk">免费 25 次/月</span>
+          </div>
+          <div class="m-close">情报他包了；出手不出手，你说了算</div>
+        </div>
+      </div>
+
+      <div class="m-card">
+        <div class="m-portrait">
+          <span class="m-num">0 3</span><span class="m-en">Medic</span>
+          <img class="portrait-img" src="/images/ai-team/pingyizhi.jpg" alt="平一指">
+          <div class="portrait-fade"></div>
+        </div>
+        <div class="m-info">
+          <div class="m-alias">平一指</div>
+          <div class="m-title">商机医生</div>
+          <div class="m-real">诊断官 · 一指知生死</div>
+          <div class="m-hr"></div>
+          <div class="m-open">平一指，神医。一指搭脉，商机是活是死、病根在价格、在人、还是在流程，他指给你看。他有个规矩：只诊，不擅动。</div>
+          <div class="m-skills">
+            <span class="m-sk">5 维诊断</span><span class="m-sk">每小时巡检</span>
+            <span class="m-sk">每日健康分</span><span class="m-sk">内容→成交归因</span>
+          </div>
+          <div class="m-close">诊归他，方子你开</div>
+        </div>
+      </div>
+
+      <div class="m-card">
+        <div class="m-portrait">
+          <span class="m-num">0 4</span><span class="m-en">Daedalus</span>
+          <img class="portrait-img" src="/images/ai-team/huangyaoshi.jpg" alt="黄药师">
+          <div class="portrait-fade"></div>
+        </div>
+        <div class="m-info">
+          <div class="m-alias">黄药师</div>
+          <div class="m-title">系统架构师</div>
+          <div class="m-real">教练 · 一句话布阵</div>
+          <div class="m-hr"></div>
+          <div class="m-open">黄药师，桃花岛主。整座桃花岛就是他的一件作品：奇门遁甲、五行机关，一草一木皆按阵法而设。外人进去出不来，他自己闭着眼也走得通。</div>
+          <div class="m-skills">
+            <span class="m-sk">配置教练</span><span class="m-sk">双层配置</span><span class="m-sk">待办建议</span>
+            <span class="m-sk">21 项功能卡</span><span class="m-sk">5 个查询工具</span>
+          </div>
+          <div class="m-close">阵法他布，闯阵的路，你自己走熟</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="counter">
+      <div class="counter-line">另有 <b>36</b> 名数字员工各司其职 —— 销售 11 · 内容营销 8 · 客服渠道 7 · 数据分析 6 · 记忆知识 4</div>
+    </div>
+
+  </div>
+</section>
 <section class="metrics" id="metrics">
     <div class="container">
       <div class="section-header">
