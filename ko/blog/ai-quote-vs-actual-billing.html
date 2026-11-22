@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <title>승인한 그 견적, 3개월 후에도 유효한가: AI 견적과 실제 청구의 차이 - SiliMind Blog</title>
+  <meta name="description" content="AI 기능의 2개월 차 청구서가 예산의 두 배——원인은 단가가 아니라 비어 있던 '호출 횟수' 열이었습니다. 견적·정산·예산 한도라는 세 개의 숫자, 3층 가격 표시, 429의 올바른 처리, 서명 전 여섯 가지 질문까지 종량 과금의 장부 관리를 정리했습니다." />
+  <link rel="canonical" href="https://www.silimind.net/blog/ai-quote-vs-actual-billing" />
+  <meta property="og:title" content="승인한 그 견적, 3개월 후에도 유효한가: AI 견적과 실제 청구의 차이 - SiliMind Blog" />
+  <meta property="og:description" content="AI 기능의 2개월 차 청구서가 예산의 두 배——원인은 단가가 아니라 비어 있던 '호출 횟수' 열이었습니다. 견적·정산·예산 한도라는 세 개의 숫자, 3층 가격 표시, 429의 올바른 처리, 서명 전 여섯 가지 질문까지 종량 과금의 장부 관리를 정리했습니다." />
+  <meta property="og:url" content="https://www.silimind.net/blog/ai-quote-vs-actual-billing" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="ko_KR" />
+  <meta property="og:site_name" content="SiliMind" />
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJ7HH4824R"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RJ7HH4824R');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "내가 승인한 그 견적, 3개월 후에도 여전히 유효한가: AI 견적과 실제 청구의 차이",
+    "description": "AI 기능의 2개월 차 청구서가 예산의 두 배——원인은 단가가 아니라 비어 있던 '호출 횟수' 열이었습니다. 견적·정산·예산 한도라는 세 개의 숫자, 3층 가격 표시, 429의 올바른 처리, 서명 전 여섯 가지 질문까지 종량 과금의 장부 관리를 정리했습니다.",
+    "datePublished": "2026-11-22",
+    "author": {
+      "@type": "Organization",
+      "name": "SiliMind"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SiliMind",
+      "url": "https://www.silimind.net"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.silimind.net/blog/ai-quote-vs-actual-billing"
+    }
+  }
+  </script>
+  <style>
+    :root {
+      --bg-primary: #0a0a0f;
+      --bg-secondary: #12121a;
+      --bg-card: #16161f;
+      --accent: #6366f1;
+      --accent-light: #818cf8;
+      --text-primary: #f0f0f5;
+      --text-secondary: rgba(240,240,245,0.6);
+      --border: rgba(99,102,241,0.08);
+      --border-hover: rgba(99,102,241,0.25);
+      --font: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'PingFang SC', 'Noto Sans SC', sans-serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* Nav */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(10,10,15,0.9);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      height: 64px;
+    }
+    .nav-inner {
+      max-width: 1100px; margin: 0 auto; padding: 0 32px;
+      height: 100%; display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      font-size: 20px; font-weight: 700; color: var(--accent-light);
+      text-decoration: none; letter-spacing: 1px;
+    }
+    .nav-links { list-style: none; display: flex; gap: 32px; }
+    .nav-links a {
+      color: var(--text-secondary); text-decoration: none; font-size: 14px;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--text-primary); }
+
+    /* Article */
+    .article-container {
+      max-width: 760px; margin: 0 auto;
+      padding: 120px 32px 80px;
+    }
+    .article-header {
+      margin-bottom: 40px;
+    }
+    .article-header h1 {
+      font-size: 32px; font-weight: 700; line-height: 1.3;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #6366f1, #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .article-meta {
+      font-size: 14px; color: var(--text-secondary);
+    }
+    .article-meta time {
+      margin-right: 16px;
+    }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      color: var(--accent-light); text-decoration: none; font-size: 14px;
+      margin-bottom: 24px; transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--text-primary); }
+
+    /* Article body */
+    .article-body h2 {
+      font-size: 24px; font-weight: 600; margin: 40px 0 16px;
+      color: var(--text-primary);
+    }
+    .article-body h3 {
+      font-size: 20px; font-weight: 600; margin: 32px 0 12px;
+      color: var(--text-primary);
+    }
+    .article-body p {
+      font-size: 16px; line-height: 1.8; color: var(--text-secondary);
+      margin-bottom: 20px;
+    }
+    .article-body ul, .article-body ol {
+      margin-bottom: 20px; padding-left: 24px; color: var(--text-secondary);
+    }
+    .article-body li {
+      margin-bottom: 8px; font-size: 16px; line-height: 1.8;
+    }
+    .article-body blockquote {
+      border-left: 3px solid var(--accent);
+      padding: 16px 24px;
+      margin: 24px 0;
+      background: var(--bg-secondary);
+      border-radius: 0 8px 8px 0;
+      color: var(--text-secondary);
+      font-size: 15px;
+    }
+    .article-body code {
+      background: var(--bg-secondary);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 14px;
+      color: var(--accent-light);
+    }
+    .article-body pre {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px 24px;
+      overflow-x: auto;
+      margin-bottom: 20px;
+    }
+    .article-body pre code {
+      background: none; padding: 0; font-size: 14px;
+      color: var(--text-primary);
+    }
+    .article-body img {
+      max-width: 100%; border-radius: 8px; margin: 24px 0;
+    }
+    .article-body a {
+      color: var(--accent-light); text-decoration: underline;
+      text-decoration-color: rgba(129,140,248,0.3);
+      transition: text-decoration-color 0.2s;
+    }
+    .article-body a:hover {
+      text-decoration-color: var(--accent-light);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center; padding: 40px 32px;
+      border-top: 1px solid var(--border);
+      color: var(--text-secondary); font-size: 13px;
+    }
+
+    @media (max-width: 768px) {
+      .article-container { padding: 100px 16px 60px; }
+      .article-header h1 { font-size: 26px; }
+      .article-body h2 { font-size: 20px; }
+      .nav-links { display: none; }
+    }
+  </style>
+<link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/blog/ai-quote-vs-actual-billing" />
+<link rel="alternate" hreflang="en" href="https://www.silimind.net/en/blog/ai-quote-vs-actual-billing" />
+<link rel="alternate" hreflang="ja" href="https://www.silimind.net/ja/blog/ai-quote-vs-actual-billing" />
+<link rel="alternate" hreflang="ko" href="https://www.silimind.net/ko/blog/ai-quote-vs-actual-billing" />
+<link rel="alternate" hreflang="x-default" href="https://www.silimind.net/blog/ai-quote-vs-actual-billing" />
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">SiliMind</a>
+      <ul class="nav-links">
+        <li><a href="/blog/" class="active">Blog</a></li>
+        <li><a href="/#features">核心能力</a></li>
+        <li><a href="#">解决方案</a></li>
+        <li><a href="#">关于我们</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <article class="article-container">
+    <a href="/blog/" class="back-link">← 返回博客</a>
+    <header class="article-header">
+      <h1>내가 승인한 그 견적, 3개월 후에도 여전히 유효한가: AI 견적과 실제 청구의 차이</h1>
+      <div class="article-meta">
+        <time datetime="2026-11-22">2026.11.22.</time>
+        <span>SiliMind</span>
+      </div>
+    </header>
+    <div class="article-body">
+      <h2>청구서가 나온 날, 아무도 돈이 어디로 갔는지 말하지 못했다</h2>
+      <p>(아래 장면은 합성 시나리오입니다. AI 기능을 갖춘 회사가 흔히 겪는 정산 상황을 엮은 것으로, 특정 기업의 실제 기록이 아닙니다. 인물과 수치는 모두 예시입니다.)</p>
+      <p>80명 규모 회사가 AI 대화 기능을 도입했다. 첫 사용자 반응은 좋았다. 브라우저를 열어 한 줄씩 찾는 수고가 사라졌다. 두 번째 달 청구서가 도착했을 때, 승인된 예산의 두 배였다. 사장은 IT 책임자를 불러 돈이 어디로 갔는지 물었다. IT 책임자는 3개월 전 그 견적 시트를 꺼냈다. 시트에는 "호당 약 ¥0.02"이라고 적혀 있었다. 숫자는 아주 작아 보였다.</p>
+      <p>나는 이 장면을 몇 번 봤다. IT 측의 설명은 언제나 비슷했다. 시트는 벤더가 제시한 단가로 계산한 것이고, 단가 자체는 맞았다고. 모든 것을 막는 것은 단가 열이 아니었다.</p>
+      <p>문제는 그 ¥0.02가 아니다. 그 달, 이 기능은 12만 번 호출되었다.</p>
+      <p>견적 시트의 "호출 횟수" 열은 비어 있었다.</p>
+      <p>AI 기능의 비용은 "한 번에 얼마인가" 열에 결코 있지 않다. "누가 호출하는가, 몇 번이나 호출할 수 있는가, 언제 멈추는가" — 이 세 열에 있다. 단가 열을 아무리 정확히 채워도, 비어 있는 호출 횟수 열은 버틸 수 없다.</p>
+      <h2>한 번의 호출에는 실제로 세 개의 숫자가 있다</h2>
+      <p>대부분의 벤더가 첫 번째 숫자를 제시한다. 한 번의 호출에는 동시에 세 개의 숫자가 존재한다.</p>
+      <table><thead><tr><th>이름</th><th>그것이 무엇인가</th><th>누가 정하는가</th><th>언제 나타나는가</th><th>틀렸을 때</th></tr></thead><tbody><tr><td>견적</td><td>상류 공식 목록 가격으로 환산한 호당 가격</td><td>상류 가격정책. 우리가 UI에 표시</td><td>호출 전. UI와 답변에 표시</td><td>예산을 여기에 맞춰도, 원래부터 견적이었음</td></tr><tr><td>정산</td><td>상류가 실제로 가져간 금액</td><td>상류 공급사</td><td>청구 주기 마감</td><td>내 숫자와 맞지 않고, 한 달 늦게 알게 됨</td></tr><tr><td>예산 한도</td><td>이 기능이 이번 달 쓸 수 있는 최대 금액</td><td>본인 또는 관리자</td><td>사전에 설정</td><td>아무도 설정하지 않으면 존재하지 않는 것과 같음</td></tr></tbody></table>
+      <p>견적은 결정하는 사람에게, 정산은 회계 담당자에게, 예산 한도는 돈을 관리하는 사람에게 향한 것이다. 이 셋을 섞어 쓴 결과로 가장 흔한 것은 견적을 정산액으로 취급하는 것이다. 월말 청구서가 예산을 초과하면 첫 반응은 "계산이 틀렸다" — 실제로는 견적과 정산이 애초에 같은 것이 아니었다.</p>
+      <p>구독과 종량 호출은 서로 다른 두 가지 비용 구조다. <a href="https://www.silimind.net/blog/ai-sdr-china-fit">AI 세일즈 도구가 중국 팀에 맞지 않는 이유</a>에서 구독 쪽을 다뤘다. 이 글은 종량 호출 쪽의 장부 관리법을 다룬다.</p>
+      <p>기록해 둘 가치가 있는 세부 사항이 하나 있다. 이런 종량형 API는 보통 빈 결과에 과금하지 않는다. 한 번 물어 빈 값이 돌아오면 비용은 0이다. 예산에 미치는 영향은 작지만, "이 기능이 낭비적으로 반복 호출되고 있는가"를 판단하는 데는 매우 유용하다.</p>
+      <h2>견적은 "호출할까 말까"를 결정하는 순간에 나타나야 한다</h2>
+      <p>많은 제품이 비용을 결과 이후에 적는다. "이번 조회 비용 ¥0.003" 한 줄로. 이 시점에는 돈이 이미 쓰였고, 사용자가 받는 것은 사후 청구서다. 실제로 효과적인 것은 세 개의 레이어이며, 각각 다른 실수를 막는다.</p>
+      <p>첫 번째 레이어는 결정 전에 있다. 모델이 도구를 호출할지 판단하는 시점에, 도구 설명에 이미 금액이 포함되어 있고, 호출 후 비용을 사용자에게 알리라는 지시도 포함되어 있다. 이 레이어가 막는 것은 "호출해야 했는가"다. 사용자가 "이 콘텐츠 성과가 어떤가"라고 물으면, 모델이 소셜 데이터 조회를 한 번 실행한다. 이 한 번을 아껴야 하는지는, 질문이 입을 떠나기 전에 가격이 있어야 한다.</p>
+      <p>두 번째 레이어는 호출 순간에 있다. 호출이 발생한 바로 그 순간, UI에 가격 표시 한 줄이 나타난다. 결과를 기다리지 않는다. 이 레이어가 막는 것은 "지금 쓰고 있다".</p>
+      <p>세 번째 레이어는 결과 반영 시점에 있다. 도구 결과에 비용 안내가 한 줄 더해져 최종 답변으로 돌아온다. 이 레이어가 막는 것은 "다 쓰고 나서야 알게 된다".</p>
+      <p>세 레이어는 세 가지를 방어한다. 호출할까, 지금 쓰고 있는가, 사후에 알게 된다. 하나라도 빠지면, 사용자에게 보이는 돈은 모두 불완전하다.</p>
+      <p>이 분업을 우리는 한 문장으로 정했다. 한도는 사람이 설정하는 숫자, 알림은 사람이 읽는 문구이며, AI의 유일한 임무는 질문이 입을 떠나기 전에 가격을 말하는 것이다.</p>
+      <p>공식 목록 가격으로 추산하면, 몇 가지 일반 채널의 호당 비용은 대략 다음과 같다. Instagram과 TikTok 콘텐츠 검색 약 $0.0035/회, YouTube 약 $0.0029, TikTok 단일 게시물을 숫자 ID로 조회 약 $0.0005, 중국 관련 키워드 리서치 약 ¥0.003. 이 단가들은 상류 공급사의 공식 목록 가격에서 추산한 것으로, 우리는 그대로 제시하며 빈 결과는 무료다. 정산 가격과는 다른 것이다. 분명히 말해두겠다. 이 견적 체계는 실제 과금을 한 번도 통과한 적이 없으므로 견적일 뿐이며, 청구서와 대조하는 데 사용해서는 안 된다.</p>
+      <h2>하드 한도는 개인이 아니라 테넌트에 걸어야 한다</h2>
+      <p>한도는 특정 개인이 예산 전체를 태워버리는 것을 막는 최후의 문이다. 두 가지 설계 결정이 정해져야 비로소 실제로 작동한다.</p>
+      <p>첫 번째 질문은 어느 레이어에 거느냐는 것이다. 우리는 유료 데이터 소스 호출 한도를 특정 사용자가 아닌 테넌트 레벨에 설계했다. 이유는 실용적이다. 사람은 퇴사하고, 이동하고, 계정을 빌려준다. 사람별로 한도를 걸면, 인사 이동이 있을 때마다 회계는 영원히 모호해진다. 테넌트 레벨 한도는 하나의 예산에 대응하며, 하나의 예산에는 하나의 정의만 존재한다.</p>
+      <p>두 번째 질문은 기본값을 부여하는가이다. 반드시 부여해야 한다. 우리는 보수적인 기본 일일 호출 한도를 출하하며, 관리자가 상향할 수 있다. 기본값이 없는 한도는 한도가 없는 것과 같다. "일단 설정하지 말고, 문제가 생기면 그때 가자"라는 단계는 대개 영원히 오지 않기 때문이다. 기본값의 역할은 누군가를 막는 것이 아니라, 처음으로 문제가 발생했을 때 이미 돈이 어떻게 유출되었는지 알고 있도록 하는 것이다.</p>
+      <h2>429는 오류가 아니다. 그것은 한 문장이다</h2>
+      <p>HTTP에서 429는 "요청 과다"로 읽히며, 정상적인 비즈니스 상태다. 그러나 많은 제품이 429를 붉은 오류 상자로 내던진다. 붉은 상자가 사용자에게 전하는 메시지는 "시스템이 고장 났다"이며, 다음 행동은 그룹 채팅에 스크린샷을 올리거나, 조용히 이 기능을 다시 사용하지 않는 것이다.</p>
+      <p>쿼터가 소진되었을 때 UI는 네 가지를 보여줘야 한다.</p>
+      <ol><li>자연스러운 한 문장. 오늘의 쿼터가 소진되었다. 내일 복구된다. "요청이 너무 잦습니다"가 아니다.</li><li>언제 복구되는가. 일 단위인지 시간 단위인지, 시점에 복구되어 얼마나 기다려야 하는지 알 수 있어야 한다.</li><li>누구에게 묻는가. 누가 한도를 올릴 수 있고, 어떻게 하는가. 이 숫자는 관리자만 변경할 수 있으므로, 일반 사용자에게 누구를 찾아야 하는지 알려야 한다.</li><li>방금 그 호출에서 실제로 무슨 일이 있었는가. 결과를 받지 못한 것인지, 받았지만 거부된 것인지. 이 한 문장이 사용자가 재시도할지 여부를 결정한다.</li></ol>
+      <h2>서명 전에 공급사에게 여섯 가지를 물어라</h2>
+      <p>순서대로 물어라. 대답하지 못하는 질문이, 나중에다툼이 벌어질 질문이다.</p>
+      <table><thead><tr><th>물을 것</th><th>성의 없는 답변</th><th>여기까지 밀어붙여야 할 것</th></tr></thead><tbody><tr><td>단가는 견적인가 정산인가</td><td>공식 가격이라 매우 정확</td><td>상류 목록 가격에서 환산한 것임을 밝히고, 언제 어긋나는지 말하게 할 것</td></tr><tr><td>빈 결과도 1회로 세는가</td><td>모두 센다</td><td>누군가 당신의 API로 무의미한 쿼리를 반복하고 있지 않은지</td></tr><tr><td>한도는 누가 설정하며, 한 사람이 변경할 수 있는가</td><td>필요에 따라 조정 가능</td><td>테넌트인지 개인인지, 변경 시 로그가 남는지, 누가 변경했는지 추적 가능한지</td></tr><tr><td>초과 후 UI는 어떤 모습인가</td><td>오류 코드를 반환</td><td>사용자에게 보이는 문장을 그대로 말하게 할 것</td></tr><tr><td>사후에 누가 호출했는지 추적 가능한가</td><td>로그가 있다</td><td>로그에 무엇이 기록되며, 특정 호출 하나를 특정할 수 있는지</td></tr><tr><td>돈은 누구의 계정을 통해 흐르는가</td><td>플랫폼의 것</td><td>자사의 조달 프로세스와 지급 조건</td></tr></tbody></table>
+      <p>정확하게 계산할 수 없는 예산은 허용 가능하다. "계산이 틀려도 아무도 알 수 없는" 예산은 허용할 수 없다.</p>
+      <p>다음 서명 전에, 그 견적 시트를 꺼내 "호출 횟수" 열을 채워라. 단가는 벤더가 진술한다. 호출 횟수를 추정하는 것은 당신 자신이다.</p>
+    </div>
+  </article>
+
+  <footer>
+    <p>© 2026 SiliMind. All rights reserved.</p>
+  </footer>
+</body>
+</html>

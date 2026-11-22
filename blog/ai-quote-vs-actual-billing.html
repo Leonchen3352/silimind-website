@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <title>你批的那份测算，三个月后还站得住吗：AI 报价估价与真实结算的差在哪 - SiliMind Blog</title>
+  <meta name="description" content="AI 功能上线后账单翻倍的根因，往往不是单价算错，而是「调用次数」一栏空着。估价/结算/预算额度三个数的区别、报价该出现在哪一层、429 为什么不该是红框、签合同前要问供应商的六个问题——按次调用这笔账，一篇管到底。" />
+  <link rel="canonical" href="https://www.silimind.net/blog/ai-quote-vs-actual-billing" />
+  <meta property="og:title" content="你批的那份测算，三个月后还站得住吗：AI 报价估价与真实结算的差在哪 - SiliMind Blog" />
+  <meta property="og:description" content="AI 功能上线后账单翻倍的根因，往往不是单价算错，而是「调用次数」一栏空着。估价/结算/预算额度三个数的区别、报价该出现在哪一层、429 为什么不该是红框、签合同前要问供应商的六个问题——按次调用这笔账，一篇管到底。" />
+  <meta property="og:url" content="https://www.silimind.net/blog/ai-quote-vs-actual-billing" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:site_name" content="SiliMind" />
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJ7HH4824R"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RJ7HH4824R');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "你批的那份测算，三个月后还站得住吗：AI 报价估价与真实结算的差在哪",
+    "description": "AI 功能上线后账单翻倍的根因，往往不是单价算错，而是「调用次数」一栏空着。估价/结算/预算额度三个数的区别、报价该出现在哪一层、429 为什么不该是红框、签合同前要问供应商的六个问题——按次调用这笔账，一篇管到底。",
+    "datePublished": "2026-11-22",
+    "author": {
+      "@type": "Organization",
+      "name": "SiliMind"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SiliMind",
+      "url": "https://www.silimind.net"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.silimind.net/blog/ai-quote-vs-actual-billing"
+    }
+  }
+  </script>
+  <style>
+    :root {
+      --bg-primary: #0a0a0f;
+      --bg-secondary: #12121a;
+      --bg-card: #16161f;
+      --accent: #6366f1;
+      --accent-light: #818cf8;
+      --text-primary: #f0f0f5;
+      --text-secondary: rgba(240,240,245,0.6);
+      --border: rgba(99,102,241,0.08);
+      --border-hover: rgba(99,102,241,0.25);
+      --font: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'PingFang SC', 'Noto Sans SC', sans-serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* Nav */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(10,10,15,0.9);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      height: 64px;
+    }
+    .nav-inner {
+      max-width: 1100px; margin: 0 auto; padding: 0 32px;
+      height: 100%; display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      font-size: 20px; font-weight: 700; color: var(--accent-light);
+      text-decoration: none; letter-spacing: 1px;
+    }
+    .nav-links { list-style: none; display: flex; gap: 32px; }
+    .nav-links a {
+      color: var(--text-secondary); text-decoration: none; font-size: 14px;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--text-primary); }
+
+    /* Article */
+    .article-container {
+      max-width: 760px; margin: 0 auto;
+      padding: 120px 32px 80px;
+    }
+    .article-header {
+      margin-bottom: 40px;
+    }
+    .article-header h1 {
+      font-size: 32px; font-weight: 700; line-height: 1.3;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #6366f1, #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .article-meta {
+      font-size: 14px; color: var(--text-secondary);
+    }
+    .article-meta time {
+      margin-right: 16px;
+    }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      color: var(--accent-light); text-decoration: none; font-size: 14px;
+      margin-bottom: 24px; transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--text-primary); }
+
+    /* Article body */
+    .article-body h2 {
+      font-size: 24px; font-weight: 600; margin: 40px 0 16px;
+      color: var(--text-primary);
+    }
+    .article-body h3 {
+      font-size: 20px; font-weight: 600; margin: 32px 0 12px;
+      color: var(--text-primary);
+    }
+    .article-body p {
+      font-size: 16px; line-height: 1.8; color: var(--text-secondary);
+      margin-bottom: 20px;
+    }
+    .article-body ul, .article-body ol {
+      margin-bottom: 20px; padding-left: 24px; color: var(--text-secondary);
+    }
+    .article-body li {
+      margin-bottom: 8px; font-size: 16px; line-height: 1.8;
+    }
+    .article-body blockquote {
+      border-left: 3px solid var(--accent);
+      padding: 16px 24px;
+      margin: 24px 0;
+      background: var(--bg-secondary);
+      border-radius: 0 8px 8px 0;
+      color: var(--text-secondary);
+      font-size: 15px;
+    }
+    .article-body code {
+      background: var(--bg-secondary);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 14px;
+      color: var(--accent-light);
+    }
+    .article-body pre {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px 24px;
+      overflow-x: auto;
+      margin-bottom: 20px;
+    }
+    .article-body pre code {
+      background: none; padding: 0; font-size: 14px;
+      color: var(--text-primary);
+    }
+    .article-body img {
+      max-width: 100%; border-radius: 8px; margin: 24px 0;
+    }
+    .article-body a {
+      color: var(--accent-light); text-decoration: underline;
+      text-decoration-color: rgba(129,140,248,0.3);
+      transition: text-decoration-color 0.2s;
+    }
+    .article-body a:hover {
+      text-decoration-color: var(--accent-light);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center; padding: 40px 32px;
+      border-top: 1px solid var(--border);
+      color: var(--text-secondary); font-size: 13px;
+    }
+
+    @media (max-width: 768px) {
+      .article-container { padding: 100px 16px 60px; }
+      .article-header h1 { font-size: 26px; }
+      .article-body h2 { font-size: 20px; }
+      .nav-links { display: none; }
+    }
+  </style>
+<link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/blog/ai-quote-vs-actual-billing" />
+<link rel="alternate" hreflang="en" href="https://www.silimind.net/en/blog/ai-quote-vs-actual-billing" />
+<link rel="alternate" hreflang="ja" href="https://www.silimind.net/ja/blog/ai-quote-vs-actual-billing" />
+<link rel="alternate" hreflang="ko" href="https://www.silimind.net/ko/blog/ai-quote-vs-actual-billing" />
+<link rel="alternate" hreflang="x-default" href="https://www.silimind.net/blog/ai-quote-vs-actual-billing" />
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">SiliMind</a>
+      <ul class="nav-links">
+        <li><a href="/blog/" class="active">Blog</a></li>
+        <li><a href="/#features">核心能力</a></li>
+        <li><a href="#">解决方案</a></li>
+        <li><a href="#">关于我们</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <article class="article-container">
+    <a href="/blog/" class="back-link">← 返回博客</a>
+    <header class="article-header">
+      <h1>你批的那份测算，三个月后还站得住吗：AI 报价估价与真实结算的差在哪</h1>
+      <div class="article-meta">
+        <time datetime="2026-11-22">2026年11月22日</time>
+        <span>SiliMind</span>
+      </div>
+    </header>
+    <div class="article-body">
+      <h2>账单出来那天，没人说得清钱花在哪</h2>
+      <p>（下面这段是合成场景，按带 AI 功能的公司常见的对账场面拼成，不是任何一家公司的真实记录，人物和数字都是示意。）</p>
+      <p>一家八十来人的公司上了 AI 对话功能。第一批用的人反馈很好，省得自己开浏览器一行行翻。第二个月的账单出来，比批的预算高出一倍。老板把 IT 负责人叫进办公室，问钱花在哪。IT 负责人翻出三个月前那份测算表，表上写着「单次约 ¥0.02」，数字看着很小。</p>
+      <p>这类场面我碰过几次。每次 IT 那边的说法都差不多，表是按供应商给的单价算的，单价确实没问题。真正卡住的从来不是单价那一栏。</p>
+      <p>问题不在这个 ¥0.02。那个月，这套功能调了十二万次。</p>
+      <p>测算表里「调用次数」那一栏是空的。</p>
+      <p>AI 功能的成本，从来不在「一次多少钱」这一栏。它在「谁会调、能调多少次、什么时候停」这三栏上。单次价格那一栏填得再准，也顶不住次数那一栏空着。</p>
+      <h2>一次调用里其实有三个数</h2>
+      <p>多数供应商报给你的是第一个数。一次调用里其实同时存在三个数。</p>
+      <table><thead><tr><th>名字</th><th>它是什么</th><th>谁定的</th><th>什么时候出现</th><th>错了会怎样</th></tr></thead><tbody><tr><td>估价</td><td>按上游官方标价折算出来的单次价格</td><td>上游定价，我们在界面上标出来</td><td>调用前，报在界面和回答里</td><td>你拿它排预算，它本来就只是估的</td></tr><tr><td>结算</td><td>上游真正收走的那笔钱</td><td>上游服务商</td><td>账期结束</td><td>你以为的数和它对不上，隔一个月才知道</td></tr><tr><td>预算额度</td><td>这套功能这个月最多能花多少</td><td>你，或者你的管理员</td><td>事前就定好</td><td>没人定，等于没有</td></tr></tbody></table>
+      <p>估价给做决定的人看，结算给财务对账的人看，预算额度给管钱的人看。这三样混着用的后果，最常见的一种是把估价当成结算数。月底账单比预算高，第一反应是「算错了」，其实是估算跟结算本来就不是一回事。</p>
+      <p>订阅和按次调用是两套不一样的成本结构，<a href="https://www.silimind.net/blog/ai-sdr-china-fit">AI 销售工具在中国团队的水土不服</a> 那篇讲过按月订阅这一侧，这篇说按次调用这一侧的账怎么管。</p>
+      <p>有个细节值得单独记一笔：这类按次接口通常空结果不收费。问一次返回空，等于没花。这条对预算影响不大，但用来判断「这个功能是不是在被浪费着反复调」很管用。</p>
+      <h2>报价得出现在「决定要不要调」的那一刻</h2>
+      <p>很多产品把费用写在结果回来之后，一句「本次查询费用 ¥0.003」。到这一步钱已经花出去了，用户拿到的是一张事后账单。真正管用的是三层，每层拦不同的错。</p>
+      <p>第一层落在决策前。模型在决定要不要调这个工具的时候，工具说明里就带着金额，还带着一条指令，要求调用之后把费用告诉用户。这一层拦的是「该不该调」。用户问一句「这条内容表现怎么样」，模型顺手去查一次社媒数据，这一下该不该省，得在开口前就有价。</p>
+      <p>第二层落在调用瞬间。调用发生的那一刻，界面上就多出一条价格说明，不等结果回来。这一层拦的是「正在花」。</p>
+      <p>第三层落在结果回填。工具结果带一句费用说明回到最终回答里。这一层拦的是「花完了才知道」。</p>
+      <p>三层管的是三件事：要不要、正在花、事后知情。少一层，用户看到的都是残缺的钱。</p>
+      <p>这件事的分工我们定成一句话：上限是人设的数，提示是人看的字，AI 只负责在开口前把价说出来。</p>
+      <p>按官方标价估算，几个常见通道的单次价格大致是：Instagram 与 TikTok 的内容检索约 $0.0035 一次，YouTube 约 $0.0029 一次，TikTok 单帖按数字 ID 查约 $0.0005 一次，中文相关词挖掘约 ¥0.003 一次。这些单价是上游服务商官方标价的估算，我们照它报价，空结果不收费，跟结算价不是一回事。顺带把话说死，这套报价没跑过真实扣费，它只能是估算，不能拿去对账单。</p>
+      <h2>硬上限要挂在租户上，不能挂在人身上</h2>
+      <p>上限是防止某个人把预算烧光的兜底那道门。两个设计点定下来，它才真的有用。</p>
+      <p>第一个问题是挂在哪一层。我们把付费数据源的调用上限设计成挂在租户这一层，不挂在某个具体用户身上。原因很实际，人会离职、会换岗、会借账号用。按人设上限，人员一流转，账就再也算不清。租户级的上限对应的是一笔预算，一个预算只有一个口径。</p>
+      <p>第二个问题是给不给默认值。必须给。我们给了一个保守的默认日调用上限，管理员可以往上提。没有默认值的上限等于没有上限，因为「先不设，等出问题再说」这一步通常永远轮不到。默认值的作用不是卡死谁，是让第一次翻车发生时，你已经知道钱是怎么流出去的。</p>
+      <h2>429 不是一个错误，是一句说明</h2>
+      <p>429 在 HTTP 里读作请求过多，它是一个正常的业务状态。但不少产品把 429 直接甩成红色错误框。红色错误框传递给用户的信息是「系统坏了」，接下来他要么截图发群，要么干脆不用这个功能了。</p>
+      <p>额度到顶的时候，界面上该出现四样东西：</p>
+      <ol><li>一句人话。今天的额度用完了，明天恢复。不是「请求过于频繁」。</li><li>什么时候恢复。额度按天还是按小时，到点就恢复，让人知道要等多久。</li><li>找谁。谁能提额，怎么提。这个数只有管理员能改，就得告诉普通用户去找谁。</li><li>刚才那一次到底发生了什么。是没拿到结果，还是拿到了但被拒。这一句决定用户会不会重试。</li></ol>
+      <h2>签之前，问供应商这六个问题</h2>
+      <p>这六个问题按顺序问。答不上来的那一条，就是你后面会吵起来的那一条。</p>
+      <table><thead><tr><th>问什么</th><th>敷衍的回答</th><th>要追到什么</th></tr></thead><tbody><tr><td>单价是估价还是结算价</td><td>按官方价格，很准</td><td>说清是按上游官方标价估的，说清什么情况下会偏离</td></tr><tr><td>空结果算不算一次</td><td>都算</td><td>有没有人拿你的接口反复试无效查询</td></tr><tr><td>上限谁设的，一个人能不能改</td><td>可以按需调整</td><td>挂在租户还是挂在人，改了有没有留记录，谁改的查不查得到</td></tr><tr><td>超限之后界面长什么样</td><td>会返回错误码</td><td>让他把用户看到的那句话说一遍</td></tr><tr><td>事后能不能查到是谁调的</td><td>有日志</td><td>日志记了什么，能不能定位到一次具体调用</td></tr><tr><td>钱走谁的账号</td><td>走平台的</td><td>你自己的采购流程和账期</td></tr></tbody></table>
+      <p>一份算不准的预算是可以接受的。一份「算错了也没人知道」的预算不行。</p>
+      <p>下次签字之前，把那份测算表翻出来，把「调用次数」那一栏填上。单价他们说了算，次数只能你自己估。</p>
+    </div>
+  </article>
+
+  <footer>
+    <p>© 2026 SiliMind. All rights reserved.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <title>承認した見積もりは3ヶ月後も成立するか：AI見積もりと実際請求の差 - SiliMind Blog</title>
+  <meta name="description" content="AI機能の2ヶ月目の請求書が予算の2倍——単価ではなく「呼び出し回数」の欄が空だったのが原因。見積もり・請求・予算上限の3つの数字、3層の価格表示、429の正しい扱い、署名前の6つの質問まで、従量課金の勘定管理を一冊に。" />
+  <link rel="canonical" href="https://www.silimind.net/blog/ai-quote-vs-actual-billing" />
+  <meta property="og:title" content="承認した見積もりは3ヶ月後も成立するか：AI見積もりと実際請求の差 - SiliMind Blog" />
+  <meta property="og:description" content="AI機能の2ヶ月目の請求書が予算の2倍——単価ではなく「呼び出し回数」の欄が空だったのが原因。見積もり・請求・予算上限の3つの数字、3層の価格表示、429の正しい扱い、署名前の6つの質問まで、従量課金の勘定管理を一冊に。" />
+  <meta property="og:url" content="https://www.silimind.net/blog/ai-quote-vs-actual-billing" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="ja_JP" />
+  <meta property="og:site_name" content="SiliMind" />
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJ7HH4824R"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RJ7HH4824R');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "承認した見積もりは3ヶ月後もまだ成立するか：AI見積もりと実際請求の差はどこか",
+    "description": "AI機能の2ヶ月目の請求書が予算の2倍——単価ではなく「呼び出し回数」の欄が空だったのが原因。見積もり・請求・予算上限の3つの数字、3層の価格表示、429の正しい扱い、署名前の6つの質問まで、従量課金の勘定管理を一冊に。",
+    "datePublished": "2026-11-22",
+    "author": {
+      "@type": "Organization",
+      "name": "SiliMind"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SiliMind",
+      "url": "https://www.silimind.net"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.silimind.net/blog/ai-quote-vs-actual-billing"
+    }
+  }
+  </script>
+  <style>
+    :root {
+      --bg-primary: #0a0a0f;
+      --bg-secondary: #12121a;
+      --bg-card: #16161f;
+      --accent: #6366f1;
+      --accent-light: #818cf8;
+      --text-primary: #f0f0f5;
+      --text-secondary: rgba(240,240,245,0.6);
+      --border: rgba(99,102,241,0.08);
+      --border-hover: rgba(99,102,241,0.25);
+      --font: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'PingFang SC', 'Noto Sans SC', sans-serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* Nav */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(10,10,15,0.9);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      height: 64px;
+    }
+    .nav-inner {
+      max-width: 1100px; margin: 0 auto; padding: 0 32px;
+      height: 100%; display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      font-size: 20px; font-weight: 700; color: var(--accent-light);
+      text-decoration: none; letter-spacing: 1px;
+    }
+    .nav-links { list-style: none; display: flex; gap: 32px; }
+    .nav-links a {
+      color: var(--text-secondary); text-decoration: none; font-size: 14px;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--text-primary); }
+
+    /* Article */
+    .article-container {
+      max-width: 760px; margin: 0 auto;
+      padding: 120px 32px 80px;
+    }
+    .article-header {
+      margin-bottom: 40px;
+    }
+    .article-header h1 {
+      font-size: 32px; font-weight: 700; line-height: 1.3;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #6366f1, #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .article-meta {
+      font-size: 14px; color: var(--text-secondary);
+    }
+    .article-meta time {
+      margin-right: 16px;
+    }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      color: var(--accent-light); text-decoration: none; font-size: 14px;
+      margin-bottom: 24px; transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--text-primary); }
+
+    /* Article body */
+    .article-body h2 {
+      font-size: 24px; font-weight: 600; margin: 40px 0 16px;
+      color: var(--text-primary);
+    }
+    .article-body h3 {
+      font-size: 20px; font-weight: 600; margin: 32px 0 12px;
+      color: var(--text-primary);
+    }
+    .article-body p {
+      font-size: 16px; line-height: 1.8; color: var(--text-secondary);
+      margin-bottom: 20px;
+    }
+    .article-body ul, .article-body ol {
+      margin-bottom: 20px; padding-left: 24px; color: var(--text-secondary);
+    }
+    .article-body li {
+      margin-bottom: 8px; font-size: 16px; line-height: 1.8;
+    }
+    .article-body blockquote {
+      border-left: 3px solid var(--accent);
+      padding: 16px 24px;
+      margin: 24px 0;
+      background: var(--bg-secondary);
+      border-radius: 0 8px 8px 0;
+      color: var(--text-secondary);
+      font-size: 15px;
+    }
+    .article-body code {
+      background: var(--bg-secondary);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 14px;
+      color: var(--accent-light);
+    }
+    .article-body pre {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px 24px;
+      overflow-x: auto;
+      margin-bottom: 20px;
+    }
+    .article-body pre code {
+      background: none; padding: 0; font-size: 14px;
+      color: var(--text-primary);
+    }
+    .article-body img {
+      max-width: 100%; border-radius: 8px; margin: 24px 0;
+    }
+    .article-body a {
+      color: var(--accent-light); text-decoration: underline;
+      text-decoration-color: rgba(129,140,248,0.3);
+      transition: text-decoration-color 0.2s;
+    }
+    .article-body a:hover {
+      text-decoration-color: var(--accent-light);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center; padding: 40px 32px;
+      border-top: 1px solid var(--border);
+      color: var(--text-secondary); font-size: 13px;
+    }
+
+    @media (max-width: 768px) {
+      .article-container { padding: 100px 16px 60px; }
+      .article-header h1 { font-size: 26px; }
+      .article-body h2 { font-size: 20px; }
+      .nav-links { display: none; }
+    }
+  </style>
+<link rel="alternate" hreflang="zh-CN" href="https://www.silimind.net/blog/ai-quote-vs-actual-billing" />
+<link rel="alternate" hreflang="en" href="https://www.silimind.net/en/blog/ai-quote-vs-actual-billing" />
+<link rel="alternate" hreflang="ja" href="https://www.silimind.net/ja/blog/ai-quote-vs-actual-billing" />
+<link rel="alternate" hreflang="ko" href="https://www.silimind.net/ko/blog/ai-quote-vs-actual-billing" />
+<link rel="alternate" hreflang="x-default" href="https://www.silimind.net/blog/ai-quote-vs-actual-billing" />
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">SiliMind</a>
+      <ul class="nav-links">
+        <li><a href="/blog/" class="active">Blog</a></li>
+        <li><a href="/#features">核心能力</a></li>
+        <li><a href="#">解决方案</a></li>
+        <li><a href="#">关于我们</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <article class="article-container">
+    <a href="/blog/" class="back-link">← 返回博客</a>
+    <header class="article-header">
+      <h1>承認した見積もりは3ヶ月後もまだ成立するか：AI見積もりと実際請求の差はどこか</h1>
+      <div class="article-meta">
+        <time datetime="2026-11-22">2026年11月22日</time>
+        <span>SiliMind</span>
+      </div>
+    </header>
+    <div class="article-body">
+      <h2>請求書が届いた日、誰もお金の行き先を説明できなかった</h2>
+      <p>（以下は合成シーンです。AI機能を持つ会社でよく起きる照合作業を組み合わせたもので、特定の企業の実録ではありません。人物と数値はすべて仮です。）</p>
+      <p>80人ほどの会社がAI対話機能を導入した。最初に使ったメンバーの評判は良く、ブラウザを開いて一行ずつ探す手間が省けた。2ヶ月目の請求書が届くと、承認された予算の2倍だった。社長はIT責任者を呼び、お金の行き先を問いただした。IT責任者は3ヶ月前の見積もり表を取り出した。「1回あたり約¥0.02」。数字はとても小さく見えた。</p>
+      <p>この場面には何度も遭遇した。IT側の説明はいつも同じだ。表はベンダーの提示単価で計算したもので、単価自体は正しかったと。 really 壁になるのは、単価の欄では決してない。</p>
+      <p>問題はあの¥0.02ではない。あの月、この機能は12万回呼び出された。</p>
+      <p>見積もり表の「呼び出し回数」の欄は、空だった。</p>
+      <p>AI機能のコストは「1回いくらか」の欄には決してない。それは「誰が呼ぶか・何回呼べるか・いつ止まるか」の3つの欄にある。単価の欄をどれだけ正確に埋めても、空の回数欄には耐えられない。</p>
+      <h2>1回の呼び出しには実は3つの数字がある</h2>
+      <p>ベンダーの多くは最初の1つしか提示しない。1回の呼び出しには、同時に3つの数字が存在する。</p>
+      <table><thead><tr><th>名前</th><th>それが何か</th><th>誰が決めるか</th><th>いつ現れるか</th><th>間違ったとき</th></tr></thead><tbody><tr><td>見積もり</td><td>上流の公式リスト価格から換算した1回あたりの価格</td><td>上流の価格設定。UIに表示する</td><td>呼び出し前。UIと回答に表示</td><td>予算をここに合わせても、もともと見積もりにすぎない</td></tr><tr><td>請求</td><td>上流が実際に回収した金額</td><td>上流プロバイダー</td><td>帳期（請求サイクル）の終わり</td><td>自分の数字と合わず、1ヶ月遅れて判明</td></tr><tr><td>予算上限</td><td>この機能が今月使える上限額</td><td>自分、または管理者</td><td>事前に設定</td><td>誰も設定しなければ、存在しないのと同じ</td></tr></tbody></table>
+      <p>見積もりは決める人に、請求は経理の照合する人に、予算上限はお金を管理する人に向けたものだ。この3つを混ぜて使った結果、最もよくあるのは、見積もりを請求額として扱うことだ。月末の請求書が予算を超え、最初の反応は「計算が間違っている」——実際には、見積もりと請求はもともと別物だった。</p>
+      <p>サブスクリプションと従量課金は2つの異なるコスト構造だ。<a href="https://www.silimind.net/blog/ai-sdr-china-fit">AIセールスツールが中国チームに馴染まない理由</a>では月額サブスクリプション側を扱った。本稿では従量課金側の勘定の管理方法を扱う。</p>
+      <p>書き留める価値のある細部が一つ。この種の従量型APIは通常、空の結果を課金しない。1回叩いて空が返れば、支払いはゼロ。予算への影響は小さいが、「この機能が無駄に繰り返し呼ばれていないか」を判断するには非常に有用だ。</p>
+      <h2>見積もりは「呼ぶべきか」を決める瞬間に現れるべき</h2>
+      <p>多くの製品は費用を結果の後に書く。「本次クエリ費用¥0.003」の一文で。この時点でお金はすでに使われており、ユーザーが手にするのは事後の請求書だ。実際に機能するのは3つのレイヤーで、それぞれ異なるミスを防ぐ。</p>
+      <p>第1レイヤーは決定の前にある。モデルがツールを呼ぶかどうかを判断する時点で、ツールの説明に金額が含まれ、呼び出し後に費用をユーザーに伝えるよう指示されている。このレイヤーが防ぐのは「呼ぶべきだったか」。ユーザーが「このコンテンツのパフォーマンスはどう？」と尋ね、モデルがソーシャルデータの照会を1回実行する——この1回を省くべきかどうかは、問いが口をつく前に価格があるべきだ。</p>
+      <p>第2レイヤーは呼び出しの瞬間にある。呼び出しが発生したその瞬間に、UIに価格表示が1行現れる。結果を待たない。このレイヤーが防ぐのは「今、使っている」。</p>
+      <p>第3レイヤーは結果の反映時。ツール結果に費用の一言が添えられて最終回答に戻る。このレイヤーが防ぐのは「使い終わってから知る」。</p>
+      <p>3つのレイヤーは3つのことを守る。呼ぶべきか、今使っている、事後に知る。1つでも欠ければ、ユーザーに見えるお金はすべて不完全になる。</p>
+      <p>この分担を私たちは一文に定めた。上限は人が設定する数、通知は人が読む文字、AIの仕事は問いが口をつく前に価格を言うことだけだ。</p>
+      <p>公式リスト価格から見積もると、一般的なチャネルの1回あたりのコストはおよそ次の通り。InstagramとTikTokのコンテンツ検索は約$0.0035/回、YouTubeは約$0.0029、TikTokの単投稿を数値IDで検索は約$0.0005、中国関連キーワードのリサーチは約¥0.003。これらの単価は上流プロバイダーの公式リスト価格から換算した見積もりで、我々はそのまま提示し、空の結果は無料。請求価格とは別物だ。はっきり言っておくと、この見積もりは実際の課金を一度も通していないため、見積もりでしかなく、請求書との照合には使えない。</p>
+      <h2>ハード上限は人ではなくテナントに掛ける</h2>
+      <p>上限は、誰か一人が予算を使い果たすのを防ぐ最後の砦だ。2つの設計判断が定まって、初めて本当に機能する。</p>
+      <p>最初の問いは、どのレイヤーに掛けるか。私たちは有料データソースの呼び出し上限を、特定の個人ではなくテナントレベルで設計した。理由は実際的だ。人は退職し、異動し、アカウントを貸す。人に上限を掛けると、人の流動のたびに会計は永久に曖昧になる。テナントレベルの上限は1つの予算に対応し、1つの予算には1つの定義しかない。</p>
+      <p>次の問いは、デフォルトを設けるか。設けるべきだ。私たちは控えめなデフォルトの日次呼び出し上限を出荷しており、管理者は引き上げられる。デフォルトのない上限は上限がないのと同じだ。「まず設定せず、問題が出てから」というステップは、通常永久に回ってこないからだ。デフォルトの役割は誰かを止めることではなく、最初に問題が起きた時に、お金がどのように流出したかをすでに把握できていることだ。</p>
+      <h2>429はエラーではない。それは一文である</h2>
+      <p>HTTPにおける429は「リクエスト過多」と読む。正常なビジネス状態だ。しかし多くの製品は429を赤いエラーボックスとして投げる。赤いボックスがユーザーに伝えるのは「システムが壊れた」で、次の行動はグループチャットにスクリーンショットを投げるか、黙ってこの機能を使わなくなるかのどちらかだ。</p>
+      <p>クオータを使い切ったとき、UIには4つのものを表示すべきだ。</p>
+      <ol><li>一文の自然な言葉。今日のクオータを使い切った。明日復旧する。「リクエストが頻繁すぎます」ではない。</li><li>いつ復旧するか。日次か時間単位か、時点で復旧し、どれくらい待つかが分かるように。</li><li>誰に聞くか。誰が上限を引き上げられるか、どうやるか。この数値を変えられるのは管理者だけ——だから一般ユーザーに誰に聞くかを伝える。</li><li>直前の1回で実際に何が起きたか。結果が得られなかったのか、得たが拒否されたのか。この一文が、ユーザーがリトライするかどうかを決める。</li></ol>
+      <h2>署名の前に、ベンダーにこの6つの質問を</h2>
+      <p>順番に問うこと。答えられない質問が、後に争いになる質問だ。</p>
+      <table><thead><tr><th>聞くこと</th><th>濁った答え</th><th>ここまで追い込むべきこと</th></tr></thead><tbody><tr><td>単価は見積もりか請求か</td><td>公式価格なので正確</td><td>上流のリスト価格から換算したものであること、どの場合に乖離するかを明言させる</td></tr><tr><td>空の結果は1回に数えるか</td><td>すべて数える</td><td>誰かがあなたのAPIで無意味なクエリを繰り返していないか</td></tr><tr><td>上限は誰が設定し、1人で変更できるか</td><td>必要に応じて調整可能</td><td>テナントか人か、変更はログに残るか、誰が変えたか追跡可能か</td></tr><tr><td>超過後のUIはどうなるか</td><td>エラーコードを返す</td><td>ユーザーに見える文をそのまま言わせる</td></tr><tr><td>事後に誰が呼んだか追跡できるか</td><td>ログあり</td><td>ログに何が記録され、特定の1回の呼び出しを特定できるか</td></tr><tr><td>お金は誰のアカウントを通るか</td><td>プラットフォームの</td><td>自社の購買プロセスと支払い条件</td></tr></tbody></table>
+      <p>正確に計算できない予算は許容できる。「計算が間違っていても誰も気付けない」予算は許容できない。</p>
+      <p>次の署名の前に、あの見積もり表を取り出し、「呼び出し回数」の欄を埋めよう。単価はベンダーが言明する。回数を見積もるのは自分だけだ。</p>
+    </div>
+  </article>
+
+  <footer>
+    <p>© 2026 SiliMind. All rights reserved.</p>
+  </footer>
+</body>
+</html>
