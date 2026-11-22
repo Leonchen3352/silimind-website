@@ -75,7 +75,7 @@
     .leader-sec { padding: 56px 0 30px; }
     .leader-card { max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: 400px 1fr; border-radius: 20px; overflow: hidden; background: linear-gradient(160deg,#141B2B 0%,#0C111C 62%,#0A0E18 100%); border: 1px solid rgba(201,162,39,.42); box-shadow: 0 30px 76px rgba(0,0,0,.6), inset 0 1px 0 rgba(232,197,90,.12); position: relative; }
     .leader-card::before { content:""; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,transparent,var(--gold),transparent); }
-    .leader-portrait { position: relative; min-height: 533px; border-right: 1px solid rgba(139,133,120,.22); }
+    .leader-portrait { position: relative; aspect-ratio: 3 / 4; border-right: 1px solid rgba(139,133,120,.22); }
     .leader-portrait img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center top; display:block; }
     .leader-portrait .portrait-fade { position:absolute; inset:0; pointer-events:none; background:linear-gradient(180deg,transparent 55%,rgba(10,14,24,.45) 82%,rgba(10,14,24,.92) 100%); }
     .leader-badge { position:absolute; top:18px; left:50%; transform:translateX(-50%); font-size:9px; letter-spacing:4px; color:#0B0F1A; font-weight:700; background:linear-gradient(100deg,#E8C55A,#C9A227); padding:3px 14px; border-radius:999px; z-index:2; }
@@ -95,7 +95,7 @@
     .stars-sec .sec-sub { color: var(--text-secondary); margin-bottom: 30px; }
     .stars-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
     .star-card { background: linear-gradient(165deg,#121826,#0C111C); border: 1px solid rgba(201,162,39,.3); border-radius: 18px; overflow: hidden; display: flex; flex-direction: column; }
-    .star-card .star-portrait { position: relative; height: 300px; overflow: hidden; }
+    .star-card .star-portrait { position: relative; aspect-ratio: 3 / 4; overflow: hidden; }
     .star-card .star-portrait img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
     .star-card .star-portrait .portrait-fade { position:absolute; inset:0; background:linear-gradient(180deg,transparent 55%,rgba(12,17,28,.55) 85%,rgba(12,17,28,.95) 100%); }
     .star-card .alias { position:absolute; left: 24px; bottom: 12px; font-size: 30px; font-weight: 700; color: var(--gold-l); letter-spacing: 3px; text-shadow: 0 4px 18px rgba(0,0,0,.7); }
@@ -142,7 +142,7 @@
     .site-footer a { color: var(--text-secondary); }
     @media (max-width: 900px) {
       .leader-card { grid-template-columns: 1fr; }
-      .leader-portrait { min-height: 420px; border-right: 0; border-bottom: 1px solid rgba(139,133,120,.22); }
+      .leader-portrait { border-right: 0; border-bottom: 1px solid rgba(139,133,120,.22); }
       .leader-body { padding: 28px 24px; }
       .stars-grid { grid-template-columns: 1fr; }
       .why-grid, .entries-grid { grid-template-columns: 1fr; }
